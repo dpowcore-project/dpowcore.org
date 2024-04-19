@@ -1,0 +1,16 @@
+## Size of the Dpowcoin Core data directory running with default settings.
+## Suggest rounding up by about 10% so it doesn't need to be updated
+## too often.
+datadir_gb: "20"
+
+## Size of the datadir with the maximum allowed pruning enabled.
+## Suggest rounding up a little bit to give room for growth in the UTXO
+## set and to account for things like pruning only happening
+## at blk file boundaries and mempool saving.
+pruned_gb: "10"
+
+## Size of monthly increase in datadir size.  For 1 MB blocks, 288
+## blocks per day, 30 days per month, 1000 MB/GB: 1*288*30/1000 = 8.64 GB.
+## Rounding that up to 9 GB and assuming it could quickly double with
+## increased segwit adoption gives a range of 9 to 18 GB/month.
+monthly_storage_increase_range_gb: "9-18"

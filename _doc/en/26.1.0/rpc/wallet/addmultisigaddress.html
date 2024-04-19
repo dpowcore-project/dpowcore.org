@@ -1,0 +1,46 @@
+---
+name: addmultisigaddress
+dpcversion: 26.1.0
+dpcgroup: wallet
+permalink: en/doc/26.1.0/rpc/wallet/addmultisigaddress/
+---
+
+addmultisigaddress nrequired ["key",...] ( "label" "address_type" )
+
+Add an nrequired-to-sign multisignature address to the wallet. Requires a new wallet backup.
+Each key is a Dpowcoin address or hex-encoded public key.
+This functionality is only intended for use with non-watchonly addresses.
+See `importaddress` for watchonly p2sh address support.
+If 'label' is specified, assign address to that label.
+Note: This command is only compatible with legacy wallets.
+
+Arguments:
+1. nrequired       (numeric, required) The number of required signatures out of the n keys or addresses.
+2. keys            (json array, required) The dpowcoin addresses or hex-encoded public keys
+     [
+       "key",      (string) dpowcoin address or hex-encoded public key
+       ...
+     ]
+3. label           (string, optional) A label to assign the addresses to.
+4. address_type    (string, optional, default=set by -addresstype) The address type to use. Options are "legacy", "p2sh-segwit", and "bech32".
+
+Result:
+{                            (json object)
+  "address" : "str",         (string) The value of the new multisig address
+  "redeemScript" : "hex",    (string) The string value of the hex-encoded redemption script
+  "descriptor" : "str",      (string) The descriptor for this multisig
+  "warnings" : [             (json array, optional) Any warnings resulting from the creation of this multisig
+    "str",                   (string)
+    ...
+  ]
+}
+
+Examples:
+
+Add a multisig address from 2 addresses
+> dpowcoin-cli addmultisigaddress 2 "[\"dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p\",\"dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p\"]"
+
+As a JSON-RPC call
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id": "curltest", "method": "addmultisigaddress", "params": [2, "[\"dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p\",\"dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p\"]"]}' -H 'content-type: text/plain;' http://127.0.0.1:42002/
+
+

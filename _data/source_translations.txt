@@ -1,0 +1,12 @@
+en:
+  created: "Published on the"
+  author: "by"
+  description: "Dpowcoin Core website"
+  footer: "Dpowcoin Core project"
+  related: "Recommended"
+  viewallposts: "View all posts"
+  not_translated: "Note: this page has not been translated"
+  tocoverview: "Overview"
+  translation_outdated: "This translation may be out of date. Please compare with the English version."
+  rss_feed: "Dpowcoin Core Blog RSS Feed"
+  rss_blog_feed: "Blog posts feed"

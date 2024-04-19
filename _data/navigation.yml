@@ -1,0 +1,68 @@
+# Site navigation links
+en:
+  home:
+    title: "Dpowcoin Core"
+    url:   "/"
+  about:
+    title: "About"
+    url:   "/en/about/"
+  supportus:
+    title: "Support us"
+    url:   "/en/supportus/"
+  resources:
+    title: "Resources"
+    submenu: true
+    tree:
+      explorers:
+        title: "Block Explorers"
+        url:   "/en/blockexplorers/"
+      exchangers:
+        title: "Exchangers"
+        url:   "/en/exchangers/"
+      coininfo:
+        title: "Coin Info"
+        url:   "/en/coininfo/"
+      markettrasing:
+        title: "Market Trasing"
+        url:   "/en/markettrasing/"
+      socialmediahub:
+        title: "Social Media Hub"
+        url:   "/en/socialmediahub/"
+      communityprojects:
+        title: "Community Projects"
+        url:   "/en/communityprojects/"
+      branding:
+        title: "Branding"
+        url:   "/en/branding/"
+  download:
+    title: "Download"
+    url: "/en/download"
+  blog:
+    title: "blog"
+    url:   "/en/blog/"
+  releases:
+    title: "releases"
+    url:   "/en/releases/"
+  dev:
+    title: "Development"
+    submenu: true
+    tree:
+      contribute:
+        title: "contribute"
+        url:   "/en/contribute/"
+      contribute-code:
+        title: "contributing code"
+        url:   "/en/faq/contributing-code/"
+      eol:
+        title: "Lifecycle"
+        url:   "/en/lifecycle"
+  contact:
+    title: "Contact"
+    submenu: true
+    tree:
+      contact_us:
+        title: "Contact Us"
+        url: "/en/contact/"
+      announcements:
+        title: "Announcements"
+        url: "/en/list/announcements/join/"

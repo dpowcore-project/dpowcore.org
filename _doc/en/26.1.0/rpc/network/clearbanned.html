@@ -1,0 +1,19 @@
+---
+name: clearbanned
+dpcversion: 26.1.0
+dpcgroup: network
+permalink: en/doc/26.1.0/rpc/network/clearbanned/
+---
+
+clearbanned
+
+Clear all banned IPs.
+
+Result:
+null    (json null)
+
+Examples:
+> dpowcoin-cli clearbanned 
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id": "curltest", "method": "clearbanned", "params": []}' -H 'content-type: text/plain;' http://127.0.0.1:42002/
+
+

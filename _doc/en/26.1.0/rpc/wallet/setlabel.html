@@ -1,0 +1,23 @@
+---
+name: setlabel
+dpcversion: 26.1.0
+dpcgroup: wallet
+permalink: en/doc/26.1.0/rpc/wallet/setlabel/
+---
+
+setlabel "address" "label"
+
+Sets the label associated with the given address.
+
+Arguments:
+1. address    (string, required) The dpowcoin address to be associated with a label.
+2. label      (string, required) The label to assign to the address.
+
+Result:
+null    (json null)
+
+Examples:
+> dpowcoin-cli setlabel "dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p" "tabby"
+> curl --user myusername --data-binary '{"jsonrpc": "1.0", "id": "curltest", "method": "setlabel", "params": ["dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p", "tabby"]}' -H 'content-type: text/plain;' http://127.0.0.1:42002/
+
+

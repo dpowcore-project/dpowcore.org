@@ -1,0 +1,97 @@
+<!doctype html>
+{% include browser_magic.html %}
+<head>
+{% if page.name != "index" and page.name != "rpcindex" %}
+  {% assign custom_title = page.name | append: " (" | append: page.dpcversion | append: " RPC)" %}
+{% else %}
+  {% if page.dpcversion != "index" %}
+    {% assign custom_title = "Dpowcoin Core " | append: page.dpcversion | append: " RPC" %}
+  {% else %}
+    {% assign custom_title = "Dpowcoin Core RPC" %}
+  {% endif %}
+{% endif %}
+{% include head.html %}
+</head>
+
+<body class="page">
+
+{% include browser-upgrade.html %}
+
+{% include navigation.html %}
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    <div>
+      <p>
+        {% if page.dpcversion != "index" %}
+          Documentation exported from <a href="https://github.com/dpowcore-project/dpowcoin/tree/v{{page.dpcversion}}">Dpowcoin Core {{page.dpcversion}}</a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+  <article class="page">
+    <h1>{{ custom_title | xml_escape }}</h1>
+    <div class="article-wrap">
+      {% if page.dpcversion != "index" %}
+        {% assign groups = site.doc | where:"dpcversion", page.dpcversion | group_by:"dpcgroup" | sort: "name" %}
+        <section class="toc">
+        <input id="searchbar" type="text" value="" placeholder="Search ..."/>
+        {% for group in groups %}
+          {% if group.name != "index" %}
+            <header>
+              <h3 class="toc-header">
+                <i class="fa fa-book"></i>
+                {{ group.name }}
+              </h3>
+              <div class="toc-drawer js-hide-on-start">
+                <ul>
+                  {% for article in group.items %}
+                    <li class="leaf-article"><a href="{{article.url}}">{{article.name}}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </header>
+          {% endif %}
+        {% endfor %}
+        </section>
+      {% endif %}
+
+      <!-- { % include istranslated.html % } -->
+
+      {% if page.name != "index" and page.name != "rpcindex" %}
+<span class="doc">
+{% highlight text %}{{ content }}{% endhighlight %}
+</span>
+      {% else %}
+        {% if page.dpcversion != "index" %}
+          Select a command group in the menu.
+        {% else %}
+          Following docs are available:
+          {% assign groups = site.doc | sort: "dpcversion" | reverse | group_by:"dpcversion" %}
+          <ul>
+            {% for group in groups %}
+              {% if group.name != "index" %}
+                {% for article in group.items %}
+                  {% if article.name == "index" %}
+                    <li><a href="{{article.url}}">{{group.name}}</a></li>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endif %}
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#index -->
+
+<div class="footer-wrap">
+  <footer>
+    {% include footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
+
+{% include scripts.html %}
+
+</body>
+</html>

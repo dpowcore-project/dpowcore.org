@@ -1,0 +1,167 @@
+// Copyright 2013 - 2016 The Bitcoin.org Project.
+// Copyright 2017 The BitcoinCore.org Project.
+// This file is licensed under the MIT License (MIT) available on
+// http://opensource.org/licenses/MIT.
+
+.mainbutton{
+        text-align:center;
+}
+.mainbutton a,
+.mainbutton a:link,
+.mainbutton a:visited,
+.mainbutton a:active{
+        font-family:'Ubuntu', sans-serif;
+        font-weight:400;
+        font-size:150%;
+        text-shadow:0 2px 6px rgba(0,0,0,0.6);
+        text-align:left;
+        display:inline-block;
+        background-color:#2c6fad;
+        border:1px solid #20598f;
+        background-image:-o-linear-gradient(bottom, #20598f 14%, #2c6fad 70%);
+        background-image:-moz-linear-gradient(bottom, #20598f 14%, #2c6fad 70%);
+        background-image:-webkit-linear-gradient(bottom, #20598f 14%, #2c6fad 70%);
+        background-image:-ms-linear-gradient(bottom, #20598f 14%, #2c6fad 70%);
+        background-image:linear-gradient(bottom, #20598f 14%, #2c6fad 70%);
+        color:#fff;
+        padding:15px 20px 15px 8px;
+        margin:40px 0 40px 0;
+        -webkit-border-radius:12px;
+        -moz-border-radius:12px;
+        border-radius:12px;
+}
+.mainbutton a:hover{
+        background-image:none;
+        color:#fff;
+}
+.mainbutton img{
+        height:42px;
+        width:42px;
+        margin-right: 8px;
+        display: inline-block;
+        vertical-align: middle;
+}
+.mainbutton span{
+        display: inline-block;
+        vertical-align: middle;
+}
+
+.links{
+        text-align:center;
+}
+.links p{
+        text-align:justify;
+}
+.links div p{
+        text-align:center;
+}
+.links h1,
+.links h2{
+        text-align:center;
+}
+.links .mainbutton a{
+        margin:10px 0 35px 0;
+}
+.linksbox{
+        display:inline-block;
+        border:2px solid #fad296;
+        padding:20px;
+        font-size:125%;
+        -webkit-border-radius:12px;
+        -moz-border-radius:12px;
+        border-radius:12px;
+        margin:0 auto 20px auto;
+}
+.linksbox p{
+        margin:0;
+}
+.linksbox p.linksmore a{
+        font-size:90%;
+}
+.linksbox p.linkskeys{
+        font-size:80%;
+        margin-top:15px;
+}
+.linksbox p.linkskeys span{
+        display:block;
+}
+.linksbox p.linkskeys a{
+        display:inline-block;
+        padding: 5px 10px 0 20px;
+        background:url(/assets/images/icons/mini_ico_key.svg) left 8px no-repeat;
+}
+.linksbox div a{
+        display:inline-block;
+}
+.linksbox div{
+        display:inline-block;
+        margin:0 20px;
+        vertical-align:top;
+}
+
+.linksbox div div{
+        display:block;
+        width:236px;
+        height:46px;
+        margin:25px 0;
+        text-align:left;
+}
+.linksbox div div span{
+        display:inline-block;
+        margin-left:6px;
+}
+.linksbox div div span span{
+        display:block;
+        margin:6px 0 0 0;
+        font-size:80%;
+}
+.linksbox img{
+        width:32px;
+        height:32px;
+        vertical-align:top;
+        position:relative;
+        top:4px;
+}
+.magnetlink{
+        display:inline-block;
+        width:16px;
+        height:16px;
+        position:relative;
+        bottom:-1px;
+        background:url(/assets/images/icons/mini_ico_magnet.svg) no-repeat;
+}
+
+@media handheld, only screen and ( max-width: 60em ), only screen and ( max-device-width: 60em ){
+
+        .links{
+                text-align:left;
+        }
+        .links p{
+                text-align:left;
+        }
+        .links div p{
+                text-align:left;
+        }
+        .links .mainbutton{
+                display:none;
+        }
+        .linksbox{
+                border:0;
+                padding:0;
+                text-align:left;
+        }
+        .linksbox div div{
+                margin:15px 0;
+                width:auto;
+        }
+        .linksbox div{
+                margin:0;
+                display:block;
+        }
+        .linksbox>p:first-child{
+                display:none;
+        }
+        .linksbox>p+div+div+p{
+                margin-top:25px;
+        }
+}
