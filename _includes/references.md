@@ -126,7 +126,7 @@
 [dpowcoin-discuss]: https://t.me/dpowcoin
 [dpocoin-dev]: https://t.me/dpowcore
 [dpowcoin-news]: https://t.me/dpowcoinnews
-[dpocoin-discord]: soon
+[dpocoin-discord]: https://discord.gg/b9zkzAgUpH
 [software life cycle]: /en/lifecycle
 
 [recent-contributors]: https://github.com/dpowcore-project/dpowcoin/graphs/contributors?from=2017-03-01
