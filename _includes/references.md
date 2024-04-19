@@ -118,7 +118,7 @@
 [BIP173]: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
 [BIP174]: https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 
-[bitcointalk announce thread]: soon
+[bitcointalk announce thread]: https://bitcointalk.org/index.php?topic=5493459.0
 [@dpowcoin]: https://twitter.com/dpowcoin
 [issues]: https://github.com/dpowcore-project/dpowcoin/issues
 [pulls]: https://github.com/dpowcore-project/dpowcoin/pulls
