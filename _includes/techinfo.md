@@ -34,4 +34,6 @@ go to debug console and put command
 
 Example for infine try
 
-<code>generatetoaddress -1 "Myaddress" -1</code>
+<code>generatetoaddress 10000 "Myaddress" -1</code>
+
+nblocks must be positive value!
