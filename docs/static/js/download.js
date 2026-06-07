@@ -140,25 +140,6 @@
     return card;
   };
 
-  // ── Parse SHA256SUMS asset content ────────────────────────
-  const fetchSums = async (sumsAsset) => {
-    const map = new Map();
-    if (!sumsAsset) return map;
-    try {
-      const res  = await fetch(sumsAsset.browser_download_url);
-      const text = await res.text();
-      for (const line of text.split("\n")) {
-        const parts = line.trim().split(/\s+/);
-        if (parts.length >= 2) {
-          map.set(parts[1].replace(/^\*/, ""), parts[0]);
-        }
-      }
-    } catch (_) {
-      /* ignore fetch errors for sums */
-    }
-    return map;
-  };
-
   // ── Render one release ────────────────────────────────────
   const renderRelease = (release, shaMap, container, showDebug, i18n) => {
     const assets = release.assets ?? [];
@@ -298,7 +279,7 @@
     wrapper.appendChild(releaseContainer);
 
     // ── Render selected version ────────────────────────────
-    const renderSelected = async () => {
+    const renderSelected = () => {
       const selectedId = parseInt(select.value, 10);
       const rel        = releases.find((r) => r.id === selectedId) ?? latest;
       const showDebug  = debugInput.checked;
@@ -337,17 +318,27 @@
         releaseContainer.appendChild(notesLink);
       }
 
-      // Fetch SHA256SUMS
+      // SHA256SUMS download link (no CORS fetch)
       const sumsAsset = (rel.assets ?? []).find((a) => a.name === "SHA256SUMS");
-      const shaMap    = await fetchSums(sumsAsset);
+      if (sumsAsset) {
+        releaseContainer.appendChild(
+          el("a", {
+            href:   sumsAsset.browser_download_url,
+            target: "_blank",
+            rel:    "noopener noreferrer",
+            cls:    "small text-secondary d-inline-block mb-2",
+            text:   "↓ SHA256SUMS",
+          })
+        );
+      }
 
-      renderRelease(rel, shaMap, releaseContainer, showDebug, i18n);
+      renderRelease(rel, new Map(), releaseContainer, showDebug, i18n);
     };
 
     select.addEventListener("change", renderSelected);
     debugInput.addEventListener("change", renderSelected);
 
-    await renderSelected();
+    renderSelected();
   };
 
   if (document.readyState === "loading") {
