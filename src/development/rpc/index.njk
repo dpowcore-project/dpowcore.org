@@ -1,0 +1,45 @@
+---
+layout: layouts/rpc.njk
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "/{{ locale }}/development/rpc/"
+pageTitle: "RPC"
+---
+{%- set t = i18n[locale] -%}
+
+<div class="rpc-index-page">
+  <div class="d-flex align-items-start justify-content-between mb-4 flex-wrap gap-2">
+    <div>
+      <h1 class="h3 mb-1">RPC API Reference</h1>
+      <p class="text-muted mb-0">
+        Bitweb Core v{{ rpc.version }} &mdash;
+        {{ rpc.methods | length }} methods
+      </p>
+    </div>
+    <span class="badge bg-secondary text-uppercase align-self-start">{{ rpc.version }}</span>
+  </div>
+
+  {% set currentCat = "" %}
+  {% for method in rpc.methods | sort(false, false, "category") %}
+    {% if method.category != currentCat %}
+      {% if currentCat != "" %}</div>{% endif %}
+      {% set currentCat = method.category %}
+      <h2 class="rpc-index-cat mt-4 mb-2 h5 text-uppercase text-secondary fw-semibold">
+        {{ method.category }}
+      </h2>
+      <div class="rpc-index-group d-flex flex-wrap gap-2 mb-2">
+    {% endif %}
+      <a href="/{{ locale }}/development/rpc/{{ method.name }}/"
+         class="rpc-index-pill badge bg-body-tertiary text-body border text-decoration-none">
+        {{ method.name }}
+      </a>
+  {% endfor %}
+  {% if currentCat != "" %}</div>{% endif %}
+
+  <p class="text-muted small mt-5">
+    Generated {{ rpc.generated | dateShort }}.
+    To update: run <code>node contrib/doc-gen/generate.js</code> against a live bitwebd node.
+  </p>
+</div>

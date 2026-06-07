@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+---
+{%- set pageTitle = title -%}
+{%- set pageDescription = summary -%}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+
+      <div class="bwc-post-date mb-2">{{ date | dateShort }}</div>
+      <h1 class="bwc-section-title mb-4">{{ title }}</h1>
+      <hr class="bwc-divider">
+
+      {% if github_release or download_url or release_notes %}
+      <p class="mb-4">
+        {% if github_release %}
+        <a href="{{ github_release }}" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm me-2">
+          <i class="fa-brands fa-github me-1"></i>{{ github_release_label | default("GitHub Release") }}
+        </a>
+        {% endif %}
+        {% if download_url %}
+        <a href="{{ download_url }}" class="btn btn-bwc-secondary btn-sm me-2">{{ i18n[locale].nav_wallets | default("Download") }}</a>
+        {% endif %}
+        {% if release_notes %}
+        <a href="{{ release_notes }}" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">Release Notes</a>
+        {% endif %}
+      </p>
+      {% endif %}
+
+      <div class="bwc-post-content">
+        {{ content | safe }}
+      </div>
+
+      <hr class="bwc-divider mt-5">
+      <a href="/{{ locale }}/blog/" class="btn btn-bwc-secondary btn-sm">
+        <i class="fa-solid fa-arrow-left me-1"></i>{{ i18n[locale].nav_blog | default("Blog") }}
+      </a>
+
+    </div>
+  </div>
+</div>

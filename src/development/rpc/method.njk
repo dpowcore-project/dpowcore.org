@@ -1,0 +1,38 @@
+---js
+{
+  layout: "layouts/rpc.njk",
+  noAlternate: false,
+  pagination: {
+    data: "rpc_localized",
+    size: 1,
+    alias: "item"
+  },
+  permalink: (data) => data.item
+    ? `${data.item.locale}/development/rpc/${data.item.method.name}/`
+    : false,
+  eleventyComputed: {
+    locale: (data) => data.item ? data.item.locale : "en",
+    method: (data) => data.item ? data.item.method : null,
+    pageTitle: (data) => data.item ? data.item.method.name : "RPC"
+  }
+}
+---
+{%- set t = i18n[locale] -%}
+
+<div class="rpc-method-page">
+  <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+    <h1 class="rpc-method-title mb-0">
+      <span class="rpc-method-name-badge">{{ method.name }}</span>
+    </h1>
+    <span class="badge rpc-cat-badge text-uppercase">{{ method.category }}</span>
+  </div>
+
+  <div class="rpc-description">
+    <pre class="rpc-pre"><code>{{ method.description }}</code></pre>
+  </div>
+
+  <div class="mt-4 d-flex gap-3 rpc-nav-links text-muted small">
+    <a href="/{{ locale }}/development/rpc/">&larr; {{ t.rpc_all_methods }}</a>
+    <span class="text-secondary">v{{ rpc.version }}</span>
+  </div>
+</div>

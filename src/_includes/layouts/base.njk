@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ locale | default('en') }}" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ pageDescription | default(site.description) }}">
+  <meta property="og:title" content="{{ pageTitle | default(site.title) }}">
+  <meta property="og:description" content="{{ pageDescription | default(site.description) }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>{% if pageTitle %}{{ pageTitle }} — {% endif %}{{ site.title }}</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% if not noAlternate %}
+    {% for altLang in site.locales %}
+      {% if altLang != locale %}
+  <link rel="alternate" hreflang="{{ altLang }}" href="{{ site.url }}/{{ altLang }}{{ page.url | replace('/' + locale + '/', '/') }}">
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+
+{% include "partials/nav.njk" %}
+<main>{{ content | safe }}</main>
+{% include "partials/footer.njk" %}
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

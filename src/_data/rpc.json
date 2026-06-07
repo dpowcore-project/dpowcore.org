@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-01T00:00:00Z",
+  "_note": "Placeholder data. Run `node contrib/doc-gen/generate.js` against a live dpowcoind node to regenerate.",
+  "methods": [
+    {
+      "name": "getblockchaininfo",
+      "category": "blockchain",
+      "description": "getblockchaininfo\n\nReturns an object containing various state info regarding blockchain processing.\n\nResult:\n{                                         (json object)\n  \"chain\" : \"str\",                        (string) current network name (main, test, regtest)\n  \"blocks\" : n,                           (numeric) the height of the most-work fully-validated chain\n  \"headers\" : n,                          (numeric) the current number of headers we have validated\n  \"bestblockhash\" : \"str\",                (string) the hash of the currently best block\n  \"difficulty\" : n,                       (numeric) the current difficulty\n  \"mediantime\" : xxx,                     (numeric) the median block time expressed in UNIX epoch time\n  \"verificationprogress\" : n,             (numeric) estimate of verification progress [0..1]\n  \"chainwork\" : \"hex\",                    (string) total amount of work in active chain, in hexadecimal\n  \"pruned\" : true|false,                  (boolean) if the blocks are subject to pruning\n  \"warnings\" : \"str\"                      (string) any network and blockchain warnings\n}\n\nExamples:\n> dpowcoin-cli getblockchaininfo\n> curl --user myusername --data-binary '{\"jsonrpc\": \"2.0\", \"id\": \"curltest\", \"method\": \"getblockchaininfo\", \"params\": []}' -H 'content-type: application/json' http://127.0.0.1:8342/"
+    },
+    {
+      "name": "getblockcount",
+      "category": "blockchain",
+      "description": "getblockcount\n\nReturns the height of the most-work fully-validated chain.\nThe genesis block has height 0.\n\nResult:\nn    (numeric) The current block count\n\nExamples:\n> dpowcoin-cli getblockcount\n> curl --user myusername --data-binary '{\"jsonrpc\": \"2.0\", \"id\": \"curltest\", \"method\": \"getblockcount\", \"params\": []}' -H 'content-type: application/json' http://127.0.0.1:8342/"
+    },
+    {
+      "name": "getnetworkinfo",
+      "category": "network",
+      "description": "getnetworkinfo\n\nReturns an object containing various state info regarding P2P networking.\n\nResult:\n{                                         (json object)\n  \"version\" : n,                          (numeric) the server version\n  \"subversion\" : \"str\",                   (string) the server subversion string\n  \"protocolversion\" : n,                  (numeric) the protocol version\n  \"connections\" : n,                      (numeric) the number of connections\n  \"connections_in\" : n,                   (numeric) the number of inbound connections\n  \"connections_out\" : n,                  (numeric) the number of outbound connections\n  \"networkactive\" : true|false,           (boolean) whether p2p networking is enabled\n  \"relayfee\" : n,                         (numeric) minimum relay fee rate for transactions\n  \"warnings\" : \"str\"                      (string) any network and blockchain warnings\n}\n\nExamples:\n> dpowcoin-cli getnetworkinfo\n> curl --user myusername --data-binary '{\"jsonrpc\": \"2.0\", \"id\": \"curltest\", \"method\": \"getnetworkinfo\", \"params\": []}' -H 'content-type: application/json' http://127.0.0.1:8342/"
+    },
+    {
+      "name": "getpeerinfo",
+      "category": "network",
+      "description": "getpeerinfo\n\nReturns data about each connected network peer as a json array of objects.\n\nResult:\n[                                         (json array)\n  {                                       (json object)\n    \"id\" : n,                             (numeric) peer index\n    \"addr\" : \"str\",                       (string) (host:port) the IP address and port of the peer\n    \"version\" : n,                        (numeric) the peer version, such as 70001\n    \"subver\" : \"str\",                     (string) the string version\n    \"conntime\" : xxx,                     (numeric) the UNIX epoch time of the connection\n    \"pingtime\" : n,                       (numeric) ping time (if available)\n    \"synced_blocks\" : n,                  (numeric) the last block we have in common with this peer\n    \"inflight\" : [                        (json array)\n      n,                                  (numeric) the heights of blocks we're currently asking this peer for\n      ...\n    ]\n  },\n  ...\n]\n\nExamples:\n> dpowcoin-cli getpeerinfo\n> curl --user myusername --data-binary '{\"jsonrpc\": \"2.0\", \"id\": \"curltest\", \"method\": \"getpeerinfo\", \"params\": []}' -H 'content-type: application/json' http://127.0.0.1:8342/"
+    },
+    {
+      "name": "help",
+      "category": "control",
+      "description": "help ( \"command\" )\n\nList all commands, or get help for a specified command.\n\nArguments:\n1. command    (string, optional, default=all commands) The command to get help on\n\nResult (for a specific command):\n\"str\"    (string) The help text\n\nResult (for all commands):\n\"str\"    (string) The help text"
+    },
+    {
+      "name": "stop",
+      "category": "control",
+      "description": "stop\n\nRequest a graceful shutdown of dpowcoind.\n\nResult:\n\"str\"    (string) A string with the content 'Bitweb Core stopping'"
+    }
+  ]
+}

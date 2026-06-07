@@ -1,0 +1,58 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "/{{ locale }}/wallets/web/"
+pageTitle: "Web Wallet"
+---
+{%- set t = i18n[locale] -%}
+
+<div class="container py-5">
+
+  <div class="mb-5">
+    <h1 class="bwc-section-title"><i class="fa-solid fa-globe me-2"></i>{{ t.wallets_web_title }}</h1>
+    <p class="bwc-section-lead">{{ t.wallets_web_lead }}</p>
+  </div>
+
+  <div class="bwc-verify mb-5">
+    <div class="alert bwc-alert-warning d-flex align-items-start gap-3 mb-4">
+      <i class="fa-solid fa-triangle-exclamation mt-1 bwc-alert-icon"></i>
+      <span>{{ t.wallets_web_warning }}</span>
+    </div>
+
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>{{ t.wallets_web_col_service }}</th>
+          <th>{{ t.wallets_web_col_type }}</th>
+          <th>{{ t.wallets_web_col_url }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="fa-solid fa-wallet bwc-icon-accent me-2"></i>{{ t.wallets_web_wallet_name }}</td>
+          <td><span class="bwc-badge-latest">{{ t.wallets_web_noncustodial }}</span></td>
+          <td>
+            <a href="https://webwallet2.bitwebcore.net" target="_blank" rel="noopener">
+              webwallet2.bitwebcore.net
+              <i class="fa-solid fa-arrow-up-right-from-square ms-1 small"></i>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="fa-solid fa-plug bwc-icon-muted me-2"></i>{{ t.wallets_web_api_name }}</td>
+          <td><span class="bwc-text-muted-sm">REST API</span></td>
+          <td>
+            <a href="https://api2.bitwebcore.net" target="_blank" rel="noopener">
+              api2.bitwebcore.net
+              <i class="fa-solid fa-arrow-up-right-from-square ms-1 small"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

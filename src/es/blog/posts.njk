@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.blogEn
+  size: 1
+  alias: post
+  addAllPagesToCollections: true
+permalink: "/es/blog/{{ post.data.permalink | replace('/en/blog/', '') | replace('/', '') or post.fileSlug }}/"
+---
+{%- set locale = 'es' -%}
+{%- set t = i18n[locale] -%}
+{%- set pageTitle = post.data.title -%}
+{%- set pageDescription = post.data.summary -%}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+
+      <div class="bwc-post-date mb-2">{{ post.data.date | dateShort }}</div>
+      <h1 class="bwc-section-title mb-4">{{ post.data.title }}</h1>
+      <hr class="bwc-divider">
+
+      {% if post.data.github_release or post.data.download_url or post.data.release_notes %}
+      <p class="mb-4">
+        {% if post.data.github_release %}
+        <a href="{{ post.data.github_release }}" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm me-2">
+          <i class="fa-brands fa-github me-1"></i>{{ post.data.github_release_label | default("GitHub Release") }}
+        </a>
+        {% endif %}
+        {% if post.data.download_url %}
+        <a href="/es/wallets/full-node/" class="btn btn-bwc-secondary btn-sm me-2">{{ t.home_download | default("Download") }}</a>
+        {% endif %}
+        {% if post.data.release_notes %}
+        <a href="{{ post.data.release_notes }}" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">{{ t.home_release_notes | default("Release Notes") }}</a>
+        {% endif %}
+      </p>
+      {% endif %}
+
+      <div class="bwc-post-content">
+        {{ post.templateContent | safe }}
+      </div>
+
+      <hr class="bwc-divider mt-5">
+      <a href="/es/blog/" class="btn btn-bwc-secondary btn-sm">
+        <i class="fa-solid fa-arrow-left me-1"></i>{{ t.nav_news | default("News") }}
+      </a>
+
+    </div>
+  </div>
+</div>

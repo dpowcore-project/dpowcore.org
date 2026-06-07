@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+---
+{%- set t = i18n[locale | default('en')] -%}
+{%- set l = locale | default('en') -%}
+
+<div class="container-fluid wp-layout">
+  <div class="row g-0">
+
+    <aside class="col-12 col-lg-3 col-xl-2 wp-sidebar" id="wpSidebar">
+      <div class="wp-sidebar-inner p-3">
+        <div class="mb-3 d-flex align-items-center gap-2">
+          <a href="/{{ l }}/development/" class="text-secondary small text-decoration-none">
+            <i class="fa-solid fa-arrow-left me-1"></i>{{ t.nav_development }}
+          </a>
+        </div>
+        <a href="/static/whitepaper.pdf" class="btn btn-bwc-primary btn-sm w-100 mb-4" download>
+          <i class="fa-solid fa-file-pdf me-2"></i>{{ t.dev_wp_pdf }}
+        </a>
+        <p class="text-uppercase text-secondary small fw-semibold mb-2" style="letter-spacing:0.06em">{{ t.wp_contents }}</p>
+        <nav id="wpToc" aria-label="White paper sections"></nav>
+      </div>
+    </aside>
+
+    <div class="col-12 col-lg-9 col-xl-10 wp-content px-4 py-5" id="wpContent">
+      <div class="wp-header mb-5">
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-2">
+          <div>
+            <span class="badge bg-secondary text-uppercase mb-2">Technical Document</span>
+            <h1 class="wp-title mb-1">Bitweb Core White Paper</h1>
+            <p class="text-secondary small mb-0">Version 1.0 &mdash; June 2026</p>
+          </div>
+          <a href="/static/whitepaper.pdf" class="btn btn-bwc-primary btn-sm d-none d-lg-inline-flex" download>
+            <i class="fa-solid fa-file-pdf me-2"></i>{{ t.dev_wp_pdf }}
+          </a>
+        </div>
+      </div>
+      <div class="wp-body">
+        {{ content | safe }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/static/js/whitepaper.js"></script>

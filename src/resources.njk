@@ -1,0 +1,91 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "/{{ locale }}/resources/"
+pageTitle: "Resources"
+---
+{%- set t = i18n[locale] -%}
+
+<div class="container py-5">
+  <h1 class="bwc-section-title mb-2">{{ t.resources_title }}</h1>
+  <p class="bwc-section-lead mb-5">{{ t.resources_lead }}</p>
+
+  <div class="row gy-4">
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <h2 class="h5 mb-3">{{ t.resources_exchanges }}</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="https://www.exbitron.com/trading/bteusdt" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-solid fa-chart-line fa-fw"></i> Exbitron BTE/USDT</a></li>
+          <li class="mb-2"><a href="https://www.exbitron.com/trading/btebtc" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-solid fa-chart-line fa-fw"></i> Exbitron BTE/BTC</a></li>
+          <li class="mb-2"><a href="https://komodoplatform.com/en/" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-solid fa-rotate fa-fw"></i> Komodo DEX</a></li>
+          <li class="mb-2"><a href="https://dex.gleec.com/" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-solid fa-rotate fa-fw"></i> Gleec DEX</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h2 class="h5 mb-3">{{ t.resources_explorers }}</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="https://explorer.bitwebcore.net" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-solid fa-cube fa-fw"></i> explorer.bitwebcore.net</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <h2 class="h5 mb-3">{{ t.resources_coin_info }}</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="https://coinpaprika.com/coin/bte-bitweb/" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-dollar-to-slot fa-fw"></i> CoinPaprika</a></li>
+          <li class="mb-2"><a href="https://www.trustpilot.com/review/bitwebcore.net" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-solid fa-star fa-fw"></i> Trustpilot</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-brands fa-telegram"></i></div>
+        <h2 class="h5 mb-3">{{ t.resources_tg_groups }}</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="https://t.me/bitweb" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-telegram fa-fw"></i> Global</a></li>
+          <li class="mb-2"><a href="https://t.me/bitweb_en" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-telegram fa-fw"></i> English</a></li>
+          <li class="mb-2"><a href="https://t.me/bitweb_zh_cn" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-telegram fa-fw"></i> Chinese</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-newspaper"></i></div>
+        <h2 class="h5 mb-3">{{ t.resources_tg_news }}</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="https://t.me/bitweb_news" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-telegram fa-fw"></i> Global</a></li>
+          <li class="mb-2"><a href="https://t.me/bitweb_cn_news" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-telegram fa-fw"></i> China</a></li>
+          <li class="mb-2"><a href="https://t.me/bitweb_news_en" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-telegram fa-fw"></i> English</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-users"></i></div>
+        <h2 class="h5 mb-3">{{ t.resources_community }}</h2>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-2"><a href="https://github.com/bitweb-project" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-github fa-fw"></i> GitHub</a></li>
+          <li class="mb-2"><a href="https://discord.gg/uC6wEVu6FR" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-discord fa-fw"></i> Discord</a></li>
+          <li class="mb-2"><a href="https://twitter.com/Bitweb_Project" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-x-twitter fa-fw"></i> Twitter / X</a></li>
+          <li class="mb-2"><a href="https://bitcointalk.org/index.php?topic=5400649.msg60250609#msg60250609" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-bitcoin fa-fw"></i> Bitcointalk</a></li>
+          <li class="mb-2"><a href="https://www.reddit.com/r/Bitweb_Project" target="_blank" rel="noopener" class="d-flex align-items-center gap-2"><i class="fa-brands fa-reddit fa-fw"></i> Reddit</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,102 @@
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.75;
+  color: #1a1a1a;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 0.5cm;
+}
+
+/* Cover block */
+.wp-cover {
+  text-align: center;
+  padding: 2.5cm 0 1.5cm;
+}
+.wp-logo {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 0 auto 1.2em;
+}
+.wp-cover-title {
+  font-size: 26pt;
+  font-weight: bold;
+  margin: 0 0 0.15em;
+  letter-spacing: -0.5px;
+  color: #111;
+}
+.wp-cover-sub {
+  font-size: 13pt;
+  color: #444;
+  margin: 0 0 0.5em;
+  font-style: italic;
+}
+.wp-cover-meta {
+  font-size: 10pt;
+  color: #777;
+  margin: 0;
+}
+.wp-cover-hr {
+  border: none;
+  border-top: 2px solid #e0a800;
+  margin: 1.5em 0 2em;
+}
+
+/* Hide the H1 from markdown — title is in the cover block */
+h1:first-of-type { display: none; }
+
+h2 {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 2em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid #ccc;
+  color: #111;
+}
+h3 {
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin-top: 1.4em;
+  color: #333;
+}
+p { margin: 0.6em 0; }
+code, pre {
+  font-family: "Courier New", monospace;
+  font-size: 9pt;
+}
+pre {
+  background: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0.7em 0.9em;
+  overflow-x: auto;
+  margin: 0.8em 0;
+}
+pre code { background: none; border: none; padding: 0; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 9.5pt;
+  margin: 0.8em 0;
+}
+th {
+  border-bottom: 2px solid #444;
+  padding: 0.4em 0.6em;
+  text-align: left;
+  font-weight: bold;
+  background: #f0f0f0;
+}
+td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.35em 0.6em;
+  vertical-align: top;
+}
+a { color: #1a5276; }
+hr { border: none; border-top: 1px solid #ddd; margin: 1.2em 0; }
+blockquote {
+  border-left: 3px solid #e0a800;
+  margin: 0.8em 0;
+  padding: 0.3em 0.9em;
+  color: #555;
+}

@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "/{{ locale }}/wallets/full-node/"
+pageTitle: "Download"
+---
+{%- set t = i18n[locale] -%}
+
+<div class="container py-5">
+
+  <div class="mb-5">
+    <h1 class="bwc-section-title">{{ t.download_title }}</h1>
+    <p class="bwc-section-lead">{{ t.download_subtitle }}</p>
+  </div>
+
+  <div id="bwc-download-root" class="mb-5"
+       data-repo="{{ site.github_api_repo }}"
+       data-locale="{{ locale }}"
+       data-i18n-loading="{{ t.download_loading }}"
+       data-i18n-error="{{ t.download_error }}"
+       data-i18n-debug="{{ t.download_show_debug }}"
+       data-i18n-version="{{ t.download_version_label }}"
+       data-i18n-latest="{{ t.download_latest_badge }}"
+       data-i18n-notes="{{ t.download_release_notes_link }}"
+       data-i18n-no-releases="{{ t.download_no_releases }}"
+       data-i18n-dl-btn="{{ t.download_dl_btn }}">
+  </div>
+
+  <hr class="bwc-divider">
+
+  <div class="bwc-verify mt-5">
+    <h2 class="h4 mb-4"><i class="fa-solid fa-shield-halved me-2 text-success"></i>{{ t.verify_title }}</h2>
+    <p class="text-secondary mb-4">{{ t.verify_intro }}</p>
+
+    <div class="bwc-verify-step">
+      <h3 class="h5 mb-3">{{ t.verify_step1_title }}</h3>
+      <p class="text-secondary small mb-1">{{ t.verify_step1_linux }}</p>
+      <pre><code>sha256sum --check SHA256SUMS</code></pre>
+      <p class="text-secondary small mb-1">{{ t.verify_step1_windows }}</p>
+      <pre><code>Get-FileHash bitweb-*.zip -Algorithm SHA256</code></pre>
+    </div>
+
+    <div class="bwc-verify-step">
+      <h3 class="h5 mb-3">{{ t.verify_step2_title }}</h3>
+      <p class="text-secondary small mb-1">{{ t.verify_step2_import }}</p>
+      <pre><code>gpg --keyserver keys.openpgp.org     --recv-keys {{ site.gpg_fingerprint }}</code></pre>
+      <p class="text-secondary small mb-1">{{ t.verify_step2_verify }}</p>
+      <pre><code>gpg --verify SHA256SUMS.asc SHA256SUMS</code></pre>
+      <div class="mt-3">
+        <span class="text-secondary small">{{ t.verify_fingerprint }}</span><br>
+        <code class="bwc-fingerprint">{{ site.gpg_fingerprint }}</code>
+        <div class="mt-2">
+          <a href="{{ site.gpg_key_url }}" target="_blank" rel="noopener" class="small">
+            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>{{ t.verify_openpgp }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bwc-verify-step bwc-verify-step-muted">
+      <h3 class="h5 mb-2">{{ t.verify_guix_title }}</h3>
+      <p class="text-secondary small mb-2">{{ t.verify_guix_body }}</p>
+      <a href="{{ site.guix_sigs }}" target="_blank" rel="noopener" class="small">
+        <i class="fa-brands fa-github me-1"></i>bitweb-project/guix.sigs
+      </a>
+      &nbsp;·&nbsp;
+      <a href="{{ site.builder_keys }}" target="_blank" rel="noopener" class="small">
+        {{ t.verify_builder_keys }}
+      </a>
+    </div>
+  </div>
+
+</div>
+
+{% block scripts %}<script src="/static/js/download.js"></script>{% endblock %}

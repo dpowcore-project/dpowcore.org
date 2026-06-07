@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+---
+{%- set t = i18n[locale | default('en')] -%}
+{%- set l = locale | default('en') -%}
+
+<div class="container-fluid rpc-layout">
+  <div class="row g-0">
+
+    {# ── Sidebar ── built from rpc.json — no duplication #}
+    <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar" id="rpcSidebar">
+      <div class="rpc-sidebar-inner p-3">
+        <div class="mb-3">
+          <input
+            type="search"
+            class="form-control form-control-sm bg-body-tertiary border-0"
+            id="rpcSearch"
+            placeholder="{{ t.dev_rpc_search }}"
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </div>
+
+        <a href="/{{ l }}/development/rpc/" class="rpc-index-link d-block mb-2 small text-secondary">
+          &larr; {{ t.rpc_all_methods }}
+        </a>
+
+        <nav id="rpcNav" aria-label="RPC methods">
+          {% set currentCat = "" %}
+          {% for m in rpc.methods | sort(false, false, "category") %}
+            {% if m.category != currentCat %}
+              {% if currentCat != "" %}</ul></div>{% endif %}
+              {% set currentCat = m.category %}
+              <div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="{{ m.category | slug }}"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>{{ m.category }}
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+            {% endif %}
+              <li>
+                <a href="/{{ l }}/development/rpc/{{ m.name }}/"
+                   class="rpc-method-link{% if page.url == '/' + l + '/development/rpc/' + m.name + '/' %} active{% endif %}">
+                  {{ m.name }}
+                </a>
+              </li>
+          {% endfor %}
+          {% if currentCat != "" %}</ul></div>{% endif %}
+        </nav>
+      </div>
+    </aside>
+
+    {# ── Main content ── #}
+    <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4">
+      {{ content | safe }}
+    </div>
+
+  </div>
+</div>
+
+<script src="/static/js/rpc-sidebar.js"></script>

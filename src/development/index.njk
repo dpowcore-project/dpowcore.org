@@ -1,0 +1,110 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "/{{ locale }}/development/"
+pageTitle: "Development"
+---
+{%- set t = i18n[locale] -%}
+
+<div class="container py-5">
+  <h1 class="bwc-section-title mb-2">{{ t.dev_title }}</h1>
+  <p class="bwc-section-lead mb-5">{{ t.dev_lead }}</p>
+
+  <div class="row gy-4 mb-5">
+
+    <div class="col-12 col-md-6">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-code-pull-request"></i></div>
+        <h2 class="h4 mb-3">{{ t.dev_contribute_title }}</h2>
+        <p class="text-secondary small mb-3">{{ t.dev_contribute_body }}</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="{{ site.github }}" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
+            <i class="fa-brands fa-github me-2"></i>{{ t.dev_github_btn }}
+          </a>
+          <a href="{{ site.github_contributing }}" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
+            <i class="fa-solid fa-book-open me-2"></i>{{ t.dev_contributing_btn }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-terminal"></i></div>
+        <h2 class="h4 mb-3">{{ t.dev_rpc_title }}</h2>
+        <p class="text-secondary small mb-3">{{ t.dev_rpc_intro }}</p>
+        <a href="/{{ locale }}/development/rpc/" class="btn btn-bwc-primary btn-sm">
+          <i class="fa-solid fa-arrow-right me-1"></i>{{ t.dev_rpc_btn }}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h2 class="h4 mb-3">{{ t.dev_wp_title }}</h2>
+        <p class="text-secondary small mb-3">{{ t.dev_wp_intro }}</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="/{{ locale }}/whitepaper/" class="btn btn-bwc-primary btn-sm">
+            <i class="fa-solid fa-arrow-right me-1"></i>{{ t.dev_wp_btn }}
+          </a>
+          <a href="/static/whitepaper.pdf" class="btn btn-bwc-secondary btn-sm" download>
+            <i class="fa-solid fa-file-pdf me-1"></i>{{ t.dev_wp_pdf }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <h2 class="h4 mb-3">{{ t.dev_build_title }}</h2>
+  <p class="text-secondary small mb-4">{{ t.dev_build_intro }}</p>
+
+  <div class="row gy-3">
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="{{ site.github }}/blob/master/contrib/guix/README.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-shield-halved fa-2x mb-2 text-secondary"></i>
+        <div class="small">{{ t.dev_build_guix }}</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="{{ site.github }}/blob/master/doc/build-unix.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-brands fa-linux fa-2x mb-2 text-secondary"></i>
+        <div class="small">{{ t.dev_build_unix }}</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="{{ site.github }}/blob/master/doc/build-osx.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-brands fa-apple fa-2x mb-2 text-secondary"></i>
+        <div class="small">{{ t.dev_build_macos }}</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="{{ site.github }}/blob/master/doc/build-freebsd.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-server fa-2x mb-2 text-secondary"></i>
+        <div class="small">{{ t.dev_build_freebsd }}</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="{{ site.github }}/blob/master/doc/build-openbsd.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-server fa-2x mb-2 text-secondary"></i>
+        <div class="small">{{ t.dev_build_openbsd }}</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="{{ site.github }}/blob/master/doc/build-netbsd.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-server fa-2x mb-2 text-secondary"></i>
+        <div class="small">{{ t.dev_build_netbsd }}</div>
+      </a>
+    </div>
+  </div>
+
+</div>

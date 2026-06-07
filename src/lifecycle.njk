@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "/{{ locale }}/lifecycle/"
+pageTitle: "Lifecycle"
+---
+{%- set t = i18n[locale] -%}
+
+<div class="container py-5">
+  <h1 class="bwc-section-title mb-2">{{ t.lifecycle_title }}</h1>
+  <p class="bwc-section-lead mb-5">{{ t.lifecycle_lead }}</p>
+
+  <div id="bwc-lifecycle-root"
+       data-repo="{{ site.github_api_repo }}"
+       data-i18n-loading="{{ t.download_loading }}"
+       data-i18n-error="{{ t.download_error }}"
+       data-i18n-supported="{{ t.lifecycle_supported }}"
+       data-i18n-eol="{{ t.lifecycle_eol }}"
+       data-i18n-version="{{ t.download_version_label }}"
+       data-i18n-status="{{ t.lifecycle_status }}"
+       data-i18n-released="{{ t.lifecycle_released }}">
+  </div>
+</div>
+
+{% block scripts %}<script src="/static/js/lifecycle.js"></script>{% endblock %}

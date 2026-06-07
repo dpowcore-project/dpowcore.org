@@ -1,0 +1,176 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: locales
+  size: 1
+  alias: locale
+permalink: "/{{ locale }}/about/"
+pageTitle: "About"
+---
+{%- set t = i18n[locale] -%}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9">
+
+      {# ── Project intro ──────────────────────────────── #}
+      <h1 class="bwc-section-title mb-2">{{ t.about_title }}</h1>
+      <p class="bwc-section-lead mb-5">{{ t.about_intro }}</p>
+
+      {# ── Team ───────────────────────────────────────── #}
+      <h2 class="h4 mb-3">{{ t.about_team_title }}</h2>
+      <div class="bwc-card mb-4">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <i class="fa-brands fa-github fa-2x text-secondary"></i>
+          <div>
+            <a href="https://github.com/mraksoll4" target="_blank" rel="noopener"
+               class="fw-bold text-decoration-none fs-5">Mraksoll</a>
+            <div class="text-secondary small">{{ t.about_maintainer_role }}</div>
+          </div>
+        </div>
+        <p class="mb-0 text-secondary small">{{ t.about_team_note }}</p>
+      </div>
+
+      {# ── Maintainers ────────────────────────────────── #}
+      <h2 class="h4 mb-3">{{ t.about_maintainers_title }}</h2>
+      <div class="bwc-card mb-4">
+        <p class="mb-0">{{ t.about_maintainers_body }}</p>
+      </div>
+
+      {# ── Contributors ───────────────────────────────── #}
+      <h2 class="h4 mb-3">{{ t.about_contributors_title }}</h2>
+      <div class="bwc-card mb-5">
+        <p>{{ t.about_contributors_body }}</p>
+        <a href="{{ site.github_contributors }}" target="_blank" rel="noopener"
+           class="btn btn-outline-secondary btn-sm">
+          <i class="fa-brands fa-github me-1"></i>{{ t.about_contributors_btn }}
+        </a>
+      </div>
+
+      {# ── Contact & Support ──────────────────────────── #}
+      <h2 class="h4 mb-3">{{ t.about_contact_title }}</h2>
+      <div class="row gy-3 mb-5">
+
+        <div class="col-12 col-md-6">
+          <div class="bwc-card h-100">
+            <div class="bwc-card-icon"><i class="fa-brands fa-github"></i></div>
+            <h3 class="h6 fw-semibold mb-2">{{ t.about_bugs_title }}</h3>
+            <p class="text-secondary small mb-3">{{ t.about_bugs_body }}</p>
+            <a href="{{ site.github_issues }}" target="_blank" rel="noopener" class="small">
+              <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>{{ t.about_bugs_link }}
+            </a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="bwc-card h-100">
+            <div class="bwc-card-icon"><i class="fa-brands fa-telegram"></i></div>
+            <h3 class="h6 fw-semibold mb-2">{{ t.about_community_title }}</h3>
+            <p class="text-secondary small mb-2">{{ t.about_community_body }}</p>
+            <ul class="list-unstyled mb-0 small">
+              <li class="mb-1">
+                <a href="https://t.me/bitweb" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-telegram fa-fw me-1"></i>Telegram Global
+                </a>
+              </li>
+              <li class="mb-1">
+                <a href="https://t.me/bitweb_en" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-telegram fa-fw me-1"></i>Telegram English
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.gg/uC6wEVu6FR" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-discord fa-fw me-1"></i>Discord
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="bwc-card h-100">
+            <div class="bwc-card-icon"><i class="fa-solid fa-globe"></i></div>
+            <h3 class="h6 fw-semibold mb-2">{{ t.about_website_bugs_title }}</h3>
+            <p class="text-secondary small mb-3">{{ t.about_website_bugs_body }}</p>
+            <a href="{{ site.website_issues }}" target="_blank" rel="noopener" class="small">
+              <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>{{ t.about_website_bugs_link }}
+            </a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="bwc-card h-100">
+            <div class="bwc-card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <h3 class="h6 fw-semibold mb-2">{{ t.about_email_title }}</h3>
+            <ul class="list-unstyled mb-0 small">
+              <li>
+                <span class="text-secondary">{{ t.about_email_general }}</span><br>
+                <a href="mailto:contact@bitwebcore.net">contact@bitwebcore.net</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      {# ── Security Policy ────────────────────────────── #}
+      <h2 class="h4 mb-3">{{ t.about_security_title }}</h2>
+
+      <div class="bwc-card mb-3">
+        <div class="bwc-card-icon"><i class="fa-solid fa-code-branch"></i></div>
+        <h3 class="h6 fw-semibold mb-2">{{ t.about_security_versions_title }}</h3>
+        <p class="text-secondary small mb-2">{{ t.about_security_versions_body }}</p>
+        <a href="/{{ locale }}/lifecycle/#schedule" class="small">
+          <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>{{ t.about_security_lifecycle_link }}
+        </a>
+      </div>
+
+      <div class="bwc-card mb-3">
+        <div class="bwc-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3 class="h6 fw-semibold mb-2">{{ t.about_security_report_title }}</h3>
+        <p class="text-secondary small mb-3">{{ t.about_security_report_body }}</p>
+        <p class="small mb-0">
+          <strong>{{ t.about_security_email_label }}</strong>
+          <a href="mailto:security@bitwebcore.net">security@bitwebcore.net</a>
+          <span class="text-secondary ms-1">({{ t.about_security_not_support }})</span>
+        </p>
+      </div>
+
+      <div class="bwc-card mb-3">
+        <div class="bwc-card-icon"><i class="fa-solid fa-key"></i></div>
+        <h3 class="h6 fw-semibold mb-3">{{ t.about_gpg_title }}</h3>
+        <table class="table table-sm table-bordered small mb-3">
+          <thead>
+            <tr>
+              <th>{{ t.about_gpg_col_name }}</th>
+              <th>{{ t.about_gpg_col_fp }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>mraksoll</td>
+              <td><code class="bwc-fingerprint">{{ site.gpg_fingerprint_display }}</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-secondary small mb-1">{{ t.about_gpg_import }}</p>
+        <pre class="rpc-pre"><code>gpg --keyserver hkps://keys.openpgp.org --recv-keys "35A7 538B 1C81 6E49"</code></pre>
+        <div class="mt-2">
+          <a href="{{ site.gpg_key_url }}" target="_blank" rel="noopener" class="small">
+            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>{{ t.verify_openpgp }}
+          </a>
+        </div>
+      </div>
+
+      <div class="bwc-card mb-5">
+        <div class="bwc-card-icon"><i class="fa-brands fa-bitcoin"></i></div>
+        <p class="small mb-0">
+          {{ t.about_security_based_on }}
+          <a href="https://github.com/bitcoin/bitcoin/blob/master/SECURITY.md"
+             target="_blank" rel="noopener">{{ t.about_security_based_on_link }}</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
