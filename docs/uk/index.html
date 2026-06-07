@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="uk" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://bitwebcore.net/uk/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Home — Bitweb Core</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/uk/">
+  
+    
+      
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/">
+      
+    
+      
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/">
+      
+    
+      
+    
+      
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/">
+      
+    
+      
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/">
+      
+    
+      
+  <link rel="alternate" hreflang="ja" href="https://bitwebcore.net/ja/">
+      
+    
+      
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/">
+      
+    
+      
+  <link rel="alternate" hreflang="es" href="https://bitwebcore.net/es/">
+      
+    
+      
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/">
+      
+    
+      
+  <link rel="alternate" hreflang="pl" href="https://bitwebcore.net/pl/">
+      
+    
+      
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/">
+      
+    
+      
+  <link rel="alternate" hreflang="pt" href="https://bitwebcore.net/pt/">
+      
+    
+      
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/">
+      
+    
+      
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/">
+      
+    
+  
+</head>
+<body>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+  <div class="container">
+
+    <a class="navbar-brand" href="/uk/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link active"
+             href="/uk/">Головна</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/about/">Про проєкт</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Гаманці
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/uk/wallets/full-node/">
+              <i class="fa-solid fa-server fa-fw me-2"></i>Повний вузол
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/wallets/web/">
+              <i class="fa-solid fa-globe fa-fw me-2"></i>Веб-гаманець
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/blog/">Новини</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/mining/">Майнінг</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/resources/">Ресурси</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Розробка
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/uk/development/">
+              <i class="fa-solid fa-code fa-fw me-2"></i>Участь
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/development/rpc/">
+              <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC Документація
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/whitepaper/">
+              <i class="fa-solid fa-file-lines fa-fw me-2"></i>Біла книга
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" type="button">
+            <i class="fa-solid fa-language"></i>
+            <span>UK</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+            
+            <li><a class="dropdown-item"
+                   href="/en/">
+              EN&nbsp; English
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/de/">
+              DE&nbsp; Deutsch
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/es/">
+              ES&nbsp; Español
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/fr/">
+              FR&nbsp; Français
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/it/">
+              IT&nbsp; Italiano
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ja/">
+              JA&nbsp; 日本語
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ko/">
+              KO&nbsp; 한국어
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pl/">
+              PL&nbsp; Polski
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pt/">
+              PT&nbsp; Português
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ro/">
+              RO&nbsp; Română
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ru/">
+              RU&nbsp; Русский
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/tr/">
+              TR&nbsp; Türkçe
+            </a></li>
+            
+            <li><a class="dropdown-item active"
+                   href="/uk/">
+              UK&nbsp; Українська
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/zh/">
+              ZH&nbsp; 中文
+            </a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
+            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Авто
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+              <i class="fa-solid fa-sun fa-fw me-2"></i>Світла
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+              <i class="fa-solid fa-moon fa-fw me-2"></i>Темна
+            </button></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main><section class="bwc-hero">
+  <div class="bwc-hero-grid"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 col-lg-8">
+        <div class="mb-4">
+          <span class="bwc-badge-latest px-3 py-1">
+            <i class="fa-solid fa-microchip me-1"></i>Argon2id PoW
+          </span>
+        </div>
+        <h1 class="bwc-tagline mb-4">
+          Децентралізовано. Безпечно. <span class="bwc-accent-text">Argon2id</span>.
+        </h1>
+        <p class="bwc-hero-desc mx-auto mb-5">Bitweb Core — криптовалюта з відкритим вихідним кодом на алгоритмі Argon2id: стійкий до ASIC, вимогливий до пам&#39;яті, чесний майнінг.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="/uk/wallets/full-node/" class="btn btn-bwc-primary">
+            <i class="fa-solid fa-download me-2"></i>Завантажити останню версію
+          </a>
+          <a href="https://github.com/bitweb-project/bitweb" class="btn btn-bwc-secondary" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-2"></i>Вихідний код
+          </a>
+          <a href="/uk/about/" class="btn btn-bwc-secondary">Детальніше</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bwc-section">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="h5 mb-2">Алгоритм Argon2id</h3>
+          <p class="text-secondary small mb-0">Вимогливий до пам&#39;яті PoW, стійкий до ASIC-майнінгу. Справедливий розподіл через доступність CPU та GPU.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="h5 mb-2">Відкритий код</h3>
+          <p class="text-secondary small mb-0">Повністю відкритий код за ліцензією MIT. Перевіряємий, відгалужуваний, розробка керована спільнотою на GitHub.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="h5 mb-2">Відтворювані збірки</h3>
+          <p class="text-secondary small mb-0">Детерміновані збірки через GNU Guix. Кожен бінарний файл можна незалежно перевірити. Атестації випусків з підписом GPG.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+      <div>
+        <h2 class="bwc-section-title mb-1">Специфікація монети</h2>
+        <p class="bwc-section-lead mb-0">Повні технічні параметри мережі Bitweb (BTE)</p>
+      </div>
+      <div class="ms-auto">
+        <span class="bwc-ticker-badge">BTE</span>
+      </div>
+    </div>
+
+    
+    <div class="row gy-3 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Максимальна пропозиція</div>
+          <div class="bwc-spec-stat-value">42 000 000</div>
+          <div class="bwc-spec-stat-sub">BTE</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Винагорода за блок</div>
+          <div class="bwc-spec-stat-value">50 <small>BTE</small></div>
+          <div class="bwc-spec-stat-sub">Халвінг: 420 000 блоки</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Час блоку</div>
+          <div class="bwc-spec-stat-value">5 <small>min</small></div>
+          <div class="bwc-spec-stat-sub">300 s</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Зрілість Coinbase</div>
+          <div class="bwc-spec-stat-value">100</div>
+          <div class="bwc-spec-stat-sub">блоки</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Proof-of-Work</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Алгоритм</span>
+            <span class="bwc-spec-val bwc-spec-accent">Argon2id</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Параметри</span>
+            <span class="bwc-spec-val">m=1024 · t=3 · p=1</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Модель PoW</span>
+            <span class="bwc-spec-val">Лише виклик</span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-0">Ідентифікатори блоків хешуються SHA256d; Argon2id служить лише викликом PoW — те саме розділення, що й у Litecoin (Scrypt PoW / SHA256d ланцюг).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Складність</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Алгоритм</span>
+            <span class="bwc-spec-val bwc-spec-accent">LWMA</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Вікно</span>
+            <span class="bwc-spec-val">576 блоки</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Період</span>
+            <span class="bwc-spec-val">~2 дні</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Перенацілення</span>
+            <span class="bwc-spec-val bwc-spec-accent">Кожен блок</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Формати адрес</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2PKH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">E</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 33</span>
+              <span class="bwc-spec-addr-tag">0x21</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2SH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">D</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 30</span>
+              <span class="bwc-spec-addr-tag">0x1E</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">web</span>1q<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">SegWit</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32m</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">web</span>1p<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">Taproot</span>
+            </span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-0">Байти версії показані в десятковому та шістнадцятковому форматі. Усі типи адрес мають 34 символи.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Мережа</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2P Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">26333</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">RPC Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">26332</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Магічне число</span>
+            <span class="bwc-spec-val">0xfeaed5ca</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIP-324 Salt</span>
+            <span class="bwc-spec-val">bitweb_v2_shared_secret</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIPs</span>
+            <span class="bwc-spec-val bwc-spec-accent">Активні з блоку 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Блок генезису</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-body">111692c1</span><span class="bwc-hash-body">b9b390c4</span><span class="bwc-hash-body">07ab74d7</span><span class="bwc-hash-body">f924d4fa</span><span class="bwc-hash-body">0f758997</span><span class="bwc-hash-body">4ab61af9</span><span class="bwc-hash-body">6392feca</span><span class="bwc-hash-body">11f209e6</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Ліміт PoW</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-zeros">000f</span><span class="bwc-hash-body">ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="mb-5">
+      <h2 class="bwc-section-title mb-1">Перезапуск мережі та вестинг</h2>
+      <p class="bwc-section-lead mb-0">BTE — повний перезапуск мережі з чистим генезисом, чесним майнінгом та вбудованим захистом вестингу для розподілених монет.</p>
+    </div>
+
+    
+    <div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Передісторія мережі</div>
+          <p class="bwc-vest-text mb-0">BTE є повним перезапуском попередньої мережі. Власники старої мережі отримали нові BTE за співвідношенням деномінації 100:1 — одна нова BTE за кожні 100 старих монет. Для збереження математичної та естетичної цілісності перші 60 000 блоків були видобуті стандартним способом: фіксована винагорода 50 BTE за блок, без збільшених виходів coinbase, без скорочень — чистий майнінг як основа справедливого розподілу.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Захист вестингу</div>
+          <p class="bwc-vest-text mb-0">Щоб запобігти раптовому тиску продажів від розподіленої пропозиції, усі виходи coinbase, видобуті протягом розширеного періоду (блоки 60 000–69 300), мають розширене блокування зрілості. Блокування розроблено так, щоб кожна монета з цього періоду ставала витратною в один і той самий момент — блок 69 400 — даючи мережі час знайти природну рівновагу цін до того, як розблоковані монети зможуть переміщатися.</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="bwc-card mb-4">
+      <div class="bwc-spec-sub-title mb-3">Ключові блоки</div>
+      <div class="row gy-3">
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--start">
+            <div class="bwc-vest-milestone-label">Початок вестингу</div>
+            <div class="bwc-vest-milestone-val">60 000</div>
+            <div class="bwc-vest-milestone-desc">Починається розширена зрілість coinbase. Усі монети з цього вікна розблоковуються в блоці 69 400.</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--end">
+            <div class="bwc-vest-milestone-label">Кінець вікна вестингу</div>
+            <div class="bwc-vest-milestone-val">69 300</div>
+            <div class="bwc-vest-milestone-desc">Останній блок, що підпадає під розширене блокування. Вікно охоплює 9 300 блоків ≈ 32 дні.</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--unlock">
+            <div class="bwc-vest-milestone-label">Розблокування всіх монет</div>
+            <div class="bwc-vest-milestone-val">69 400</div>
+            <div class="bwc-vest-milestone-desc">Усі coinbase розширеного періоду дозрівають одночасно. Відновлюється стандартна зрілість у 100 блоків (~8 год).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--miner">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-pickaxe"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">Примітка для майнерів</div>
+            <p class="bwc-vest-text mb-0">Ваші блоки майняться та виплачуються нормально — стандартна винагорода 50 BTE на кожній висоті. Якщо ваш блок потрапляє в розширене вікно (60 000–69 300), ваш coinbase дозріє пізніше, ніж зазвичай, але всі такі монети розблоковуються разом у блоці 69 400, приблизно через 32 дні від початку вікна. За межами цього діапазону стандартна зрілість у 100 блоків (~8 годин) діє як завжди.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--pool">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">Майнінг-пули — консолідація UTXO</div>
+            <p class="bwc-vest-text">Пул, що заробляє 50 BTE за блок, накопичить понад 1 600 невитрачених виходів coinbase до того, як матиме 80 000 BTE. Створення транзакції виплати з такої кількості входів може перевищити ліміт розміру транзакції та повернути помилку. Перед кожним запланованим запуском виплат консолідуйте свій гаманець: надсилайте партії не більше 50 000 BTE на свою власну адресу окремими транзакціями. Виконуйте консолідацію після блоку 69 400, щоб уникнути помилок розширеної зрілості.</p>
+            <span class="bwc-vest-badge">Перед великими виплатами: консолідуйте партіями ≤ 50 000 BTE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="bwc-card d-flex flex-wrap align-items-center gap-3">
+      <div>
+        <div class="text-secondary small mb-1">Останній випуск</div>
+        <div class="fw-bold" id="bwc-latest-ver">—</div>
+      </div>
+      <div class="ms-auto d-flex gap-2 flex-wrap">
+        <a href="/uk/wallets/full-node/" class="btn btn-bwc-primary btn-sm">
+          <i class="fa-solid fa-download me-1"></i>Завантажити
+        </a>
+        <a href="https://github.com/bitweb-project/bitweb/releases" class="btn btn-bwc-secondary btn-sm" target="_blank" rel="noopener">
+          Примітки до випуску
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="bwc-section-title mb-0">Останні новини</h2>
+      <a href="/uk/blog/" class="small">Читати далі</a>
+    </div>
+    <div class="row gy-3">
+      
+    </div>
+    
+  </div>
+</section>
+
+<script src="/static/js/home.js"></script>
+</main>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">Програмне забезпечення з відкритим кодом, випущене під ліцензією MIT.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Проєкт</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/about/" class="footer-link">Про проєкт</a></li>
+          <li><a href="/uk/wallets/full-node/" class="footer-link">Повний вузол</a></li>
+          <li><a href="/uk/blog/" class="footer-link">Новини</a></li>
+          <li><a href="/uk/resources/" class="footer-link">Ресурси</a></li>
+          <li><a href="/uk/brand/" class="footer-link">Брендові активи</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Розробники</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/development/" class="footer-link">Участь</a></li>
+          <li><a href="/uk/development/rpc/" class="footer-link">RPC Документація</a></li>
+          <li><a href="/uk/whitepaper/" class="footer-link">Біла книга</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Підписи Guix
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Безпека</h6>
+        <p class="text-secondary small mb-1">Відбиток GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Перевірити ключ на OpenPGP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Ліцензія MIT</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+
+</body>
+</html>

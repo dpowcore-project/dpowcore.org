@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Mining">
+  <meta property="og:description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://bitwebcore.net/es/mining/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Mining — Bitweb Core</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/es/mining/">
+  
+    
+      
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="uk" href="https://bitwebcore.net/uk/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="ja" href="https://bitwebcore.net/ja/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/mining/">
+      
+    
+      
+    
+      
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="pl" href="https://bitwebcore.net/pl/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="pt" href="https://bitwebcore.net/pt/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/mining/">
+      
+    
+      
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/mining/">
+      
+    
+  
+</head>
+<body>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+  <div class="container">
+
+    <a class="navbar-brand" href="/es/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/es/">Inicio</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/es/about/">Acerca de</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Carteras
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/es/wallets/full-node/">
+              <i class="fa-solid fa-server fa-fw me-2"></i>Nodo Completo
+            </a></li>
+            <li><a class="dropdown-item" href="/es/wallets/web/">
+              <i class="fa-solid fa-globe fa-fw me-2"></i>Cartera Web
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/es/blog/">Noticias</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active"
+             href="/es/mining/">Minería</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/es/resources/">Recursos</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Desarrollo
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/es/development/">
+              <i class="fa-solid fa-code fa-fw me-2"></i>Contribuir
+            </a></li>
+            <li><a class="dropdown-item" href="/es/development/rpc/">
+              <i class="fa-solid fa-terminal fa-fw me-2"></i>Documentación RPC
+            </a></li>
+            <li><a class="dropdown-item" href="/es/whitepaper/">
+              <i class="fa-solid fa-file-lines fa-fw me-2"></i>Libro Blanco
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" type="button">
+            <i class="fa-solid fa-language"></i>
+            <span>ES</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+            
+            <li><a class="dropdown-item"
+                   href="/en/mining/">
+              EN&nbsp; English
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/de/mining/">
+              DE&nbsp; Deutsch
+            </a></li>
+            
+            <li><a class="dropdown-item active"
+                   href="/es/mining/">
+              ES&nbsp; Español
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/fr/mining/">
+              FR&nbsp; Français
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/it/mining/">
+              IT&nbsp; Italiano
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ja/mining/">
+              JA&nbsp; 日本語
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ko/mining/">
+              KO&nbsp; 한국어
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pl/mining/">
+              PL&nbsp; Polski
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pt/mining/">
+              PT&nbsp; Português
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ro/mining/">
+              RO&nbsp; Română
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ru/mining/">
+              RU&nbsp; Русский
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/tr/mining/">
+              TR&nbsp; Türkçe
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/uk/mining/">
+              UK&nbsp; Українська
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/zh/mining/">
+              ZH&nbsp; 中文
+            </a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
+            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+              <i class="fa-solid fa-sun fa-fw me-2"></i>Claro
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+              <i class="fa-solid fa-moon fa-fw me-2"></i>Oscuro
+            </button></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+
+  <div class="mb-5">
+    <h1 class="bwc-section-title"><i class="fa-solid fa-microchip me-2"></i>Minería de Bitweb</h1>
+    <p class="bwc-section-lead">Bitweb utiliza el algoritmo de prueba de trabajo Argon2id — mineable con CPU y GPU.</p>
+  </div>
+
+  <section class="mb-5">
+    <h2 class="h3 mb-1">Minería en Solitario</h2>
+    <p class="text-secondary mb-4">Mina directamente en tu propio nodo completo. Conservas el 100% de las recompensas de bloque.</p>
+
+    <div class="bwc-verify">
+
+      <div class="bwc-verify-step">
+        <h3 class="h5 mb-2">1. Configurar tu nodo</h3>
+        <p class="text-secondary small mb-2">Añade lo siguiente a bitweb.conf:</p>
+        <pre><code>rpcuser=user
+rpcpassword=password
+rpcallowip=127.0.0.1
+rpcport=26332
+txindex=1
+coinstatsindex=1
+server=1
+listen=1</code></pre>
+      </div>
+
+      <div class="bwc-verify-step">
+        <h3 class="h5 mb-2">2. Descargar cpuminer-opt</h3>
+        <p class="text-secondary small mb-2">Compilaciones para Windows y Linux — elige el binario que coincida con tu CPU:</p>
+        <a href="https://github.com/bitweb-project/cpuminer-opt/releases" target="_blank" rel="noopener" class="btn btn-bwc-secondary mb-3">
+          <i class="fa-brands fa-github me-2"></i>bitweb-project/cpuminer-opt
+        </a>
+
+        <div class="mb-3">
+          <p class="text-secondary small mb-2 fw-semibold">CPU</p>
+          <pre><code>cpuminer-sse2            -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-aes-sse42       -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx             -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx2            -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx2-sha        -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx2-sha-vaes   -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx512          -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx512-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4</code></pre>
+        </div>
+
+        <div class="mb-3">
+          <p class="text-secondary small mb-2 fw-semibold">GPU — OpenCL <span class="fw-normal">(todas las compilaciones admiten minería GPU)</span></p>
+          <pre><code>cpuminer-* -a argon2id1024 --use-gpu OpenCL -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce --gpu-batchsize 3484 --gpu-id 1</code></pre>
+        </div>
+
+        <div>
+          <p class="text-secondary small mb-2 fw-semibold">GPU — CUDA</p>
+          <pre><code>cpuminer-* -a argon2id1024 --use-gpu CUDA -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce --gpu-batchsize 64 --gpu-id 1</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="h3 mb-1">Grupos de Minería</h2>
+    <p class="text-secondary mb-4">La minería en grupo te ofrece pagos estables. Conéctate usando la configuración stratum que aparece en el panel de cada grupo.</p>
+
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <div class="bwc-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bwc-card-icon mb-0"><i class="fa-solid fa-server"></i></div>
+            <div>
+              <div class="fw-semibold">Grupo Oficial de Bitweb</div>
+              <div class="text-secondary small">pool.bitwebcore.net</div>
+            </div>
+          </div>
+          <a href="https://pool.bitwebcore.net" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm">
+            Abrir grupo <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+          </a>
+          <a href="https://github.com/bitweb-project/miningcore" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm ms-2">
+            <i class="fa-brands fa-github me-1"></i>Fuente
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="bwc-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bwc-card-icon mb-0"><i class="fa-solid fa-chart-bar"></i></div>
+            <div>
+              <div class="fw-semibold">Todos los grupos</div>
+              <div class="text-secondary small">miningpoolstats.stream</div>
+            </div>
+          </div>
+          <a href="https://miningpoolstats.stream/bitweb" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
+            Encontrar más grupos <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</main>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">Software de código abierto, publicado bajo la licencia MIT.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Proyecto</h6>
+        <ul class="list-unstyled">
+          <li><a href="/es/about/" class="footer-link">Acerca de</a></li>
+          <li><a href="/es/wallets/full-node/" class="footer-link">Nodo Completo</a></li>
+          <li><a href="/es/blog/" class="footer-link">Noticias</a></li>
+          <li><a href="/es/resources/" class="footer-link">Recursos</a></li>
+          <li><a href="/es/brand/" class="footer-link">Recursos de Marca</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Desarrolladores</h6>
+        <ul class="list-unstyled">
+          <li><a href="/es/development/" class="footer-link">Contribuir</a></li>
+          <li><a href="/es/development/rpc/" class="footer-link">Documentación RPC</a></li>
+          <li><a href="/es/whitepaper/" class="footer-link">Libro Blanco</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix Sigs
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Seguridad</h6>
+        <p class="text-secondary small mb-1">Huella GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Verificar clave en OpenPGP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licencia MIT</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+
+</body>
+</html>

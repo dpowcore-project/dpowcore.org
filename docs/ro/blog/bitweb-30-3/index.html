@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Bitweb Core">
+  <meta property="og:description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://bitwebcore.net/ro/blog/bitweb-30-3/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Bitweb Core</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/ro/blog/bitweb-30-3/">
+  
+    
+      
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="uk" href="https://bitwebcore.net/uk/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="ja" href="https://bitwebcore.net/ja/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="es" href="https://bitwebcore.net/es/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="pl" href="https://bitwebcore.net/pl/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="pt" href="https://bitwebcore.net/pt/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/ro/blog/bitweb-30-3/">
+      
+    
+      
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/ro/blog/bitweb-30-3/">
+      
+    
+  
+</head>
+<body>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+  <div class="container">
+
+    <a class="navbar-brand" href="/ro/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ro/">Acasă</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ro/about/">Despre</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Portofele
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/ro/wallets/full-node/">
+              <i class="fa-solid fa-server fa-fw me-2"></i>Nod complet
+            </a></li>
+            <li><a class="dropdown-item" href="/ro/wallets/web/">
+              <i class="fa-solid fa-globe fa-fw me-2"></i>Portofel web
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active"
+             href="/ro/blog/">Știri</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ro/mining/">Minare</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ro/resources/">Resurse</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dezvoltare
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/ro/development/">
+              <i class="fa-solid fa-code fa-fw me-2"></i>Contribuie
+            </a></li>
+            <li><a class="dropdown-item" href="/ro/development/rpc/">
+              <i class="fa-solid fa-terminal fa-fw me-2"></i>Documentație RPC
+            </a></li>
+            <li><a class="dropdown-item" href="/ro/whitepaper/">
+              <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" type="button">
+            <i class="fa-solid fa-language"></i>
+            <span>RO</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+            
+            <li><a class="dropdown-item"
+                   href="/en/blog/bitweb-30-3/">
+              EN&nbsp; English
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/de/blog/bitweb-30-3/">
+              DE&nbsp; Deutsch
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/es/blog/bitweb-30-3/">
+              ES&nbsp; Español
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/fr/blog/bitweb-30-3/">
+              FR&nbsp; Français
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/it/blog/bitweb-30-3/">
+              IT&nbsp; Italiano
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ja/blog/bitweb-30-3/">
+              JA&nbsp; 日本語
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ko/blog/bitweb-30-3/">
+              KO&nbsp; 한국어
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pl/blog/bitweb-30-3/">
+              PL&nbsp; Polski
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pt/blog/bitweb-30-3/">
+              PT&nbsp; Português
+            </a></li>
+            
+            <li><a class="dropdown-item active"
+                   href="/ro/blog/bitweb-30-3/">
+              RO&nbsp; Română
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ru/blog/bitweb-30-3/">
+              RU&nbsp; Русский
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/tr/blog/bitweb-30-3/">
+              TR&nbsp; Türkçe
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/uk/blog/bitweb-30-3/">
+              UK&nbsp; Українська
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/zh/blog/bitweb-30-3/">
+              ZH&nbsp; 中文
+            </a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
+            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+              <i class="fa-solid fa-sun fa-fw me-2"></i>Luminos
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+              <i class="fa-solid fa-moon fa-fw me-2"></i>Întunecat
+            </button></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+
+      <div class="bwc-post-date mb-2">7 Jun 2026</div>
+      <h1 class="bwc-section-title mb-4">Bitweb Core 30.3 — Network Restart &amp; Wallet Migration</h1>
+      <hr class="bwc-divider">
+
+      
+      <p class="mb-4">
+        
+        <a href="https://github.com/bitweb-project/bitweb/releases/tag/v30.3" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm me-2">
+          <i class="fa-brands fa-github me-1"></i>GitHub Release v30.3
+        </a>
+        
+        
+        <a href="/ro/wallets/full-node/" class="btn btn-bwc-secondary btn-sm me-2">Descarcă</a>
+        
+        
+        <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/release-notes/release-notes-30.3.md" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">Note de lansare</a>
+        
+      </p>
+      
+
+      <div class="bwc-post-content">
+        <p>Bitweb Core 30.3 is now available. This release restarts the Bitweb network with a new chain and
+updates to the latest <a href="https://github.com/bitcoin/bitcoin/tree/1fb642efb3ee6212f22302d742f6927981acfa76">Bitcoin Core 0.30.x codebase</a>.
+The old chain is abandoned.</p>
+<blockquote>
+<p><strong>Back up your wallet before doing anything.</strong>
+Shut down your wallet completely, copy <code>wallet.dat</code> to a safe location outside the data directory.
+Encrypt your wallet with a strong password if you haven't already. Encrypted wallets survive
+migration without issues — migration only updates a file header field
+(SQLite <code>application_id</code>, bytes 68–71) separate from encrypted key data.</p>
+</blockquote>
+<h2>Step 1 — Back up your wallet</h2>
+<p>Shut down your old Bitweb node completely. Copy <code>wallet.dat</code> to a safe location outside the data
+directory. Keep this backup — you will need it in Step 3.</p>
+<h2>Step 2 — Install and sync the new version</h2>
+<p>Download and install Bitweb Core 30.3. Start the node and let it fully sync the new chain from
+scratch (this may take time). Then shut it down before proceeding.</p>
+<h2>Which wallet type do I have?</h2>
+<p>Run this on your <strong>old node</strong> before shutting it down:</p>
+<pre><code>bitweb-cli getwalletinfo
+</code></pre>
+<ul>
+<li>If <code>&quot;descriptors&quot;: true</code> → follow <strong>Step 3a</strong></li>
+<li>If <code>&quot;descriptors&quot;: false</code> → follow <strong>Step 3b</strong></li>
+</ul>
+<h2>Step 3a — Descriptor wallet (most users)</h2>
+<p>Copy your backed-up <code>wallet.dat</code> into the new data directory, then enable cross-chain import.</p>
+<p>Add to <code>bitweb.conf</code>:</p>
+<pre><code>walletcrosschain=1
+</code></pre>
+<p>Or use the command-line flag:</p>
+<pre><code>bitwebd -walletcrosschain
+</code></pre>
+<p><strong>GUI users:</strong> Start the node → <em>File → Open Wallet</em> → select your wallet.
+Rescan starts automatically. Wait for it to complete before checking your balance.</p>
+<p><strong>CLI users:</strong></p>
+<pre><code>bitweb-cli loadwallet &quot;your-wallet-name&quot;
+bitweb-cli rescanblockchain
+</code></pre>
+<h2>Step 3b — Legacy wallet (extra step required)</h2>
+<p>Copy <code>wallet.dat</code> into the new data directory, enable <code>walletcrosschain</code> (same as 3a above), then run:</p>
+<pre><code>bitweb-cli migratewallet &quot;your-wallet-name&quot;
+bitweb-cli rescanblockchain
+</code></pre>
+<p>We strongly recommend creating a new native descriptor wallet and moving all coins there.
+The node supports only descriptor wallets going forward.</p>
+<h2>Importing private keys (optional)</h2>
+<p>If you need to import an old WIF private key:</p>
+<pre><code>bitweb-cli getdescriptorinfo &quot;combo(YOUR_WIF_KEY)&quot;
+</code></pre>
+<p>Note the checksum from the output, then import:</p>
+<pre><code>bitweb-cli importdescriptors '[{&quot;desc&quot;:&quot;combo(YOUR_WIF_KEY)#CHECKSUM&quot;,&quot;timestamp&quot;:&quot;now&quot;}]'
+bitweb-cli rescanblockchain
+</code></pre>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>&quot;Unexpected application id&quot; error</strong> — ensure you are using the 30.3 binary, not the old one.</li>
+<li><strong>Balance shows zero after rescan</strong> — wait for rescan to fully complete. Check progress:
+<code>bitweb-cli getwalletinfo</code> → look for the <code>&quot;scanning&quot;</code> field.</li>
+<li><strong>Remove the flag after migration</strong> — once migration is done, remove <code>walletcrosschain=1</code>
+from <code>bitweb.conf</code>.</li>
+</ul>
+<p>Issues or questions? Use the <a href="https://github.com/bitweb-project/bitweb/issues">issue tracker</a>
+or join the community on the <a href="/en/resources/">resources page</a>.</p>
+
+      </div>
+
+      <hr class="bwc-divider mt-5">
+      <a href="/ro/blog/" class="btn btn-bwc-secondary btn-sm">
+        <i class="fa-solid fa-arrow-left me-1"></i>Știri
+      </a>
+
+    </div>
+  </div>
+</div>
+</main>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">Software open source, lansat sub Licența MIT.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Proiect</h6>
+        <ul class="list-unstyled">
+          <li><a href="/ro/about/" class="footer-link">Despre</a></li>
+          <li><a href="/ro/wallets/full-node/" class="footer-link">Nod complet</a></li>
+          <li><a href="/ro/blog/" class="footer-link">Știri</a></li>
+          <li><a href="/ro/resources/" class="footer-link">Resurse</a></li>
+          <li><a href="/ro/brand/" class="footer-link">Resurse de brand</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Dezvoltatori</h6>
+        <ul class="list-unstyled">
+          <li><a href="/ro/development/" class="footer-link">Contribuie</a></li>
+          <li><a href="/ro/development/rpc/" class="footer-link">Documentație RPC</a></li>
+          <li><a href="/ro/whitepaper/" class="footer-link">White Paper</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Semnături Guix
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Securitate</h6>
+        <p class="text-secondary small mb-1">Amprentă GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Verifică cheia pe OpenPGP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licența MIT</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+
+</body>
+</html>

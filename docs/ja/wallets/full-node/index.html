@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Download">
+  <meta property="og:description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://bitwebcore.net/ja/wallets/full-node/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Download — Bitweb Core</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/ja/wallets/full-node/">
+  
+    
+      
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="uk" href="https://bitwebcore.net/uk/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/wallets/full-node/">
+      
+    
+      
+    
+      
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="es" href="https://bitwebcore.net/es/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="pl" href="https://bitwebcore.net/pl/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="pt" href="https://bitwebcore.net/pt/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/wallets/full-node/">
+      
+    
+      
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/wallets/full-node/">
+      
+    
+  
+</head>
+<body>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+  <div class="container">
+
+    <a class="navbar-brand" href="/ja/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ja/">ホーム</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ja/about/">概要</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ウォレット
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/ja/wallets/full-node/">
+              <i class="fa-solid fa-server fa-fw me-2"></i>フルノード
+            </a></li>
+            <li><a class="dropdown-item" href="/ja/wallets/web/">
+              <i class="fa-solid fa-globe fa-fw me-2"></i>ウェブウォレット
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ja/blog/">ニュース</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ja/mining/">マイニング</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/ja/resources/">リソース</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            開発
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/ja/development/">
+              <i class="fa-solid fa-code fa-fw me-2"></i>貢献する
+            </a></li>
+            <li><a class="dropdown-item" href="/ja/development/rpc/">
+              <i class="fa-solid fa-terminal fa-fw me-2"></i>RPCドキュメント
+            </a></li>
+            <li><a class="dropdown-item" href="/ja/whitepaper/">
+              <i class="fa-solid fa-file-lines fa-fw me-2"></i>ホワイトペーパー
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" type="button">
+            <i class="fa-solid fa-language"></i>
+            <span>JA</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+            
+            <li><a class="dropdown-item"
+                   href="/en/wallets/full-node/">
+              EN&nbsp; English
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/de/wallets/full-node/">
+              DE&nbsp; Deutsch
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/es/wallets/full-node/">
+              ES&nbsp; Español
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/fr/wallets/full-node/">
+              FR&nbsp; Français
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/it/wallets/full-node/">
+              IT&nbsp; Italiano
+            </a></li>
+            
+            <li><a class="dropdown-item active"
+                   href="/ja/wallets/full-node/">
+              JA&nbsp; 日本語
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ko/wallets/full-node/">
+              KO&nbsp; 한국어
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pl/wallets/full-node/">
+              PL&nbsp; Polski
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pt/wallets/full-node/">
+              PT&nbsp; Português
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ro/wallets/full-node/">
+              RO&nbsp; Română
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ru/wallets/full-node/">
+              RU&nbsp; Русский
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/tr/wallets/full-node/">
+              TR&nbsp; Türkçe
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/uk/wallets/full-node/">
+              UK&nbsp; Українська
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/zh/wallets/full-node/">
+              ZH&nbsp; 中文
+            </a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
+            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>自動
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+              <i class="fa-solid fa-sun fa-fw me-2"></i>ライト
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+              <i class="fa-solid fa-moon fa-fw me-2"></i>ダーク
+            </button></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+
+  <div class="mb-5">
+    <h1 class="bwc-section-title">Bitweb Coreをダウンロード</h1>
+    <p class="bwc-section-lead">プラットフォームを選択してダウンロードを確認してください。</p>
+  </div>
+
+  <div id="bwc-download-root" class="mb-5"
+       data-repo="bitweb-project/bitweb"
+       data-locale="ja"
+       data-i18n-loading="リリースを読み込み中…"
+       data-i18n-error="リリースの読み込みに失敗しました。以下にアクセスしてください"
+       data-i18n-debug="デバッグビルドを表示"
+       data-i18n-version="バージョン"
+       data-i18n-latest="最新"
+       data-i18n-notes="↗ GitHubのリリースノート"
+       data-i18n-no-releases="リリースが見つかりません。"
+       data-i18n-dl-btn="↓ ダウンロード">
+  </div>
+
+  <hr class="bwc-divider">
+
+  <div class="bwc-verify mt-5">
+    <h2 class="h4 mb-4"><i class="fa-solid fa-shield-halved me-2 text-success"></i>ダウンロードの確認</h2>
+    <p class="text-secondary mb-4">バイナリを実行する前に、必ずSHA256チェックサムとGPG署名を確認してください。</p>
+
+    <div class="bwc-verify-step">
+      <h3 class="h5 mb-3">1. SHA256チェックサムの確認</h3>
+      <p class="text-secondary small mb-1">Linux / macOS:</p>
+      <pre><code>sha256sum --check SHA256SUMS</code></pre>
+      <p class="text-secondary small mb-1">Windows (PowerShell):</p>
+      <pre><code>Get-FileHash bitweb-*.zip -Algorithm SHA256</code></pre>
+    </div>
+
+    <div class="bwc-verify-step">
+      <h3 class="h5 mb-3">2. GPG署名の確認</h3>
+      <p class="text-secondary small mb-1">署名キーのインポート:</p>
+      <pre><code>gpg --keyserver keys.openpgp.org     --recv-keys 23B3D882F805A5D1F0A12A2535A7538B1C816E49</code></pre>
+      <p class="text-secondary small mb-1">SHA256SUMSの確認:</p>
+      <pre><code>gpg --verify SHA256SUMS.asc SHA256SUMS</code></pre>
+      <div class="mt-3">
+        <span class="text-secondary small">キーフィンガープリント:</span><br>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="small">
+            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>OpenPGPでキーを確認
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bwc-verify-step bwc-verify-step-muted">
+      <h3 class="h5 mb-2">再現可能なビルド (Guix)</h3>
+      <p class="text-secondary small mb-2">Bitweb CoreはGNU Guixを使用して再現可能にビルドされています。ビルダー証明とキーは以下で公開されています</p>
+      <a href="https://github.com/bitweb-project/guix.sigs" target="_blank" rel="noopener" class="small">
+        <i class="fa-brands fa-github me-1"></i>bitweb-project/guix.sigs
+      </a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/bitweb-project/guix.sigs/tree/main/builder-keys" target="_blank" rel="noopener" class="small">
+        ビルダーキー
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<script src="/static/js/download.js"></script>
+</main>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">MITライセンスの下でリリースされたオープンソースソフトウェア。</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">プロジェクト</h6>
+        <ul class="list-unstyled">
+          <li><a href="/ja/about/" class="footer-link">概要</a></li>
+          <li><a href="/ja/wallets/full-node/" class="footer-link">フルノード</a></li>
+          <li><a href="/ja/blog/" class="footer-link">ニュース</a></li>
+          <li><a href="/ja/resources/" class="footer-link">リソース</a></li>
+          <li><a href="/ja/brand/" class="footer-link">ブランドアセット</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">開発者</h6>
+        <ul class="list-unstyled">
+          <li><a href="/ja/development/" class="footer-link">貢献する</a></li>
+          <li><a href="/ja/development/rpc/" class="footer-link">RPCドキュメント</a></li>
+          <li><a href="/ja/whitepaper/" class="footer-link">ホワイトペーパー</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix Sigs
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">セキュリティ</h6>
+        <p class="text-secondary small mb-1">GPGフィンガープリント:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>OpenPGPでキーを確認
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">MITライセンス</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+
+</body>
+</html>

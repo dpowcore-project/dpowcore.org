@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="uk" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core technical white paper — Argon2id proof-of-work, LWMA-3 difficulty, genesis airdrop, and monetary policy.">
+  <meta property="og:title" content="White Paper">
+  <meta property="og:description" content="Bitweb Core technical white paper — Argon2id proof-of-work, LWMA-3 difficulty, genesis airdrop, and monetary policy.">
+  <meta property="og:url" content="https://bitwebcore.net/uk/whitepaper/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>White Paper — Bitweb Core</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/uk/whitepaper/">
+  
+    
+      
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/whitepaper/">
+      
+    
+      
+    
+      
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="ja" href="https://bitwebcore.net/ja/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="es" href="https://bitwebcore.net/es/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="pl" href="https://bitwebcore.net/pl/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="pt" href="https://bitwebcore.net/pt/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/whitepaper/">
+      
+    
+      
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/whitepaper/">
+      
+    
+  
+</head>
+<body>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+  <div class="container">
+
+    <a class="navbar-brand" href="/uk/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/">Головна</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/about/">Про проєкт</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Гаманці
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/uk/wallets/full-node/">
+              <i class="fa-solid fa-server fa-fw me-2"></i>Повний вузол
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/wallets/web/">
+              <i class="fa-solid fa-globe fa-fw me-2"></i>Веб-гаманець
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/blog/">Новини</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/mining/">Майнінг</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/resources/">Ресурси</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Розробка
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/uk/development/">
+              <i class="fa-solid fa-code fa-fw me-2"></i>Участь
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/development/rpc/">
+              <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC Документація
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/whitepaper/">
+              <i class="fa-solid fa-file-lines fa-fw me-2"></i>Біла книга
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" type="button">
+            <i class="fa-solid fa-language"></i>
+            <span>UK</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+            
+            <li><a class="dropdown-item"
+                   href="/en/whitepaper/">
+              EN&nbsp; English
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/de/whitepaper/">
+              DE&nbsp; Deutsch
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/es/whitepaper/">
+              ES&nbsp; Español
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/fr/whitepaper/">
+              FR&nbsp; Français
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/it/whitepaper/">
+              IT&nbsp; Italiano
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ja/whitepaper/">
+              JA&nbsp; 日本語
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ko/whitepaper/">
+              KO&nbsp; 한국어
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pl/whitepaper/">
+              PL&nbsp; Polski
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pt/whitepaper/">
+              PT&nbsp; Português
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ro/whitepaper/">
+              RO&nbsp; Română
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ru/whitepaper/">
+              RU&nbsp; Русский
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/tr/whitepaper/">
+              TR&nbsp; Türkçe
+            </a></li>
+            
+            <li><a class="dropdown-item active"
+                   href="/uk/whitepaper/">
+              UK&nbsp; Українська
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/zh/whitepaper/">
+              ZH&nbsp; 中文
+            </a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
+            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Авто
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+              <i class="fa-solid fa-sun fa-fw me-2"></i>Світла
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+              <i class="fa-solid fa-moon fa-fw me-2"></i>Темна
+            </button></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main><div class="container-fluid wp-layout">
+  <div class="row g-0">
+
+    <aside class="col-12 col-lg-3 col-xl-2 wp-sidebar" id="wpSidebar">
+      <div class="wp-sidebar-inner p-3">
+        <div class="mb-3 d-flex align-items-center gap-2">
+          <a href="/uk/development/" class="text-secondary small text-decoration-none">
+            <i class="fa-solid fa-arrow-left me-1"></i>Розробка
+          </a>
+        </div>
+        <a href="/static/whitepaper.pdf" class="btn btn-bwc-primary btn-sm w-100 mb-4" download>
+          <i class="fa-solid fa-file-pdf me-2"></i>Завантажити PDF
+        </a>
+        <p class="text-uppercase text-secondary small fw-semibold mb-2" style="letter-spacing:0.06em">Зміст</p>
+        <nav id="wpToc" aria-label="White paper sections"></nav>
+      </div>
+    </aside>
+
+    <div class="col-12 col-lg-9 col-xl-10 wp-content px-4 py-5" id="wpContent">
+      <div class="wp-header mb-5">
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-2">
+          <div>
+            <span class="badge bg-secondary text-uppercase mb-2">Technical Document</span>
+            <h1 class="wp-title mb-1">Bitweb Core White Paper</h1>
+            <p class="text-secondary small mb-0">Version 1.0 &mdash; June 2026</p>
+          </div>
+          <a href="/static/whitepaper.pdf" class="btn btn-bwc-primary btn-sm d-none d-lg-inline-flex" download>
+            <i class="fa-solid fa-file-pdf me-2"></i>Завантажити PDF
+          </a>
+        </div>
+      </div>
+      <div class="wp-body">
+        <h1>Bitweb Core: A Memory-Hard Proof-of-Work Cryptocurrency</h1>
+<p><strong>Version 1.0 · June 2026</strong></p>
+<p>Mraksoll — Lead Maintainer<br>
+contact@bitwebcore.net<br>
+https://bitwebcore.net</p>
+<hr>
+<h2>Abstract</h2>
+<p>Bitweb Core (BTE) is an open-source cryptocurrency derived from Bitcoin Core 0.30.x, distinguished
+by three design decisions: replacement of SHA256d proof-of-work with Argon2id — a memory-hard,
+ASIC-resistant hashing function — adoption of the LWMA-3 per-block difficulty algorithm with a
+five-minute target, and a snapshot-based genesis airdrop that carried over balances from the
+prior chain at a 100:1 denomination. The codebase follows Bitcoin Core's development process
+including the full functional test suite, reproducible GNU Guix builds, and GPG-signed release
+attestations. This paper describes the technical parameters, the rationale behind each design
+choice, and the toolchain used to bootstrap the network.</p>
+<hr>
+<h2>Table of Contents</h2>
+<ol>
+<li>Introduction</li>
+<li>Codebase and Development Process</li>
+<li>Proof-of-Work: Argon2id</li>
+<li>Implementation: ISA Dispatcher</li>
+<li>Difficulty Algorithm: LWMA-3</li>
+<li>Timing and Anti-Manipulation Parameters</li>
+<li>Monetary Policy</li>
+<li>Network Parameters</li>
+<li>Consensus-Level Security Patches</li>
+<li>Genesis Airdrop</li>
+<li>Vesting and Anti-Dump Protection</li>
+<li>Mining</li>
+<li>Conclusion<br>
+Appendix A — Network Parameter Reference<br>
+Appendix B — Airdrop Toolchain<br>
+Appendix C — Halving Schedule</li>
+</ol>
+<hr>
+<h2>1. Introduction</h2>
+<p>Bitcoin's proof-of-work algorithm (SHA256d) was initially mined on consumer CPUs, then GPUs, and
+eventually displaced entirely by application-specific integrated circuits (ASICs). ASIC
+manufacturing concentrates hash rate among a small number of hardware producers and large mining
+operations, reducing the decentralization that proof-of-work is intended to enforce.</p>
+<p>Argon2id, winner of the Password Hashing Competition (2015), was designed to be simultaneously
+time-hard and memory-hard. Its memory requirement makes it resistant to the parallel architectures
+that give ASICs their advantage over general-purpose hardware, and its sequential memory access
+pattern penalises GPU implementations relative to CPU ones.</p>
+<p>Bitweb Core applies Argon2id as the proof-of-work challenge function while retaining SHA256d for
+all internal chain data structures — the same separation used by Litecoin (Scrypt PoW / SHA256d
+chain). This preserves full compatibility with Bitcoin's UTXO model, transaction format, and wallet
+infrastructure while making block production accessible to commodity hardware.</p>
+<p>The network is a full relaunch of a prior Bitweb chain. Holders of the old network received new BTE
+proportional to their previous balance at a 100:1 denomination ratio. The relaunch was motivated by
+the need to upgrade the codebase to Bitcoin Core 0.30.x, adopt Argon2id, and establish cleaner
+monetary parameters.</p>
+<hr>
+<h2>2. Codebase and Development Process</h2>
+<h3>2.1 Upstream Base</h3>
+<p>Bitweb Core is a fork of Bitcoin Core 0.30.x and tracks upstream releases. Protocol changes,
+wallet improvements, and security fixes from Bitcoin Core are reviewed and merged as they are
+published. The project commits to staying within two major version series of the Bitcoin Core
+upstream.</p>
+<h3>2.2 Development Standards</h3>
+<p>The development process mirrors Bitcoin Core:</p>
+<ul>
+<li><strong>Peer review.</strong> All changes are submitted as GitHub pull requests and require review before
+merging. There is no privileged developer class; contributors earn trust through merit.</li>
+<li><strong>Functional test suite.</strong> The full Bitcoin Core functional test suite is inherited and extended.
+Consensus-critical changes require passing all tests, including the regression test framework
+(<code>regtest</code> chain).</li>
+<li><strong>Reproducible builds.</strong> Release binaries are built using GNU Guix for deterministic output.
+Builder attestations and signing keys are published at
+<a href="https://github.com/bitweb-project/guix.sigs">github.com/bitweb-project/guix.sigs</a>.</li>
+<li><strong>GPG-signed releases.</strong> Every release is signed by the lead maintainer's GPG key
+(<code>23B3 D882 F805 A5D1 F0A1 2A25 35A7 538B 1C81 6E49</code>). Users are expected to verify
+signatures before running any binary.</li>
+<li><strong>Security policy.</strong> Vulnerabilities are reported to security@bitwebcore.net under responsible
+disclosure. The project maintains security updates for the two most recent major release series,
+following the Bitcoin Core security policy model.</li>
+</ul>
+<hr>
+<h2>3. Proof-of-Work: Argon2id</h2>
+<h3>3.1 Algorithm Selection</h3>
+<p>Argon2 is defined in RFC 9106 and exists in three variants:</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Parallelism</th>
+<th>Data-dependence</th>
+<th>Recommended use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Argon2d</td>
+<td>Single-pass</td>
+<td>Data-dependent</td>
+<td>Cryptocurrency PoW (original)</td>
+</tr>
+<tr>
+<td>Argon2i</td>
+<td>Single-pass</td>
+<td>Data-independent</td>
+<td>Password hashing</td>
+</tr>
+<tr>
+<td><strong>Argon2id</strong></td>
+<td><strong>Hybrid</strong></td>
+<td><strong>Both</strong></td>
+<td><strong>General-purpose — RFC recommendation</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Argon2id was chosen over Argon2d since it has wide support on all platforms and programming languages ​​in the form of ready-made libraries, unlike the I and D variants.</p>
+<h3>3.2 Consensus Parameters</h3>
+<p>The following parameters are consensus-critical and are encoded directly in <code>block.cpp</code>. Any change
+requires a hard fork.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variant</td>
+<td><code>Argon2_id</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Time cost (<code>t</code>)</td>
+<td><code>3</code></td>
+<td>Number of passes over memory</td>
+</tr>
+<tr>
+<td>Memory cost (<code>m</code>)</td>
+<td><code>1024 KiB</code></td>
+<td>Fits in CPU L2/L3 cache; penalises GPU</td>
+</tr>
+<tr>
+<td>Parallelism (<code>p</code>)</td>
+<td><code>1</code></td>
+<td>Single-threaded per hash attempt</td>
+</tr>
+<tr>
+<td>Output length</td>
+<td><code>32 bytes</code></td>
+<td>256-bit PoW hash</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>80-byte serialized header</td>
+<td></td>
+</tr>
+<tr>
+<td>Salt</td>
+<td>80-byte serialized header</td>
+<td>Same as password</td>
+</tr>
+</tbody>
+</table>
+<p>Using the serialized block header as both the password and the salt keeps the construction
+self-contained: the salt is fully determined by the header itself, requiring no additional hash or
+preprocessing step.</p>
+<p>The 80-byte header satisfies Argon2's minimum salt requirement of 8 bytes with ample margin. The
+80-byte length is identical to Bitcoin's block header serialization (4 version + 32 prevHash +
+32 merkleRoot + 4 time + 4 nBits + 4 nNonce).</p>
+<h3>3.3 Hash Construction</h3>
+<pre><code class="language-cpp">// From block.cpp — consensus-critical, must not be changed
+argon2_context context;
+context.out     = hash.begin();
+context.outlen  = 32;
+context.pwd     = (uint8_t*)ss.data();   // 80-byte serialized header
+context.pwdlen  = 80;
+context.salt    = (uint8_t*)ss.data();   // same as password
+context.saltlen = 80;
+context.t_cost  = 3;
+context.m_cost  = 1024;
+context.lanes   = 1;
+context.threads = 1;
+context.version = ARGON2_VERSION_NUMBER;
+
+const int rc = argon2_ctx(&amp;context, Argon2_id);
+assert(rc == ARGON2_OK);
+</code></pre>
+<h3>3.4 Chain Hash Separation</h3>
+<p>Block identifiers (used in <code>hashPrevBlock</code>, Merkle tree roots, and all chain linkage) are computed
+with SHA256d, not Argon2id. Argon2id serves exclusively as the proof-of-work challenge. This is the
+same separation used by Litecoin (Scrypt PoW / SHA256d chain data) and ensures that:</p>
+<ul>
+<li>Chain indexing and validation remain computationally cheap.</li>
+<li>Existing block explorer and wallet infrastructure is compatible without modification.</li>
+<li>The PoW challenge can in principle be changed in a future hard fork without altering chain
+data structures.</li>
+</ul>
+<h3>3.5 Memory Hardness and ASIC Resistance</h3>
+<p>At <code>m = 1024 KiB</code>, each hash attempt requires filling and reading one mebibyte of working memory.
+Because Argon2's internal Blake2b rounds create data dependencies between blocks, the memory cannot
+be computed in parallel sub-units — it must be traversed sequentially. This eliminates the area
+reuse that makes SHA256d ASICs economically viable: an ASIC targeting Argon2id at these parameters
+requires the same ~1 MiB SRAM per hashing core as a general-purpose CPU, removing the area
+advantage that ASICs ordinarily exploit.</p>
+<p>At <code>t = 3</code> passes, three sequential sweeps over the 1 MiB buffer are required per hash. This
+increases the time cost relative to a single pass without increasing the peak memory footprint,
+further raising the cost of time-memory trade-off (TMTO) attacks.</p>
+<hr>
+<h2>4. Implementation: ISA Dispatcher</h2>
+<p>The internal fill-segment function — the innermost loop of Argon2's memory-filling phase — is
+performance-critical. Bitweb Core implements the same ISA-dispatch pattern used by Bitcoin Core
+for SHA256: a runtime CPU feature detector selects the fastest available implementation.</p>
+<h3>4.1 Available Backends</h3>
+<table>
+<thead>
+<tr>
+<th>Backend</th>
+<th>Compiled with</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fill_segment_ref</code></td>
+<td>(always)</td>
+<td>Pure-C reference; safe fallback</td>
+</tr>
+<tr>
+<td><code>fill_segment_sse2</code></td>
+<td><code>-msse2</code></td>
+<td>x86: SSE2 detected at runtime</td>
+</tr>
+<tr>
+<td><code>fill_segment_ssse3</code></td>
+<td><code>-mssse3</code></td>
+<td>x86: SSSE3 detected at runtime</td>
+</tr>
+<tr>
+<td><code>fill_segment_avx2</code></td>
+<td><code>-mavx2</code></td>
+<td>x86: AVX2 + OS XSAVE enabled</td>
+</tr>
+<tr>
+<td><code>fill_segment_avx512</code></td>
+<td><code>-mavx512f</code></td>
+<td>x86: AVX-512F + OS XSAVE enabled</td>
+</tr>
+<tr>
+<td><code>fill_segment_neon</code></td>
+<td><code>-mfpu=neon</code></td>
+<td>AArch64: NEON flag in <code>use_implementation</code></td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 Dispatcher Mechanism</h3>
+<p>A global function pointer <code>argon2_fill_segment</code> defaults to <code>fill_segment_ref</code> at startup.
+<code>Argon2AutoDetectImpl()</code> is called once at node startup. It performs CPUID detection and,
+on x86, verifies OS XSAVE support before upgrading the pointer to the fastest available SIMD
+backend. On AArch64, NEON is selected when available.</p>
+<p>This design means every node automatically uses the most efficient implementation available on its
+hardware without requiring separate binary distributions per CPU microarchitecture.</p>
+<hr>
+<h2>5. Difficulty Algorithm: LWMA-3</h2>
+<h3>5.1 Rationale for Replacing Bitcoin's Retargeting</h3>
+<p>Bitcoin adjusts difficulty once every 2,016 blocks (approximately two weeks). This large window
+was appropriate for a network with stable hash rate, but creates significant instability when hash
+rate changes rapidly — a common occurrence for smaller networks where a single pool can represent a
+significant fraction of total hash rate. A 2,016-block window also means the network is effectively
+unable to respond to hash rate changes for up to two weeks.</p>
+<p>Bitweb Core uses LWMA-3 (Linearly Weighted Moving Average, revision 3), designed by Zawy with
+contributions from the Bitcoin Gold and Zcash communities. LWMA-3 retargets on every block,
+using a weighted average of the N most recent solve times where more recent blocks receive linearly
+higher weight. This allows the network to track hash rate changes within hours rather than weeks.</p>
+<h3>5.2 Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target block time <code>T</code></td>
+<td><code>300 s</code> (5 min)</td>
+<td>Between LTC (150 s) and BTC (600 s)</td>
+</tr>
+<tr>
+<td>Averaging window <code>N</code></td>
+<td><code>576 blocks</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Retarget</td>
+<td>Every block</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The 5-minute block time was chosen to place Bitweb between Litecoin's 2.5 minutes and Bitcoin's
+10 minutes. Confirmation latency is half that of Bitcoin while the longer interval reduces orphan
+rate on variable-latency network paths.</p>
+<h3>5.3 Genesis Mining</h3>
+<p>The first 60,000 blocks were mined at minimum difficulty (<code>powLimit</code>) for genesis airdrop
+distribution to prior chain holders. LWMA-3's normal operation begins at block 60,001.</p>
+<hr>
+<h2>6. Timing and Anti-Manipulation Parameters</h2>
+<h3>6.1 Future Time Limit (FTL)</h3>
+<pre><code class="language-cpp">// chain.h
+static constexpr int64_t MAX_FUTURE_BLOCK_TIME = 600; // 2 × target block time
+</code></pre>
+<p>A block is rejected if its timestamp exceeds the node's current time by more than 600 seconds.
+Setting FTL to <code>2T</code> (two block intervals) is standard practice for time-warp attack mitigation.
+The original Bitcoin Core value was <code>7200 s</code> (two hours); Bitweb Core reduces this to limit the
+window in which a miner can manipulate timestamps to artificially lower difficulty.</p>
+<h3>6.2 Timestamp Window</h3>
+<pre><code class="language-cpp">static constexpr int64_t TIMESTAMP_WINDOW = 2 * 60 * 60; // 2 hours
+</code></pre>
+<p>The grace period used when validating external timestamps (RPC parameters, wallet key creation
+times) against block timestamps. This remains at two hours to preserve compatibility with wallet
+software that computes key creation time from block timestamps.</p>
+<h3>6.3 Catching-Up Gap</h3>
+<pre><code class="language-cpp">static constexpr int64_t MAX_BLOCK_TIME_GAP = 90 * 60; // 90 minutes
+</code></pre>
+<p>The threshold at which the GUI switches to &quot;Catching up...&quot; mode. At a 5-minute block time, 90
+minutes represents 18 blocks — enough to distinguish a genuine sync lag from normal network
+variance.</p>
+<h3>6.4 Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Ratio to T</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAX_FUTURE_BLOCK_TIME</code></td>
+<td>600 s</td>
+<td>2T</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP_WINDOW</code></td>
+<td>7200 s</td>
+<td>24T</td>
+</tr>
+<tr>
+<td><code>MAX_BLOCK_TIME_GAP</code></td>
+<td>5400 s</td>
+<td>18T</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>7. Monetary Policy</h2>
+<h3>7.1 Supply Cap</h3>
+<p>The maximum supply is capped at <code>42,000,000 BTE</code> in the consensus parameters. The subsidy
+function uses integer right-shift identical to Bitcoin Core's <code>GetBlockSubsidy()</code> implementation.
+Actual issuable supply across all 33 halving eras is <strong>41,999,999.9538 BTE</strong>
+(4,199,999,995,380,000 satoshis — the C++ verifiable nSum value).</p>
+<h3>7.2 Block Reward and Halving</h3>
+<pre><code>Initial block reward : 50 BTE  (5,000,000,000 satoshis)
+Halving interval     : 420,000 blocks
+Halving period       : ≈ 4.0 years at 300 s/block
+</code></pre>
+<p>The reward for block <code>n</code> in satoshis:</p>
+<pre><code>subsidy(n) = (50 × COIN) &gt;&gt; floor(n / 420000)
+COIN = 100,000,000
+</code></pre>
+<p>This mirrors Bitcoin Core exactly. The right-shift produces precise fractional BTE values
+(12.5, 6.25, 3.125…) unlike floor division of integer BTE amounts.</p>
+<h3>7.3 Halving Schedule</h3>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Blocks</th>
+<th>Reward (BTE)</th>
+<th>Era Supply (BTE)</th>
+<th>Cumulative (BTE)</th>
+<th>Approx. Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0 – 419,999</td>
+<td>50</td>
+<td>21,000,000</td>
+<td>21,000,000</td>
+<td>2026–2030</td>
+</tr>
+<tr>
+<td>1</td>
+<td>420,000 – 839,999</td>
+<td>25</td>
+<td>10,500,000</td>
+<td>31,500,000</td>
+<td>2030–2034</td>
+</tr>
+<tr>
+<td>2</td>
+<td>840,000 – 1,259,999</td>
+<td>12.5</td>
+<td>5,250,000</td>
+<td>36,750,000</td>
+<td>2034–2038</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,260,000 – 1,679,999</td>
+<td>6.25</td>
+<td>2,625,000</td>
+<td>39,375,000</td>
+<td>2038–2042</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1,680,000 – 2,099,999</td>
+<td>3.125</td>
+<td>1,312,500</td>
+<td>40,687,500</td>
+<td>2042–2046</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2,100,000 – 2,519,999</td>
+<td>1.5625</td>
+<td>656,250</td>
+<td>41,343,750</td>
+<td>2046–2050</td>
+</tr>
+</tbody>
+</table>
+<p>Series continues for 27 additional eras. Total converges to <strong>41,999,999.9538 BTE</strong>
+(verifiable nSum: 4,199,999,995,380,000 satoshis).</p>
+<h3>7.4 Coinbase Maturity</h3>
+<p>A standard coinbase output becomes spendable after <code>100</code> blocks (approximately 8.3 hours). The
+extended maturity rule for the vesting window is described in Section 11.</p>
+<hr>
+<h2>8. Network Parameters</h2>
+<h3>8.1 Ports and Magic</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2P Port (mainnet)</td>
+<td><code>26333</code></td>
+</tr>
+<tr>
+<td>RPC Port (mainnet)</td>
+<td><code>26332</code></td>
+</tr>
+<tr>
+<td>Network magic</td>
+<td><code>0xfeaed5ca</code></td>
+</tr>
+<tr>
+<td>BIP-324 shared secret salt</td>
+<td><code>bitweb_v2_shared_secret</code></td>
+</tr>
+<tr>
+<td>BIPs active from</td>
+<td>Block 1</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 Address Formats</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Prefix</th>
+<th>Version byte</th>
+<th>Encoding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2PKH</td>
+<td><code>E…</code></td>
+<td><code>33</code> (0x21)</td>
+<td>Base58Check</td>
+</tr>
+<tr>
+<td>P2SH</td>
+<td><code>D…</code></td>
+<td><code>30</code> (0x1E)</td>
+<td>Base58Check</td>
+</tr>
+<tr>
+<td>P2WPKH / P2WSH</td>
+<td><code>web1q…</code></td>
+<td>—</td>
+<td>Bech32</td>
+</tr>
+<tr>
+<td>P2TR (Taproot)</td>
+<td><code>web1p…</code></td>
+<td>—</td>
+<td>Bech32m</td>
+</tr>
+</tbody>
+</table>
+<p>All SegWit and Taproot address types inherited from Bitcoin Core are fully supported and active
+from block 1.</p>
+<hr>
+<h2>9. Consensus-Level Security Patches</h2>
+<p>Bitweb Core incorporates several security patches applied at the consensus layer, beyond what
+was present in the inherited Bitcoin Core base.</p>
+<h3>9.1 BIP53 — 64-Byte Transaction Rejection</h3>
+<pre><code class="language-cpp">// tx_check.cpp
+if (!tx.IsCoinBase() &amp;&amp; ::GetSerializeSize(TX_NO_WITNESS(tx)) == 64)
+    return state.Invalid(TxValidationResult::TX_CONSENSUS, &quot;bad-txns-64byte&quot;,
+                         &quot;tx serialized size is exactly 64 bytes (BIP53)&quot;);
+</code></pre>
+<p>Transactions serialized to exactly 64 bytes (without witness) are rejected at the consensus level.
+Such transactions create ambiguity in the Merkle tree: a 64-byte transaction serialization can be
+confused with an internal Merkle node, enabling certain Merkle proof forgeries. Coinbase
+transactions are exempt because a 64-byte coinbase would require approximately 224 bits of work
+to construct and is therefore practically impossible to produce maliciously.</p>
+<h3>9.2 CVE-2018-17144 — Duplicate Input Detection</h3>
+<p>Transactions are checked for duplicate inputs before any UTXO lookup. The original vulnerability
+could result in coin inflation if a transaction spending the same output twice passed validation in
+certain caching conditions.</p>
+<hr>
+<h2>10. Genesis Airdrop</h2>
+<h3>10.1 Background</h3>
+<p>The prior Bitweb chain had an established holder base. To preserve holder equity across the
+relaunch, a full balance snapshot of the old chain was taken at its final block and used as the
+initial allocation for new BTE.</p>
+<h3>10.2 Snapshot Methodology</h3>
+<p>A purpose-built UTXO scanner (<code>btesnapshot.py</code>) performed a full scan of the old chain via the
+Bitcoin RPC <code>getblock</code> interface with verbosity level 2, processing all transaction inputs and
+outputs in order to reconstruct the final UTXO set. All standard script types were supported:</p>
+<table>
+<thead>
+<tr>
+<th>Script type</th>
+<th>Address resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2PKH</td>
+<td>Decoded by node; Bitweb prefix 33 (0x21)</td>
+</tr>
+<tr>
+<td>P2SH</td>
+<td>Decoded by node; Bitweb prefix 30 (0x1E)</td>
+</tr>
+<tr>
+<td>P2WPKH</td>
+<td>Decoded by node; Bech32 <code>web1q…</code></td>
+</tr>
+<tr>
+<td>P2WSH</td>
+<td>Decoded by node; Bech32 <code>web1q…</code></td>
+</tr>
+<tr>
+<td>P2TR</td>
+<td>Decoded by node; Bech32m <code>web1p…</code></td>
+</tr>
+<tr>
+<td>P2PK</td>
+<td>Derived manually: Hash160(pubkey) → Base58Check with version byte 33</td>
+</tr>
+<tr>
+<td><code>OP_RETURN</code></td>
+<td>Skipped (unspendable by design)</td>
+</tr>
+</tbody>
+</table>
+<p>The scanner operated in batches of 1,000 blocks per RPC round-trip, with a two-phase design:
+a validation run over the first 1,000 blocks, followed by a full scan upon manual confirmation.</p>
+<p>The output was a file of <code>address:satoshis</code> pairs representing the final UTXO-aggregated balance of
+every address that held coins at snapshot height.</p>
+<h3>10.3 Denomination</h3>
+<p>A 100:1 denomination was applied: one new BTE for every 100 old coins. This was implemented with
+ceiling rounding to avoid penalising small holders:</p>
+<pre><code class="language-python"># denominator.py 
+sat_new = math.ceil(sat_old / 100)
+</code></pre>
+<p>Any address whose denominated balance fell below <code>10,000 satoshis</code> was raised to <code>10,000 satoshis</code>
+(the dust floor). This ensures every holder receives a balance above the standard relay dust
+threshold, regardless of how small their position on the old chain was.</p>
+<h3>10.4 Distribution Mechanics</h3>
+<p>The denominated airdrop file was submitted to the new chain using <code>sendmany</code> RPC calls in batches
+of 500 addresses, with a fee rate of <code>2 sat/vB</code> and a checkpoint-resume mechanism so that a
+interrupted airdrop process could continue from the last confirmed batch without re-sending any
+payment.</p>
+<p>Each batch was confirmed before the next was submitted, enforcing sequential ordering and
+preventing fee market congestion from simultaneous large-scale output creation.</p>
+<hr>
+<h2>11. Vesting and Anti-Dump Protection</h2>
+<h3>11.1 Rationale</h3>
+<p>A snapshot-based airdrop creates an immediate supply overhang: all distributed coins are
+simultaneously unencumbered at genesis. Without a mitigation, large holders from the old chain
+could sell their entire allocation in the first blocks, suppressing price discovery and
+disadvantaging new participants who discover the network later.</p>
+<h3>11.2 Mechanism</h3>
+<p>Bitweb Core introduces an extended coinbase maturity rule applied to blocks 60,000 through 69,299.
+These blocks were mined during the distribution window immediately following the genesis airdrop.</p>
+<pre><code class="language-cpp">// Consensus::CheckTxInputs (tx_check excerpt)
+static constexpr int EXT_MATURITY_START = 60000;
+static constexpr int EXT_MATURITY_END   = EXT_MATURITY_START + EXT_COINBASE_MATURITY; // 69300
+
+if (coin.nHeight &gt;= EXT_MATURITY_START &amp;&amp; coin.nHeight &lt; EXT_MATURITY_END) {
+    // Required depth = (EXT_MATURITY_END - coin.nHeight) + COINBASE_MATURITY
+    if (nSpendHeight - coin.nHeight &lt; (EXT_MATURITY_END - coin.nHeight) + COINBASE_MATURITY)
+        return state.Invalid(..., &quot;bad-txns-premature-spend-of-coinbase&quot;, ...);
+}
+</code></pre>
+<p>The maturity requirement is computed such that for any block <code>h</code> in <code>[60000, 69299]</code>, the coinbase
+output becomes spendable at block <code>69300 + 100 = 69400</code>. Every coinbase from the extended window
+unlocks simultaneously at block <strong>69,400</strong>.</p>
+<h3>11.3 Key Blocks</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre Miner for airdrop/swap distribution</td>
+<td>0 – 59,999</td>
+</tr>
+<tr>
+<td>Extended maturity window starts</td>
+<td>60,000</td>
+</tr>
+<tr>
+<td>Extended maturity window ends</td>
+<td>69,299</td>
+</tr>
+<tr>
+<td>All extended coinbases unlock</td>
+<td>69,400</td>
+</tr>
+</tbody>
+</table>
+<h3>11.4 Properties</h3>
+<ul>
+<li><strong>Cliff, not gradual release.</strong> All locked coins unlock at the same block (69,400). This is a
+deliberate design choice: gradual release schedules create recurring sell pressure events.
+A single cliff gives the market a known, predictable date to price in.</li>
+<li><strong>Miner reward unaffected.</strong> The block reward is always 50 BTE throughout this period.
+Only spendability is delayed, not the reward itself.</li>
+<li><strong>Standard maturity resumes at 69,400.</strong> After the cliff, all coinbases mature after the standard
+100 blocks (~8.3 hours).</li>
+</ul>
+<h3>11.5 Pool Operator Note</h3>
+<p>A pool accumulating one coinbase per block across the 9,300-block window will hold over 1,600
+unspent coinbase outputs by the time it attempts a large payout. A <code>sendmany</code> transaction
+spending more than ~500 of these inputs may exceed the standard transaction size limit. Pool
+operators should consolidate in batches of no more than 50,000 BTE per transaction, and perform
+consolidation after block 69,400 to avoid extended-maturity errors.</p>
+<hr>
+<h2>13. Conclusion</h2>
+<p>Bitweb Core applies three targeted modifications to Bitcoin Core: Argon2id as a memory-hard
+proof-of-work function, LWMA-3 per-block difficulty retargeting calibrated to a five-minute block
+interval, and a snapshot-based genesis airdrop with a vesting cliff to manage initial supply
+distribution. All other Bitcoin Core behaviour — transaction format, UTXO model, SegWit, Taproot,
+BIP-324 transport encryption, reproducible builds, and the full test suite — is preserved.</p>
+<p>The design prioritises verifiability. Every consensus-critical parameter is embedded directly in
+source code and documented here. Every release binary is independently reproducible via GNU Guix
+and GPG-signed. The development process is open: there is no privileged developer class, and all
+changes go through public peer review.</p>
+<p>Source: <a href="https://github.com/bitweb-project/bitweb">github.com/bitweb-project/bitweb</a><br>
+Website: <a href="https://bitwebcore.net">bitwebcore.net</a></p>
+<hr>
+<h2>Appendix A — Network Parameter Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ticker</td>
+<td>BTE</td>
+</tr>
+<tr>
+<td>Max supply (params)</td>
+<td>42,000,000 BTE</td>
+</tr>
+<tr>
+<td>Issuable supply (satoshi precision)</td>
+<td>41,999,999.9538 BTE</td>
+</tr>
+<tr>
+<td>nSum (C++ verifiable)</td>
+<td>4,199,999,995,380,000 sat</td>
+</tr>
+<tr>
+<td>Initial block reward</td>
+<td>50 BTE</td>
+</tr>
+<tr>
+<td>Halving interval</td>
+<td>420,000 blocks</td>
+</tr>
+<tr>
+<td>Halving period</td>
+<td>≈ 4.0 years</td>
+</tr>
+<tr>
+<td>Target block time</td>
+<td>300 s (5 min)</td>
+</tr>
+<tr>
+<td>Coinbase maturity (standard)</td>
+<td>100 blocks (~8.3 h)</td>
+</tr>
+<tr>
+<td>Coinbase maturity (extended)</td>
+<td>Variable; all unlock at block 69,400</td>
+</tr>
+<tr>
+<td>PoW algorithm</td>
+<td>Argon2id</td>
+</tr>
+<tr>
+<td>Argon2id <code>t</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>Argon2id <code>m</code></td>
+<td>1024 KiB</td>
+</tr>
+<tr>
+<td>Argon2id <code>p</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Difficulty algorithm</td>
+<td>LWMA-3</td>
+</tr>
+<tr>
+<td>LWMA window N</td>
+<td>576 blocks</td>
+</tr>
+<tr>
+<td>Retarget</td>
+<td>Every block</td>
+</tr>
+<tr>
+<td>Max future block time (FTL)</td>
+<td>600 s</td>
+</tr>
+<tr>
+<td>Pre - Mined blocks for Airdrop/Swap and project needs.</td>
+<td>60,000</td>
+</tr>
+<tr>
+<td>PoW limit</td>
+<td><code>000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</code> or <code>0x1f0fffff</code></td>
+</tr>
+<tr>
+<td>Genesis block hash</td>
+<td><code>111692c1b9b390c407ab74d7f924d4fa0f7589974ab61af96392feca11f209e6</code></td>
+</tr>
+<tr>
+<td>P2P port (mainnet)</td>
+<td>26333</td>
+</tr>
+<tr>
+<td>RPC port (mainnet)</td>
+<td>26332</td>
+</tr>
+<tr>
+<td>Network magic</td>
+<td>0xfeaed5ca</td>
+</tr>
+<tr>
+<td>BIP-324 salt</td>
+<td><code>bitweb_v2_shared_secret</code></td>
+</tr>
+<tr>
+<td>P2PKH prefix</td>
+<td>E (dec 33, 0x21)</td>
+</tr>
+<tr>
+<td>P2SH prefix</td>
+<td>D (dec 30, 0x1E)</td>
+</tr>
+<tr>
+<td>Bech32 HRP</td>
+<td><code>web</code></td>
+</tr>
+<tr>
+<td>SegWit / Taproot</td>
+<td>Active from block 1</td>
+</tr>
+<tr>
+<td>BIPs</td>
+<td>Active from block 1</td>
+</tr>
+<tr>
+<td>License</td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Appendix B — Airdrop Toolchain</h2>
+<p>Three scripts were used in sequence to produce and distribute the genesis airdrop:</p>
+<p><strong>1. <code>btesnapshot.py</code></strong> — UTXO scanner.<br>
+Connects to the old chain's RPC node, scans all blocks in batches of 1,000, reconstructs the final
+UTXO set, resolves addresses for all standard script types including P2PK (manual derivation with
+Bitweb version byte 33), and outputs <code>address:satoshis</code> pairs.
+can be found at https://github.com/bitweb-project/bitweb-maintainer-tools/blob/main/btesnapshot.py</p>
+<p><strong>2. <code>denominator.py</code></strong> — Denomination and dust adjustment.<br>
+Reads the snapshot file, applies 100:1 denomination with ceiling rounding, raises any result below
+10,000 satoshis to 10,000 satoshis (dust floor), and outputs the adjusted <code>address:satoshis</code> file
+sorted descending by balance.
+can be found at https://github.com/bitweb-project/bitweb-maintainer-tools/blob/main/denominator.py</p>
+<p><strong>3. <code>aitdrop.py</code></strong> — Distribution sender.<br>
+Reads the denominated file, batches addresses into groups of 500, and submits each batch via
+<code>sendmany</code> RPC with fee rate 2 sat/vB. Maintains a checkpoint file so interrupted runs resume
+from the last confirmed batch. Waits for at least one confirmation per batch before proceeding.
+can be found at https://github.com/bitweb-project/bitweb-maintainer-tools/blob/main/aitdrop.py</p>
+<hr>
+<h2>Appendix C — Halving Schedule</h2>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Block range</th>
+<th>Reward (BTE)</th>
+<th>Era supply (BTE)</th>
+<th>Cumulative (BTE)</th>
+<th>Target year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0 – 419,999</td>
+<td>50</td>
+<td>21,000,000</td>
+<td>21,000,000</td>
+<td>2026–2030</td>
+</tr>
+<tr>
+<td>1</td>
+<td>420,000 – 839,999</td>
+<td>25</td>
+<td>10,500,000</td>
+<td>31,500,000</td>
+<td>2030–2034</td>
+</tr>
+<tr>
+<td>2</td>
+<td>840,000 – 1,259,999</td>
+<td>12.5</td>
+<td>5,250,000</td>
+<td>36,750,000</td>
+<td>2034–2038</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,260,000 – 1,679,999</td>
+<td>6.25</td>
+<td>2,625,000</td>
+<td>39,375,000</td>
+<td>2038–2042</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1,680,000 – 2,099,999</td>
+<td>3.125</td>
+<td>1,312,500</td>
+<td>40,687,500</td>
+<td>2042–2046</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2,100,000 – 2,519,999</td>
+<td>1.5625</td>
+<td>656,250</td>
+<td>41,343,750</td>
+<td>2046–2050</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2,520,000 – 2,939,999</td>
+<td>0.78125</td>
+<td>328,125</td>
+<td>41,671,875</td>
+<td>2050–2054</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2,940,000 – 3,359,999</td>
+<td>0.390625</td>
+<td>164,062.5</td>
+<td>41,835,937.5</td>
+<td>2054–2058</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>33</td>
+<td>13,440,000 – 13,859,999</td>
+<td>0.00000001</td>
+<td>0.0042</td>
+<td>41,999,999.9538</td>
+<td>~2162</td>
+</tr>
+</tbody>
+</table>
+<p>Reward halves every 420,000 blocks. Series runs 33 eras until reward = 1 satoshi (0.00000001 BTE).
+Total issuable: <strong>41,999,999.9538 BTE</strong> (nSum: 4,199,999,995,380,000 satoshis).</p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/static/js/whitepaper.js"></script>
+</main>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">Програмне забезпечення з відкритим кодом, випущене під ліцензією MIT.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Проєкт</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/about/" class="footer-link">Про проєкт</a></li>
+          <li><a href="/uk/wallets/full-node/" class="footer-link">Повний вузол</a></li>
+          <li><a href="/uk/blog/" class="footer-link">Новини</a></li>
+          <li><a href="/uk/resources/" class="footer-link">Ресурси</a></li>
+          <li><a href="/uk/brand/" class="footer-link">Брендові активи</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Розробники</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/development/" class="footer-link">Участь</a></li>
+          <li><a href="/uk/development/rpc/" class="footer-link">RPC Документація</a></li>
+          <li><a href="/uk/whitepaper/" class="footer-link">Біла книга</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Підписи Guix
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Безпека</h6>
+        <p class="text-secondary small mb-1">Відбиток GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Перевірити ключ на OpenPGP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Ліцензія MIT</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+
+</body>
+</html>

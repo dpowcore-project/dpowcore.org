@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="uk" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Development">
+  <meta property="og:description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://bitwebcore.net/uk/development/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Development — Bitweb Core</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/uk/development/">
+  
+    
+      
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/development/">
+      
+    
+      
+    
+      
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="ja" href="https://bitwebcore.net/ja/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="es" href="https://bitwebcore.net/es/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="pl" href="https://bitwebcore.net/pl/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="pt" href="https://bitwebcore.net/pt/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/development/">
+      
+    
+      
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/development/">
+      
+    
+  
+</head>
+<body>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+  <div class="container">
+
+    <a class="navbar-brand" href="/uk/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/">Головна</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/about/">Про проєкт</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Гаманці
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/uk/wallets/full-node/">
+              <i class="fa-solid fa-server fa-fw me-2"></i>Повний вузол
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/wallets/web/">
+              <i class="fa-solid fa-globe fa-fw me-2"></i>Веб-гаманець
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/blog/">Новини</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/mining/">Майнінг</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/uk/resources/">Ресурси</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Розробка
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/uk/development/">
+              <i class="fa-solid fa-code fa-fw me-2"></i>Участь
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/development/rpc/">
+              <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC Документація
+            </a></li>
+            <li><a class="dropdown-item" href="/uk/whitepaper/">
+              <i class="fa-solid fa-file-lines fa-fw me-2"></i>Біла книга
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" type="button">
+            <i class="fa-solid fa-language"></i>
+            <span>UK</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+            
+            <li><a class="dropdown-item"
+                   href="/en/development/">
+              EN&nbsp; English
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/de/development/">
+              DE&nbsp; Deutsch
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/es/development/">
+              ES&nbsp; Español
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/fr/development/">
+              FR&nbsp; Français
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/it/development/">
+              IT&nbsp; Italiano
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ja/development/">
+              JA&nbsp; 日本語
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ko/development/">
+              KO&nbsp; 한국어
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pl/development/">
+              PL&nbsp; Polski
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pt/development/">
+              PT&nbsp; Português
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ro/development/">
+              RO&nbsp; Română
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ru/development/">
+              RU&nbsp; Русский
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/tr/development/">
+              TR&nbsp; Türkçe
+            </a></li>
+            
+            <li><a class="dropdown-item active"
+                   href="/uk/development/">
+              UK&nbsp; Українська
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/zh/development/">
+              ZH&nbsp; 中文
+            </a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
+            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Авто
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+              <i class="fa-solid fa-sun fa-fw me-2"></i>Світла
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+              <i class="fa-solid fa-moon fa-fw me-2"></i>Темна
+            </button></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+  <h1 class="bwc-section-title mb-2">Розробка</h1>
+  <p class="bwc-section-lead mb-5">Долучайтеся до Bitweb Core або досліджуйте RPC API.</p>
+
+  <div class="row gy-4 mb-5">
+
+    <div class="col-12 col-md-6">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-code-pull-request"></i></div>
+        <h2 class="h4 mb-3">Участь у розробці</h2>
+        <p class="text-secondary small mb-3">Bitweb Core — проєкт відкритих учасників: будь-хто може долучитися через рецензування, тестування та патчі. Немає привілейованого класу розробників; учасники заробляють довіру через заслуги. Підтримувачі репозиторію відповідають за злиття запитів на pull та цикл випусків.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="https://github.com/bitweb-project/bitweb" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
+            <i class="fa-brands fa-github me-2"></i>Форкнути на GitHub
+          </a>
+          <a href="https://github.com/bitweb-project/bitweb/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
+            <i class="fa-solid fa-book-open me-2"></i>Посібник з участі
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-terminal"></i></div>
+        <h2 class="h4 mb-3">RPC Документація</h2>
+        <p class="text-secondary small mb-3">Повний довідник JSON-RPC API для bitweb-cli та інтерфейсу RPC.</p>
+        <a href="/uk/development/rpc/" class="btn btn-bwc-primary btn-sm">
+          <i class="fa-solid fa-arrow-right me-1"></i>Переглянути документацію RPC
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="bwc-card h-100">
+        <div class="bwc-card-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h2 class="h4 mb-3">Біла книга</h2>
+        <p class="text-secondary small mb-3">Технічна специфікація, що охоплює Argon2id proof-of-work, складність LWMA-3, грошову політику та ейрдроп генезису.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="/uk/whitepaper/" class="btn btn-bwc-primary btn-sm">
+            <i class="fa-solid fa-arrow-right me-1"></i>Читати білу книгу
+          </a>
+          <a href="/static/whitepaper.pdf" class="btn btn-bwc-secondary btn-sm" download>
+            <i class="fa-solid fa-file-pdf me-1"></i>Завантажити PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <h2 class="h4 mb-3">Збірка з вихідного коду</h2>
+  <p class="text-secondary small mb-4">Посібники зі збірки для всіх підтримуваних платформ підтримуються в репозиторії.</p>
+
+  <div class="row gy-3">
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/contrib/guix/README.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-shield-halved fa-2x mb-2 text-secondary"></i>
+        <div class="small">Відтворювані збірки (Guix)</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/build-unix.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-brands fa-linux fa-2x mb-2 text-secondary"></i>
+        <div class="small">Linux / Unix</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/build-osx.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-brands fa-apple fa-2x mb-2 text-secondary"></i>
+        <div class="small">macOS</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/build-freebsd.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-server fa-2x mb-2 text-secondary"></i>
+        <div class="small">FreeBSD</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/build-openbsd.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-server fa-2x mb-2 text-secondary"></i>
+        <div class="small">OpenBSD</div>
+      </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/build-netbsd.md" target="_blank" rel="noopener"
+         class="bwc-card text-decoration-none text-center d-block py-3 h-100">
+        <i class="fa-solid fa-server fa-2x mb-2 text-secondary"></i>
+        <div class="small">NetBSD</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+</main>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">Програмне забезпечення з відкритим кодом, випущене під ліцензією MIT.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Проєкт</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/about/" class="footer-link">Про проєкт</a></li>
+          <li><a href="/uk/wallets/full-node/" class="footer-link">Повний вузол</a></li>
+          <li><a href="/uk/blog/" class="footer-link">Новини</a></li>
+          <li><a href="/uk/resources/" class="footer-link">Ресурси</a></li>
+          <li><a href="/uk/brand/" class="footer-link">Брендові активи</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Розробники</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/development/" class="footer-link">Участь</a></li>
+          <li><a href="/uk/development/rpc/" class="footer-link">RPC Документація</a></li>
+          <li><a href="/uk/whitepaper/" class="footer-link">Біла книга</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Підписи Guix
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Безпека</h6>
+        <p class="text-secondary small mb-1">Відбиток GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Перевірити ключ на OpenPGP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Ліцензія MIT</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Web Wallet">
+  <meta property="og:description" content="Bitweb Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://bitwebcore.net/pt/wallets/web/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Web Wallet — Bitweb Core</title>
+
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/pt/wallets/web/">
+  
+    
+      
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="uk" href="https://bitwebcore.net/uk/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="ja" href="https://bitwebcore.net/ja/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="es" href="https://bitwebcore.net/es/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="pl" href="https://bitwebcore.net/pl/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/wallets/web/">
+      
+    
+      
+    
+      
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/wallets/web/">
+      
+    
+      
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/wallets/web/">
+      
+    
+  
+</head>
+<body>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+  <div class="container">
+
+    <a class="navbar-brand" href="/pt/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/pt/">Início</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/pt/about/">Sobre</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Carteiras
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/pt/wallets/full-node/">
+              <i class="fa-solid fa-server fa-fw me-2"></i>Nó Completo
+            </a></li>
+            <li><a class="dropdown-item" href="/pt/wallets/web/">
+              <i class="fa-solid fa-globe fa-fw me-2"></i>Carteira Web
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/pt/blog/">Notícias</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/pt/mining/">Mineração</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/pt/resources/">Recursos</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Desenvolvimento
+          </a>
+          <ul class="dropdown-menu bwc-dd">
+            <li><a class="dropdown-item" href="/pt/development/">
+              <i class="fa-solid fa-code fa-fw me-2"></i>Contribuir
+            </a></li>
+            <li><a class="dropdown-item" href="/pt/development/rpc/">
+              <i class="fa-solid fa-terminal fa-fw me-2"></i>Documentação RPC
+            </a></li>
+            <li><a class="dropdown-item" href="/pt/whitepaper/">
+              <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
+            </a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" type="button">
+            <i class="fa-solid fa-language"></i>
+            <span>PT</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+            
+            <li><a class="dropdown-item"
+                   href="/en/wallets/web/">
+              EN&nbsp; English
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/de/wallets/web/">
+              DE&nbsp; Deutsch
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/es/wallets/web/">
+              ES&nbsp; Español
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/fr/wallets/web/">
+              FR&nbsp; Français
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/it/wallets/web/">
+              IT&nbsp; Italiano
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ja/wallets/web/">
+              JA&nbsp; 日本語
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ko/wallets/web/">
+              KO&nbsp; 한국어
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/pl/wallets/web/">
+              PL&nbsp; Polski
+            </a></li>
+            
+            <li><a class="dropdown-item active"
+                   href="/pt/wallets/web/">
+              PT&nbsp; Português
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ro/wallets/web/">
+              RO&nbsp; Română
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/ru/wallets/web/">
+              RU&nbsp; Русский
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/tr/wallets/web/">
+              TR&nbsp; Türkçe
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/uk/wallets/web/">
+              UK&nbsp; Українська
+            </a></li>
+            
+            <li><a class="dropdown-item"
+                   href="/zh/wallets/web/">
+              ZH&nbsp; 中文
+            </a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown bwc-util-item">
+          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
+            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Automático
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+              <i class="fa-solid fa-sun fa-fw me-2"></i>Claro
+            </button></li>
+            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+              <i class="fa-solid fa-moon fa-fw me-2"></i>Escuro
+            </button></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+
+  <div class="mb-5">
+    <h1 class="bwc-section-title"><i class="fa-solid fa-globe me-2"></i>Carteira Web</h1>
+    <p class="bwc-section-lead">Carteira baseada em navegador — sem instalação necessária. Suas chaves permanecem no seu dispositivo.</p>
+  </div>
+
+  <div class="bwc-verify mb-5">
+    <div class="alert bwc-alert-warning d-flex align-items-start gap-3 mb-4">
+      <i class="fa-solid fa-triangle-exclamation mt-1 bwc-alert-icon"></i>
+      <span>Esta é uma carteira web não custodial. Nunca compartilhe sua frase semente ou chaves privadas com ninguém.</span>
+    </div>
+
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Serviço</th>
+          <th>Tipo</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="fa-solid fa-wallet bwc-icon-accent me-2"></i>Carteira Web</td>
+          <td><span class="bwc-badge-latest">Não custodial</span></td>
+          <td>
+            <a href="https://webwallet2.bitwebcore.net" target="_blank" rel="noopener">
+              webwallet2.bitwebcore.net
+              <i class="fa-solid fa-arrow-up-right-from-square ms-1 small"></i>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="fa-solid fa-plug bwc-icon-muted me-2"></i>API da Carteira</td>
+          <td><span class="bwc-text-muted-sm">REST API</span></td>
+          <td>
+            <a href="https://api2.bitwebcore.net" target="_blank" rel="noopener">
+              api2.bitwebcore.net
+              <i class="fa-solid fa-arrow-up-right-from-square ms-1 small"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</main>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">Software de código aberto, lançado sob a Licença MIT.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Projeto</h6>
+        <ul class="list-unstyled">
+          <li><a href="/pt/about/" class="footer-link">Sobre</a></li>
+          <li><a href="/pt/wallets/full-node/" class="footer-link">Nó Completo</a></li>
+          <li><a href="/pt/blog/" class="footer-link">Notícias</a></li>
+          <li><a href="/pt/resources/" class="footer-link">Recursos</a></li>
+          <li><a href="/pt/brand/" class="footer-link">Materiais da Marca</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Desenvolvedores</h6>
+        <ul class="list-unstyled">
+          <li><a href="/pt/development/" class="footer-link">Contribuir</a></li>
+          <li><a href="/pt/development/rpc/" class="footer-link">Documentação RPC</a></li>
+          <li><a href="/pt/whitepaper/" class="footer-link">White Paper</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Assinaturas Guix
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Segurança</h6>
+        <p class="text-secondary small mb-1">Impressão digital GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Verificar chave no OpenPGP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licença MIT</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/theme.js"></script>
+
+</body>
+</html>
