@@ -35,9 +35,9 @@
 </head>
 <body>
 
-{% include "partials/nav.njk" %}
+{%- include "partials/nav.njk" %}
 <main>{{ content | safe }}</main>
-{% include "partials/footer.njk" %}
+{%- include "partials/footer.njk" -%}
 
 <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
 <script src="/static/js/bootstrap.bundle.min.js"

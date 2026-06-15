@@ -1,8 +1,8 @@
-{% set l = locale | default('en') %}
-{% for lang in site.locales %}
-  {% if ('/' + lang + '/') in page.url %}{% set l = lang %}{% endif %}
-{% endfor %}
-{% set t = i18n[l] %}
+{%- set l = locale | default('en') -%}
+{%- for lang in site.locales -%}
+  {%- if ('/' + lang + '/') in page.url %}{%- set l = lang -%}{%- endif -%}
+{%- endfor -%}
+{%- set t = i18n[l] -%}
 
 <footer class="bwc-footer mt-auto py-5">
   <div class="container">

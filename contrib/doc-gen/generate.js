@@ -110,7 +110,8 @@ for (const group of groups) {
   console.log(`  [${group.name}] ${group.methods.length} methods`);
   for (const name of group.methods) {
     process.stdout.write(`    • ${name}…`);
-    methods.push({ name, category: group.name, description: run('help', name) });
+    const desc = run('help', name).split('\n').map(l => l.trimEnd()).join('\n');
+    methods.push({ name, category: group.name, description: desc });
     process.stdout.write(' ✓\n');
   }
 }

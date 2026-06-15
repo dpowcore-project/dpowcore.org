@@ -65,7 +65,7 @@ pageTitle: "Home"
   </div>
 </section>
 
-{# ── Coin Specification ── #}
+{#- ── Coin Specification ── -#}
 <section class="bwc-section bwc-section-flush">
   <div class="container">
 
@@ -79,7 +79,7 @@ pageTitle: "Home"
       </div>
     </div>
 
-    {# Economics row #}
+    {#- Economics row -#}
     <div class="row gy-3 mb-4">
       <div class="col-6 col-lg-3">
         <div class="bwc-spec-stat">
@@ -111,7 +111,7 @@ pageTitle: "Home"
       </div>
     </div>
 
-    {# PoW + Difficulty #}
+    {#- PoW + Difficulty -#}
     <div class="row gy-4 mb-4">
       <div class="col-12 col-md-6">
         <div class="bwc-card h-100">
@@ -156,7 +156,7 @@ pageTitle: "Home"
       </div>
     </div>
 
-    {# Address Formats + Network #}
+    {#- Address Formats + Network -#}
     <div class="row gy-4 mb-4">
       <div class="col-12 col-md-6">
         <div class="bwc-card h-100">
@@ -223,7 +223,7 @@ pageTitle: "Home"
       </div>
     </div>
 
-    {# Genesis + PoW Limit #}
+    {#- Genesis + PoW Limit -#}
     <div class="row gy-4">
       <div class="col-12 col-md-6">
         <div class="bwc-card h-100">
@@ -253,7 +253,7 @@ pageTitle: "Home"
       <p class="bwc-section-lead mb-0">{{ t.vest_subtitle }}</p>
     </div>
 
-    {# Row 1: Background + Vesting protection #}
+    {#- Row 1: Background + Vesting protection -#}
     <div class="row gy-4 mb-4">
       <div class="col-12 col-md-6">
         <div class="bwc-card h-100">
@@ -269,7 +269,7 @@ pageTitle: "Home"
       </div>
     </div>
 
-    {# Row 2: Key blocks #}
+    {#- Row 2: Key blocks -#}
     <div class="bwc-card mb-4">
       <div class="bwc-spec-sub-title mb-3">{{ t.vest_blocks_title }}</div>
       <div class="row gy-3">
@@ -297,7 +297,7 @@ pageTitle: "Home"
       </div>
     </div>
 
-    {# Row 3: Miner note + Pool warning #}
+    {#- Row 3: Miner note + Pool warning -#}
     <div class="row gy-4">
       <div class="col-12 col-md-6">
         <div class="bwc-vest-note bwc-vest-note--miner">
@@ -355,9 +355,9 @@ pageTitle: "Home"
     {%- else -%}
       {%- set posts = collections.blogEn -%}
     {%- endif -%}
-    {% if posts and posts.length %}
+    {%- if posts and posts.length %}
     <div class="row gy-3">
-      {% for post in posts | slice(0, 3) %}
+      {%- for post in posts | slice(0, 3) %}
       <div class="col-12 col-md-4">
         <div class="bwc-post-card">
           <div class="bwc-post-date mb-2">{{ post.date | dateShort }}</div>
@@ -366,14 +366,14 @@ pageTitle: "Home"
           <a href="{{ post.url }}" class="small">{{ t.read_more }}</a>
         </div>
       </div>
-      {% endfor %}
+      {%- endfor %}
     </div>
-    {% else %}
+    {%- else %}
     <div class="bwc-placeholder text-center py-4">
       <i class="fa-solid fa-newspaper fs-3 d-block mb-2 opacity-50"></i>
       <p class="mb-0">{{ t.news_empty }}</p>
     </div>
-    {% endif %}
+    {%- endif %}
   </div>
 </section>
 

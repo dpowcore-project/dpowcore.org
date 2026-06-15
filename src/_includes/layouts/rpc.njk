@@ -7,7 +7,7 @@ layout: layouts/base.njk
 <div class="container-fluid rpc-layout">
   <div class="row g-0">
 
-    {# ── Sidebar ── built from rpc.json — no duplication #}
+    {#- ── Sidebar ── built from rpc.json — no duplication -#}
     <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
         <div class="mb-3">
@@ -26,11 +26,11 @@ layout: layouts/base.njk
         </a>
 
         <nav id="rpcNav" aria-label="RPC methods">
-          {% set currentCat = "" %}
-          {% for m in rpc.methods | sort(false, false, "category") %}
-            {% if m.category != currentCat %}
-              {% if currentCat != "" %}</ul></div>{% endif %}
-              {% set currentCat = m.category %}
+          {%- set currentCat = "" -%}
+          {%- for m in rpc.methods | sort(false, false, "category") %}
+            {%- if m.category != currentCat %}
+              {%- if currentCat != "" %}</ul></div>{% endif %}
+              {%- set currentCat = m.category -%}
               <div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
@@ -39,20 +39,20 @@ layout: layouts/base.njk
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>{{ m.category }}
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            {% endif %}
+            {%- endif %}
               <li>
                 <a href="/{{ l }}/development/rpc/{{ m.name }}/"
                    class="rpc-method-link{% if page.url == '/' + l + '/development/rpc/' + m.name + '/' %} active{% endif %}">
                   {{ m.name }}
                 </a>
               </li>
-          {% endfor %}
-          {% if currentCat != "" %}</ul></div>{% endif %}
+          {%- endfor %}
+          {%- if currentCat != "" %}</ul></div>{% endif %}
         </nav>
       </div>
     </aside>
 
-    {# ── Main content ── #}
+    {#- ── Main content ── -#}
     <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4">
       {{ content | safe }}
     </div>

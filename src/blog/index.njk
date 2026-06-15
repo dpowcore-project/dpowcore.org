@@ -13,27 +13,27 @@ pageTitle: "News"
 <div class="container py-5">
   <h1 class="bwc-section-title mb-5">{{ t.news_title }}</h1>
 
-  {% if posts and posts.length %}
+  {%- if posts and posts.length %}
   <div class="row gy-4">
-    {% for post in posts %}
+    {%- for post in posts %}
     {%- set rawSlug = post.data.permalink | replace("/en/blog/", "") | replace("/", "") -%}
     {%- set slug = rawSlug if rawSlug else post.fileSlug -%}
     <div class="col-12 col-md-6 col-lg-4">
       <div class="bwc-post-card">
         <div class="bwc-post-date mb-2">{{ post.data.date | dateShort }}</div>
         <h2 class="bwc-post-title">
-          <a href="/{{ locale }}/blog/{{ slug }}/" class="text-decoration-none text-white">{{ post.data.title }}</a>
+          <a href="/{{ locale }}/blog/{{ slug }}/" class="text-decoration-none bwc-post-title-link">{{ post.data.title }}</a>
         </h2>
         <p class="text-secondary small mb-3">{{ post.data.summary | default("") }}</p>
         <a href="/{{ locale }}/blog/{{ slug }}/" class="small">{{ t.read_more }}</a>
       </div>
     </div>
-    {% endfor %}
+    {%- endfor %}
   </div>
-  {% else %}
+  {%- else %}
   <div class="bwc-placeholder text-center py-5">
     <i class="fa-solid fa-newspaper fs-2 d-block mb-3 opacity-50"></i>
     <p class="mb-0">{{ t.news_empty }}</p>
   </div>
-  {% endif %}
+  {%- endif %}
 </div>

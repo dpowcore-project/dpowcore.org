@@ -21,22 +21,22 @@ pageTitle: "RPC"
     <span class="badge bg-secondary text-uppercase align-self-start">{{ rpc.version }}</span>
   </div>
 
-  {% set currentCat = "" %}
-  {% for method in rpc.methods | sort(false, false, "category") %}
-    {% if method.category != currentCat %}
-      {% if currentCat != "" %}</div>{% endif %}
-      {% set currentCat = method.category %}
+  {%- set currentCat = "" -%}
+  {%- for method in rpc.methods | sort(false, false, "category") %}
+    {%- if method.category != currentCat %}
+      {%- if currentCat != "" %}</div>{% endif %}
+      {%- set currentCat = method.category -%}
       <h2 class="rpc-index-cat mt-4 mb-2 h5 text-uppercase text-secondary fw-semibold">
         {{ method.category }}
       </h2>
       <div class="rpc-index-group d-flex flex-wrap gap-2 mb-2">
-    {% endif %}
+    {%- endif %}
       <a href="/{{ locale }}/development/rpc/{{ method.name }}/"
          class="rpc-index-pill badge bg-body-tertiary text-body border text-decoration-none">
         {{ method.name }}
       </a>
-  {% endfor %}
-  {% if currentCat != "" %}</div>{% endif %}
+  {%- endfor %}
+  {%- if currentCat != "" %}</div>{% endif %}
 
   <p class="text-muted small mt-5">
     Generated {{ rpc.generated | dateShort }}.

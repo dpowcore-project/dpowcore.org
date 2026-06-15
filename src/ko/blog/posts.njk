@@ -20,21 +20,21 @@ permalink: "/ko/blog/{{ post.data.permalink | replace('/en/blog/', '') | replace
       <h1 class="bwc-section-title mb-4">{{ post.data.title }}</h1>
       <hr class="bwc-divider">
 
-      {% if post.data.github_release or post.data.download_url or post.data.release_notes %}
+      {%- if post.data.github_release or post.data.download_url or post.data.release_notes %}
       <p class="mb-4">
-        {% if post.data.github_release %}
+        {%- if post.data.github_release %}
         <a href="{{ post.data.github_release }}" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm me-2">
           <i class="fa-brands fa-github me-1"></i>{{ post.data.github_release_label | default("GitHub Release") }}
         </a>
-        {% endif %}
-        {% if post.data.download_url %}
+        {%- endif %}
+        {%- if post.data.download_url %}
         <a href="/ko/wallets/full-node/" class="btn btn-bwc-secondary btn-sm me-2">{{ t.home_download | default("Download") }}</a>
-        {% endif %}
-        {% if post.data.release_notes %}
+        {%- endif %}
+        {%- if post.data.release_notes %}
         <a href="{{ post.data.release_notes }}" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">{{ t.home_release_notes | default("Release Notes") }}</a>
-        {% endif %}
+        {%- endif %}
       </p>
-      {% endif %}
+      {%- endif %}
 
       <div class="bwc-post-content">
         {{ post.templateContent | safe }}

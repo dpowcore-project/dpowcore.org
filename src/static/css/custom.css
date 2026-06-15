@@ -479,6 +479,8 @@ pre code {
 .bwc-post-card:hover { border-color: rgba(0, 212, 170, 0.35); }
 .bwc-post-date { font-size: 0.8rem; color: var(--bwc-text-muted); font-family: var(--bwc-font-mono); }
 .bwc-post-title { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.bwc-post-title-link { color: var(--bwc-text); }
+.bwc-post-title-link:hover { color: var(--bwc-accent); }
 
 /* ── Post content (rendered markdown) ── */
 .bwc-post-content h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--bwc-text); }
