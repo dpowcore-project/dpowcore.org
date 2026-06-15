@@ -91,7 +91,7 @@
             <i class="fa-solid fa-language"></i>
             <span>{{ l | upper }}</span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end bwc-dd">
+          <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
             {% for lang in locales %}
             <li><a class="dropdown-item{% if l == lang %} active{% endif %}"
                    href="{{ page.url | replace('/' + l + '/', '/' + lang + '/') }}">

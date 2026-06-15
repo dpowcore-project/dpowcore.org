@@ -172,6 +172,27 @@ pre code {
   color: var(--bwc-accent);
 }
 
+/* ── Language dropdown: keep long locale list scrollable ── */
+.bwc-lang-dd {
+  max-height: min(360px, 70vh);
+  overflow-y: auto;
+}
+
+/* ── Mobile collapsed navbar: allow scrolling when content is taller than viewport ── */
+@media (max-width: 991px) {
+  .bwc-navbar .navbar-collapse.show,
+  .bwc-navbar .navbar-collapse.collapsing {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  .bwc-navbar .navbar-collapse .bwc-lang-dd {
+    position: static !important;
+    max-height: none;
+    overflow-y: visible;
+    transform: none !important;
+  }
+}
+
 /* ── Utility pill buttons (language + theme) ── */
 .bwc-util-item { margin-left: 0.35rem; }
 

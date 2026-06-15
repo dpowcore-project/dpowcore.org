@@ -9,5 +9,8 @@
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-navigation": "^1.0.5"
+  },
+  "overrides": {
+    "js-yaml": "^4.2.0"
   }
 }
