@@ -11,9 +11,14 @@
   <meta name="twitter:card" content="summary">
   <title>importmempool — Bitweb Core</title>
 
-  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/css/all.min.css">
-  <link rel="stylesheet" href="/static/css/custom.css">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-FBpEU+TCoc4LvjzYsNNVe6Fya956qTAoxFe6b17hFoxB3hbEOhUmJZQ6URuEQcnurUXgXOBickIzbcluwS17eg==" crossorigin="anonymous">
 
   <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
@@ -34,42 +39,7 @@
   <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/development/rpc/importmempool/">
   <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/development/rpc/importmempool/">
 </head>
-<body>
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
+<body><nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
   <div class="container">
 
     <a class="navbar-brand" href="/de/">
@@ -152,77 +122,62 @@
             <span>DE</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
-            
             <li><a class="dropdown-item"
                    href="/en/development/rpc/importmempool/">
               EN&nbsp; English
             </a></li>
-            
             <li><a class="dropdown-item active"
                    href="/de/development/rpc/importmempool/">
               DE&nbsp; Deutsch
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/es/development/rpc/importmempool/">
               ES&nbsp; Español
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/fr/development/rpc/importmempool/">
               FR&nbsp; Français
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/it/development/rpc/importmempool/">
               IT&nbsp; Italiano
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/ja/development/rpc/importmempool/">
               JA&nbsp; 日本語
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/ko/development/rpc/importmempool/">
               KO&nbsp; 한국어
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/pl/development/rpc/importmempool/">
               PL&nbsp; Polski
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/pt/development/rpc/importmempool/">
               PT&nbsp; Português
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/ro/development/rpc/importmempool/">
               RO&nbsp; Română
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/ru/development/rpc/importmempool/">
               RU&nbsp; Русский
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/tr/development/rpc/importmempool/">
               TR&nbsp; Türkçe
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/uk/development/rpc/importmempool/">
               UK&nbsp; Українська
             </a></li>
-            
             <li><a class="dropdown-item"
                    href="/zh/development/rpc/importmempool/">
               ZH&nbsp; 中文
             </a></li>
-            
           </ul>
         </li>
 
@@ -250,10 +205,7 @@
 </nav>
 
 <main><div class="container-fluid rpc-layout">
-  <div class="row g-0">
-
-    
-    <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar" id="rpcSidebar">
+  <div class="row g-0"><aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
         <div class="mb-3">
           <input
@@ -270,13 +222,7 @@
           &larr; Alle Methoden
         </a>
 
-        <nav id="rpcNav" aria-label="RPC methods">
-          
-          
-            
-              
-              
-              <div class="rpc-category mb-1">
+        <nav id="rpcNav" aria-label="RPC methods"><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="blockchain"
@@ -284,314 +230,234 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>blockchain
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/dumptxoutset/"
                    class="rpc-method-link">
                   dumptxoutset
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getargon2idpowblockhash/"
                    class="rpc-method-link">
                   getargon2idpowblockhash
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getbestblockhash/"
                    class="rpc-method-link">
                   getbestblockhash
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblock/"
                    class="rpc-method-link">
                   getblock
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblockchaininfo/"
                    class="rpc-method-link">
                   getblockchaininfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblockcount/"
                    class="rpc-method-link">
                   getblockcount
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblockfilter/"
                    class="rpc-method-link">
                   getblockfilter
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblockfrompeer/"
                    class="rpc-method-link">
                   getblockfrompeer
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblockhash/"
                    class="rpc-method-link">
                   getblockhash
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblockheader/"
                    class="rpc-method-link">
                   getblockheader
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getblockstats/"
                    class="rpc-method-link">
                   getblockstats
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getchainstates/"
                    class="rpc-method-link">
                   getchainstates
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getchaintips/"
                    class="rpc-method-link">
                   getchaintips
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getchaintxstats/"
                    class="rpc-method-link">
                   getchaintxstats
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getdeploymentinfo/"
                    class="rpc-method-link">
                   getdeploymentinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getdescriptoractivity/"
                    class="rpc-method-link">
                   getdescriptoractivity
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getdifficulty/"
                    class="rpc-method-link">
                   getdifficulty
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getmempoolancestors/"
                    class="rpc-method-link">
                   getmempoolancestors
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getmempooldescendants/"
                    class="rpc-method-link">
                   getmempooldescendants
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getmempoolentry/"
                    class="rpc-method-link">
                   getmempoolentry
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getmempoolinfo/"
                    class="rpc-method-link">
                   getmempoolinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getrawmempool/"
                    class="rpc-method-link">
                   getrawmempool
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/gettxout/"
                    class="rpc-method-link">
                   gettxout
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/gettxoutproof/"
                    class="rpc-method-link">
                   gettxoutproof
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/gettxoutsetinfo/"
                    class="rpc-method-link">
                   gettxoutsetinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/gettxspendingprevout/"
                    class="rpc-method-link">
                   gettxspendingprevout
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/importmempool/"
                    class="rpc-method-link active">
                   importmempool
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/loadtxoutset/"
                    class="rpc-method-link">
                   loadtxoutset
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/preciousblock/"
                    class="rpc-method-link">
                   preciousblock
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/pruneblockchain/"
                    class="rpc-method-link">
                   pruneblockchain
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/savemempool/"
                    class="rpc-method-link">
                   savemempool
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/scanblocks/"
                    class="rpc-method-link">
                   scanblocks
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/scantxoutset/"
                    class="rpc-method-link">
                   scantxoutset
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/verifychain/"
                    class="rpc-method-link">
                   verifychain
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/verifytxoutproof/"
                    class="rpc-method-link">
                   verifytxoutproof
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/waitforblock/"
                    class="rpc-method-link">
                   waitforblock
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/waitforblockheight/"
                    class="rpc-method-link">
                   waitforblockheight
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/waitfornewblock/"
                    class="rpc-method-link">
                   waitfornewblock
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="control"
@@ -599,58 +465,42 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>control
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/getmemoryinfo/"
                    class="rpc-method-link">
                   getmemoryinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getrpcinfo/"
                    class="rpc-method-link">
                   getrpcinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/help/"
                    class="rpc-method-link">
                   help
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/logging/"
                    class="rpc-method-link">
                   logging
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/stop/"
                    class="rpc-method-link">
                   stop
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/uptime/"
                    class="rpc-method-link">
                   uptime
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="mining"
@@ -658,66 +508,48 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>mining
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/getblocktemplate/"
                    class="rpc-method-link">
                   getblocktemplate
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getmininginfo/"
                    class="rpc-method-link">
                   getmininginfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getnetworkhashps/"
                    class="rpc-method-link">
                   getnetworkhashps
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getprioritisedtransactions/"
                    class="rpc-method-link">
                   getprioritisedtransactions
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/prioritisetransaction/"
                    class="rpc-method-link">
                   prioritisetransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/submitblock/"
                    class="rpc-method-link">
                   submitblock
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/submitheader/"
                    class="rpc-method-link">
                   submitheader
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="network"
@@ -725,122 +557,90 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>network
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/addnode/"
                    class="rpc-method-link">
                   addnode
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/clearbanned/"
                    class="rpc-method-link">
                   clearbanned
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/disconnectnode/"
                    class="rpc-method-link">
                   disconnectnode
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getaddednodeinfo/"
                    class="rpc-method-link">
                   getaddednodeinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getaddrmaninfo/"
                    class="rpc-method-link">
                   getaddrmaninfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getconnectioncount/"
                    class="rpc-method-link">
                   getconnectioncount
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getnettotals/"
                    class="rpc-method-link">
                   getnettotals
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getnetworkinfo/"
                    class="rpc-method-link">
                   getnetworkinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getnodeaddresses/"
                    class="rpc-method-link">
                   getnodeaddresses
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getpeerinfo/"
                    class="rpc-method-link">
                   getpeerinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listbanned/"
                    class="rpc-method-link">
                   listbanned
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/ping/"
                    class="rpc-method-link">
                   ping
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/setban/"
                    class="rpc-method-link">
                   setban
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/setnetworkactive/"
                    class="rpc-method-link">
                   setnetworkactive
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="rawtransactions"
@@ -848,162 +648,120 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>rawtransactions
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/analyzepsbt/"
                    class="rpc-method-link">
                   analyzepsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/combinepsbt/"
                    class="rpc-method-link">
                   combinepsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/combinerawtransaction/"
                    class="rpc-method-link">
                   combinerawtransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/converttopsbt/"
                    class="rpc-method-link">
                   converttopsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/createpsbt/"
                    class="rpc-method-link">
                   createpsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/createrawtransaction/"
                    class="rpc-method-link">
                   createrawtransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/decodepsbt/"
                    class="rpc-method-link">
                   decodepsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/decoderawtransaction/"
                    class="rpc-method-link">
                   decoderawtransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/decodescript/"
                    class="rpc-method-link">
                   decodescript
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/descriptorprocesspsbt/"
                    class="rpc-method-link">
                   descriptorprocesspsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/finalizepsbt/"
                    class="rpc-method-link">
                   finalizepsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/fundrawtransaction/"
                    class="rpc-method-link">
                   fundrawtransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getrawtransaction/"
                    class="rpc-method-link">
                   getrawtransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/joinpsbts/"
                    class="rpc-method-link">
                   joinpsbts
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/sendrawtransaction/"
                    class="rpc-method-link">
                   sendrawtransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/signrawtransactionwithkey/"
                    class="rpc-method-link">
                   signrawtransactionwithkey
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/submitpackage/"
                    class="rpc-method-link">
                   submitpackage
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/testmempoolaccept/"
                    class="rpc-method-link">
                   testmempoolaccept
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/utxoupdatepsbt/"
                    class="rpc-method-link">
                   utxoupdatepsbt
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="signer"
@@ -1011,18 +769,12 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>signer
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/enumeratesigners/"
                    class="rpc-method-link">
                   enumeratesigners
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="util"
@@ -1030,74 +782,54 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>util
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/createmultisig/"
                    class="rpc-method-link">
                   createmultisig
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/deriveaddresses/"
                    class="rpc-method-link">
                   deriveaddresses
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/estimatesmartfee/"
                    class="rpc-method-link">
                   estimatesmartfee
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getdescriptorinfo/"
                    class="rpc-method-link">
                   getdescriptorinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getindexinfo/"
                    class="rpc-method-link">
                   getindexinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/signmessagewithprivkey/"
                    class="rpc-method-link">
                   signmessagewithprivkey
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/validateaddress/"
                    class="rpc-method-link">
                   validateaddress
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/verifymessage/"
                    class="rpc-method-link">
                   verifymessage
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="wallet"
@@ -1105,458 +837,342 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>wallet
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/abandontransaction/"
                    class="rpc-method-link">
                   abandontransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/abortrescan/"
                    class="rpc-method-link">
                   abortrescan
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/backupwallet/"
                    class="rpc-method-link">
                   backupwallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/bumpfee/"
                    class="rpc-method-link">
                   bumpfee
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/createwallet/"
                    class="rpc-method-link">
                   createwallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/createwalletdescriptor/"
                    class="rpc-method-link">
                   createwalletdescriptor
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/encryptwallet/"
                    class="rpc-method-link">
                   encryptwallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getaddressesbylabel/"
                    class="rpc-method-link">
                   getaddressesbylabel
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getaddressinfo/"
                    class="rpc-method-link">
                   getaddressinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getbalance/"
                    class="rpc-method-link">
                   getbalance
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getbalances/"
                    class="rpc-method-link">
                   getbalances
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/gethdkeys/"
                    class="rpc-method-link">
                   gethdkeys
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getnewaddress/"
                    class="rpc-method-link">
                   getnewaddress
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getrawchangeaddress/"
                    class="rpc-method-link">
                   getrawchangeaddress
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getreceivedbyaddress/"
                    class="rpc-method-link">
                   getreceivedbyaddress
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getreceivedbylabel/"
                    class="rpc-method-link">
                   getreceivedbylabel
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/gettransaction/"
                    class="rpc-method-link">
                   gettransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/getwalletinfo/"
                    class="rpc-method-link">
                   getwalletinfo
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/importdescriptors/"
                    class="rpc-method-link">
                   importdescriptors
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/importprunedfunds/"
                    class="rpc-method-link">
                   importprunedfunds
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/keypoolrefill/"
                    class="rpc-method-link">
                   keypoolrefill
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listaddressgroupings/"
                    class="rpc-method-link">
                   listaddressgroupings
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listdescriptors/"
                    class="rpc-method-link">
                   listdescriptors
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listlabels/"
                    class="rpc-method-link">
                   listlabels
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listlockunspent/"
                    class="rpc-method-link">
                   listlockunspent
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listreceivedbyaddress/"
                    class="rpc-method-link">
                   listreceivedbyaddress
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listreceivedbylabel/"
                    class="rpc-method-link">
                   listreceivedbylabel
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listsinceblock/"
                    class="rpc-method-link">
                   listsinceblock
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listtransactions/"
                    class="rpc-method-link">
                   listtransactions
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listunspent/"
                    class="rpc-method-link">
                   listunspent
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listwalletdir/"
                    class="rpc-method-link">
                   listwalletdir
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/listwallets/"
                    class="rpc-method-link">
                   listwallets
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/loadwallet/"
                    class="rpc-method-link">
                   loadwallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/lockunspent/"
                    class="rpc-method-link">
                   lockunspent
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/migratewallet/"
                    class="rpc-method-link">
                   migratewallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/psbtbumpfee/"
                    class="rpc-method-link">
                   psbtbumpfee
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/removeprunedfunds/"
                    class="rpc-method-link">
                   removeprunedfunds
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/rescanblockchain/"
                    class="rpc-method-link">
                   rescanblockchain
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/restorewallet/"
                    class="rpc-method-link">
                   restorewallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/send/"
                    class="rpc-method-link">
                   send
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/sendall/"
                    class="rpc-method-link">
                   sendall
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/sendmany/"
                    class="rpc-method-link">
                   sendmany
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/sendtoaddress/"
                    class="rpc-method-link">
                   sendtoaddress
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/setlabel/"
                    class="rpc-method-link">
                   setlabel
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/settxfee/"
                    class="rpc-method-link">
                   settxfee
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/setwalletflag/"
                    class="rpc-method-link">
                   setwalletflag
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/signmessage/"
                    class="rpc-method-link">
                   signmessage
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/signrawtransactionwithwallet/"
                    class="rpc-method-link">
                   signrawtransactionwithwallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/simulaterawtransaction/"
                    class="rpc-method-link">
                   simulaterawtransaction
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/unloadwallet/"
                    class="rpc-method-link">
                   unloadwallet
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/walletcreatefundedpsbt/"
                    class="rpc-method-link">
                   walletcreatefundedpsbt
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/walletdisplayaddress/"
                    class="rpc-method-link">
                   walletdisplayaddress
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/walletlock/"
                    class="rpc-method-link">
                   walletlock
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/walletpassphrase/"
                    class="rpc-method-link">
                   walletpassphrase
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/walletpassphrasechange/"
                    class="rpc-method-link">
                   walletpassphrasechange
                 </a>
               </li>
-          
-            
               <li>
                 <a href="/de/development/rpc/walletprocesspsbt/"
                    class="rpc-method-link">
                   walletprocesspsbt
                 </a>
-              </li>
-          
-            
-              </ul></div>
-              
-              <div class="rpc-category mb-1">
+              </li></ul></div><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
                   data-cat="zmq"
@@ -1564,21 +1180,15 @@
                   <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>zmq
                 </button>
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
-            
               <li>
                 <a href="/de/development/rpc/getzmqnotifications/"
                    class="rpc-method-link">
                   getzmqnotifications
                 </a>
-              </li>
-          
-          </ul></div>
+              </li></ul></div>
         </nav>
       </div>
-    </aside>
-
-    
-    <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4">
+    </aside><div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4">
       <div class="rpc-method-page">
   <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
     <h1 class="rpc-method-title mb-0">
@@ -1627,41 +1237,9 @@ Examples:
   </div>
 </div>
 
-<script src="/static/js/rpc-sidebar.js"></script>
-</main>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-<footer class="bwc-footer mt-auto py-5">
+<script src="/static/js/rpc-sidebar.js"
+  integrity="sha512-I9a/RRWbVOW7lGMC72BZ3tU4c3ndXBPZpJGVRwZdRsx2xrUBp/TB38/DVF+LxgJKafCwgz5n/jGKaXwL4TEUBw==" crossorigin="anonymous"></script>
+</main><footer class="bwc-footer mt-auto py-5">
   <div class="container">
     <div class="row gy-4">
 
@@ -1721,10 +1299,11 @@ Examples:
     </div>
   </div>
 </footer>
-
-
-<script src="/static/js/bootstrap.bundle.min.js"></script>
-<script src="/static/js/theme.js"></script>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
 
 </body>
 </html>
