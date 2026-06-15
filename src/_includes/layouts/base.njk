@@ -20,13 +20,13 @@
   <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
 
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-  {% if not noAlternate %}
-    {% for altLang in site.locales %}
-      {% if altLang != locale %}
+  {%- if not noAlternate %}
+    {%- for altLang in site.locales %}
+      {%- if altLang != locale %}
   <link rel="alternate" hreflang="{{ altLang }}" href="{{ site.url }}/{{ altLang }}{{ page.url | replace('/' + locale + '/', '/') }}">
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+      {%- endif %}
+    {%- endfor %}
+  {%- endif %}
 </head>
 <body>
 
