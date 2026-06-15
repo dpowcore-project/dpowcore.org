@@ -1,7 +1,8 @@
 import pluginNavigation from "@11ty/eleventy-navigation";
-import { readdirSync } from "fs";
+import { readdirSync, readFileSync } from "fs";
 import { resolve, dirname, basename } from "path";
 import { fileURLToPath } from "url";
+import { createHash } from "crypto";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -10,6 +11,19 @@ export default function (eleventyConfig) {
 
   // Pass through static assets
   eleventyConfig.addPassthroughCopy("src/static");
+
+  // Subresource Integrity hash for files in src/static
+  // Usage: {{ 'css/bootstrap.min.css' | sri }} -> "sha512-...."
+  const sriCache = new Map();
+  eleventyConfig.addFilter("sri", (relPath) => {
+    if (sriCache.has(relPath)) return sriCache.get(relPath);
+    const filePath = resolve(__dirname, "src/static", relPath);
+    const data = readFileSync(filePath);
+    const hash = createHash("sha512").update(data).digest("base64");
+    const result = `sha512-${hash}`;
+    sriCache.set(relPath, result);
+    return result;
+  });
 
   // Nunjucks as default template engine
   eleventyConfig.setTemplateFormats(["njk", "md", "html"]);

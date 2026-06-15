@@ -25,4 +25,5 @@ pageTitle: "Lifecycle"
   </div>
 </div>
 
-{% block scripts %}<script src="/static/js/lifecycle.js"></script>{% endblock %}
+{% block scripts %}<script src="/static/js/lifecycle.js"
+  integrity="{{ 'js/lifecycle.js' | sri }}" crossorigin="anonymous"></script>{% endblock %}

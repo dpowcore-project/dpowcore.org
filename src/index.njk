@@ -377,4 +377,5 @@ pageTitle: "Home"
   </div>
 </section>
 
-{% block scripts %}<script src="/static/js/home.js"></script>{% endblock %}
+{% block scripts %}<script src="/static/js/home.js"
+  integrity="{{ 'js/home.js' | sri }}" crossorigin="anonymous"></script>{% endblock %}

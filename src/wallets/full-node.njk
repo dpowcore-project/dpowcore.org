@@ -75,4 +75,5 @@ pageTitle: "Download"
 
 </div>
 
-{% block scripts %}<script src="/static/js/download.js"></script>{% endblock %}
+{% block scripts %}<script src="/static/js/download.js"
+  integrity="{{ 'js/download.js' | sri }}" crossorigin="anonymous"></script>{% endblock %}
