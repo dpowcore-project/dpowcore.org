@@ -1,16 +1,26 @@
+---js
+{
+  layout: "layouts/base.njk",
+  pagination: {
+    data: "collections.blogEn",
+    size: 1,
+    alias: "post",
+    addAllPagesToCollections: true
+  },
+  permalink: (data) => {
+    const slug = data.post?.data?.permalink
+      ? data.post.data.permalink.replace('/en/blog/', '').replace('/', '')
+      : data.post?.fileSlug;
+    return `/it/blog/${slug}/`;
+  },
+  eleventyComputed: {
+    locale: () => "it",
+    pageTitle: (data) => data.post?.data?.title,
+    pageDescription: (data) => data.post?.data?.summary
+  }
+}
 ---
-layout: layouts/base.njk
-pagination:
-  data: collections.blogEn
-  size: 1
-  alias: post
-  addAllPagesToCollections: true
-permalink: "/it/blog/{{ post.data.permalink | replace('/en/blog/', '') | replace('/', '') or post.fileSlug }}/"
----
-{%- set locale = 'it' -%}
 {%- set t = i18n[locale] -%}
-{%- set pageTitle = post.data.title -%}
-{%- set pageDescription = post.data.summary -%}
 
 <div class="container py-5">
   <div class="row justify-content-center">

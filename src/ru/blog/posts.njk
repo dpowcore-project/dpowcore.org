@@ -1,16 +1,26 @@
+---js
+{
+  layout: "layouts/base.njk",
+  pagination: {
+    data: "collections.blogEn",
+    size: 1,
+    alias: "post",
+    addAllPagesToCollections: true
+  },
+  permalink: (data) => {
+    const slug = data.post?.data?.permalink
+      ? data.post.data.permalink.replace('/en/blog/', '').replace('/', '')
+      : data.post?.fileSlug;
+    return `/ru/blog/${slug}/`;
+  },
+  eleventyComputed: {
+    locale: () => "ru",
+    pageTitle: (data) => data.post?.data?.title,
+    pageDescription: (data) => data.post?.data?.summary
+  }
+}
 ---
-layout: layouts/base.njk
-pagination:
-  data: collections.blogEn
-  size: 1
-  alias: post
-  addAllPagesToCollections: true
-permalink: "/ru/blog/{{ post.data.permalink | replace('/en/blog/', '') | replace('/', '') or post.fileSlug }}/"
----
-{%- set locale = 'ru' -%}
 {%- set t = i18n[locale] -%}
-{%- set pageTitle = post.data.title -%}
-{%- set pageDescription = post.data.summary -%}
 
 <div class="container py-5">
   <div class="row justify-content-center">
@@ -28,10 +38,10 @@ permalink: "/ru/blog/{{ post.data.permalink | replace('/en/blog/', '') | replace
         </a>
         {%- endif %}
         {%- if post.data.download_url %}
-        <a href="{{ post.data.download_url }}" class="btn btn-bwc-secondary btn-sm me-2">{{ t.nav_wallets | default("Download") }}</a>
+        <a href="/ru/wallets/full-node/" class="btn btn-bwc-secondary btn-sm me-2">{{ t.home_download | default("Download") }}</a>
         {%- endif %}
         {%- if post.data.release_notes %}
-        <a href="{{ post.data.release_notes }}" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">Release Notes</a>
+        <a href="{{ post.data.release_notes }}" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">{{ t.home_release_notes | default("Release Notes") }}</a>
         {%- endif %}
       </p>
       {%- endif %}

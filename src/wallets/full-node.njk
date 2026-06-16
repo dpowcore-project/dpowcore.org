@@ -46,7 +46,7 @@ pageTitle: "Download"
     <div class="bwc-verify-step">
       <h3 class="h5 mb-3">{{ t.verify_step2_title }}</h3>
       <p class="text-secondary small mb-1">{{ t.verify_step2_import }}</p>
-      <pre><code>gpg --keyserver keys.openpgp.org     --recv-keys {{ site.gpg_fingerprint }}</code></pre>
+      <pre><code>gpg --keyserver keys.openpgp.org --recv-keys {{ site.gpg_fingerprint }}</code></pre>
       <p class="text-secondary small mb-1">{{ t.verify_step2_verify }}</p>
       <pre><code>gpg --verify SHA256SUMS.asc SHA256SUMS</code></pre>
       <div class="mt-3">

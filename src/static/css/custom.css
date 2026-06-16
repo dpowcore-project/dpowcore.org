@@ -7,6 +7,7 @@
 [data-bs-theme="dark"] {
   --bwc-accent:      #00d4aa;
   --bwc-accent-dim:  #00a888;
+  --bwc-accent-rgb:  0, 212, 170;
   --bwc-bg:          #0a0c10;
   --bwc-surface:     #111520;
   --bwc-surface2:    #181d2a;
@@ -22,6 +23,7 @@
 [data-bs-theme="light"] {
   --bwc-accent:      #007a62;
   --bwc-accent-dim:  #005a48;
+  --bwc-accent-rgb:  0, 122, 98;
   --bwc-bg:          #f4f6f9;
   --bwc-surface:     #ffffff;
   --bwc-surface2:    #edf0f5;
@@ -565,9 +567,9 @@ pre code {
 /* ── Post content (rendered markdown) ── */
 .bwc-post-content h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--bwc-text); }
 .bwc-post-content h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--bwc-text); }
-.bwc-post-content p { margin-bottom: 1rem; line-height: 1.7; color: var(--bwc-text-secondary); }
+.bwc-post-content p { margin-bottom: 1rem; line-height: 1.7; color: var(--bwc-text-muted); }
 .bwc-post-content ul,
-.bwc-post-content ol { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--bwc-text-secondary); }
+.bwc-post-content ol { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--bwc-text-muted); }
 .bwc-post-content li { margin-bottom: 0.35rem; line-height: 1.6; }
 .bwc-post-content blockquote {
   border-left: 3px solid var(--bwc-accent);
@@ -575,7 +577,7 @@ pre code {
   border-radius: 0 6px 6px 0;
   padding: 0.9rem 1.1rem;
   margin: 1.25rem 0;
-  color: var(--bwc-text-secondary);
+  color: var(--bwc-text-muted);
 }
 .bwc-post-content blockquote p { margin-bottom: 0; }
 .bwc-post-content pre { margin-bottom: 1.25rem; }
