@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/static/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/custom.css"
-    integrity="sha512-FBpEU+TCoc4LvjzYsNNVe6Fya956qTAoxFe6b17hFoxB3hbEOhUmJZQ6URuEQcnurUXgXOBickIzbcluwS17eg==" crossorigin="anonymous">
+    integrity="sha512-RZVBUD/oIN+XI3Y5kVOW0x9AdOOwkW7FOKy+H4iojD24CWy+4JKseL1rwU8wMWfk2Sf6rqKN9sTLNvLg+uaFLA==" crossorigin="anonymous">
 
   <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
@@ -39,168 +39,164 @@
   <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/blog/">
   <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/blog/">
 </head>
-<body><nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
-  <div class="container">
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
 
-    <a class="navbar-brand" href="/de/">
+    <a class="bwc-nav-brand" href="/de/">
       <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
            class="bwc-logo">
       Bitweb Core
     </a>
 
-    <button class="navbar-toggler border-0" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navMenu"
-            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>DE</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/blog/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/de/blog/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/blog/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/blog/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/blog/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/blog/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/blog/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/blog/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/blog/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/blog/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/blog/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/blog/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/blog/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/blog/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/de/">Startseite</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/de/about/">Über uns</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Wallets
-          </a>
-          <ul class="dropdown-menu bwc-dd">
-            <li><a class="dropdown-item" href="/de/wallets/full-node/">
-              <i class="fa-solid fa-server fa-fw me-2"></i>Full Node
-            </a></li>
-            <li><a class="dropdown-item" href="/de/wallets/web/">
-              <i class="fa-solid fa-globe fa-fw me-2"></i>Web Wallet
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active"
-             href="/de/blog/">Neuigkeiten</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/de/mining/">Mining</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/de/resources/">Ressourcen</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Entwicklung
-          </a>
-          <ul class="dropdown-menu bwc-dd">
-            <li><a class="dropdown-item" href="/de/development/">
-              <i class="fa-solid fa-code fa-fw me-2"></i>Beitragen
-            </a></li>
-            <li><a class="dropdown-item" href="/de/development/rpc/">
-              <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC-Dokumentation
-            </a></li>
-            <li><a class="dropdown-item" href="/de/whitepaper/">
-              <i class="fa-solid fa-file-lines fa-fw me-2"></i>Weißbuch
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown bwc-util-item">
-          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false" type="button">
-            <i class="fa-solid fa-language"></i>
-            <span>DE</span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
-            <li><a class="dropdown-item"
-                   href="/en/blog/">
-              EN&nbsp; English
-            </a></li>
-            <li><a class="dropdown-item active"
-                   href="/de/blog/">
-              DE&nbsp; Deutsch
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/es/blog/">
-              ES&nbsp; Español
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/fr/blog/">
-              FR&nbsp; Français
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/it/blog/">
-              IT&nbsp; Italiano
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ja/blog/">
-              JA&nbsp; 日本語
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ko/blog/">
-              KO&nbsp; 한국어
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/pl/blog/">
-              PL&nbsp; Polski
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/pt/blog/">
-              PT&nbsp; Português
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ro/blog/">
-              RO&nbsp; Română
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ru/blog/">
-              RU&nbsp; Русский
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/tr/blog/">
-              TR&nbsp; Türkçe
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/uk/blog/">
-              UK&nbsp; Українська
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/zh/blog/">
-              ZH&nbsp; 中文
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown bwc-util-item">
-          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
-                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
-            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
-              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
-            </button></li>
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
-              <i class="fa-solid fa-sun fa-fw me-2"></i>Hell
-            </button></li>
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
-              <i class="fa-solid fa-moon fa-fw me-2"></i>Dunkel
-            </button></li>
-          </ul>
-        </li>
-
-      </ul>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Hell
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Dunkel
+          </button></li>
+        </ul>
+      </div>
     </div>
+
+    <ul class="bwc-nav-links list-unstyled mb-0">
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/de/">Startseite</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/de/about/">Über uns</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Wallets
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/de/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Full Node
+          </a></li>
+          <li><a class="dropdown-item" href="/de/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Web Wallet
+          </a></li>
+        </ul>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/de/blog/">Neuigkeiten</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/de/mining/">Mining</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/de/resources/">Ressourcen</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Entwicklung
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/de/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Beitragen
+          </a></li>
+          <li><a class="dropdown-item" href="/de/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC-Dokumentation
+          </a></li>
+          <li><a class="dropdown-item" href="/de/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>Weißbuch
+          </a></li>
+        </ul>
+      </li>
+
+    </ul>
+
   </div>
 </nav>
 

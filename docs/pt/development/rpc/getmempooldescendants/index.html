@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/static/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/custom.css"
-    integrity="sha512-FBpEU+TCoc4LvjzYsNNVe6Fya956qTAoxFe6b17hFoxB3hbEOhUmJZQ6URuEQcnurUXgXOBickIzbcluwS17eg==" crossorigin="anonymous">
+    integrity="sha512-RZVBUD/oIN+XI3Y5kVOW0x9AdOOwkW7FOKy+H4iojD24CWy+4JKseL1rwU8wMWfk2Sf6rqKN9sTLNvLg+uaFLA==" crossorigin="anonymous">
 
   <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
@@ -39,173 +39,169 @@
   <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/development/rpc/getmempooldescendants/">
   <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/development/rpc/getmempooldescendants/">
 </head>
-<body><nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
-  <div class="container">
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
 
-    <a class="navbar-brand" href="/pt/">
+    <a class="bwc-nav-brand" href="/pt/">
       <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
            class="bwc-logo">
       Bitweb Core
     </a>
 
-    <button class="navbar-toggler border-0" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navMenu"
-            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>PT</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/development/rpc/getmempooldescendants/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/development/rpc/getmempooldescendants/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/development/rpc/getmempooldescendants/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/development/rpc/getmempooldescendants/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/development/rpc/getmempooldescendants/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/development/rpc/getmempooldescendants/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/development/rpc/getmempooldescendants/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/development/rpc/getmempooldescendants/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/pt/development/rpc/getmempooldescendants/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/development/rpc/getmempooldescendants/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/development/rpc/getmempooldescendants/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/development/rpc/getmempooldescendants/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/development/rpc/getmempooldescendants/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/development/rpc/getmempooldescendants/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/pt/">Início</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/pt/about/">Sobre</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Carteiras
-          </a>
-          <ul class="dropdown-menu bwc-dd">
-            <li><a class="dropdown-item" href="/pt/wallets/full-node/">
-              <i class="fa-solid fa-server fa-fw me-2"></i>Nó Completo
-            </a></li>
-            <li><a class="dropdown-item" href="/pt/wallets/web/">
-              <i class="fa-solid fa-globe fa-fw me-2"></i>Carteira Web
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/pt/blog/">Notícias</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/pt/mining/">Mineração</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-             href="/pt/resources/">Recursos</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Desenvolvimento
-          </a>
-          <ul class="dropdown-menu bwc-dd">
-            <li><a class="dropdown-item" href="/pt/development/">
-              <i class="fa-solid fa-code fa-fw me-2"></i>Contribuir
-            </a></li>
-            <li><a class="dropdown-item" href="/pt/development/rpc/">
-              <i class="fa-solid fa-terminal fa-fw me-2"></i>Documentação RPC
-            </a></li>
-            <li><a class="dropdown-item" href="/pt/whitepaper/">
-              <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown bwc-util-item">
-          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false" type="button">
-            <i class="fa-solid fa-language"></i>
-            <span>PT</span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
-            <li><a class="dropdown-item"
-                   href="/en/development/rpc/getmempooldescendants/">
-              EN&nbsp; English
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/de/development/rpc/getmempooldescendants/">
-              DE&nbsp; Deutsch
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/es/development/rpc/getmempooldescendants/">
-              ES&nbsp; Español
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/fr/development/rpc/getmempooldescendants/">
-              FR&nbsp; Français
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/it/development/rpc/getmempooldescendants/">
-              IT&nbsp; Italiano
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ja/development/rpc/getmempooldescendants/">
-              JA&nbsp; 日本語
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ko/development/rpc/getmempooldescendants/">
-              KO&nbsp; 한국어
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/pl/development/rpc/getmempooldescendants/">
-              PL&nbsp; Polski
-            </a></li>
-            <li><a class="dropdown-item active"
-                   href="/pt/development/rpc/getmempooldescendants/">
-              PT&nbsp; Português
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ro/development/rpc/getmempooldescendants/">
-              RO&nbsp; Română
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/ru/development/rpc/getmempooldescendants/">
-              RU&nbsp; Русский
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/tr/development/rpc/getmempooldescendants/">
-              TR&nbsp; Türkçe
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/uk/development/rpc/getmempooldescendants/">
-              UK&nbsp; Українська
-            </a></li>
-            <li><a class="dropdown-item"
-                   href="/zh/development/rpc/getmempooldescendants/">
-              ZH&nbsp; 中文
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown bwc-util-item">
-          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
-                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
-            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
-              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Automático
-            </button></li>
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
-              <i class="fa-solid fa-sun fa-fw me-2"></i>Claro
-            </button></li>
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
-              <i class="fa-solid fa-moon fa-fw me-2"></i>Escuro
-            </button></li>
-          </ul>
-        </li>
-
-      </ul>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Automático
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Claro
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Escuro
+          </button></li>
+        </ul>
+      </div>
     </div>
+
+    <ul class="bwc-nav-links list-unstyled mb-0">
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pt/">Início</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pt/about/">Sobre</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Carteiras
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/pt/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Nó Completo
+          </a></li>
+          <li><a class="dropdown-item" href="/pt/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Carteira Web
+          </a></li>
+        </ul>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pt/blog/">Notícias</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pt/mining/">Mineração</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pt/resources/">Recursos</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle active"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Desenvolvimento
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/pt/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Contribuir
+          </a></li>
+          <li><a class="dropdown-item" href="/pt/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>Documentação RPC
+          </a></li>
+          <li><a class="dropdown-item" href="/pt/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
+          </a></li>
+        </ul>
+      </li>
+
+    </ul>
+
   </div>
 </nav>
 
 <main><div class="container-fluid rpc-layout">
-  <div class="row g-0"><aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar" id="rpcSidebar">
+  <div class="row g-0"><aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar order-2 order-lg-1" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
         <div class="mb-3">
           <input
@@ -1188,7 +1184,7 @@
               </li></ul></div>
         </nav>
       </div>
-    </aside><div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4">
+    </aside><div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4 order-1 order-lg-2">
       <div class="rpc-method-page">
   <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
     <h1 class="rpc-method-title mb-0">
