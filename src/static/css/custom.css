@@ -67,7 +67,8 @@ pre {
   border: 1px solid var(--bwc-border);
   border-radius: 6px;
   padding: 1rem 1.25rem;
-  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
   color: var(--bwc-text);
 }
 
@@ -86,13 +87,13 @@ pre code {
   color: inherit;
 }
 
-/* ── Navbar ── */
+/* ── Navbar — 2-row mobile, single-row desktop ── */
 .bwc-navbar {
   background: rgba(10, 12, 16, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--bwc-border);
-  padding: 0.75rem 0;
+  z-index: 1030;
   transition: background 0.2s, border-color 0.2s;
 }
 
@@ -100,52 +101,137 @@ pre code {
   background: rgba(255, 255, 255, 0.92);
 }
 
-.bwc-navbar .navbar-brand {
+/*
+  .bwc-nav-inner is the flex container (with Bootstrap .container for width/padding).
+  Mobile default: flex-wrap → row 1: brand + utils, row 2: nav links.
+  Desktop (≥992px): flex-nowrap → all in one row.
+*/
+.bwc-nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0;
+}
+
+/* Brand — row 1 left on both mobile and desktop */
+.bwc-nav-brand {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: var(--bwc-font-mono);
   font-size: 1.05rem;
   letter-spacing: 0.04em;
   color: var(--bwc-text);
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 0.2rem 0;
+}
+.bwc-nav-brand:hover { color: var(--bwc-text); }
+
+/* Utils (language + theme) — row 1 right on mobile, row 1 far-right on desktop */
+.bwc-nav-utils {
+  order: 2;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  padding: 0.2rem 0;
 }
 
-.bwc-navbar .navbar-toggler-icon {
-  filter: none;
-}
-[data-bs-theme="light"] .bwc-navbar .navbar-toggler-icon {
-  filter: invert(1);
+/* Nav links — row 2 on mobile, inline after brand on desktop */
+.bwc-nav-links {
+  order: 3;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.4rem 0 0.5rem;
+  border-top: 1px solid var(--bwc-border);
+  margin-top: 0.4rem;
 }
 
+/* Desktop (≥992px): collapse to single row */
+@media (min-width: 992px) {
+  .bwc-nav-inner {
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 3.25rem;
+    gap: 0;
+  }
 
-.bwc-navbar .nav-link {
-  color: var(--bwc-text-muted);
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0 0.75rem;
-  height: 2.25rem;                     /* same as .bwc-util-btn */
+  .bwc-nav-brand {
+    order: 1;
+    padding: 0;
+  }
+
+  .bwc-nav-links {
+    order: 2;
+    width: auto;
+    flex: 1;
+    flex-wrap: nowrap;
+    border-top: none;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 1.25rem;
+    gap: 0;
+  }
+
+  .bwc-nav-utils {
+    order: 3;
+    margin-left: 0.75rem;
+    padding: 0;
+  }
+}
+
+/* ── Nav link items ── */
+.bwc-nav-item {
+  position: relative;
+}
+
+.bwc-nav-link {
   display: inline-flex;
   align-items: center;
-  border: 1px solid transparent;       /* same box-model */
+  padding: 0.3rem 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--bwc-text-muted);
   border-radius: 6px;
-  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
   transition: color 0.15s, background 0.15s;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  line-height: 1.4;
 }
 
-.bwc-navbar .nav-link:hover,
-.bwc-navbar .nav-link.active {
+.bwc-nav-link:hover,
+.bwc-nav-link.active {
   color: var(--bwc-accent);
   background: rgba(0, 212, 170, 0.08);
 }
 
-[data-bs-theme="light"] .bwc-navbar .nav-link:hover,
-[data-bs-theme="light"] .bwc-navbar .nav-link.active {
+[data-bs-theme="light"] .bwc-nav-link:hover,
+[data-bs-theme="light"] .bwc-nav-link.active {
   background: rgba(0, 122, 98, 0.08);
 }
 
-/* ── Dropdown menus (всё через .bwc-dd чтобы не ломать Bootstrap) ── */
+.bwc-nav-link.dropdown-toggle::after {
+  margin-left: 0.3rem;
+}
+
+/* ── Dropdown menus ── */
 .bwc-dd {
   background: var(--bwc-surface) !important;
   border: 1px solid var(--bwc-border) !important;
   border-radius: 8px !important;
-  padding: 0.3rem !important;          /* tight — no giant blank space */
+  padding: 0.3rem !important;
   min-width: 0 !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
 }
@@ -172,59 +258,47 @@ pre code {
   color: var(--bwc-accent);
 }
 
-/* ── Language dropdown: keep long locale list scrollable ── */
+/* ── Language dropdown ── */
+/* On mobile: limit height so it doesn't overflow viewport */
 .bwc-lang-dd {
-  max-height: min(360px, 70vh);
+  max-height: min(340px, 65vh);
   overflow-y: auto;
 }
-
-/* ── Mobile collapsed navbar: allow scrolling when content is taller than viewport ── */
-@media (max-width: 991px) {
-  .bwc-navbar .navbar-collapse.show,
-  .bwc-navbar .navbar-collapse.collapsing {
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-  }
-  .bwc-navbar .navbar-collapse .bwc-lang-dd {
-    position: static !important;
+/* On desktop: all 14 languages fit without artificial constraint */
+@media (min-width: 992px) {
+  .bwc-lang-dd {
     max-height: none;
     overflow-y: visible;
-    transform: none !important;
   }
 }
 
-/* ── Utility pill buttons (language + theme) ── */
-.bwc-util-item { margin-left: 0.35rem; }
-
-/* ── Util buttons: language + theme — один стиль, один размер ── */
+/* ── Utility buttons (language + theme) ── */
 .bwc-util-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.3rem;
-  height: 2.25rem !important;          /* fixed height = nav-link height */
-  padding: 0 0.75rem !important;
-  background: transparent !important;
-  border: 1px solid var(--bwc-border) !important;
-  border-radius: 6px !important;
-  color: var(--bwc-text-muted) !important;
-  font-size: 0.875rem !important;
-  font-weight: 500 !important;
-  line-height: 1 !important;
+  height: 2rem;
+  padding: 0 0.65rem;
+  background: transparent;
+  border: 1px solid var(--bwc-border);
+  border-radius: 6px;
+  color: var(--bwc-text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
   white-space: nowrap;
   transition: color 0.15s, border-color 0.15s;
-  box-sizing: border-box !important;
+  cursor: pointer;
 }
 
 .bwc-util-btn:hover,
 .bwc-util-btn[aria-expanded="true"] {
-  color: var(--bwc-accent) !important;
-  border-color: var(--bwc-accent) !important;
+  color: var(--bwc-accent);
+  border-color: var(--bwc-accent);
 }
 
 .bwc-util-btn::after {
-  margin-left: 0.2rem;
-  vertical-align: middle;
+  margin-left: 0.15rem;
 }
 
 /* ── Hero ── */
@@ -440,7 +514,7 @@ pre code {
   overflow-y: auto;
 }
 @media (max-width: 991px) {
-  .rpc-sidebar { position: relative; top: 0; height: auto; min-height: unset; border-right: none; border-bottom: 1px solid var(--bwc-border); }
+  .rpc-sidebar { position: relative; top: 0; height: auto; min-height: unset; border-right: none; border-top: 1px solid var(--bwc-border); }
 }
 .rpc-sidebar::-webkit-scrollbar { width: 4px; }
 .rpc-sidebar::-webkit-scrollbar-track { background: transparent; }
@@ -462,10 +536,16 @@ pre code {
 }
 .rpc-method-link:hover { color: var(--bwc-text); background: rgba(255,255,255,0.04); }
 .rpc-method-link.active { color: var(--bwc-accent); background: rgba(0, 212, 170, 0.08); }
-.rpc-content { max-width: 860px; }
-.rpc-method-name { font-family: var(--bwc-font-mono); font-size: 1.6rem; color: var(--bwc-accent); }
-.rpc-param-table th { font-family: var(--bwc-font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--bwc-text-muted); border-color: var(--bwc-border); }
-.rpc-param-table td { border-color: var(--bwc-border); font-size: 0.875rem; vertical-align: top; }
+.rpc-content { max-width: 860px; min-width: 0; }
+.rpc-method-title { font-family: var(--bwc-font-mono); font-size: 1.1rem; font-weight: 600; color: var(--bwc-accent); line-height: 1.2; }
+.rpc-method-name-badge { color: inherit; }
+.rpc-cat-badge { font-family: var(--bwc-font-mono); font-size: 0.68rem; letter-spacing: 0.07em; background: rgba(0,212,170,0.1); color: var(--bwc-accent); border: 1px solid rgba(0,212,170,0.25); }
+.rpc-pre { font-size: 0.72rem; }
+.rpc-pre code { font-size: inherit; }
+@media (max-width: 991px) {
+  .rpc-method-title { font-size: 1rem; }
+  .rpc-pre { font-size: 0.68rem; }
+}
 
 /* ── Blog ── */
 .bwc-post-card {
@@ -523,8 +603,6 @@ pre code {
 .table td { border-color: var(--bwc-border); }
 
 /* ── Utility classes replacing inline styles ── */
-.bwc-badge-sm { font-size: 0.8rem; }
-.bwc-ver-label { font-family: var(--bwc-font-display); font-weight: 700; }
 .bwc-section-flush { padding-top: 0; }
 .bwc-alert-warning {
   background: rgba(255, 193, 7, 0.08);
@@ -748,26 +826,49 @@ pre code {
   overflow-y: auto;
 }
 @media (max-width: 991px) {
-  .wp-sidebar { position: relative; top: 0; height: auto; min-height: unset; border-right: none; border-bottom: 1px solid var(--bwc-border); }
+  .wp-sidebar { position: relative; top: 0; height: auto; min-height: unset; border-right: none; border-top: 1px solid var(--bwc-border); }
 }
 .wp-sidebar::-webkit-scrollbar { width: 4px; }
 .wp-sidebar::-webkit-scrollbar-track { background: transparent; }
 .wp-sidebar::-webkit-scrollbar-thumb { background: var(--bwc-border); border-radius: 2px; }
-.wp-content { max-width: 860px; }
+.wp-content { max-width: 860px; min-width: 0; }
 .wp-title { font-size: 1.75rem; font-weight: 700; }
 .wp-body h1 { display: none; }
 .wp-body h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.75rem; padding-top: 0.5rem; border-top: 1px solid var(--bwc-border); }
 .wp-body h3 { font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--bwc-accent); }
-.wp-body p { font-size: 0.9375rem; line-height: 1.75; color: var(--bwc-text-muted); }
-.wp-body code { font-family: var(--bwc-font-mono); font-size: 0.82em; background: var(--bwc-surface); border: 1px solid var(--bwc-border); border-radius: 3px; padding: 0.1em 0.35em; }
-.wp-body pre { background: var(--bwc-surface); border: 1px solid var(--bwc-border); border-radius: 6px; padding: 1rem; overflow-x: auto; }
+.wp-body p { font-size: 0.9375rem; line-height: 1.75; color: var(--bwc-text-muted); overflow-wrap: break-word; }
+.wp-body code { font-family: var(--bwc-font-mono); font-size: 0.82em; background: var(--bwc-surface); border: 1px solid var(--bwc-border); border-radius: 3px; padding: 0.1em 0.35em; overflow-wrap: break-word; }
+.wp-body pre { background: var(--bwc-surface); border: 1px solid var(--bwc-border); border-radius: 6px; padding: 1rem; white-space: pre-wrap; overflow-wrap: break-word; }
 .wp-body pre code { background: none; border: none; padding: 0; font-size: 0.8125rem; }
 .wp-body table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 1rem 0; }
 .wp-body th { font-family: var(--bwc-font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--bwc-text-muted); border-bottom: 2px solid var(--bwc-border); padding: 0.5rem 0.75rem; text-align: left; }
 .wp-body td { border-bottom: 1px solid var(--bwc-border); padding: 0.5rem 0.75rem; vertical-align: top; }
 .wp-body hr { border-color: var(--bwc-border); margin: 2rem 0; }
 .wp-body blockquote { border-left: 3px solid var(--bwc-accent); margin: 1rem 0; padding: 0.5rem 1rem; color: var(--bwc-text-muted); }
+
+/* On mobile: shrink pre font, reflow tables */
+@media (max-width: 991px) {
+  .wp-body pre {
+    font-size: 0.78rem;
+  }
+  .wp-body table {
+    table-layout: fixed;
+    font-size: 0.7rem;
+  }
+  .wp-body th,
+  .wp-body td {
+    padding: 0.35rem 0.4rem;
+    overflow-wrap: break-word;
+  }
+}
 .wp-toc-list { font-size: 0.82rem; }
+.wp-toc-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--bwc-text-muted);
+}
 .wp-toc-link { display: block; padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--bwc-text-muted); text-decoration: none; line-height: 1.4; transition: color 0.15s, background 0.15s; }
 .wp-toc-link:hover { color: var(--bwc-accent); background: var(--bwc-border); }
 .wp-toc-link.active { color: var(--bwc-accent); background: rgba(var(--bwc-accent-rgb, 255,165,0), 0.08); }

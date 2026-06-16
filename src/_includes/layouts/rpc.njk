@@ -8,7 +8,8 @@ layout: layouts/base.njk
   <div class="row g-0">
 
     {#- ── Sidebar ── built from rpc.json — no duplication -#}
-    <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar" id="rpcSidebar">
+    {#- order-2 on mobile (below content), order-lg-1 on desktop (left column) -#}
+    <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar order-2 order-lg-1" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
         <div class="mb-3">
           <input
@@ -53,7 +54,8 @@ layout: layouts/base.njk
     </aside>
 
     {#- ── Main content ── -#}
-    <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4">
+    {#- order-1 on mobile (shown first), order-lg-2 on desktop (right column) -#}
+    <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4 order-1 order-lg-2">
       {{ content | safe }}
     </div>
 

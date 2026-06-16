@@ -1,7 +1,7 @@
 {#
   Locale detection from URL — works for ALL pages including blog posts
   /en/blog/foo/ → l = 'en'  /ru/blog/foo/ → l = 'ru'
-  /zh/blog/foo/ → l = 'zh'  etc. Fallback to frontmatter locale, then 'en'
+  Fallback to frontmatter locale, then 'en'
 #}
 {%- set l = locale | default('en') -%}
 {%- for lang in site.locales -%}
@@ -9,117 +9,118 @@
 {%- endfor -%}
 {%- set t = i18n[l] -%}
 
-<nav class="navbar navbar-expand-lg bwc-navbar sticky-top" id="mainNav">
-  <div class="container">
+{#
+  2-row mobile navbar — no hamburger.
+  Mobile:   row 1 = brand + utility buttons
+            row 2 = all nav links (flex-wrap)
+  Desktop:  single row: brand | nav links | utility buttons
+#}
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
 
-    <a class="navbar-brand" href="/{{ l }}/">
+    <a class="bwc-nav-brand" href="/{{ l }}/">
       <img src="/static/img/logo.svg" alt="{{ site.title }}" width="28" height="28"
            class="bwc-logo">
       {{ site.title }}
     </a>
 
-    <button class="navbar-toggler border-0" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navMenu"
-            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>{{ l | upper }}</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          {%- for lang in locales %}
+          <li><a class="dropdown-item{% if l == lang %} active{% endif %}"
+                 href="{{ page.url | replace('/' + l + '/', '/' + lang + '/') }}">
+            {{ lang | upper }}&nbsp; {{ i18n[lang].lang_name }}
+          </a></li>
+          {%- endfor %}
+        </ul>
+      </div>
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-
-        <li class="nav-item">
-          <a class="nav-link{% if page.url == '/' + l + '/' %} active{% endif %}"
-             href="/{{ l }}/">{{ t.nav_home }}</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link{% if '/about' in page.url %} active{% endif %}"
-             href="/{{ l }}/about/">{{ t.nav_about }}</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle{% if '/wallets' in page.url %} active{% endif %}"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ t.nav_wallets }}
-          </a>
-          <ul class="dropdown-menu bwc-dd">
-            <li><a class="dropdown-item" href="/{{ l }}/wallets/full-node/">
-              <i class="fa-solid fa-server fa-fw me-2"></i>{{ t.nav_wallets_fullnode }}
-            </a></li>
-            <li><a class="dropdown-item" href="/{{ l }}/wallets/web/">
-              <i class="fa-solid fa-globe fa-fw me-2"></i>{{ t.nav_wallets_web }}
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link{% if '/blog' in page.url %} active{% endif %}"
-             href="/{{ l }}/blog/">{{ t.nav_news }}</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link{% if '/mining' in page.url %} active{% endif %}"
-             href="/{{ l }}/mining/">{{ t.nav_mining }}</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link{% if '/resources' in page.url %} active{% endif %}"
-             href="/{{ l }}/resources/">{{ t.nav_resources }}</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle{% if '/development' in page.url %} active{% endif %}"
-             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{ t.nav_development }}
-          </a>
-          <ul class="dropdown-menu bwc-dd">
-            <li><a class="dropdown-item" href="/{{ l }}/development/">
-              <i class="fa-solid fa-code fa-fw me-2"></i>{{ t.nav_contribute }}
-            </a></li>
-            <li><a class="dropdown-item" href="/{{ l }}/development/rpc/">
-              <i class="fa-solid fa-terminal fa-fw me-2"></i>{{ t.nav_rpc }}
-            </a></li>
-            <li><a class="dropdown-item" href="/{{ l }}/whitepaper/">
-              <i class="fa-solid fa-file-lines fa-fw me-2"></i>{{ t.nav_whitepaper }}
-            </a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown bwc-util-item">
-          <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false" type="button">
-            <i class="fa-solid fa-language"></i>
-            <span>{{ l | upper }}</span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
-            {%- for lang in locales %}
-            <li><a class="dropdown-item{% if l == lang %} active{% endif %}"
-                   href="{{ page.url | replace('/' + l + '/', '/' + lang + '/') }}">
-              {{ lang | upper }}&nbsp; {{ i18n[lang].lang_name }}
-            </a></li>
-            {%- endfor %}
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown bwc-util-item">
-          <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
-                  data-bs-toggle="dropdown" aria-expanded="false" type="button">
-            <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
-              <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>{{ t.nav_theme_auto }}
-            </button></li>
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
-              <i class="fa-solid fa-sun fa-fw me-2"></i>{{ t.nav_theme_light }}
-            </button></li>
-            <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
-              <i class="fa-solid fa-moon fa-fw me-2"></i>{{ t.nav_theme_dark }}
-            </button></li>
-          </ul>
-        </li>
-
-      </ul>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>{{ t.nav_theme_auto }}
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>{{ t.nav_theme_light }}
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>{{ t.nav_theme_dark }}
+          </button></li>
+        </ul>
+      </div>
     </div>
+
+    <ul class="bwc-nav-links list-unstyled mb-0">
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link{% if page.url == '/' + l + '/' %} active{% endif %}"
+           href="/{{ l }}/">{{ t.nav_home }}</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link{% if '/about' in page.url %} active{% endif %}"
+           href="/{{ l }}/about/">{{ t.nav_about }}</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle{% if '/wallets' in page.url %} active{% endif %}"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ t.nav_wallets }}
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/{{ l }}/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>{{ t.nav_wallets_fullnode }}
+          </a></li>
+          <li><a class="dropdown-item" href="/{{ l }}/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>{{ t.nav_wallets_web }}
+          </a></li>
+        </ul>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link{% if '/blog' in page.url %} active{% endif %}"
+           href="/{{ l }}/blog/">{{ t.nav_news }}</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link{% if '/mining' in page.url %} active{% endif %}"
+           href="/{{ l }}/mining/">{{ t.nav_mining }}</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link{% if '/resources' in page.url %} active{% endif %}"
+           href="/{{ l }}/resources/">{{ t.nav_resources }}</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle{% if '/development' in page.url %} active{% endif %}"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ t.nav_development }}
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/{{ l }}/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>{{ t.nav_contribute }}
+          </a></li>
+          <li><a class="dropdown-item" href="/{{ l }}/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>{{ t.nav_rpc }}
+          </a></li>
+          <li><a class="dropdown-item" href="/{{ l }}/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>{{ t.nav_whitepaper }}
+          </a></li>
+        </ul>
+      </li>
+
+    </ul>
+
   </div>
 </nav>

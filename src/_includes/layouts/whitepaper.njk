@@ -7,7 +7,7 @@ layout: layouts/base.njk
 <div class="container-fluid wp-layout">
   <div class="row g-0">
 
-    <aside class="col-12 col-lg-3 col-xl-2 wp-sidebar" id="wpSidebar">
+    <aside class="col-12 col-lg-3 col-xl-2 wp-sidebar order-2 order-lg-1" id="wpSidebar">
       <div class="wp-sidebar-inner p-3">
         <div class="mb-3 d-flex align-items-center gap-2">
           <a href="/{{ l }}/development/" class="text-secondary small text-decoration-none">
@@ -17,12 +17,12 @@ layout: layouts/base.njk
         <a href="/static/whitepaper.pdf" class="btn btn-bwc-primary btn-sm w-100 mb-4" download>
           <i class="fa-solid fa-file-pdf me-2"></i>{{ t.dev_wp_pdf }}
         </a>
-        <p class="text-uppercase text-secondary small fw-semibold mb-2" style="letter-spacing:0.06em">{{ t.wp_contents }}</p>
+        <p class="wp-toc-label mb-2">{{ t.wp_contents }}</p>
         <nav id="wpToc" aria-label="White paper sections"></nav>
       </div>
     </aside>
 
-    <div class="col-12 col-lg-9 col-xl-10 wp-content px-4 py-5" id="wpContent">
+    <div class="col-12 col-lg-9 col-xl-10 wp-content px-4 py-5 order-1 order-lg-2" id="wpContent">
       <div class="wp-header mb-5">
         <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-2">
           <div>
