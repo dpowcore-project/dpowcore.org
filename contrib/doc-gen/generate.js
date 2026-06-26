@@ -8,15 +8,17 @@
  * Options:
  *   --cli <path>      Path to bitweb-cli binary (default: "bitweb-cli")
  *   --chain <name>    Chain: regtest | testnet | mainnet (default: "regtest")
- *   --out <path>      Output JSON path (default: "src/_data/rpc.json")
+ *   --version <ver>   Override version string, e.g. "31.1"
  *   --rpcuser <u>     RPC username (if not using cookie auth)
  *   --rpcpass <p>     RPC password
  *   --rpcport <port>  RPC port
  *
+ * Output: src/_data/rpc/<version>.json (auto-detected from node)
+ *
  * Prerequisites:
  *   (1) bitwebd must be running — regtest recommended (starts instantly)
  *   (2) Run from project root: node contrib/doc-gen/generate.js
- *   (3) Commit the generated src/_data/rpc.json
+ *   (3) Commit the generated src/_data/rpc/<version>.json
  */
 
 import { execFileSync } from 'child_process';
@@ -26,43 +28,40 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// ── CLI argument parsing ─────────────────────────────────────────────────────
 const argv = process.argv.slice(2);
 const args = {};
 for (let i = 0; i < argv.length; i += 2) {
   args[argv[i].replace(/^--/, '')] = argv[i + 1];
 }
 
-const CLI_BIN  = args['cli']     ?? 'bitweb-cli';
-const CHAIN    = args['chain']   ?? 'regtest';
-const OUT_PATH = args['out']     ?? resolve(__dirname, '../../src/_data/rpc.json');
-const RPC_USER = args['rpcuser'] ?? null;
-const RPC_PASS = args['rpcpass'] ?? null;
-const RPC_PORT = args['rpcport'] ?? null;
+const CLI_BIN     = args['cli']      ?? 'bitweb-cli';
+const CHAIN       = args['chain']    ?? 'regtest';
+const VER_OVERRIDE = args['version'] ?? null;
+const RPC_USER    = args['rpcuser']  ?? null;
+const RPC_PASS    = args['rpcpass']  ?? null;
+const RPC_PORT    = args['rpcport']  ?? null;
+const RPC_DIR     = resolve(__dirname, '../../src/_data/rpc');
 
-// ── Helper: run bitweb-cli ───────────────────────────────────────────────────
 function run(...cmdArgs) {
   const base = [];
-  if (CHAIN === 'regtest')  base.push('-regtest');
-  if (CHAIN === 'testnet')  base.push('-testnet');
+  if (CHAIN === 'regtest') base.push('-regtest');
+  if (CHAIN === 'testnet') base.push('-testnet');
   if (RPC_USER) base.push(`-rpcuser=${RPC_USER}`);
   if (RPC_PASS) base.push(`-rpcpassword=${RPC_PASS}`);
   if (RPC_PORT) base.push(`-rpcport=${RPC_PORT}`);
-
-  const all = [...base, ...cmdArgs];
   try {
-    return execFileSync(CLI_BIN, all, { encoding: 'utf8', timeout: 15000 }).trim();
+    return execFileSync(CLI_BIN, [...base, ...cmdArgs], { encoding: 'utf8', timeout: 15000 }).trim();
   } catch (err) {
     const msg = (err.stderr?.toString() ?? err.message).split('\n')[0];
-    console.error(`\n✗ Failed: ${CLI_BIN} ${all.join(' ')}`);
+    console.error(`\n✗ Failed: ${CLI_BIN} ${[...base, ...cmdArgs].join(' ')}`);
     console.error(`  ${msg}`);
     console.error('\nIs bitwebd running?  Try: bitwebd -regtest -daemon');
     process.exit(1);
   }
 }
 
-// ── Parse version ────────────────────────────────────────────────────────────
 function getVersion() {
+  if (VER_OVERRIDE) return VER_OVERRIDE;
   const raw = run('getnetworkinfo');
   let info;
   try { info = JSON.parse(raw); } catch {
@@ -72,7 +71,6 @@ function getVersion() {
   return `${Math.floor(v / 10000) % 100}.${Math.floor(v / 100) % 100}.${v % 100}`;
 }
 
-// ── Parse `help` index into groups ──────────────────────────────────────────
 function parseHelpIndex(raw) {
   const groups = [];
   let cur = null;
@@ -90,15 +88,15 @@ function parseHelpIndex(raw) {
   return groups;
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
 console.log('\nBitweb Core RPC Doc Generator');
 console.log(`  CLI:   ${CLI_BIN}`);
-console.log(`  Chain: ${CHAIN}`);
-console.log(`  Out:   ${OUT_PATH}\n`);
+console.log(`  Chain: ${CHAIN}\n`);
 
 console.log('→ Fetching version…');
 const version = getVersion();
-console.log(`  Version: ${version}\n`);
+const outPath = resolve(RPC_DIR, `${version}.json`);
+console.log(`  Version: ${version}`);
+console.log(`  Out:     ${outPath}\n`);
 
 console.log('→ Fetching help index…');
 const groups = parseHelpIndex(run('help'));
@@ -118,8 +116,8 @@ for (const group of groups) {
 
 const output = { version, generated: new Date().toISOString(), methods };
 
-mkdirSync(dirname(OUT_PATH), { recursive: true });
-writeFileSync(OUT_PATH, JSON.stringify(output, null, 2), 'utf8');
+mkdirSync(RPC_DIR, { recursive: true });
+writeFileSync(outPath, JSON.stringify(output, null, 2), 'utf8');
 
-console.log(`\n✓ Written ${methods.length} methods → ${OUT_PATH}`);
+console.log(`\n✓ Written ${methods.length} methods → ${outPath}`);
 console.log('  Now run: npm run build\n');

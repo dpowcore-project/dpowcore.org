@@ -4,7 +4,8 @@
   "version": "1.0.1",
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --serve --port=8080"
+    "start": "eleventy --serve --port=8080",
+    "build:clean": "node contrib/doc-gen/clean-rpc-docs.js && eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",

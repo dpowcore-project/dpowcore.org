@@ -3,14 +3,41 @@ layout: layouts/base.njk
 ---
 {%- set t = i18n[locale | default('en')] -%}
 {%- set l = locale | default('en') -%}
+{%- set ver = currentVersion if currentVersion else rpcMeta.latest -%}
+{%- set rpcData = rpc[ver] -%}
 
 <div class="container-fluid rpc-layout">
   <div class="row g-0">
 
-    {#- ── Sidebar ── built from rpc.json — no duplication -#}
-    {#- order-2 on mobile (below content), order-lg-1 on desktop (left column) -#}
     <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar order-2 order-lg-1" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
+
+        {%- if rpcMeta.versions | length > 1 %}
+        <div class="mb-3">
+          <div class="dropdown">
+            <button class="btn bwc-util-btn dropdown-toggle w-100 text-start"
+                    data-bs-toggle="dropdown" aria-expanded="false" type="button">
+              <i class="fa-solid fa-code-branch me-1"></i>v{{ ver }}{% if ver == rpcMeta.latest %} <span class="rpc-latest-tag">latest</span>{% endif %}
+            </button>
+            <ul class="dropdown-menu bwc-dd w-100">
+              {%- for v in rpcMeta.versions %}
+              <li>
+                <a class="dropdown-item rpc-ver-item{% if v == ver %} active{% endif %}"
+                   href="/{{ l }}/development/rpc/{{ v }}/"
+                   data-rpc-ver="{{ v }}">v{{ v }}{% if v == rpcMeta.latest %} <span class="rpc-latest-tag">latest</span>{% endif %}</a>
+              </li>
+              {%- endfor %}
+            </ul>
+          </div>
+        </div>
+        {%- else %}
+        <div class="mb-3">
+          <span class="text-muted small" style="font-family:var(--bwc-font-mono);font-size:0.78rem;">
+            <i class="fa-solid fa-code-branch me-1"></i>v{{ ver }}
+          </span>
+        </div>
+        {%- endif %}
+
         <div class="mb-3">
           <input
             type="search"
@@ -22,13 +49,13 @@ layout: layouts/base.njk
           >
         </div>
 
-        <a href="/{{ l }}/development/rpc/" class="rpc-index-link d-block mb-2 small text-secondary">
+        <a href="/{{ l }}/development/rpc/{{ ver }}/" class="rpc-index-link d-block mb-2 small text-secondary">
           &larr; {{ t.rpc_all_methods }}
         </a>
 
-        <nav id="rpcNav" aria-label="RPC methods">
+        <nav id="rpcNav" aria-label="RPC methods" data-rpc-ver="{{ ver }}">
           {%- set currentCat = "" -%}
-          {%- for m in rpc.methods | sort(false, false, "category") %}
+          {%- for m in rpcData.methods | sort(false, false, "category") %}
             {%- if m.category != currentCat %}
               {%- if currentCat != "" %}</ul></div>{% endif %}
               {%- set currentCat = m.category -%}
@@ -42,8 +69,9 @@ layout: layouts/base.njk
                 <ul class="rpc-method-list list-unstyled ms-2 mb-0">
             {%- endif %}
               <li>
-                <a href="/{{ l }}/development/rpc/{{ m.name }}/"
-                   class="rpc-method-link{% if page.url == '/' + l + '/development/rpc/' + m.name + '/' %} active{% endif %}">
+                <a href="/{{ l }}/development/rpc/{{ ver }}/{{ m.name }}/"
+                   class="rpc-method-link{% if page.url == '/' + l + '/development/rpc/' + ver + '/' + m.name + '/' %} active{% endif %}"
+                   data-rpc-method="{{ m.name }}">
                   {{ m.name }}
                 </a>
               </li>
@@ -53,8 +81,6 @@ layout: layouts/base.njk
       </div>
     </aside>
 
-    {#- ── Main content ── -#}
-    {#- order-1 on mobile (shown first), order-lg-2 on desktop (right column) -#}
     <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4 order-1 order-lg-2">
       {{ content | safe }}
     </div>

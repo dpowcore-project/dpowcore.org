@@ -8,10 +8,11 @@
     alias: "item"
   },
   permalink: (data) => data.item
-    ? `${data.item.locale}/development/rpc/${data.item.method.name}/`
+    ? `${data.item.locale}/development/rpc/${data.item.version}/${data.item.method.name}/`
     : false,
   eleventyComputed: {
     locale: (data) => data.item ? data.item.locale : "en",
+    currentVersion: (data) => data.item ? data.item.version : null,
     method: (data) => data.item ? data.item.method : null,
     pageTitle: (data) => data.item ? data.item.method.name : "RPC"
   }
@@ -32,7 +33,7 @@
   </div>
 
   <div class="mt-4 d-flex gap-3 rpc-nav-links text-muted small">
-    <a href="/{{ locale }}/development/rpc/">&larr; {{ t.rpc_all_methods }}</a>
-    <span class="text-secondary">v{{ rpc.version }}</span>
+    <a href="/{{ locale }}/development/rpc/{{ currentVersion }}/">&larr; {{ t.rpc_all_methods }}</a>
+    <span class="text-secondary">v{{ currentVersion }}</span>
   </div>
 </div>

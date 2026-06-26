@@ -1,86 +1,80 @@
 /**
- * rpc-sidebar.js — accordion + search for RPC docs
- * No var, no innerHTML with user data.
+ * rpc-sidebar.js — accordion, search, version switcher
  */
 (() => {
   "use strict";
 
   const init = () => {
-    const nav     = document.getElementById("rpcNav");
-    const search  = document.getElementById("rpcSearch");
+    const nav    = document.getElementById("rpcNav");
+    const search = document.getElementById("rpcSearch");
     if (!nav) return;
 
-    // ── Build accordion behaviour ────────────────────────
-    const toggles = nav.querySelectorAll(".rpc-cat-toggle");
-
-    const openCategory = (btn) => {
+    const openCat = (btn) => {
       const list = btn.nextElementSibling;
-      if (!list) return;
-      list.style.display = "block";
+      if (list) list.style.display = "block";
       btn.classList.remove("collapsed");
     };
 
-    const closeCategory = (btn) => {
+    const closeCat = (btn) => {
       const list = btn.nextElementSibling;
-      if (!list) return;
-      list.style.display = "none";
+      if (list) list.style.display = "none";
       btn.classList.add("collapsed");
     };
 
-    toggles.forEach((btn) => {
-      // Start: check if active link is inside this category
-      const activeLink = btn.nextElementSibling?.querySelector(".active");
-      if (activeLink) {
-        openCategory(btn);
+    nav.querySelectorAll(".rpc-cat-toggle").forEach((btn) => {
+      if (btn.nextElementSibling?.querySelector(".active")) {
+        openCat(btn);
       } else {
-        closeCategory(btn);
+        closeCat(btn);
       }
-
       btn.addEventListener("click", () => {
-        const isOpen = !btn.classList.contains("collapsed");
-        if (isOpen) {
-          closeCategory(btn);
-        } else {
-          openCategory(btn);
-        }
+        btn.classList.contains("collapsed") ? openCat(btn) : closeCat(btn);
       });
     });
 
-    // ── Search ───────────────────────────────────────────
-    if (!search) return;
-
-    search.addEventListener("input", () => {
-      const query = search.value.trim().toLowerCase();
-      const categories = nav.querySelectorAll(".rpc-category");
-
-      categories.forEach((cat) => {
-        const links = cat.querySelectorAll(".rpc-method-link");
-        let visibleCount = 0;
-
-        links.forEach((link) => {
-          const text = link.textContent.toLowerCase();
-          const match = !query || text.includes(query);
-          link.closest("li").style.display = match ? "" : "none";
-          if (match) visibleCount++;
-        });
-
-        const btn  = cat.querySelector(".rpc-cat-toggle");
-        const list = cat.querySelector(".rpc-method-list");
-
-        if (query) {
-          // Always show categories with matching results
-          cat.style.display = visibleCount ? "" : "none";
-          if (visibleCount && list) list.style.display = "block";
-          if (btn) btn.classList.remove("collapsed");
-        } else {
-          cat.style.display = "";
-          // Restore original state: only active-containing stays open
-          const hasActive = cat.querySelector(".active");
-          if (hasActive) {
-            openCategory(btn);
+    if (search) {
+      search.addEventListener("input", () => {
+        const q = search.value.trim().toLowerCase();
+        nav.querySelectorAll(".rpc-category").forEach((cat) => {
+          const links = cat.querySelectorAll(".rpc-method-link");
+          let visible = 0;
+          links.forEach((link) => {
+            const match = !q || link.textContent.toLowerCase().includes(q);
+            link.closest("li").style.display = match ? "" : "none";
+            if (match) visible++;
+          });
+          const btn  = cat.querySelector(".rpc-cat-toggle");
+          const list = cat.querySelector(".rpc-method-list");
+          if (q) {
+            cat.style.display = visible ? "" : "none";
+            if (visible && list) list.style.display = "block";
+            if (btn) btn.classList.remove("collapsed");
           } else {
-            closeCategory(btn);
+            cat.style.display = "";
+            cat.querySelector(".active") ? openCat(btn) : closeCat(btn);
           }
+        });
+      });
+    }
+
+    // Version switcher: if on a method page, jump to same method in new version
+    document.querySelectorAll(".rpc-ver-item").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetVer = link.dataset.rpcVer;
+        if (!targetVer) return;
+
+        const active = nav.querySelector(".rpc-method-link.active");
+        if (!active) return;
+
+        const method = active.dataset.rpcMethod;
+        if (!method) return;
+
+        const parts = window.location.pathname.split("/").filter(Boolean);
+        // URL: /locale/development/rpc/VERSION/method/
+        if (parts.length >= 4 && parts[2] === "rpc") {
+          e.preventDefault();
+          parts[3] = targetVer;
+          window.location.href = "/" + parts.join("/") + "/";
         }
       });
     });

@@ -544,6 +544,8 @@ pre code {
 .rpc-cat-badge { font-family: var(--bwc-font-mono); font-size: 0.68rem; letter-spacing: 0.07em; background: rgba(0,212,170,0.1); color: var(--bwc-accent); border: 1px solid rgba(0,212,170,0.25); }
 .rpc-pre { font-size: 0.72rem; }
 .rpc-pre code { font-size: inherit; }
+.rpc-latest-tag { font-size: 0.65rem; color: var(--bwc-accent); font-family: var(--bwc-font-mono); margin-left: 0.3rem; }
+.rpc-sidebar .dropdown-toggle { justify-content: flex-start; }
 @media (max-width: 991px) {
   .rpc-method-title { font-size: 1rem; }
   .rpc-pre { font-size: 0.68rem; }

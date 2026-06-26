@@ -1,15 +1,24 @@
----
-layout: layouts/rpc.njk
-pagination:
-  data: locales
-  size: 1
-  alias: locale
-permalink: "/{{ locale }}/development/rpc/"
-pageTitle: "RPC"
+---js
+{
+  layout: "layouts/rpc.njk",
+  pagination: {
+    data: "rpc_version_locales",
+    size: 1,
+    alias: "item"
+  },
+  permalink: (data) => data.item
+    ? `${data.item.locale}/development/rpc/${data.item.version}/`
+    : false,
+  eleventyComputed: {
+    locale: (data) => data.item ? data.item.locale : "en",
+    currentVersion: (data) => data.item ? data.item.version : null,
+    pageTitle: (data) => data.item ? `RPC v${data.item.version}` : "RPC"
+  }
+}
 ---
 {%- set t = i18n[locale] -%}
-{%- set ver = rpcMeta.latest -%}
-{%- set rpcData = rpc[ver] -%}
+{%- set ver = item.version -%}
+{%- set rpcData = item.rpcData -%}
 
 <div class="rpc-index-page">
   <div class="d-flex align-items-start justify-content-between mb-4 flex-wrap gap-2">

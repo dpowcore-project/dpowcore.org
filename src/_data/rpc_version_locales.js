@@ -13,11 +13,9 @@ const versions = readdirSync(resolve(__dirname, 'rpc'))
   .filter(f => f.endsWith('.json'))
   .map(f => basename(f, '.json'));
 
-const allMethods = versions.flatMap(version => {
-  const data = JSON.parse(readFileSync(resolve(__dirname, 'rpc', `${version}.json`), 'utf8'));
-  return locales.flatMap(locale =>
-    data.methods.map(method => ({ locale, version, method }))
-  );
-});
-
-export default allMethods;
+export default locales.flatMap(locale =>
+  versions.map(version => {
+    const data = JSON.parse(readFileSync(resolve(__dirname, 'rpc', `${version}.json`), 'utf8'));
+    return { locale, version, rpcData: data };
+  })
+);
