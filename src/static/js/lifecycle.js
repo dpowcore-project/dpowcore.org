@@ -63,7 +63,8 @@
       const res = await fetch(API_URL, { headers: { Accept: "application/vnd.github+json" } });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       releases = await res.json();
-    } catch {
+    } catch (err) {
+      console.error("Failed to fetch lifecycle releases:", err);
       wrapper.innerHTML = "";
       wrapper.appendChild(el("div", { cls: "alert alert-warning", text: i18n.error }));
       return;
@@ -78,11 +79,11 @@
 
     // Group by major version
     const byMajor = new Map();
-    for (const r of releases) {
-      const m = parseMajor(r.tag_name);
-      if (m < 0) continue;
-      if (!byMajor.has(m)) byMajor.set(m, []);
-      byMajor.get(m).push(r);
+    for (const release of releases) {
+      const majorVersion = parseMajor(release.tag_name);
+      if (majorVersion < 0) continue;
+      if (!byMajor.has(majorVersion)) byMajor.set(majorVersion, []);
+      byMajor.get(majorVersion).push(release);
     }
 
     // Determine top-2 supported majors
@@ -107,28 +108,28 @@
         (a, b) => new Date(b.published_at) - new Date(a.published_at)
       );
 
-      for (let i = 0; i < seriesReleases.length; i++) {
-        const r = seriesReleases[i];
+      for (let releaseIndex = 0; releaseIndex < seriesReleases.length; releaseIndex++) {
+        const release = seriesReleases[releaseIndex];
         // Only the latest release in a supported series is Supported;
         // older patch releases within the same major are EOL.
-        const isThisSupported = isSupported && i === 0;
+        const isThisSupported = isSupported && releaseIndex === 0;
 
         const tr = el("tr");
 
         // Version + link
         const tdVer = el("td");
         const link  = el("a", {
-          href:   r.html_url,
+          href:   release.html_url,
           target: "_blank",
           rel:    "noopener noreferrer",
-          text:   r.tag_name,
+          text:   release.tag_name,
         });
         tdVer.appendChild(link);
         tr.appendChild(tdVer);
 
         // Date
-        const dateStr = r.published_at
-          ? new Date(r.published_at).toLocaleDateString()
+        const dateStr = release.published_at
+          ? new Date(release.published_at).toLocaleDateString()
           : "—";
         tr.appendChild(el("td", { text: dateStr }));
 

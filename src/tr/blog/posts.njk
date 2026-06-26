@@ -8,8 +8,10 @@
     addAllPagesToCollections: true
   },
   permalink: (data) => {
-    const slug = data.post?.data?.permalink
-      ? data.post.data.permalink.replace('/en/blog/', '').replace('/', '')
+    const permalink = data.post?.data?.permalink;
+    const segments = permalink ? permalink.split('/').filter(Boolean) : [];
+    const slug = segments.length > 0
+      ? segments[segments.length - 1]
       : data.post?.fileSlug;
     return `/tr/blog/${slug}/`;
   },

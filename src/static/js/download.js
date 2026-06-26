@@ -87,7 +87,7 @@
     return `${(bytes / 1024).toFixed(0)} KB`;
   };
 
-  const isDebug  = (name) => /-debug\./.test(name);
+  const isDebug = (name) => /-debug\./.test(name);
   const isSums = (name) =>
     name === "SHA256SUMS" || name === "SHA256SUMS.asc";
 
@@ -114,7 +114,7 @@
 
     const nameSpan = el("span", { cls: "bwc-dl-filename", text: asset.name });
     const sizeSpan = el("span", { cls: "bwc-dl-size", text: sizeStr });
-    const osIcon   = el("i", { cls: `${icon} bwc-dl-os-icon`, title: label });
+    const osIcon = el("i", { cls: `${icon} bwc-dl-os-icon`, title: label });
 
     const dlBtn = el("a", {
       cls:  "btn btn-bwc-primary btn-sm ms-auto flex-shrink-0",
@@ -126,7 +126,7 @@
     const card = el("div", { cls: "bwc-dl-card" }, osIcon, nameSpan, sizeSpan);
 
     if (sha256) {
-      const hashBox = el("code", { cls: "bwc-hash", title: "Click to copy SHA256" });
+      const hashBox = el("code", { cls: "bwc-hash" });
       hashBox.textContent = sha256;
       hashBox.addEventListener("click", () => copyText(sha256, hashBox));
       card.appendChild(hashBox);
@@ -137,7 +137,7 @@
   };
 
   // ── Render one release ────────────────────────────────────
-  const renderRelease = (release, shaMap, container, showDebug, i18n) => {
+  const renderRelease = (release, container, showDebug, i18n) => {
     const assets = release.assets ?? [];
 
     const groups = { windows: [], macos: [], linux: [], source: [], other: [] };
@@ -166,7 +166,8 @@
       );
 
       for (const asset of groupAssets) {
-        const sha = shaMap.get(asset.name) ?? null;
+        // Use GitHub API digest field (sha256:HEXHASH) available since June 2025
+        const sha = asset.digest ? asset.digest.replace(/^sha256:/, "") : null;
         groupEl.appendChild(buildCard(asset, sha, i18n.dlBtn));
       }
 
@@ -314,7 +315,8 @@
         releaseContainer.appendChild(notesLink);
       }
 
-      // SHA256SUMS download link (no CORS fetch)
+      // SHA256SUMS download link (GitHub releases block CORS fetch, so hashes
+      // cannot be parsed client-side — we just provide the download link)
       const sumsAsset = (rel.assets ?? []).find((a) => a.name === "SHA256SUMS");
       if (sumsAsset) {
         releaseContainer.appendChild(
@@ -328,7 +330,7 @@
         );
       }
 
-      renderRelease(rel, new Map(), releaseContainer, showDebug, i18n);
+      renderRelease(rel, releaseContainer, showDebug, i18n);
     };
 
     select.addEventListener("change", renderSelected);

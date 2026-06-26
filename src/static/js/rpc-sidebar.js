@@ -51,7 +51,9 @@
             if (btn) btn.classList.remove("collapsed");
           } else {
             cat.style.display = "";
-            cat.querySelector(".active") ? openCat(btn) : closeCat(btn);
+            if (btn) {
+              cat.querySelector(".active") ? openCat(btn) : closeCat(btn);
+            }
           }
         });
       });
@@ -66,11 +68,13 @@
         const active = nav.querySelector(".rpc-method-link.active");
         if (!active) return;
 
-        const method = active.dataset.rpcMethod;
-        if (!method) return;
-
+        let method = active.dataset.rpcMethod;
         const parts = window.location.pathname.split("/").filter(Boolean);
         // URL: /locale/development/rpc/VERSION/method/
+        if (!method && parts.length >= 5 && parts[2] === "rpc") {
+          method = parts[4];
+        }
+        if (!method) return;
         if (parts.length >= 4 && parts[2] === "rpc") {
           e.preventDefault();
           parts[3] = targetVer;
