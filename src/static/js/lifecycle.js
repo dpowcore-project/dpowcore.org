@@ -107,7 +107,12 @@
         (a, b) => new Date(b.published_at) - new Date(a.published_at)
       );
 
-      for (const r of seriesReleases) {
+      for (let i = 0; i < seriesReleases.length; i++) {
+        const r = seriesReleases[i];
+        // Only the latest release in a supported series is Supported;
+        // older patch releases within the same major are EOL.
+        const isThisSupported = isSupported && i === 0;
+
         const tr = el("tr");
 
         // Version + link
@@ -130,10 +135,10 @@
         // Status badge
         const tdStatus = el("td");
         const badge = el("span", {
-          cls:  isSupported
+          cls:  isThisSupported
             ? "badge bg-success text-white"
             : "badge bg-secondary text-white",
-          text: isSupported ? i18n.supported : i18n.eol,
+          text: isThisSupported ? i18n.supported : i18n.eol,
         });
         tdStatus.appendChild(badge);
         tr.appendChild(tdStatus);
