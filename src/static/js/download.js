@@ -88,10 +88,6 @@
   };
 
   const isDebug  = (name) => /-debug\./.test(name);
-  const isSource = (name) =>
-    name === "SHA256SUMS" ||
-    name === "SHA256SUMS.asc" ||
-    (/\.tar\.gz$/.test(name) && !/linux|darwin/.test(name));
   const isSums = (name) =>
     name === "SHA256SUMS" || name === "SHA256SUMS.asc";
 
@@ -144,17 +140,17 @@
   const renderRelease = (release, shaMap, container, showDebug, i18n) => {
     const assets = release.assets ?? [];
 
-    const groups = { windows: [], macos: [], linux: [], other: [] };
+    const groups = { windows: [], macos: [], linux: [], source: [], other: [] };
 
     for (const asset of assets) {
       if (isSums(asset.name))                        continue;
-      if (isSource(asset.name))                      continue;
       if (isDebug(asset.name) && !showDebug)         continue;
 
       const { label } = osInfo(asset.name);
       if (/Windows/.test(label))    groups.windows.push(asset);
       else if (/macOS/.test(label)) groups.macos.push(asset);
       else if (/Linux/.test(label)) groups.linux.push(asset);
+      else if (/Source/.test(label)) groups.source.push(asset);
       else                          groups.other.push(asset);
     }
 
