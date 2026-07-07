@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pl" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bitweb Core 31.2 This release is a maintenance and feature update on top of the 31.x branch.">
+  <meta property="og:title" content="Bitweb Core 31.2">
+  <meta property="og:description" content="Bitweb Core 31.2 This release is a maintenance and feature update on top of the 31.x branch.">
+  <meta property="og:url" content="https://bitwebcore.net/pl/blog/bitweb-31-2/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Bitweb Core 31.2 — Bitweb Core</title>
+
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-g8hyvx1/Dpop2vSZsmlVNkheHzZ4cH4wXaGNwVSuBxiAjCmHHpRpUmDjl0trIjmXuhWjOyX2MiMUXwVEEwFtAw==" crossorigin="anonymous">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://bitwebcore.net/pl/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="uk" href="https://bitwebcore.net/uk/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="zh" href="https://bitwebcore.net/zh/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="de" href="https://bitwebcore.net/de/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="ja" href="https://bitwebcore.net/ja/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="ko" href="https://bitwebcore.net/ko/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="es" href="https://bitwebcore.net/es/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="it" href="https://bitwebcore.net/it/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="tr" href="https://bitwebcore.net/tr/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="pt" href="https://bitwebcore.net/pt/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="fr" href="https://bitwebcore.net/fr/blog/bitweb-31-2/">
+  <link rel="alternate" hreflang="ro" href="https://bitwebcore.net/ro/blog/bitweb-31-2/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+
+    <a class="bwc-nav-brand" href="/pl/">
+      <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+           class="bwc-logo">
+      Bitweb Core
+    </a>
+
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>PL</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/blog/bitweb-31-2/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/blog/bitweb-31-2/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/blog/bitweb-31-2/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/blog/bitweb-31-2/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/blog/bitweb-31-2/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/blog/bitweb-31-2/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/blog/bitweb-31-2/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/pl/blog/bitweb-31-2/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/blog/bitweb-31-2/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/blog/bitweb-31-2/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/blog/bitweb-31-2/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/blog/bitweb-31-2/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/blog/bitweb-31-2/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/blog/bitweb-31-2/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Jasny
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Ciemny
+          </button></li>
+        </ul>
+      </div>
+    </div>
+
+    <ul class="bwc-nav-links list-unstyled mb-0">
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/">Strona główna</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/about/">O projekcie</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Portfele
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/pl/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Pełny węzeł
+          </a></li>
+          <li><a class="dropdown-item" href="/pl/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Portfel webowy
+          </a></li>
+        </ul>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/pl/blog/">Aktualności</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/mining/">Wydobycie</a>
+      </li>
+
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/resources/">Zasoby</a>
+      </li>
+
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Rozwój
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/pl/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Współtworzenie
+          </a></li>
+          <li><a class="dropdown-item" href="/pl/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>Dokumentacja RPC
+          </a></li>
+          <li><a class="dropdown-item" href="/pl/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
+          </a></li>
+        </ul>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<main><div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+
+      <div class="bwc-post-date mb-2">7 Jul 2026</div>
+      <h1 class="bwc-section-title mb-4">Bitweb Core 31.2</h1>
+      <hr class="bwc-divider">
+      <p class="mb-4">
+        <a href="https://github.com/bitweb-project/bitweb/releases/tag/v31.2" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm me-2">
+          <i class="fa-brands fa-github me-1"></i>GitHub Release v31.2
+        </a>
+        <a href="/pl/wallets/full-node/" class="btn btn-bwc-secondary btn-sm me-2">Pobierz</a>
+        <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/release-notes/release-notes-31.2.md" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">Informacje o wydaniu</a>
+      </p>
+
+      <div class="bwc-post-content">
+        <p>Bitweb Core 31.2 is now available.
+This release is a maintenance and feature update on top of the 30.x branch.</p>
+<blockquote>
+<p>⚠️ <strong>IMPORTANT! ALWAYS BACK UP YOUR WALLET DATA BEFORE ANY UPDATE.</strong>
+Shut down your wallet completely, then copy your <code>wallet.dat</code> file to a safe place before
+updating. If possible, always encrypt your wallet with a strong password.</p>
+</blockquote>
+<h2>Upgrade from 31.1</h2>
+<p>If you are already running Bitweb Core 31.1, upgrading to 31.2 is straightforward:</p>
+<ol>
+<li>Shut down your node completely.</li>
+<li>Back up your <code>wallet.dat</code> to a safe location outside the data directory.</li>
+<li>Install Bitweb Core 31.2.</li>
+<li>Start the node — it will continue syncing from where it left off.</li>
+</ol>
+<p>No rescan or migration is required when upgrading from 31.1.</p>
+<h2>What's new in 31.2</h2>
+<h3>New feature: header PoW verification cache</h3>
+<p>This release adds a new <strong>header proof-of-work verification cache</strong> (<code>pow_cache</code>), built on the
+same <code>CuckooCache::cache</code> structure already used elsewhere in the codebase (e.g. the signature
+cache). The cache stores the result of already-verified headers (64 MiB by default, configurable
+via <code>-headerpowcachesize</code>) and sits behind a single choke point, <code>CheckProofOfWorkCached()</code>, used
+by both header validation (<code>CheckBlockHeader()</code>) and block reads from disk
+(<code>BlockManager::ReadBlock()</code>). This means the cache speeds up essentially any PoW check on an
+already-seen header — including serving blocks to other peers and re-reading blocks from local
+storage — not just initial header sync. It starts empty and is warmed up by ordinary node
+operation; misses always fall back to a full Argon2id recompute, so consensus rules are
+unaffected.</p>
+<h3>New feature: parallel header PoW check queue</h3>
+<p>Separately, header PoW checks can now be dispatched across a dedicated parallel check queue owned
+by <code>ChainstateManager</code>, instead of being checked one at a time. This only engages once a batch of
+headers exceeds an internal threshold (32 headers) — in practice this means it's mainly active
+during the presync stage of initial headers sync, where large batches of headers arrive from a
+peer and need checking before the chain's cumulative work is confirmed; during normal steady-state
+operation, where headers usually arrive in small numbers, checks are still processed sequentially.
+Up to <strong>6 threads</strong> can be used; on machines with fewer than 3 CPU cores, the queue automatically
+falls back to a single thread so it never starves the rest of the node.</p>
+<h3>Bug fixes (backported from upstream Bitcoin Core, not yet in official 31.x)</h3>
+<ul>
+<li>Fixed a race in <code>FetchBlock()</code> where a peer disconnecting between <code>GetPeerRef()</code> and
+<code>BlockRequested()</code> could hit an assert on a missing <code>CNodeState</code>, remotely triggerable via the
+<code>getblockfrompeer</code> RPC.</li>
+<li>Fixed an undefined-behavior bug where a pruned node in a deep reorg could insert the same
+(parent, block) pair into <code>m_blocks_unlinked</code> twice, corrupting the ordering invariant of
+<code>setBlockIndexCandidates</code>.</li>
+<li>Enforced BIP152's requirement that <code>sendcmpct</code>'s announce field be 0 or 1; peers violating this
+are now misbehaved and disconnected.</li>
+<li>Hardened private-broadcast handling: newly queued transactions get a 5-minute grace period
+before being flagged stale (previously they could be flagged within seconds), and sending to the
+same node id twice for the same transaction is now prevented.</li>
+<li>Fixed mempool package cleanup on an internal, not-known-to-be-reachable
+&quot;PolicyScriptChecks succeeded but ConsensusScriptChecks failed&quot; path, so a failing transaction's
+dependents are also removed instead of being left behind.</li>
+<li>Fixed a cosmetic Taproot-deployment reporting issue in RPC output (Taproot itself was already
+active at the validation level; only the RPC status report was affected).</li>
+</ul>
+<p>See <a href="https://github.com/bitweb-project/bitweb/blob/master/doc/release-notes/release-notes-31.2.md">release notes</a> on GitHub for the full changelog.</p>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>Node won't start after upgrade</strong> — make sure you're upgrading from 31.1 (or a migrated 30.x
+wallet). If you're coming from an older, unmigrated chain, instructions in the <a href="https://github.com/bitweb-project/bitweb/releases/tag/v30.3.1">30.3.1</a> release.</li>
+<li><strong>Balance shows zero after upgrade</strong> — run <code>bitweb-cli rescanblockchain</code> to rescan the chain.</li>
+</ul>
+<p>Issues or questions? Use the <a href="https://github.com/bitweb-project/bitweb/issues">issue tracker</a>
+or join the community on the <a href="https://bitwebcore.net/en/resources/">resources page</a>.</p>
+
+      </div>
+
+      <hr class="bwc-divider mt-5">
+      <a href="/pl/blog/" class="btn btn-bwc-secondary btn-sm">
+        <i class="fa-solid fa-arrow-left me-1"></i>Aktualności
+      </a>
+
+    </div>
+  </div>
+</div>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Bitweb Core</span>
+        </div>
+        <p class="text-secondary small">Oprogramowanie open source, wydane na licencji MIT.</p>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Projekt</h6>
+        <ul class="list-unstyled">
+          <li><a href="/pl/about/" class="footer-link">O projekcie</a></li>
+          <li><a href="/pl/wallets/full-node/" class="footer-link">Pełny węzeł</a></li>
+          <li><a href="/pl/blog/" class="footer-link">Aktualności</a></li>
+          <li><a href="/pl/resources/" class="footer-link">Zasoby</a></li>
+          <li><a href="/pl/brand/" class="footer-link">Zasoby marki</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Deweloperzy</h6>
+        <ul class="list-unstyled">
+          <li><a href="/pl/development/" class="footer-link">Współtworzenie</a></li>
+          <li><a href="/pl/development/rpc/" class="footer-link">Dokumentacja RPC</a></li>
+          <li><a href="/pl/whitepaper/" class="footer-link">White Paper</a></li>
+          <li><a href="https://github.com/bitweb-project/bitweb" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/bitweb-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix Sigs
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Bezpieczeństwo</h6>
+        <p class="text-secondary small mb-1">Odcisk GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Zweryfikuj klucz w OpenPGP
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Bitweb Core contributors</span>
+      <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licencja MIT</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>
