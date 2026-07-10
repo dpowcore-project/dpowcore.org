@@ -36,7 +36,6 @@ pageTitle: "Home"
     </div>
   </div>
 </section>
-
 <section class="bwc-section">
   <div class="container">
     <div class="row gy-4">
@@ -64,11 +63,9 @@ pageTitle: "Home"
     </div>
   </div>
 </section>
-
-{#- ── Coin Specification ── -#}
+{#- Coin Specification -#}
 <section class="bwc-section bwc-section-flush">
   <div class="container">
-
     <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
       <div>
         <h2 class="bwc-section-title mb-1">{{ t.spec_title }}</h2>
@@ -78,7 +75,6 @@ pageTitle: "Home"
         <span class="bwc-ticker-badge">BTE</span>
       </div>
     </div>
-
     {#- Economics row -#}
     <div class="row gy-3 mb-4">
       <div class="col-6 col-lg-3">
@@ -110,7 +106,6 @@ pageTitle: "Home"
         </div>
       </div>
     </div>
-
     {#- PoW + Difficulty -#}
     <div class="row gy-4 mb-4">
       <div class="col-12 col-md-6">
@@ -155,7 +150,6 @@ pageTitle: "Home"
         </div>
       </div>
     </div>
-
     {#- Address Formats + Network -#}
     <div class="row gy-4 mb-4">
       <div class="col-12 col-md-6">
@@ -222,7 +216,6 @@ pageTitle: "Home"
         </div>
       </div>
     </div>
-
     {#- Genesis + PoW Limit -#}
     <div class="row gy-4">
       <div class="col-12 col-md-6">
@@ -242,17 +235,14 @@ pageTitle: "Home"
         </div>
       </div>
     </div>
-
   </div>
 </section>
-
 <section class="bwc-section bwc-section-flush">
   <div class="container">
     <div class="mb-5">
       <h2 class="bwc-section-title mb-1">{{ t.vest_title }}</h2>
       <p class="bwc-section-lead mb-0">{{ t.vest_subtitle }}</p>
     </div>
-
     {#- Row 1: Background + Vesting protection -#}
     <div class="row gy-4 mb-4">
       <div class="col-12 col-md-6">
@@ -268,7 +258,6 @@ pageTitle: "Home"
         </div>
       </div>
     </div>
-
     {#- Row 2: Key blocks -#}
     <div class="bwc-card mb-4">
       <div class="bwc-spec-sub-title mb-3">{{ t.vest_blocks_title }}</div>
@@ -296,7 +285,6 @@ pageTitle: "Home"
         </div>
       </div>
     </div>
-
     {#- Row 3: Miner note + Pool warning -#}
     <div class="row gy-4">
       <div class="col-12 col-md-6">
@@ -319,10 +307,8 @@ pageTitle: "Home"
         </div>
       </div>
     </div>
-
   </div>
 </section>
-
 <section class="bwc-section bwc-section-flush">
   <div class="container">
     <div class="bwc-card d-flex flex-wrap align-items-center gap-3">
@@ -341,7 +327,6 @@ pageTitle: "Home"
     </div>
   </div>
 </section>
-
 <section class="bwc-section bwc-section-flush">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -376,6 +361,5 @@ pageTitle: "Home"
     {%- endif %}
   </div>
 </section>
-
 {% block scripts %}<script src="/static/js/home.js"
   integrity="{{ 'js/home.js' | sri }}" crossorigin="anonymous"></script>{% endblock %}

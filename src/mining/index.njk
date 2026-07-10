@@ -10,18 +10,14 @@ pageTitle: "Mining"
 {%- set t = i18n[locale] -%}
 
 <div class="container py-5">
-
   <div class="mb-5">
     <h1 class="bwc-section-title"><i class="fa-solid fa-microchip me-2"></i>{{ t.mining_title }}</h1>
     <p class="bwc-section-lead">{{ t.mining_lead }}</p>
   </div>
-
   <section class="mb-5">
     <h2 class="h3 mb-1">{{ t.mining_solo_title }}</h2>
     <p class="text-secondary mb-4">{{ t.mining_solo_lead }}</p>
-
     <div class="bwc-verify">
-
       <div class="bwc-verify-step">
         <h3 class="h5 mb-2">{{ t.mining_step1_title }}</h3>
         <p class="text-secondary small mb-2">{{ t.mining_step1_desc }}</p>
@@ -34,46 +30,45 @@ coinstatsindex=1
 server=1
 listen=1</code></pre>
       </div>
-
       <div class="bwc-verify-step">
         <h3 class="h5 mb-2">{{ t.mining_step2_title }}</h3>
         <p class="text-secondary small mb-2">{{ t.mining_step2_desc }}</p>
         <a href="https://github.com/bitweb-project/cpuminer-opt/releases" target="_blank" rel="noopener" class="btn btn-bwc-secondary mb-3">
           <i class="fa-brands fa-github me-2"></i>bitweb-project/cpuminer-opt
         </a>
-
         <div class="mb-3">
           <p class="text-secondary small mb-2 fw-semibold">{{ t.mining_cpu_label }}</p>
-          <pre><code>cpuminer-sse2            -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
-cpuminer-aes-sse42       -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
-cpuminer-avx             -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
-cpuminer-avx2            -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
-cpuminer-avx2-sha        -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
-cpuminer-avx2-sha-vaes   -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
-cpuminer-avx512          -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+          <pre><code>cpuminer-sse2 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-aes-sse42 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx2 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx2-sha -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx2-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx512 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
 cpuminer-avx512-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4</code></pre>
         </div>
-
         <div class="mb-3">
           <p class="text-secondary small mb-2 fw-semibold">{{ t.mining_gpu_ocl_label }} <span class="fw-normal">({{ t.mining_gpu_ocl_note }})</span></p>
           <pre><code>cpuminer-* -a argon2id1024 --use-gpu OpenCL -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce --gpu-batchsize 3484 --gpu-id 1</code></pre>
         </div>
-
         <div>
           <p class="text-secondary small mb-2 fw-semibold">{{ t.mining_gpu_cuda_label }}</p>
           <pre><code>cpuminer-* -a argon2id1024 --use-gpu CUDA -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce --gpu-batchsize 64 --gpu-id 1</code></pre>
         </div>
       </div>
-
     </div>
   </section>
-
   <section>
     <h2 class="h3 mb-1">{{ t.mining_pools_title }}</h2>
     <p class="text-secondary mb-4">{{ t.mining_pools_lead }}</p>
-
     <div class="row g-3">
-
       <div class="col-md-6">
         <div class="bwc-card h-100">
           <div class="d-flex align-items-center gap-3 mb-3">
@@ -91,7 +86,6 @@ cpuminer-avx512-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p pa
           </a>
         </div>
       </div>
-
       <div class="col-md-6">
         <div class="bwc-card h-100">
           <div class="d-flex align-items-center gap-3 mb-3">
@@ -106,8 +100,6 @@ cpuminer-avx512-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p pa
           </a>
         </div>
       </div>
-
     </div>
   </section>
-
 </div>

@@ -17,13 +17,11 @@
 #}
 <nav class="bwc-navbar sticky-top" id="mainNav">
   <div class="container bwc-nav-inner">
-
     <a class="bwc-nav-brand" href="/{{ l }}/">
       <img src="/static/img/logo.svg" alt="{{ site.title }}" width="28" height="28"
            class="bwc-logo">
       {{ site.title }}
     </a>
-
     <div class="bwc-nav-utils">
       <div class="dropdown">
         <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
@@ -40,7 +38,6 @@
           {%- endfor %}
         </ul>
       </div>
-
       <div class="dropdown">
         <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
                 data-bs-toggle="dropdown" aria-expanded="false" type="button">
@@ -59,19 +56,15 @@
         </ul>
       </div>
     </div>
-
     <ul class="bwc-nav-links list-unstyled mb-0">
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link{% if page.url == '/' + l + '/' %} active{% endif %}"
            href="/{{ l }}/">{{ t.nav_home }}</a>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link{% if '/about' in page.url %} active{% endif %}"
            href="/{{ l }}/about/">{{ t.nav_about }}</a>
       </li>
-
       <li class="bwc-nav-item dropdown">
         <a class="bwc-nav-link dropdown-toggle{% if '/wallets' in page.url %} active{% endif %}"
            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,22 +79,18 @@
           </a></li>
         </ul>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link{% if '/blog' in page.url %} active{% endif %}"
            href="/{{ l }}/blog/">{{ t.nav_news }}</a>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link{% if '/mining' in page.url %} active{% endif %}"
            href="/{{ l }}/mining/">{{ t.nav_mining }}</a>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link{% if '/resources' in page.url %} active{% endif %}"
            href="/{{ l }}/resources/">{{ t.nav_resources }}</a>
       </li>
-
       <li class="bwc-nav-item dropdown">
         <a class="bwc-nav-link dropdown-toggle{% if '/development' in page.url %} active{% endif %}"
            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -119,8 +108,6 @@
           </a></li>
         </ul>
       </li>
-
     </ul>
-
   </div>
 </nav>

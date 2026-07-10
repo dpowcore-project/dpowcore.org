@@ -10,12 +10,10 @@ pageTitle: "Download"
 {%- set t = i18n[locale] -%}
 
 <div class="container py-5">
-
   <div class="mb-5">
     <h1 class="bwc-section-title">{{ t.download_title }}</h1>
     <p class="bwc-section-lead">{{ t.download_subtitle }}</p>
   </div>
-
   <div id="bwc-download-root" class="mb-5"
        data-repo="{{ site.github_api_repo }}"
        data-locale="{{ locale }}"
@@ -28,13 +26,10 @@ pageTitle: "Download"
        data-i18n-no-releases="{{ t.download_no_releases }}"
        data-i18n-dl-btn="{{ t.download_dl_btn }}">
   </div>
-
   <hr class="bwc-divider">
-
   <div class="bwc-verify mt-5">
     <h2 class="h4 mb-4"><i class="fa-solid fa-shield-halved me-2 text-success"></i>{{ t.verify_title }}</h2>
     <p class="text-secondary mb-4">{{ t.verify_intro }}</p>
-
     <div class="bwc-verify-step">
       <h3 class="h5 mb-3">{{ t.verify_step1_title }}</h3>
       <p class="text-secondary small mb-1">{{ t.verify_step1_linux }}</p>
@@ -42,7 +37,6 @@ pageTitle: "Download"
       <p class="text-secondary small mb-1">{{ t.verify_step1_windows }}</p>
       <pre><code>Get-FileHash bitweb-*.zip -Algorithm SHA256</code></pre>
     </div>
-
     <div class="bwc-verify-step">
       <h3 class="h5 mb-3">{{ t.verify_step2_title }}</h3>
       <p class="text-secondary small mb-1">{{ t.verify_step2_import }}</p>
@@ -59,7 +53,6 @@ pageTitle: "Download"
         </div>
       </div>
     </div>
-
     <div class="bwc-verify-step bwc-verify-step-muted">
       <h3 class="h5 mb-2">{{ t.verify_guix_title }}</h3>
       <p class="text-secondary small mb-2">{{ t.verify_guix_body }}</p>
@@ -72,8 +65,6 @@ pageTitle: "Download"
       </a>
     </div>
   </div>
-
 </div>
-
 {% block scripts %}<script src="/static/js/download.js"
   integrity="{{ 'js/download.js' | sri }}" crossorigin="anonymous"></script>{% endblock %}

@@ -22,7 +22,6 @@ pageTitle: "RPC"
     </div>
     <span class="badge bg-secondary text-uppercase align-self-start">{{ ver }}</span>
   </div>
-
   {%- set currentCat = "" -%}
   {%- for method in rpcData.methods | sort(false, false, "category") %}
     {%- if method.category != currentCat %}
@@ -39,7 +38,6 @@ pageTitle: "RPC"
       </a>
   {%- endfor %}
   {%- if currentCat != "" %}</div>{% endif %}
-
   <p class="text-muted small mt-5">
     Generated {{ rpcData.generated | dateShort }}.
     To update: run <code>node contrib/doc-gen/generate.js</code> against a live bitwebd node.

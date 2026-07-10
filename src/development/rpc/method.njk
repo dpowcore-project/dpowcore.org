@@ -19,7 +19,6 @@
 }
 ---
 {%- set t = i18n[locale] -%}
-
 <div class="rpc-method-page">
   <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
     <h1 class="rpc-method-title mb-0">
@@ -27,11 +26,9 @@
     </h1>
     <span class="badge rpc-cat-badge text-uppercase">{{ method.category }}</span>
   </div>
-
   <div class="rpc-description">
     <pre class="rpc-pre"><code>{{ method.description }}</code></pre>
   </div>
-
   <div class="mt-4 d-flex gap-3 rpc-nav-links text-muted small">
     <a href="/{{ locale }}/development/rpc/{{ currentVersion }}/">&larr; {{ t.rpc_all_methods }}</a>
     <span class="text-secondary">v{{ currentVersion }}</span>

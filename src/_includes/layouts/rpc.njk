@@ -8,10 +8,8 @@ layout: layouts/base.njk
 
 <div class="container-fluid rpc-layout">
   <div class="row g-0">
-
     <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar order-2 order-lg-1" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
-
         {%- if rpcMeta.versions | length > 1 %}
         <div class="mb-3">
           <div class="dropdown">
@@ -37,7 +35,6 @@ layout: layouts/base.njk
           </span>
         </div>
         {%- endif %}
-
         <div class="mb-3">
           <input
             type="search"
@@ -48,11 +45,9 @@ layout: layouts/base.njk
             spellcheck="false"
           >
         </div>
-
         <a href="/{{ l }}/development/rpc/{{ ver }}/" class="rpc-index-link d-block mb-2 small text-secondary">
           &larr; {{ t.rpc_all_methods }}
         </a>
-
         <nav id="rpcNav" aria-label="RPC methods" data-rpc-ver="{{ ver }}">
           {%- set currentCat = "" -%}
           {%- for m in rpcData.methods | sort(false, false, "category") %}
@@ -80,13 +75,10 @@ layout: layouts/base.njk
         </nav>
       </div>
     </aside>
-
     <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4 order-1 order-lg-2">
       {{ content | safe }}
     </div>
-
   </div>
 </div>
-
 <script src="/static/js/rpc-sidebar.js"
   integrity="{{ 'js/rpc-sidebar.js' | sri }}" crossorigin="anonymous"></script>

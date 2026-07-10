@@ -12,7 +12,6 @@ pageTitle: "Lifecycle"
 <div class="container py-5">
   <h1 class="bwc-section-title mb-2">{{ t.lifecycle_title }}</h1>
   <p class="bwc-section-lead mb-5">{{ t.lifecycle_lead }}</p>
-
   <div id="bwc-lifecycle-root"
        data-repo="{{ site.github_api_repo }}"
        data-i18n-loading="{{ t.download_loading }}"
@@ -24,6 +23,5 @@ pageTitle: "Lifecycle"
        data-i18n-released="{{ t.lifecycle_released }}">
   </div>
 </div>
-
 {% block scripts %}<script src="/static/js/lifecycle.js"
   integrity="{{ 'js/lifecycle.js' | sri }}" crossorigin="anonymous"></script>{% endblock %}
