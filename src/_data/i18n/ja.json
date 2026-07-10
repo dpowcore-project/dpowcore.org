@@ -63,7 +63,7 @@
   "wallets_web_wallet_name": "ウェブウォレット",
   "wallets_web_api_name": "ウォレットAPI",
   "mining_title": "Bitweb マイニング",
-  "mining_lead": "BitwWebはArgon2idプルーフ・オブ・ワークアルゴリズムを使用 — CPUとGPUでマイニング可能。",
+  "mining_lead": "BitwebはArgon2idプルーフ・オブ・ワークアルゴリズムを使用 — CPUとGPUでマイニング可能。",
   "mining_solo_title": "ソロマイニング",
   "mining_solo_lead": "自分のフルノードに直接マイニング。ブロック報酬の100%を獲得。",
   "mining_step1_title": "1. ノードを設定する",
