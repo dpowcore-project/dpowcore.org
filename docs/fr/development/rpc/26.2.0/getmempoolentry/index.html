@@ -189,9 +189,24 @@
     <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar order-2 order-lg-1" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
         <div class="mb-3">
-          <span class="text-muted small" style="font-family:var(--bwc-font-mono);font-size:0.78rem;">
-            <i class="fa-solid fa-code-branch me-1"></i>v26.2.0
-          </span>
+          <div class="dropdown">
+            <button class="btn bwc-util-btn dropdown-toggle w-100 text-start"
+                    data-bs-toggle="dropdown" aria-expanded="false" type="button">
+              <i class="fa-solid fa-code-branch me-1"></i>v26.2.0
+            </button>
+            <ul class="dropdown-menu bwc-dd w-100">
+              <li>
+                <a class="dropdown-item rpc-ver-item"
+                   href="/fr/development/rpc/26.3.1/"
+                   data-rpc-ver="26.3.1">v26.3.1 <span class="rpc-latest-tag">latest</span></a>
+              </li>
+              <li>
+                <a class="dropdown-item rpc-ver-item active"
+                   href="/fr/development/rpc/26.2.0/"
+                   data-rpc-ver="26.2.0">v26.2.0</a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="mb-3">
           <input
