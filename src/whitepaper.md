@@ -27,7 +27,7 @@ Argon2id construction — a memory-hard, ASIC-resistant hashing function — and
 per-block difficulty algorithm with a five-minute target. From genesis through block
 224,999 the network additionally required a second, independent proof-of-work check (Yespower)
 sharing Argon2id's target; this transitional dual-PoW requirement was dropped from consensus at
-block 225,000 (Dpowcoin Core v26.3.1), after which Argon2id alone secures the chain. The codebase follows Bitcoin Core's development process
+block 225,000 (Dpowcoin Core v26.3.2), after which Argon2id alone secures the chain. The codebase follows Bitcoin Core's development process
 including the full functional test suite, reproducible GNU Guix builds, and GPG-signed release
 attestations. This paper describes the technical parameters, the rationale behind each design
 choice, and the toolchain used to bootstrap the network.
@@ -220,7 +220,7 @@ Dpowcoin Core is not affiliated with Komodo or its projects.
 | Transition | 225,000 | Yespower requirement removed from consensus code |
 | Argon2id-Only Era | 225,000+ | Argon2id only |
 
-The Yespower requirement was removed from consensus starting with Dpowcoin Core v26.3.1. No action
+The Yespower requirement was removed from consensus starting with Dpowcoin Core v26.3.2. No action
 is required from miners or SPV wallets: since Yespower and Argon2id always shared the same target,
 mining software already built on Argon2id continues to work unchanged across the transition, and
 light clients can rely on Argon2id alone for header verification both before and after block
@@ -519,7 +519,7 @@ Website: [dpowcore.org](https://dpowcore.org)
 | Argon2id round 1 `t` / `m` / `p` | 2 / 4,096 KiB / 2 |
 | Argon2id round 2 `t` / `m` / `p` | 2 / 32,768 KiB / 2 |
 | Dual-PoW era (Yespower + Argon2id) | Blocks 0 – 224,999 |
-| Yespower dropped from consensus | Block 225,000 (v26.3.1) |
+| Yespower dropped from consensus | Block 225,000 (v26.3.2) |
 | Header PoW cache size (default) | 64 MiB (`-headerpowcachesize`) |
 | Header PoW parallel-check threshold | 32 headers |
 | Header PoW check worker threads (max) | 6 |
