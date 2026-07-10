@@ -10,7 +10,6 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <title>removeprunedfunds — Bitweb Core</title>
-
   <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
   <link rel="stylesheet" href="/static/css/bootstrap.min.css"
     integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
@@ -19,11 +18,9 @@
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/custom.css"
     integrity="sha512-g8hyvx1/Dpop2vSZsmlVNkheHzZ4cH4wXaGNwVSuBxiAjCmHHpRpUmDjl0trIjmXuhWjOyX2MiMUXwVEEwFtAw==" crossorigin="anonymous">
-
   <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
-
   <link rel="canonical" href="https://bitwebcore.net/es/development/rpc/30.3.1/removeprunedfunds/">
   <link rel="alternate" hreflang="en" href="https://bitwebcore.net/en/development/rpc/30.3.1/removeprunedfunds/">
   <link rel="alternate" hreflang="ru" href="https://bitwebcore.net/ru/development/rpc/30.3.1/removeprunedfunds/">
@@ -42,13 +39,11 @@
 <body>
 <nav class="bwc-navbar sticky-top" id="mainNav">
   <div class="container bwc-nav-inner">
-
     <a class="bwc-nav-brand" href="/es/">
       <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
            class="bwc-logo">
       Bitweb Core
     </a>
-
     <div class="bwc-nav-utils">
       <div class="dropdown">
         <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
@@ -115,7 +110,6 @@
           </a></li>
         </ul>
       </div>
-
       <div class="dropdown">
         <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
                 data-bs-toggle="dropdown" aria-expanded="false" type="button">
@@ -134,19 +128,15 @@
         </ul>
       </div>
     </div>
-
     <ul class="bwc-nav-links list-unstyled mb-0">
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link"
            href="/es/">Inicio</a>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link"
            href="/es/about/">Acerca de</a>
       </li>
-
       <li class="bwc-nav-item dropdown">
         <a class="bwc-nav-link dropdown-toggle"
            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -161,22 +151,18 @@
           </a></li>
         </ul>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link"
            href="/es/blog/">Noticias</a>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link"
            href="/es/mining/">Minería</a>
       </li>
-
       <li class="bwc-nav-item">
         <a class="bwc-nav-link"
            href="/es/resources/">Recursos</a>
       </li>
-
       <li class="bwc-nav-item dropdown">
         <a class="bwc-nav-link dropdown-toggle active"
            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -194,15 +180,12 @@
           </a></li>
         </ul>
       </li>
-
     </ul>
-
   </div>
 </nav>
 
 <main><div class="container-fluid rpc-layout">
   <div class="row g-0">
-
     <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar order-2 order-lg-1" id="rpcSidebar">
       <div class="rpc-sidebar-inner p-3">
         <div class="mb-3">
@@ -235,7 +218,6 @@
             </ul>
           </div>
         </div>
-
         <div class="mb-3">
           <input
             type="search"
@@ -246,11 +228,9 @@
             spellcheck="false"
           >
         </div>
-
         <a href="/es/development/rpc/30.3.1/" class="rpc-index-link d-block mb-2 small text-secondary">
           &larr; Todos los métodos
         </a>
-
         <nav id="rpcNav" aria-label="RPC methods" data-rpc-ver="30.3.1"><div class="rpc-category mb-1">
                 <button
                   class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
@@ -1368,7 +1348,6 @@
         </nav>
       </div>
     </aside>
-
     <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4 order-1 order-lg-2">
       <div class="rpc-method-page">
   <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
@@ -1377,7 +1356,6 @@
     </h1>
     <span class="badge rpc-cat-badge text-uppercase">wallet</span>
   </div>
-
   <div class="rpc-description">
     <pre class="rpc-pre"><code>removeprunedfunds &quot;txid&quot;
 
@@ -1395,7 +1373,6 @@ Examples:
 As a JSON-RPC call
 &gt; curl --user myusername --data-binary &#39;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;id&quot;: &quot;curltest&quot;, &quot;method&quot;: &quot;removeprunedfunds&quot;, &quot;params&quot;: [&quot;a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5&quot;]}&#39; -H &#39;content-type: application/json&#39; http://127.0.0.1:26332/</code></pre>
   </div>
-
   <div class="mt-4 d-flex gap-3 rpc-nav-links text-muted small">
     <a href="/es/development/rpc/30.3.1/">&larr; Todos los métodos</a>
     <span class="text-secondary">v30.3.1</span>
@@ -1403,17 +1380,14 @@ As a JSON-RPC call
 </div>
 
     </div>
-
   </div>
 </div>
-
 <script src="/static/js/rpc-sidebar.js"
   integrity="sha512-m5vNKMZC0fmEvB7ZLb/xYDrPMyZRBYCyNA1lCCfJAXBgjBEwYCvYbLqWFgehHspV4/ilKihAeXVZ82K+k45yQA==" crossorigin="anonymous"></script>
 </main><footer class="bwc-footer mt-auto py-5">
   <div class="container">
     <div class="row gy-4">
-
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-3">
         <div class="d-flex align-items-center gap-2 mb-3">
           <img src="/static/img/logo.svg" alt="Bitweb Core" width="28" height="28"
                class="bwc-logo">
@@ -1421,7 +1395,6 @@ As a JSON-RPC call
         </div>
         <p class="text-secondary small">Software de código abierto, publicado bajo la licencia MIT.</p>
       </div>
-
       <div class="col-6 col-md-2">
         <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Proyecto</h6>
         <ul class="list-unstyled">
@@ -1432,7 +1405,6 @@ As a JSON-RPC call
           <li><a href="/es/brand/" class="footer-link">Recursos de Marca</a></li>
         </ul>
       </div>
-
       <div class="col-6 col-md-2">
         <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Desarrolladores</h6>
         <ul class="list-unstyled">
@@ -1447,8 +1419,14 @@ As a JSON-RPC call
           </a></li>
         </ul>
       </div>
-
-      <div class="col-12 col-md-4">
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Legal</h6>
+        <ul class="list-unstyled">
+          <li><a href="/es/privacy/" class="footer-link">Política de Privacidad</a></li>
+          <li><a href="/es/cookies/" class="footer-link">Política de Cookies</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
         <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Seguridad</h6>
         <p class="text-secondary small mb-1">Huella GPG:</p>
         <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
@@ -1458,11 +1436,8 @@ As a JSON-RPC call
           </a>
         </div>
       </div>
-
     </div>
-
     <hr class="border-secondary mt-4 mb-3">
-
     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
       <span>&copy; Bitweb Core contributors</span>
       <a href="https://github.com/bitweb-project/bitweb/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licencia MIT</a>
