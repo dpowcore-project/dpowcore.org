@@ -7,7 +7,7 @@ pagination:
 permalink: "/{{ locale }}/cookies/"
 templateEngineOverride: md
 pageTitle: "Cookie Policy"
-pageDescription: "Cookie Policy for bitwebcore.net"
+pageDescription: "Cookie Policy for dpowcore.org"
 legalUpdated: "Last updated: July 2026"
 ---
 ## What is a cookie

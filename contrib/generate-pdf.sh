@@ -32,7 +32,7 @@ pandoc "$INPUT" \
   --from gfm \
   --to html5 \
   --standalone \
-  --metadata title="Bitweb Core White Paper" \
+  --metadata title="Dpowcoin Core White Paper" \
   --css "$CSS" \
   --include-before-body "$HEADER" \
   --pdf-engine="$ENGINE" \

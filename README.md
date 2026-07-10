@@ -1,6 +1,6 @@
-# Bitweb Core — Website
+# Dpowcoin Core — Website
 
-Static site for [bitwebcore.net](https://bitwebcore.net), built with [Eleventy](https://www.11ty.dev/) (11ty).
+Static site for [dpowcore.org](https://dpowcore.org), built with [Eleventy](https://www.11ty.dev/) (11ty).
 
 ---
 
@@ -156,10 +156,10 @@ summary: "Short description shown on the blog index."
 permalink: /en/blog/my-post-slug/
 
 # Optional — for release posts:
-# github_release: "https://github.com/bitweb-project/bitweb/releases/tag/vX.Y"
+# github_release: "https://github.com/dpowcore-project/dpowcoin/releases/tag/vX.Y"
 # github_release_label: "GitHub Release vX.Y"
 # download_url: /en/wallets/full-node/
-# release_notes: "https://github.com/bitweb-project/bitweb/blob/master/doc/release-notes/release-notes-X.Y.md"
+# release_notes: "https://github.com/dpowcore-project/dpowcoin/blob/master/doc/release-notes/release-notes-X.Y.md"
 ---
 ```
 
@@ -194,25 +194,25 @@ To regenerate it:
 
 1. Add the node binaries to PATH (adjust version as needed):
    ```bash
-   export PATH="$HOME/bitweb-30.3/bin:$PATH"
+   export PATH="$HOME/dpowcoin-30.3/bin:$PATH"
    ```
 
-2. Start `bitwebd` in regtest with RPC enabled:
+2. Start `dpowcoind` in regtest with RPC enabled:
    ```bash
-   bitwebd -regtest -daemon -server=1 -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1
+   dpowcoind -regtest -daemon -server=1 -rpcallowip=127.0.0.1 -rpcbind=127.0.0.1
    ```
    Regtest is recommended — starts instantly, no blockchain sync required.
 
 3. Run the generator from the project root:
    ```bash
-   cd ~/bitwebcore
+   cd ~/dpowcore.org
    node contrib/doc-gen/generate.js
    ```
    Outputs `src/_data/rpc.json` with all methods across all categories.
 
 4. Stop the node:
    ```bash
-   bitweb-cli -regtest stop
+   dpowcoin-cli -regtest stop
    ```
 
 5. Build and commit:
@@ -224,7 +224,7 @@ To regenerate it:
 
 To use a non-default binary path:
 ```bash
-node contrib/doc-gen/generate.js --cli /path/to/bitweb-cli
+node contrib/doc-gen/generate.js --cli /path/to/dpowcoin-cli
 ```
 
 ---

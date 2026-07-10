@@ -24,7 +24,7 @@ pageTitle: "Mining"
         <pre><code>rpcuser=user
 rpcpassword=password
 rpcallowip=127.0.0.1
-rpcport=26332
+rpcport=42002
 txindex=1
 coinstatsindex=1
 server=1
@@ -38,29 +38,21 @@ listen=1</code></pre>
         </a>
         <div class="mb-3">
           <p class="text-secondary small mb-2 fw-semibold">{{ t.mining_cpu_label }}</p>
-          <pre><code>cpuminer-sse2 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+          <pre><code>cpuminer-sse2 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
 
-cpuminer-aes-sse42 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-aes-sse42 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
 
-cpuminer-avx -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
 
-cpuminer-avx2 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx2 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
 
-cpuminer-avx2-sha -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx2-sha -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
 
-cpuminer-avx2-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx2-sha-vaes -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
 
-cpuminer-avx512 -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+cpuminer-avx512 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
 
-cpuminer-avx512-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4</code></pre>
-        </div>
-        <div class="mb-3">
-          <p class="text-secondary small mb-2 fw-semibold">{{ t.mining_gpu_ocl_label }} <span class="fw-normal">({{ t.mining_gpu_ocl_note }})</span></p>
-          <pre><code>cpuminer-* -a argon2id1024 --use-gpu OpenCL -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce --gpu-batchsize 3484 --gpu-id 1</code></pre>
-        </div>
-        <div>
-          <p class="text-secondary small mb-2 fw-semibold">{{ t.mining_gpu_cuda_label }}</p>
-          <pre><code>cpuminer-* -a argon2id1024 --use-gpu CUDA -o http://127.0.0.1:26332 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce --gpu-batchsize 64 --gpu-id 1</code></pre>
+cpuminer-avx512-sha-vaes -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4</code></pre>
         </div>
       </div>
     </div>
@@ -95,7 +87,7 @@ cpuminer-avx512-sha-vaes -a argon2id1024 -o http://127.0.0.1:26332 -u user -p pa
               <div class="text-secondary small">miningpoolstats.stream</div>
             </div>
           </div>
-          <a href="https://miningpoolstats.stream/bitweb" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
+          <a href="https://miningpoolstats.stream/dpowcoin" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
             {{ t.mining_find_pools }} <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
           </a>
         </div>

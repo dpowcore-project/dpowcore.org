@@ -3,8 +3,8 @@
 # News is English-only. Russian and other locales get mirrors automatically via posts.njk
 #
 # Usage:
-#   ./contrib/new-post.sh "Bitweb Core 31.0 Released"
-#   ./contrib/new-post.sh "Bitweb Core 31.0 Released" 2026-09-01   (custom date)
+#   ./contrib/new-post.sh "Dpowcoin Core 31.0 Released"
+#   ./contrib/new-post.sh "Dpowcoin Core 31.0 Released" 2026-09-01   (custom date)
 
 set -euo pipefail
 
@@ -15,7 +15,7 @@ if [[ -z "$TITLE" ]]; then
   echo "Usage: $0 \"Post Title\" [date=today]"
   echo ""
   echo "Examples:"
-  echo "  $0 \"Bitweb Core 31.0 Released\""
+  echo "  $0 \"Dpowcoin Core 31.0 Released\""
   echo "  $0 \"Network Update\" 2026-09-01"
   exit 1
 fi
@@ -57,10 +57,10 @@ title: "${TITLE}"
 summary: ""
 permalink: /en/blog/${SLUG}/
 # Uncomment for release posts:
-# github_release: "https://github.com/bitweb-project/bitweb/releases/tag/vX.Y"
+# github_release: "https://github.com/dpowcore-project/dpowcoin/releases/tag/vX.Y"
 # github_release_label: "GitHub Release vX.Y"
 # download_url: /en/wallets/full-node/
-# release_notes: "https://github.com/bitweb-project/bitweb/blob/master/doc/release-notes/release-notes-X.Y.md"
+# release_notes: "https://github.com/dpowcore-project/dpowcoin/blob/master/doc/release-notes/release-notes-X.Y.md"
 ---
 
 Write your post content here in Markdown.

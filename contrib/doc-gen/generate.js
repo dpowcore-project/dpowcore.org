@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * Bitweb Core — RPC Documentation Generator
+ * Dpowcoin Core — RPC Documentation Generator
  *
  * Usage:
  *   node contrib/doc-gen/generate.js [options]
  *
  * Options:
- *   --cli <path>      Path to bitweb-cli binary (default: "bitweb-cli")
+ *   --cli <path>      Path to dpowcoin-cli binary (default: "dpowcoin-cli")
  *   --chain <name>    Chain: regtest | testnet | mainnet (default: "regtest")
  *   --version <ver>   Override version string, e.g. "31.1"
  *   --rpcuser <u>     RPC username (if not using cookie auth)
@@ -16,7 +16,7 @@
  * Output: src/_data/rpc/<version>.json (auto-detected from node)
  *
  * Prerequisites:
- *   (1) bitwebd must be running — regtest recommended (starts instantly)
+ *   (1) dpowcoind must be running — regtest recommended (starts instantly)
  *   (2) Run from project root: node contrib/doc-gen/generate.js
  *   (3) Commit the generated src/_data/rpc/<version>.json
  */
@@ -34,7 +34,7 @@ for (let i = 0; i < argv.length; i += 2) {
   args[argv[i].replace(/^--/, '')] = argv[i + 1];
 }
 
-const CLI_BIN     = args['cli']      ?? 'bitweb-cli';
+const CLI_BIN     = args['cli']      ?? 'dpowcoin-cli';
 const CHAIN       = args['chain']    ?? 'regtest';
 const VER_OVERRIDE = args['version'] ?? null;
 const RPC_USER    = args['rpcuser']  ?? null;
@@ -55,7 +55,7 @@ function run(...cmdArgs) {
     const msg = (err.stderr?.toString() ?? err.message).split('\n')[0];
     console.error(`\n✗ Failed: ${CLI_BIN} ${[...base, ...cmdArgs].join(' ')}`);
     console.error(`  ${msg}`);
-    console.error('\nIs bitwebd running?  Try: bitwebd -regtest -daemon');
+    console.error('\nIs dpowcoind running?  Try: dpowcoind -regtest -daemon');
     process.exit(1);
   }
 }
@@ -88,7 +88,7 @@ function parseHelpIndex(raw) {
   return groups;
 }
 
-console.log('\nBitweb Core RPC Doc Generator');
+console.log('\nDpowcoin Core RPC Doc Generator');
 console.log(`  CLI:   ${CLI_BIN}`);
 console.log(`  Chain: ${CHAIN}\n`);
 

@@ -1,5 +1,5 @@
 /**
- * lifecycle.js — Bitweb Core release lifecycle page
+ * lifecycle.js — Dpowcoin Core release lifecycle page
  * Fetches all releases, groups by major version, shows the last 2 majors as
  * "Supported", everything older as "End of Life".
  *
@@ -12,7 +12,7 @@
 (() => {
   "use strict";
 
-  const REPO    = "bitweb-project/bitweb";
+  const REPO    = "dpowcore-project/dpowcoin";
   const API_URL = `https://api.github.com/repos/${REPO}/releases`;
 
   // ── Parse major version from tag ───────────────────────────

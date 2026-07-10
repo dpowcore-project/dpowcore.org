@@ -16,7 +16,7 @@ pageTitle: "Home"
       <div class="col-12 col-lg-8">
         <div class="mb-4">
           <span class="bwc-badge-latest px-3 py-1">
-            <i class="fa-solid fa-microchip me-1"></i>Argon2id PoW
+            <i class="fa-solid fa-microchip me-1"></i>x2 Rounds Argon2id + SHA512 as salt PoW
           </span>
         </div>
         <h1 class="bwc-tagline mb-4">
@@ -66,13 +66,14 @@ pageTitle: "Home"
 {#- Coin Specification -#}
 <section class="bwc-section bwc-section-flush">
   <div class="container">
+
     <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
       <div>
         <h2 class="bwc-section-title mb-1">{{ t.spec_title }}</h2>
         <p class="bwc-section-lead mb-0">{{ t.spec_subtitle }}</p>
       </div>
       <div class="ms-auto">
-        <span class="bwc-ticker-badge">BTE</span>
+        <span class="bwc-ticker-badge">DPC</span>
       </div>
     </div>
     {#- Economics row -#}
@@ -81,13 +82,13 @@ pageTitle: "Home"
         <div class="bwc-spec-stat">
           <div class="bwc-spec-stat-label">{{ t.spec_max_supply }}</div>
           <div class="bwc-spec-stat-value">42 000 000</div>
-          <div class="bwc-spec-stat-sub">BTE</div>
+          <div class="bwc-spec-stat-sub">DPC</div>
         </div>
       </div>
       <div class="col-6 col-lg-3">
         <div class="bwc-spec-stat">
           <div class="bwc-spec-stat-label">{{ t.spec_block_reward }}</div>
-          <div class="bwc-spec-stat-value">50 <small>BTE</small></div>
+          <div class="bwc-spec-stat-value">50 <small>DPC</small></div>
           <div class="bwc-spec-stat-sub">{{ t.spec_halving }}: 420 000 {{ t.spec_blocks }}</div>
         </div>
       </div>
@@ -124,7 +125,8 @@ pageTitle: "Home"
             <span class="bwc-spec-val">{{ t.spec_pow_model_val }}</span>
           </div>
           <div class="bwc-spec-note">
-            <p class="bwc-text-muted-sm mb-0">{{ t.spec_pow_note }}</p>
+            <p class="bwc-text-muted-sm mb-2">{{ t.spec_pow_note }}</p>
+            <p class="bwc-text-muted-sm mb-0"><em>{{ t.spec_pow_disclaimer }}</em></p>
           </div>
         </div>
       </div>
@@ -158,30 +160,30 @@ pageTitle: "Home"
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">P2PKH</span>
             <span class="bwc-spec-val">
-              <span class="bwc-spec-accent bwc-spec-addr-prefix">E</span><span class="bwc-spec-addr-ellipsis">…</span>
-              <span class="bwc-spec-addr-dec">dec 33</span>
-              <span class="bwc-spec-addr-tag">0x21</span>
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">P</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 55</span>
+              <span class="bwc-spec-addr-tag">0x37</span>
             </span>
           </div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">P2SH</span>
             <span class="bwc-spec-val">
-              <span class="bwc-spec-accent bwc-spec-addr-prefix">D</span><span class="bwc-spec-addr-ellipsis">…</span>
-              <span class="bwc-spec-addr-dec">dec 30</span>
-              <span class="bwc-spec-addr-tag">0x1E</span>
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">C</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 28</span>
+              <span class="bwc-spec-addr-tag">0x1C</span>
             </span>
           </div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">Bech32</span>
             <span class="bwc-spec-val">
-              <span class="bwc-spec-accent">web</span>1q<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-accent">dpc</span>1q<span class="bwc-spec-addr-ellipsis">…</span>
               <span class="bwc-spec-addr-tag">SegWit</span>
             </span>
           </div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">Bech32m</span>
             <span class="bwc-spec-val">
-              <span class="bwc-spec-accent">web</span>1p<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-accent">dpc</span>1p<span class="bwc-spec-addr-ellipsis">…</span>
               <span class="bwc-spec-addr-tag">Taproot</span>
             </span>
           </div>
@@ -195,19 +197,19 @@ pageTitle: "Home"
           <div class="bwc-spec-sub-title">{{ t.spec_net_title }}</div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">P2P Port</span>
-            <span class="bwc-spec-val bwc-spec-accent">26333</span>
+            <span class="bwc-spec-val bwc-spec-accent">42003</span>
           </div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">RPC Port</span>
-            <span class="bwc-spec-val bwc-spec-accent">26332</span>
+            <span class="bwc-spec-val bwc-spec-accent">42002</span>
           </div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">{{ t.spec_net_magic }}</span>
-            <span class="bwc-spec-val">0xfeaed5ca</span>
+            <span class="bwc-spec-val">0xf29f4afb</span>
           </div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">BIP-324 Salt</span>
-            <span class="bwc-spec-val">bitweb_v2_shared_secret</span>
+            <span class="bwc-spec-val">dpowcoin_v2_shared_secret</span>
           </div>
           <div class="bwc-spec-row">
             <span class="bwc-spec-key">{{ t.spec_net_bips }}</span>
@@ -222,7 +224,7 @@ pageTitle: "Home"
         <div class="bwc-card h-100">
           <div class="bwc-spec-sub-title">{{ t.spec_genesis_title }}</div>
           <div class="bwc-hash-display">
-            <span class="bwc-hash-body">111692c1</span><span class="bwc-hash-body">b9b390c4</span><span class="bwc-hash-body">07ab74d7</span><span class="bwc-hash-body">f924d4fa</span><span class="bwc-hash-body">0f758997</span><span class="bwc-hash-body">4ab61af9</span><span class="bwc-hash-body">6392feca</span><span class="bwc-hash-body">11f209e6</span>
+            <span class="bwc-hash-body">d86f8a0582e779830f182befeaaabc8c7</span><span class="bwc-hash-body">3a159b6b06530910758daf17ce31e36</span>
           </div>
         </div>
       </div>
@@ -230,7 +232,7 @@ pageTitle: "Home"
         <div class="bwc-card h-100">
           <div class="bwc-spec-sub-title">{{ t.spec_powlimit_title }}</div>
           <div class="bwc-hash-display">
-            <span class="bwc-hash-zeros">000f</span><span class="bwc-hash-body">ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+            <span class="bwc-hash-zeros">001</span><span class="bwc-hash-body">fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
           </div>
         </div>
       </div>

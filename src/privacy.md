@@ -7,13 +7,13 @@ pagination:
 permalink: "/{{ locale }}/privacy/"
 templateEngineOverride: md
 pageTitle: "Privacy Policy"
-pageDescription: "Privacy Policy for bitwebcore.net"
+pageDescription: "Privacy Policy for dpowcore.org"
 legalUpdated: "Last updated: July 2026"
 ---
 ## Introduction
 
 By visiting this website, you are accepting the practices described in this policy. This site
-(bitwebcore.net) is a static site: the pages, styles, and scripts in this repository do not
+(dpowcore.org) is a static site: the pages, styles, and scripts in this repository do not
 themselves collect, store, or process any personal information. Some visitor data is nonetheless
 handled by the infrastructure this site runs on — described below — which is outside this
 project's control and governed by that infrastructure's own privacy policy.

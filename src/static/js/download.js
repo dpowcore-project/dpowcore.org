@@ -1,5 +1,5 @@
 /**
- * download.js — Bitweb Core download page
+ * download.js — Dpowcoin Core download page
  * Fetches releases from GitHub API, filters to the last 2 major versions,
  * renders download cards.
  *
@@ -17,7 +17,7 @@
 (() => {
   "use strict";
 
-  const REPO         = "bitweb-project/bitweb";
+  const REPO         = "dpowcore-project/dpowcoin";
   const API_URL      = `https://api.github.com/repos/${REPO}/releases`;
   const RELEASES_URL = `https://github.com/${REPO}/releases`;
 

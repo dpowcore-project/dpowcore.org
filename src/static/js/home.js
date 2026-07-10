@@ -1,12 +1,12 @@
 /**
- * home.js — Bitweb homepage
+ * home.js — Dpowcoin homepage
  * Fetches the latest release tag from GitHub and populates #bwc-latest-ver.
  */
 
 (() => {
   'use strict';
 
-  const REPO    = 'bitweb-project/bitweb';
+  const REPO    = 'dpowcore-project/dpowcoin';
   const API_URL = `https://api.github.com/repos/${REPO}/releases/latest`;
 
   const init = async () => {

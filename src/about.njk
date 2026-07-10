@@ -21,6 +21,14 @@ pageTitle: "About"
         <div class="d-flex align-items-center gap-3 mb-3">
           <i class="fa-brands fa-github fa-2x text-secondary"></i>
           <div>
+            <a href="https://github.com/someunknownman" target="_blank" rel="noopener"
+               class="fw-bold text-decoration-none fs-5">someunknownman</a>
+            <div class="text-secondary small">{{ t.about_creator_role }}</div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <i class="fa-brands fa-github fa-2x text-secondary"></i>
+          <div>
             <a href="https://github.com/mraksoll4" target="_blank" rel="noopener"
                class="fw-bold text-decoration-none fs-5">Mraksoll</a>
             <div class="text-secondary small">{{ t.about_maintainer_role }}</div>
@@ -62,17 +70,17 @@ pageTitle: "About"
             <p class="text-secondary small mb-2">{{ t.about_community_body }}</p>
             <ul class="list-unstyled mb-0 small">
               <li class="mb-1">
-                <a href="https://t.me/bitweb" target="_blank" rel="noopener">
+                <a href="https://t.me/dpowcoin" target="_blank" rel="noopener">
                   <i class="fa-brands fa-telegram fa-fw me-1"></i>Telegram Global
                 </a>
               </li>
               <li class="mb-1">
-                <a href="https://t.me/bitweb_en" target="_blank" rel="noopener">
+                <a href="https://t.me/dpowcoin_cn" target="_blank" rel="noopener">
                   <i class="fa-brands fa-telegram fa-fw me-1"></i>Telegram English
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/uC6wEVu6FR" target="_blank" rel="noopener">
+                <a href="https://discord.gg/b9zkzAgUpH" target="_blank" rel="noopener">
                   <i class="fa-brands fa-discord fa-fw me-1"></i>Discord
                 </a>
               </li>
@@ -96,7 +104,7 @@ pageTitle: "About"
             <ul class="list-unstyled mb-0 small">
               <li>
                 <span class="text-secondary">{{ t.about_email_general }}</span><br>
-                <a href="mailto:contact@bitwebcore.net">contact@bitwebcore.net</a>
+                <a href="mailto:contact@dpowcore.org">contact@dpowcore.org</a>
               </li>
             </ul>
           </div>
@@ -118,10 +126,10 @@ pageTitle: "About"
         <p class="text-secondary small mb-3">{{ t.about_security_report_body }}</p>
         <p class="small mb-2">
           <strong>{{ t.about_security_email_label }}</strong>
-          <a href="mailto:security@bitwebcore.net">security@bitwebcore.net</a>
+          <a href="mailto:security@dpowcore.org">security@dpowcore.org</a>
           <span class="text-secondary ms-1">({{ t.about_security_not_support }})</span>
         </p>
-        <a href="https://github.com/bitweb-project/bitweb/blob/master/SECURITY.md"
+        <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/SECURITY.md"
            target="_blank" rel="noopener" class="small">
           <i class="fa-solid fa-arrow-up-right-from-square me-1"></i>SECURITY.md
         </a>
@@ -158,6 +166,38 @@ pageTitle: "About"
           <a href="https://github.com/bitcoin/bitcoin/blob/master/SECURITY.md"
              target="_blank" rel="noopener">{{ t.about_security_based_on_link }}</a>
         </p>
+      </div>
+      {#- Support Us (donations) -#}
+      <div class="bwc-card">
+        <button class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-between w-100 bwc-collapse-toggle"
+                type="button" data-bs-toggle="collapse" data-bs-target="#supportUsCollapse"
+                aria-expanded="false" aria-controls="supportUsCollapse">
+          <span><i class="fa-solid fa-heart me-2"></i>{{ t.about_support_title }}</span>
+          <i class="fa-solid fa-chevron-down bwc-collapse-chevron"></i>
+        </button>
+        <div class="collapse mt-3" id="supportUsCollapse">
+          <p class="text-secondary small mb-2">{{ t.about_support_body1 }}</p>
+          <p class="text-secondary small mb-2">{{ t.about_support_body2 }}</p>
+          <p class="small mb-3">{{ t.about_support_warning }}</p>
+          <table class="table table-sm table-bordered small mb-3">
+            <thead>
+              <tr>
+                <th>{{ t.about_support_col_coin }}</th>
+                <th>{{ t.about_support_col_address }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dpowcoin - DPC</td>
+                <td>
+                  <a class="bwc-fingerprint" href="https://explorer.dpowcore.org/address/dpc1qhxeag7jqpzu6ggr6lp7zd0ueusdjdxxahu6na5"
+                     target="_blank" rel="noopener">dpc1qhxeag7jqpzu6ggr6lp7zd0ueusdjdxxahu6na5</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-secondary small mb-0">{{ t.about_support_thanks }}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-9">
+      <h1 class="bwc-section-title mb-2">{{ pageTitle }}</h1>
+      <p class="text-secondary small mb-5">{{ legalUpdated }}</p>
+      <div class="wp-body">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,13 +19,12 @@
 {%- set t = i18n[locale] -%}
 {%- set ver = item.version -%}
 {%- set rpcData = item.rpcData -%}
-
 <div class="rpc-index-page">
   <div class="d-flex align-items-start justify-content-between mb-4 flex-wrap gap-2">
     <div>
       <h1 class="h3 mb-1">RPC API Reference</h1>
       <p class="text-muted mb-0">
-        Bitweb Core v{{ ver }} &mdash;
+        Dpowcoin Core v{{ ver }} &mdash;
         {{ rpcData.methods | length }} methods
       </p>
     </div>
@@ -49,6 +48,6 @@
   {%- if currentCat != "" %}</div>{% endif %}
   <p class="text-muted small mt-5">
     Generated {{ rpcData.generated | dateShort }}.
-    To update: run <code>node contrib/doc-gen/generate.js</code> against a live bitwebd node.
+    To update: run <code>node contrib/doc-gen/generate.js</code> against a live dpowcoind node.
   </p>
 </div>

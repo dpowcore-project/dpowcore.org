@@ -1,13 +1,13 @@
 /* ============================================================
-   Bitweb Core — Custom Styles  (system fonts, no CDN)
+   Dpowcoin Core — Custom Styles  (system fonts, no CDN)
    ============================================================ */
 
 /* ── Dark theme (default) ── */
 :root,
 [data-bs-theme="dark"] {
-  --bwc-accent:      #00d4aa;
-  --bwc-accent-dim:  #00a888;
-  --bwc-accent-rgb:  0, 212, 170;
+  --bwc-accent:      #4f9ee0;
+  --bwc-accent-dim:  #3a7bc0;
+  --bwc-accent-rgb:  79, 158, 224;
   --bwc-bg:          #0a0c10;
   --bwc-surface:     #111520;
   --bwc-surface2:    #181d2a;
@@ -21,9 +21,9 @@
 
 /* ── Light theme ── */
 [data-bs-theme="light"] {
-  --bwc-accent:      #007a62;
-  --bwc-accent-dim:  #005a48;
-  --bwc-accent-rgb:  0, 122, 98;
+  --bwc-accent:      #2f6eaa;
+  --bwc-accent-dim:  #1f4f80;
+  --bwc-accent-rgb:  47, 110, 170;
   --bwc-bg:          #f4f6f9;
   --bwc-surface:     #ffffff;
   --bwc-surface2:    #edf0f5;
@@ -216,7 +216,7 @@ pre code {
 .bwc-nav-link:hover,
 .bwc-nav-link.active {
   color: var(--bwc-accent);
-  background: rgba(0, 212, 170, 0.08);
+  background: rgba(79, 158, 224, 0.08);
 }
 
 [data-bs-theme="light"] .bwc-nav-link:hover,
@@ -250,13 +250,13 @@ pre code {
 
 .bwc-dd .dropdown-item:hover,
 .bwc-dd .dropdown-item:focus {
-  background: rgba(0, 212, 170, 0.08);
+  background: rgba(79, 158, 224, 0.08);
   color: var(--bwc-accent);
 }
 
 .bwc-dd .dropdown-item.active,
 .bwc-dd button.dropdown-item.bwc-theme-active {
-  background: rgba(0, 212, 170, 0.12);
+  background: rgba(79, 158, 224, 0.12);
   color: var(--bwc-accent);
 }
 
@@ -315,7 +315,7 @@ pre code {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 170, 0.12), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79, 158, 224, 0.12), transparent),
     radial-gradient(ellipse 40% 60% at 80% 50%, rgba(0, 100, 200, 0.06), transparent);
   pointer-events: none;
 }
@@ -394,7 +394,7 @@ pre code {
   transition: border-color 0.2s, transform 0.2s;
 }
 .bwc-card:hover {
-  border-color: rgba(0, 212, 170, 0.35);
+  border-color: rgba(79, 158, 224, 0.35);
   transform: translateY(-2px);
 }
 .bwc-card-icon {
@@ -440,7 +440,7 @@ pre code {
   flex-wrap: wrap;
   transition: border-color 0.15s;
 }
-.bwc-dl-card:hover { border-color: rgba(0, 212, 170, 0.3); }
+.bwc-dl-card:hover { border-color: rgba(79, 158, 224, 0.3); }
 .bwc-dl-os-icon { font-size: 1.3rem; color: var(--bwc-text-muted); flex-shrink: 0; }
 .bwc-dl-filename { font-family: var(--bwc-font-mono); font-size: 0.82rem; color: var(--bwc-text); word-break: break-all; flex: 1 1 200px; }
 .bwc-dl-size { font-size: 0.8rem; color: var(--bwc-text-muted); flex-shrink: 0; }
@@ -474,9 +474,9 @@ pre code {
 }
 
 .bwc-badge-latest {
-  background: rgba(0, 212, 170, 0.15);
+  background: rgba(79, 158, 224, 0.15);
   color: var(--bwc-accent);
-  border: 1px solid rgba(0, 212, 170, 0.3);
+  border: 1px solid rgba(79, 158, 224, 0.3);
   font-family: var(--bwc-font-mono);
   font-size: 0.7rem;
   padding: 0.2em 0.55em;
@@ -503,6 +503,10 @@ pre code {
   font-size: 0.82rem;
   letter-spacing: 0.05em;
 }
+
+/* ── Collapsible card (e.g. Support Us) ── */
+.bwc-collapse-toggle .bwc-collapse-chevron { transition: transform 0.2s; }
+.bwc-collapse-toggle[aria-expanded="true"] .bwc-collapse-chevron { transform: rotate(180deg); }
 
 /* ── RPC Docs ── */
 .rpc-layout { min-height: calc(100vh - 60px); }
@@ -537,11 +541,11 @@ pre code {
   min-height: 36px;
 }
 .rpc-method-link:hover { color: var(--bwc-text); background: rgba(255,255,255,0.04); }
-.rpc-method-link.active { color: var(--bwc-accent); background: rgba(0, 212, 170, 0.08); }
+.rpc-method-link.active { color: var(--bwc-accent); background: rgba(79, 158, 224, 0.08); }
 .rpc-content { max-width: 860px; min-width: 0; }
 .rpc-method-title { font-family: var(--bwc-font-mono); font-size: 1.1rem; font-weight: 600; color: var(--bwc-accent); line-height: 1.2; }
 .rpc-method-name-badge { color: inherit; }
-.rpc-cat-badge { font-family: var(--bwc-font-mono); font-size: 0.68rem; letter-spacing: 0.07em; background: rgba(0,212,170,0.1); color: var(--bwc-accent); border: 1px solid rgba(0,212,170,0.25); }
+.rpc-cat-badge { font-family: var(--bwc-font-mono); font-size: 0.68rem; letter-spacing: 0.07em; background: rgba(79,158,224,0.1); color: var(--bwc-accent); border: 1px solid rgba(79,158,224,0.25); }
 .rpc-pre { font-size: 0.72rem; }
 .rpc-pre code { font-size: inherit; }
 .rpc-latest-tag { font-size: 0.65rem; color: var(--bwc-accent); font-family: var(--bwc-font-mono); margin-left: 0.3rem; }
@@ -560,7 +564,7 @@ pre code {
   transition: border-color 0.2s;
   height: 100%;
 }
-.bwc-post-card:hover { border-color: rgba(0, 212, 170, 0.35); }
+.bwc-post-card:hover { border-color: rgba(79, 158, 224, 0.35); }
 .bwc-post-date { font-size: 0.8rem; color: var(--bwc-text-muted); font-family: var(--bwc-font-mono); }
 .bwc-post-title { font-size: 1.15rem; margin-bottom: 0.5rem; }
 .bwc-post-title-link { color: var(--bwc-text); }
@@ -595,8 +599,8 @@ pre code {
 /* ── Utilities ── */
 .bwc-divider { border: none; height: 1px; background: var(--bwc-border); margin: 2rem 0; }
 .bwc-placeholder {
-  background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0,212,170,0.04) 8px, rgba(0,212,170,0.04) 16px);
-  border: 1px dashed rgba(0,212,170,0.25);
+  background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(79,158,224,0.04) 8px, rgba(79,158,224,0.04) 16px);
+  border: 1px dashed rgba(79,158,224,0.25);
   border-radius: 8px;
   padding: 1.5rem;
   color: var(--bwc-text-muted);
@@ -628,7 +632,7 @@ pre code {
   padding: 1.25rem 1.5rem;
   transition: border-color 0.2s;
 }
-.bwc-spec-stat:hover { border-color: rgba(0, 212, 170, 0.3); }
+.bwc-spec-stat:hover { border-color: rgba(79, 158, 224, 0.3); }
 .bwc-spec-stat-label {
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -697,8 +701,8 @@ pre code {
 .bwc-ticker-badge {
   display: inline-flex;
   align-items: center;
-  background: rgba(0, 212, 170, 0.08);
-  border: 1px solid rgba(0, 212, 170, 0.25);
+  background: rgba(79, 158, 224, 0.08);
+  border: 1px solid rgba(79, 158, 224, 0.25);
   border-radius: 8px;
   padding: 0.35rem 1.1rem;
   font-family: var(--bwc-font-mono);
@@ -751,7 +755,7 @@ pre code {
   background: var(--bwc-surface);
   height: 100%;
 }
-.bwc-vest-milestone--start  { border-left-color: rgba(0, 212, 170, 0.45); }
+.bwc-vest-milestone--start  { border-left-color: rgba(79, 158, 224, 0.45); }
 .bwc-vest-milestone--end    { border-left-color: rgba(255, 165, 50, 0.5); }
 .bwc-vest-milestone--unlock { border-left-color: var(--bwc-accent); }
 .bwc-vest-milestone-label {
@@ -783,7 +787,7 @@ pre code {
   border-radius: 10px;
   height: 100%;
 }
-.bwc-vest-note--miner { border-left: 3px solid rgba(0, 212, 170, 0.4); }
+.bwc-vest-note--miner { border-left: 3px solid rgba(79, 158, 224, 0.4); }
 .bwc-vest-note--pool  { border-left: 3px solid rgba(255, 165, 50, 0.55); }
 .bwc-vest-note-icon {
   font-size: 1.1rem;
