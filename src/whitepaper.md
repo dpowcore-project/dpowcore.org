@@ -45,8 +45,7 @@ choice, and the toolchain used to bootstrap the network.
 9. Consensus-Level Security Patches  
 10. Genesis Airdrop  
 11. Vesting and Anti-Dump Protection  
-12. Mining  
-13. Conclusion  
+12. Conclusion  
 Appendix A — Network Parameter Reference  
 Appendix B — Airdrop Toolchain  
 Appendix C — Halving Schedule  
@@ -217,6 +216,52 @@ backend. On AArch64, NEON is selected when available.
 
 This design means every node automatically uses the most efficient implementation available on its
 hardware without requiring separate binary distributions per CPU microarchitecture.
+
+### 4.3 Header Proof-of-Work Cache
+
+Because Argon2id is memory-hard and expensive relative to upstream Bitcoin's SHA256d, the same
+header's proof-of-work is legitimately re-checked at several independent points in the codebase:
+the headers-sync batch check, `CheckBlockHeader()` on both header acceptance and block acceptance,
+and disk re-reads in `BlockManager::ReadBlock()`. Bitweb Core adds `HeaderPoWCache`
+(`pow_cache.h`/`pow_cache.cpp`), a process-lifetime, positive-only result cache built on
+`CuckooCache`, so every one of those call sites shares one cache instead of each re-hashing from
+scratch.
+
+| Property | Value |
+|----------|-------|
+| Default size | `64 MiB` (`DEFAULT_HEADER_POW_CACHE_BYTES`) |
+| Runtime override | `-headerpowcachesize=<MiB>` |
+| Cache key | `header.GetHash()` — cheap SHA256d, not the Argon2id result itself |
+| Cached outcome | Positive results only; a failed check is never cached |
+| Concurrency | `std::shared_mutex` — concurrent `Get()` reads; `Set()`/`Reset()` take an exclusive lock |
+
+The cache is keyed on the header's ordinary SHA256d hash, so even computing the cache key never
+requires the expensive Argon2id hash. Because only positive results are stored, a cache miss always
+falls back to a full, honest `CheckProofOfWork()` recompute — behaviour on miss is identical to
+having no cache at all, so the cache can only remove redundant work; it can never weaken validation.
+Once a header has been verified anywhere in the process, every other call site benefits, including a
+headers-sync that has to restart against a different peer, or a disk re-read long after initial
+validation.
+
+### 4.4 Parallel Header Validation
+
+Header proof-of-work checks are dispatched through `CCheckQueue<CHeaderPoWCheck>`
+(`HasValidProofOfWork()` in `validation.cpp`), the same queue-based worker-pool primitive Bitcoin
+Core uses for script verification.
+
+| Parameter | Value | Notes |
+|-----------|-------|-------|
+| Parallel-dispatch threshold | `32` headers (`HEADER_POW_PARALLEL_THRESHOLD`) | Below this, headers are checked sequentially through the same `CheckProofOfWorkCached()` choke point |
+| Worker thread cap | `6` (`MAX_HEADER_POW_CHECK_THREADS`) | |
+| Worker thread count | `clamp(cores > 1 ? cores - 1 : cores, 1, 6)` participants, minus the calling thread | One core is left free for the rest of the node when more than one core is available, so a small box (e.g. a Raspberry Pi) is never starved |
+| Queue batch size | `64` | |
+
+Below the 32-header threshold, a batch is checked sequentially through the same
+`CheckProofOfWorkCached()` cache-backed path used elsewhere, so the two code paths stay behaviourally
+identical. At or above the threshold, each header becomes a `CHeaderPoWCheck` job submitted to the
+queue; the calling (master) thread also participates in the batch via
+`CCheckQueueControl::Complete()`, the same convention Bitcoin Core's `-par` script-verification
+threads use.
 
 ---
 
@@ -515,7 +560,7 @@ consolidation after block 69,400 to avoid extended-maturity errors.
 
 ---
 
-## 13. Conclusion
+## 12. Conclusion
 
 Bitweb Core applies three targeted modifications to Bitcoin Core: Argon2id as a memory-hard
 proof-of-work function, LWMA-3 per-block difficulty retargeting calibrated to a five-minute block
@@ -551,6 +596,9 @@ Website: [bitwebcore.net](https://bitwebcore.net)
 | Argon2id `t` | 3 |
 | Argon2id `m` | 1024 KiB |
 | Argon2id `p` | 1 |
+| Header PoW cache size (default) | 64 MiB (`-headerpowcachesize`) |
+| Header PoW parallel-check threshold | 32 headers |
+| Header PoW check worker threads (max) | 6 |
 | Difficulty algorithm | LWMA-3 |
 | LWMA window N | 576 blocks |
 | Retarget | Every block |
