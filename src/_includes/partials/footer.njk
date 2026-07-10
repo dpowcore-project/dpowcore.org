@@ -7,7 +7,7 @@
 <footer class="bwc-footer mt-auto py-5">
   <div class="container">
     <div class="row gy-4">
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-3">
         <div class="d-flex align-items-center gap-2 mb-3">
           <img src="/static/img/logo.svg" alt="{{ site.title }}" width="28" height="28"
                class="bwc-logo">
@@ -39,7 +39,14 @@
           </a></li>
         </ul>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">{{ t.footer_legal }}</h6>
+        <ul class="list-unstyled">
+          <li><a href="/{{ l }}/privacy/" class="footer-link">{{ t.nav_privacy }}</a></li>
+          <li><a href="/{{ l }}/cookies/" class="footer-link">{{ t.nav_cookies }}</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
         <h6 class="text-uppercase text-secondary small fw-semibold mb-3">{{ t.footer_security }}</h6>
         <p class="text-secondary small mb-1">{{ t.footer_gpg_label }}</p>
         <code class="bwc-fingerprint">{{ site.gpg_fingerprint }}</code>
