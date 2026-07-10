@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="uk" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://dpowcore.org/uk/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Home — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/uk/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/">
+  <link rel="alternate" hreflang="zh" href="https://dpowcore.org/zh/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/">
+  <link rel="alternate" hreflang="ja" href="https://dpowcore.org/ja/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/">
+  <link rel="alternate" hreflang="it" href="https://dpowcore.org/it/">
+  <link rel="alternate" hreflang="pl" href="https://dpowcore.org/pl/">
+  <link rel="alternate" hreflang="tr" href="https://dpowcore.org/tr/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/">
+  <link rel="alternate" hreflang="fr" href="https://dpowcore.org/fr/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/uk/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>UK</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/uk/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Авто
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Світла
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Темна
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/uk/">Головна</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/about/">Про проєкт</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Гаманці
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/uk/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Повний вузол
+          </a></li>
+          <li><a class="dropdown-item" href="/uk/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Веб-гаманець
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/blog/">Новини</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/mining/">Майнінг</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/resources/">Ресурси</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Розробка
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/uk/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Участь
+          </a></li>
+          <li><a class="dropdown-item" href="/uk/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC Документація
+          </a></li>
+          <li><a class="dropdown-item" href="/uk/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>Біла книга
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><section class="bwc-hero">
+  <div class="bwc-hero-grid"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 col-lg-8">
+        <div class="mb-4">
+          <span class="bwc-badge-latest px-3 py-1">
+            <i class="fa-solid fa-microchip me-1"></i>x2 Rounds Argon2id + SHA512 as salt PoW
+          </span>
+        </div>
+        <h1 class="bwc-tagline mb-4">
+          Децентралізовано. Безпечно. <span class="bwc-accent-text">Argon2id</span>.
+        </h1>
+        <p class="bwc-hero-desc mx-auto mb-5">Dpowcoin Core — криптовалюта з відкритим вихідним кодом на алгоритмі Argon2id: стійкий до ASIC, вимогливий до пам&#39;яті, чесний майнінг.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="/uk/wallets/full-node/" class="btn btn-bwc-primary">
+            <i class="fa-solid fa-download me-2"></i>Завантажити останню версію
+          </a>
+          <a href="https://github.com/dpowcore-project/dpowcoin" class="btn btn-bwc-secondary" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-2"></i>Вихідний код
+          </a>
+          <a href="/uk/about/" class="btn btn-bwc-secondary">Детальніше</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="h5 mb-2">Алгоритм Argon2id</h3>
+          <p class="text-secondary small mb-0">Вимогливий до пам&#39;яті PoW, стійкий до ASIC-майнінгу. Справедливий розподіл через CPU майнинг.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="h5 mb-2">Відкритий код</h3>
+          <p class="text-secondary small mb-0">Повністю відкритий код за ліцензією MIT. Перевіряємий, відгалужуваний, розробка керована спільнотою на GitHub.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="h5 mb-2">Відтворювані збірки</h3>
+          <p class="text-secondary small mb-0">Детерміновані збірки через GNU Guix. Кожен бінарний файл можна незалежно перевірити. Атестації випусків з підписом GPG.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="bwc-section bwc-section-flush">
+  <div class="container">
+
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+      <div>
+        <h2 class="bwc-section-title mb-1">Специфікація монети</h2>
+        <p class="bwc-section-lead mb-0">Повні технічні параметри мережі Dpowcoin (DPC)</p>
+      </div>
+      <div class="ms-auto">
+        <span class="bwc-ticker-badge">DPC</span>
+      </div>
+    </div><div class="row gy-3 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Максимальна пропозиція</div>
+          <div class="bwc-spec-stat-value">42 000 000</div>
+          <div class="bwc-spec-stat-sub">DPC</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Винагорода за блок</div>
+          <div class="bwc-spec-stat-value">50 <small>DPC</small></div>
+          <div class="bwc-spec-stat-sub">Халвінг: 420 000 блоки</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Час блоку</div>
+          <div class="bwc-spec-stat-value">5 <small>min</small></div>
+          <div class="bwc-spec-stat-sub">300 s</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Зрілість Coinbase</div>
+          <div class="bwc-spec-stat-value">100</div>
+          <div class="bwc-spec-stat-sub">блоки</div>
+        </div>
+      </div>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Proof-of-Work</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Алгоритм</span>
+            <span class="bwc-spec-val bwc-spec-accent">Argon2id</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">2× сіль SHA-512 → 2 раунди Argon2id</span>
+            <span class="bwc-spec-val">m=1024 · t=3 · p=1</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Модель PoW</span>
+            <span class="bwc-spec-val">Подвійний Argon2id із сіллю SHA-512</span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-2">Хеш блока: salt = SHA-512(SHA-512(header)); h1 = Argon2id(header, salt, m=4MB, t=2, p=2); PoW = Argon2id(header, salt=h1, m=32MB, t=2, p=2). Два послідовні проходи Argon2id із сіллю з подвійного SHA-512-дайджесту заголовка — за задумом вимогливий до пам&#39;яті та стійкий до ASIC.</p>
+            <p class="bwc-text-muted-sm mb-0"><em>Dpowcoin Core — криптовалюта з відкритим вихідним кодом на алгоритмі Argon2id: стійкий до ASIC, вимогливий до пам&#39;яті, чесний майнінг.</em></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Складність</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Алгоритм</span>
+            <span class="bwc-spec-val bwc-spec-accent">LWMA</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Вікно</span>
+            <span class="bwc-spec-val">576 блоки</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Період</span>
+            <span class="bwc-spec-val">~2 дні</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Перенацілення</span>
+            <span class="bwc-spec-val bwc-spec-accent">Кожен блок</span>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Формати адрес</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2PKH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">P</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 55</span>
+              <span class="bwc-spec-addr-tag">0x37</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2SH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">C</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 28</span>
+              <span class="bwc-spec-addr-tag">0x1C</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">dpc</span>1q<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">SegWit</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32m</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">dpc</span>1p<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">Taproot</span>
+            </span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-0">Байти версії показані в десятковому та шістнадцятковому форматі. Усі типи адрес мають 34 символи.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Мережа</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2P Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">42003</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">RPC Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">42002</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Магічне число</span>
+            <span class="bwc-spec-val">0xf29f4afb</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIP-324 Salt</span>
+            <span class="bwc-spec-val">dpowcoin_v2_shared_secret</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIPs</span>
+            <span class="bwc-spec-val bwc-spec-accent">Активні з блоку 2</span>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Блок генезису</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-body">d86f8a0582e779830f182befeaaabc8c7</span><span class="bwc-hash-body">3a159b6b06530910758daf17ce31e36</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Ліміт PoW</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-zeros">001</span><span class="bwc-hash-body">fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="mb-5">
+      <h2 class="bwc-section-title mb-1">Оновлення мережі</h2>
+      <p class="bwc-section-lead mb-0">На блоці 225,000 Yespower виключається з консенсусу — після цього Dpowcoin переходить винятково на Argon2id.</p>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Передісторія: епоха Dual PoW</div>
+          <p class="bwc-vest-text mb-0">До блоку 225,000 Dpowcoin перевіряв кожен заголовок двома незалежними перевірками proof-of-work зі спільною ціллю: hash = { Yespower(header), Argon2id(header) }, дійсний ⇔ обидва хеші ≤ target(nBits). Yespower перевірявся першим як дешевий фільтр; Argon2id обчислювався лише тоді, коли Yespower проходив перевірку.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Чому Yespower виключається</div>
+          <p class="bwc-vest-text mb-0">Оскільки обидва алгоритми використовували спільну ціль, Yespower не додавав реальної безпеки понад ту, яку вже забезпечує Argon2id, водночас подвоюючи обсяг роботи, який має враховувати LWMA, і ускладнюючи кодову базу без жодної вимірюваної користі для мережі. Оскільки обидві перевірки незалежні, виключення Yespower не впливає на коригування складності чи вагу ланцюга — обидва параметри повністю не залежать від алгоритму. Ідею Dual PoW варто було спробувати, але ця реалізація створила більше проблем, ніж вирішила. Назва «Dual PoW» зберігається виключно з історичних причин.</p>
+        </div>
+      </div>
+    </div><div class="bwc-card mb-4">
+      <div class="bwc-spec-sub-title mb-3">Ключові блоки</div>
+      <div class="row gy-3">
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--start">
+            <div class="bwc-vest-milestone-label">Епоха Dual PoW</div>
+            <div class="bwc-vest-milestone-val">0 – 224,999</div>
+            <div class="bwc-vest-milestone-desc">Заголовки перевіряються одночасно Yespower та Argon2id зі спільною ціллю.</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--end">
+            <div class="bwc-vest-milestone-label">Yespower виключено</div>
+            <div class="bwc-vest-milestone-val">225,000</div>
+            <div class="bwc-vest-milestone-desc">Починаючи з цієї висоти, перевірку Yespower видалено з коду консенсусу.</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--unlock">
+            <div class="bwc-vest-milestone-label">Епоха лише Argon2id</div>
+            <div class="bwc-vest-milestone-val">225,000+</div>
+            <div class="bwc-vest-milestone-desc">Усі заголовки перевіряються виключно за допомогою proof-of-work Argon2id.</div>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--miner">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-pickaxe"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">Примітка для майнерів</div>
+            <p class="bwc-vest-text mb-0">Жодних дій не потрібно. Оскільки Yespower та Argon2id завжди використовували спільну ціль, майнінг-софт на базі Argon2id продовжує працювати без змін до і після блоку 225,000. Легкі SPV-гаманці можуть покладатися лише на Argon2id для перевірки, оскільки бібліотеки SHA-512 та Argon2id доступні практично на будь-якій платформі.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--pool">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">Важливе застереження</div>
+            <p class="bwc-vest-text">Ми не використовуємо технологію «delayed PoW» і жодним чином не пов&#39;язані з Komodo чи її проєктами. До блоку 225,000 Dpowcoin використовував Dual PoW з Yespower та Argon2id, де сам Argon2id обчислюється як два послідовні раунди із сіллю з подвійного SHA-512.</p>
+            <span class="bwc-vest-badge">Не пов&#39;язані з Komodo — без delayed PoW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="bwc-card d-flex flex-wrap align-items-center gap-3">
+      <div>
+        <div class="text-secondary small mb-1">Останній випуск</div>
+        <div class="fw-bold" id="bwc-latest-ver">—</div>
+      </div>
+      <div class="ms-auto d-flex gap-2 flex-wrap">
+        <a href="/uk/wallets/full-node/" class="btn btn-bwc-primary btn-sm">
+          <i class="fa-solid fa-download me-1"></i>Завантажити
+        </a>
+        <a href="https://github.com/dpowcore-project/dpowcoin/releases" class="btn btn-bwc-secondary btn-sm" target="_blank" rel="noopener">
+          Примітки до випуску
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="bwc-section-title mb-0">Останні новини</h2>
+      <a href="/uk/blog/" class="small">Читати далі</a>
+    </div>
+    <div class="row gy-3">
+    </div>
+  </div>
+</section>
+<script src="/static/js/home.js"
+  integrity="sha512-saK9ZErY5SmOzZ5EdXZiD2Rkjs7wxTgzkHJ85Vv1UaotjqREiXvw4He+cAkl+J1lHbNJmROm8Z1oC9kIMAE1Tw==" crossorigin="anonymous"></script>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">Програмне забезпечення з відкритим кодом, випущене під ліцензією MIT.</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Проєкт</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/about/" class="footer-link">Про проєкт</a></li>
+          <li><a href="/uk/wallets/full-node/" class="footer-link">Повний вузол</a></li>
+          <li><a href="/uk/blog/" class="footer-link">Новини</a></li>
+          <li><a href="/uk/resources/" class="footer-link">Ресурси</a></li>
+          <li><a href="/uk/brand/" class="footer-link">Брендові активи</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Розробники</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/development/" class="footer-link">Участь</a></li>
+          <li><a href="/uk/development/rpc/" class="footer-link">RPC Документація</a></li>
+          <li><a href="/uk/whitepaper/" class="footer-link">Біла книга</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Підписи Guix
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Правова інформація</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/privacy/" class="footer-link">Політика конфіденційності</a></li>
+          <li><a href="/uk/cookies/" class="footer-link">Політика використання cookie</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Безпека</h6>
+        <p class="text-secondary small mb-1">Відбиток GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Перевірити ключ на OpenPGP
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Ліцензія MIT</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://dpowcore.org/ja/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Home — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/ja/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/">
+  <link rel="alternate" hreflang="uk" href="https://dpowcore.org/uk/">
+  <link rel="alternate" hreflang="zh" href="https://dpowcore.org/zh/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/">
+  <link rel="alternate" hreflang="it" href="https://dpowcore.org/it/">
+  <link rel="alternate" hreflang="pl" href="https://dpowcore.org/pl/">
+  <link rel="alternate" hreflang="tr" href="https://dpowcore.org/tr/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/">
+  <link rel="alternate" hreflang="fr" href="https://dpowcore.org/fr/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/ja/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>JA</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/ja/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>自動
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>ライト
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>ダーク
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/ja/">ホーム</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/ja/about/">概要</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          ウォレット
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/ja/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>フルノード
+          </a></li>
+          <li><a class="dropdown-item" href="/ja/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>ウェブウォレット
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/ja/blog/">ニュース</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/ja/mining/">マイニング</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/ja/resources/">リソース</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          開発
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/ja/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>貢献する
+          </a></li>
+          <li><a class="dropdown-item" href="/ja/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>RPCドキュメント
+          </a></li>
+          <li><a class="dropdown-item" href="/ja/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>ホワイトペーパー
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><section class="bwc-hero">
+  <div class="bwc-hero-grid"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 col-lg-8">
+        <div class="mb-4">
+          <span class="bwc-badge-latest px-3 py-1">
+            <i class="fa-solid fa-microchip me-1"></i>x2 Rounds Argon2id + SHA512 as salt PoW
+          </span>
+        </div>
+        <h1 class="bwc-tagline mb-4">
+          分散型。安全。<span class="bwc-accent-text">Argon2id</span>。
+        </h1>
+        <p class="bwc-hero-desc mx-auto mb-5">Dpowcoin CoreはArgon2idプルーフ・オブ・ワークアルゴリズムを実装したオープンソース暗号通貨です — ASIC耐性、メモリ集約型、公平なマイニングのために設計されています。</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="/ja/wallets/full-node/" class="btn btn-bwc-primary">
+            <i class="fa-solid fa-download me-2"></i>最新版をダウンロード
+          </a>
+          <a href="https://github.com/dpowcore-project/dpowcoin" class="btn btn-bwc-secondary" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-2"></i>ソースを表示
+          </a>
+          <a href="/ja/about/" class="btn btn-bwc-secondary">詳しく知る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="h5 mb-2">Argon2idアルゴリズム</h3>
+          <p class="text-secondary small mb-0">ASICマイニングに耐性のあるメモリ集約型プルーフ・オブ・ワーク。CPUへのアクセスによる公平な配布。</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="h5 mb-2">オープンソース</h3>
+          <p class="text-secondary small mb-0">MITライセンスの下で完全オープンソース。監査可能、フォーク可能、GitHubでのコミュニティ主導の開発。</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="h5 mb-2">再現可能なビルド</h3>
+          <p class="text-secondary small mb-0">GNU Guixによる決定論的ビルド。すべてのバイナリは独立して検証可能。GPG署名付きリリース証明。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="bwc-section bwc-section-flush">
+  <div class="container">
+
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+      <div>
+        <h2 class="bwc-section-title mb-1">コイン仕様</h2>
+        <p class="bwc-section-lead mb-0">Dpowcoin (DPC) ネットワークの完全な技術パラメータ</p>
+      </div>
+      <div class="ms-auto">
+        <span class="bwc-ticker-badge">DPC</span>
+      </div>
+    </div><div class="row gy-3 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">最大供給量</div>
+          <div class="bwc-spec-stat-value">42 000 000</div>
+          <div class="bwc-spec-stat-sub">DPC</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">ブロック報酬</div>
+          <div class="bwc-spec-stat-value">50 <small>DPC</small></div>
+          <div class="bwc-spec-stat-sub">半減期: 420 000 ブロック</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">ブロック時間</div>
+          <div class="bwc-spec-stat-value">5 <small>min</small></div>
+          <div class="bwc-spec-stat-sub">300 s</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">コインベース成熟度</div>
+          <div class="bwc-spec-stat-value">100</div>
+          <div class="bwc-spec-stat-sub">ブロック</div>
+        </div>
+      </div>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">プルーフ・オブ・ワーク</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">アルゴリズム</span>
+            <span class="bwc-spec-val bwc-spec-accent">Argon2id</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">2× SHA-512ソルト → 2回のArgon2idラウンド</span>
+            <span class="bwc-spec-val">m=1024 · t=3 · p=1</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">PoWモデル</span>
+            <span class="bwc-spec-val">SHA-512ソルト化された二重Argon2id</span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-2">ブロックハッシュ：salt = SHA-512(SHA-512(header)); h1 = Argon2id(header, salt, m=4MB, t=2, p=2); PoW = Argon2id(header, salt=h1, m=32MB, t=2, p=2)。ヘッダーの二重SHA-512ダイジェストでソルト化された2つの連鎖Argon2idパス — 設計上、メモリ集約型かつASIC耐性を持ちます。</p>
+            <p class="bwc-text-muted-sm mb-0"><em>Dpowcoin CoreはArgon2idプルーフ・オブ・ワークアルゴリズムを実装したオープンソース暗号通貨です — ASIC耐性、メモリ集約型、公平なマイニングのために設計されています。</em></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">難易度</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">アルゴリズム</span>
+            <span class="bwc-spec-val bwc-spec-accent">LWMA</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">ウィンドウ</span>
+            <span class="bwc-spec-val">576 ブロック</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">期間</span>
+            <span class="bwc-spec-val">~2 日</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">再ターゲット</span>
+            <span class="bwc-spec-val bwc-spec-accent">毎ブロック</span>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">アドレス形式</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2PKH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">P</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 55</span>
+              <span class="bwc-spec-addr-tag">0x37</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2SH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">C</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 28</span>
+              <span class="bwc-spec-addr-tag">0x1C</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">dpc</span>1q<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">SegWit</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32m</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">dpc</span>1p<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">Taproot</span>
+            </span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-0">バージョンバイトは10進数と16進数で表示。すべてのアドレスタイプは34文字。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">ネットワーク</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2P Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">42003</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">RPC Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">42002</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">マジック</span>
+            <span class="bwc-spec-val">0xf29f4afb</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIP-324 Salt</span>
+            <span class="bwc-spec-val">dpowcoin_v2_shared_secret</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIPs</span>
+            <span class="bwc-spec-val bwc-spec-accent">ブロック2から有効</span>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">ジェネシスブロック</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-body">d86f8a0582e779830f182befeaaabc8c7</span><span class="bwc-hash-body">3a159b6b06530910758daf17ce31e36</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">PoW制限</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-zeros">001</span><span class="bwc-hash-body">fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="mb-5">
+      <h2 class="bwc-section-title mb-1">ネットワークアップグレード</h2>
+      <p class="bwc-section-lead mb-0">ブロック225,000でYespowerがコンセンサスから削除されます — 以降、DpowcoinはArgon2id専用になります。</p>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">背景：デュアルPoW時代</div>
+          <p class="bwc-vest-text mb-0">ブロック225,000以前、Dpowcoinは1つのターゲットを共有する2つの独立したプルーフ・オブ・ワーク検証ですべてのヘッダーを検証していました：hash = { Yespower(header), Argon2id(header) }、有効 ⇔ 両方のハッシュ ≤ target(nBits)。Yespowerは低コストなフィルターとして最初に検証され、Yespowerを通過した場合のみArgon2idが計算されました。</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">Yespowerが削除される理由</div>
+          <p class="bwc-vest-text mb-0">両アルゴリズムが同じターゲットを共有していたため、YespowerはArgon2idがすでに提供しているセキュリティ以上の実質的な効果をもたらさず、LWMAが考慮すべき作業量を倍増させ、ネットワークに測定可能な利益をもたらすことなくコードベースを複雑化させていました。2つの検証は独立しているため、Yespowerの削除は難易度調整やチェーンウェイトに影響を与えません — どちらも完全にアルゴリズムに依存しません。デュアルPoWのアイデアは試す価値がありましたが、この実装は解決した以上の問題を生み出しました。「デュアルPoW」という名称は歴史的な理由のみで維持されています。</p>
+        </div>
+      </div>
+    </div><div class="bwc-card mb-4">
+      <div class="bwc-spec-sub-title mb-3">主要ブロック</div>
+      <div class="row gy-3">
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--start">
+            <div class="bwc-vest-milestone-label">デュアルPoW時代</div>
+            <div class="bwc-vest-milestone-val">0 – 224,999</div>
+            <div class="bwc-vest-milestone-desc">ヘッダーはYespowerとArgon2idの両方で検証され、1つのターゲットを共有します。</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--end">
+            <div class="bwc-vest-milestone-label">Yespower削除</div>
+            <div class="bwc-vest-milestone-val">225,000</div>
+            <div class="bwc-vest-milestone-desc">この高さでコンセンサスコードからYespower検証が削除されます。</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--unlock">
+            <div class="bwc-vest-milestone-label">Argon2id専用時代</div>
+            <div class="bwc-vest-milestone-val">225,000+</div>
+            <div class="bwc-vest-milestone-desc">すべてのヘッダーはArgon2idプルーフ・オブ・ワークのみで検証されます。</div>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--miner">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-pickaxe"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">マイナーへの注意事項</div>
+            <p class="bwc-vest-text mb-0">特別な対応は必要ありません。YespowerとArgon2idは常に同じターゲットを共有していたため、Argon2idベースのマイニングソフトウェアはブロック225,000の前後で変更なく動作し続けます。SHA-512とArgon2idのライブラリはほぼすべてのプラットフォームで利用可能なため、軽量SPVウォレットはArgon2idのみに依存して検証できます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--pool">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">重要な免責事項</div>
+            <p class="bwc-vest-text">当プロジェクトは「delayed PoW」技術を使用しておらず、Komodoまたはそのプロジェクトともいかなる関係もありません。ブロック225,000以前、DpowcoinはYespowerとArgon2idからなるデュアルPoWを使用しており、Argon2id自体は二重SHA-512でソルト化された2つの連鎖ラウンドとして計算されます。</p>
+            <span class="bwc-vest-badge">Komodoとは無関係 — delayed PoWなし</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="bwc-card d-flex flex-wrap align-items-center gap-3">
+      <div>
+        <div class="text-secondary small mb-1">最新リリース</div>
+        <div class="fw-bold" id="bwc-latest-ver">—</div>
+      </div>
+      <div class="ms-auto d-flex gap-2 flex-wrap">
+        <a href="/ja/wallets/full-node/" class="btn btn-bwc-primary btn-sm">
+          <i class="fa-solid fa-download me-1"></i>ダウンロード
+        </a>
+        <a href="https://github.com/dpowcore-project/dpowcoin/releases" class="btn btn-bwc-secondary btn-sm" target="_blank" rel="noopener">
+          リリースノート
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="bwc-section-title mb-0">最新ニュース</h2>
+      <a href="/ja/blog/" class="small">続きを読む</a>
+    </div>
+    <div class="row gy-3">
+    </div>
+  </div>
+</section>
+<script src="/static/js/home.js"
+  integrity="sha512-saK9ZErY5SmOzZ5EdXZiD2Rkjs7wxTgzkHJ85Vv1UaotjqREiXvw4He+cAkl+J1lHbNJmROm8Z1oC9kIMAE1Tw==" crossorigin="anonymous"></script>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">MITライセンスの下でリリースされたオープンソースソフトウェア。</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">プロジェクト</h6>
+        <ul class="list-unstyled">
+          <li><a href="/ja/about/" class="footer-link">概要</a></li>
+          <li><a href="/ja/wallets/full-node/" class="footer-link">フルノード</a></li>
+          <li><a href="/ja/blog/" class="footer-link">ニュース</a></li>
+          <li><a href="/ja/resources/" class="footer-link">リソース</a></li>
+          <li><a href="/ja/brand/" class="footer-link">ブランドアセット</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">開発者</h6>
+        <ul class="list-unstyled">
+          <li><a href="/ja/development/" class="footer-link">貢献する</a></li>
+          <li><a href="/ja/development/rpc/" class="footer-link">RPCドキュメント</a></li>
+          <li><a href="/ja/whitepaper/" class="footer-link">ホワイトペーパー</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix Sigs
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">法的情報</h6>
+        <ul class="list-unstyled">
+          <li><a href="/ja/privacy/" class="footer-link">プライバシーポリシー</a></li>
+          <li><a href="/ja/cookies/" class="footer-link">クッキーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">セキュリティ</h6>
+        <p class="text-secondary small mb-1">GPGフィンガープリント:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>OpenPGPでキーを確認
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">MITライセンス</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>

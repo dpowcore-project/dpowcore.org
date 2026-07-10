@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://dpowcore.org/zh/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Home — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/zh/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/">
+  <link rel="alternate" hreflang="uk" href="https://dpowcore.org/uk/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/">
+  <link rel="alternate" hreflang="ja" href="https://dpowcore.org/ja/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/">
+  <link rel="alternate" hreflang="it" href="https://dpowcore.org/it/">
+  <link rel="alternate" hreflang="pl" href="https://dpowcore.org/pl/">
+  <link rel="alternate" hreflang="tr" href="https://dpowcore.org/tr/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/">
+  <link rel="alternate" hreflang="fr" href="https://dpowcore.org/fr/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/zh/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>ZH</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/zh/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>自动
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>浅色
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>深色
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/zh/">首页</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/zh/about/">关于</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          钱包
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/zh/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>全节点
+          </a></li>
+          <li><a class="dropdown-item" href="/zh/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>网页钱包
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/zh/blog/">新闻</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/zh/mining/">挖矿</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/zh/resources/">资源</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          开发
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/zh/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>贡献
+          </a></li>
+          <li><a class="dropdown-item" href="/zh/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC 文档
+          </a></li>
+          <li><a class="dropdown-item" href="/zh/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>白皮书
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><section class="bwc-hero">
+  <div class="bwc-hero-grid"></div>
+  <div class="container position-relative">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 col-lg-8">
+        <div class="mb-4">
+          <span class="bwc-badge-latest px-3 py-1">
+            <i class="fa-solid fa-microchip me-1"></i>x2 Rounds Argon2id + SHA512 as salt PoW
+          </span>
+        </div>
+        <h1 class="bwc-tagline mb-4">
+          去中心化。安全。<span class="bwc-accent-text">Argon2id</span>。
+        </h1>
+        <p class="bwc-hero-desc mx-auto mb-5">Dpowcoin Core 是一种开源加密货币，采用 Argon2id 工作量证明算法 — 抗 ASIC、内存密集，专为公平挖矿而生。</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="/zh/wallets/full-node/" class="btn btn-bwc-primary">
+            <i class="fa-solid fa-download me-2"></i>下载最新版本
+          </a>
+          <a href="https://github.com/dpowcore-project/dpowcoin" class="btn btn-bwc-secondary" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-2"></i>查看源码
+          </a>
+          <a href="/zh/about/" class="btn btn-bwc-secondary">了解更多</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="h5 mb-2">Argon2id 算法</h3>
+          <p class="text-secondary small mb-0">内存密集型工作量证明，抗 ASIC 挖矿。通过 CPU 的可访问性实现公平分配。</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 class="h5 mb-2">开源</h3>
+          <p class="text-secondary small mb-0">基于 MIT 许可证完全开源。可审计、可分叉，在 GitHub 上由社区驱动开发。</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="bwc-card h-100">
+          <div class="bwc-card-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="h5 mb-2">可复现构建</h3>
+          <p class="text-secondary small mb-0">通过 GNU Guix 实现确定性构建。每个二进制文件均可独立验证。GPG 签名发布证明。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="bwc-section bwc-section-flush">
+  <div class="container">
+
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+      <div>
+        <h2 class="bwc-section-title mb-1">币种规格</h2>
+        <p class="bwc-section-lead mb-0">Dpowcoin (DPC) 网络的完整技术参数</p>
+      </div>
+      <div class="ms-auto">
+        <span class="bwc-ticker-badge">DPC</span>
+      </div>
+    </div><div class="row gy-3 mb-4">
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">最大供应量</div>
+          <div class="bwc-spec-stat-value">42 000 000</div>
+          <div class="bwc-spec-stat-sub">DPC</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">区块奖励</div>
+          <div class="bwc-spec-stat-value">50 <small>DPC</small></div>
+          <div class="bwc-spec-stat-sub">减半: 420 000 区块</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">出块时间</div>
+          <div class="bwc-spec-stat-value">5 <small>min</small></div>
+          <div class="bwc-spec-stat-sub">300 s</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="bwc-spec-stat">
+          <div class="bwc-spec-stat-label">Coinbase 成熟度</div>
+          <div class="bwc-spec-stat-value">100</div>
+          <div class="bwc-spec-stat-sub">区块</div>
+        </div>
+      </div>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">工作量证明</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">算法</span>
+            <span class="bwc-spec-val bwc-spec-accent">Argon2id</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">2× SHA-512 加盐 → 2 轮 Argon2id</span>
+            <span class="bwc-spec-val">m=1024 · t=3 · p=1</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">PoW 模型</span>
+            <span class="bwc-spec-val">SHA-512 加盐双重 Argon2id</span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-2">区块哈希：salt = SHA-512(SHA-512(header)); h1 = Argon2id(header, salt, m=4MB, t=2, p=2); PoW = Argon2id(header, salt=h1, m=32MB, t=2, p=2)。两轮链式 Argon2id 计算，使用区块头的双重 SHA-512 摘要加盐 — 设计上具有内存密集性和抗 ASIC 特性。</p>
+            <p class="bwc-text-muted-sm mb-0"><em>Dpowcoin Core 是一种开源加密货币，采用 Argon2id 工作量证明算法 — 抗 ASIC、内存密集，专为公平挖矿而生。</em></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">难度</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">算法</span>
+            <span class="bwc-spec-val bwc-spec-accent">LWMA</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">窗口</span>
+            <span class="bwc-spec-val">576 区块</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">周期</span>
+            <span class="bwc-spec-val">~2 天</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">重新定向</span>
+            <span class="bwc-spec-val bwc-spec-accent">每个区块</span>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">地址格式</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2PKH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">P</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 55</span>
+              <span class="bwc-spec-addr-tag">0x37</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2SH</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent bwc-spec-addr-prefix">C</span><span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-dec">dec 28</span>
+              <span class="bwc-spec-addr-tag">0x1C</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">dpc</span>1q<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">SegWit</span>
+            </span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">Bech32m</span>
+            <span class="bwc-spec-val">
+              <span class="bwc-spec-accent">dpc</span>1p<span class="bwc-spec-addr-ellipsis">…</span>
+              <span class="bwc-spec-addr-tag">Taproot</span>
+            </span>
+          </div>
+          <div class="bwc-spec-note">
+            <p class="bwc-text-muted-sm mb-0">版本字节以十进制和十六进制显示。所有地址类型均为 34 个字符。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">网络</div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">P2P Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">42003</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">RPC Port</span>
+            <span class="bwc-spec-val bwc-spec-accent">42002</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">魔数</span>
+            <span class="bwc-spec-val">0xf29f4afb</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIP-324 Salt</span>
+            <span class="bwc-spec-val">dpowcoin_v2_shared_secret</span>
+          </div>
+          <div class="bwc-spec-row">
+            <span class="bwc-spec-key">BIPs</span>
+            <span class="bwc-spec-val bwc-spec-accent">从区块 2 开始生效</span>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">创世区块</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-body">d86f8a0582e779830f182befeaaabc8c7</span><span class="bwc-hash-body">3a159b6b06530910758daf17ce31e36</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">PoW 限制</div>
+          <div class="bwc-hash-display">
+            <span class="bwc-hash-zeros">001</span><span class="bwc-hash-body">fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="mb-5">
+      <h2 class="bwc-section-title mb-1">网络升级</h2>
+      <p class="bwc-section-lead mb-0">在区块 225,000，Yespower 将从共识中移除 — 此后 Dpowcoin 将完全采用 Argon2id。</p>
+    </div><div class="row gy-4 mb-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">背景：双重 PoW 时代</div>
+          <p class="bwc-vest-text mb-0">在区块 225,000 之前，Dpowcoin 使用共享同一目标值的两种独立工作量证明检查来验证每个区块头：hash = { Yespower(header), Argon2id(header) }，有效 ⇔ 两个哈希值均 ≤ target(nBits)。Yespower 作为低成本过滤器首先被验证；只有通过 Yespower 检查后才会计算 Argon2id。</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-card h-100">
+          <div class="bwc-spec-sub-title">为何移除 Yespower</div>
+          <p class="bwc-vest-text mb-0">由于两种算法共享同一目标值，Yespower 并未在 Argon2id 已提供的安全性之上增加任何实质保障，却使 LWMA 需要处理的工作量翻倍，并在没有任何可衡量收益的情况下使代码库复杂化。由于两项检查相互独立，移除 Yespower 不会影响难度调整或链权重 — 二者均与算法完全无关。双重 PoW 的想法值得一试，但这一实现所制造的问题比它解决的还多。“Dual PoW”这一名称仅因历史原因予以保留。</p>
+        </div>
+      </div>
+    </div><div class="bwc-card mb-4">
+      <div class="bwc-spec-sub-title mb-3">关键区块</div>
+      <div class="row gy-3">
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--start">
+            <div class="bwc-vest-milestone-label">双重 PoW 时代</div>
+            <div class="bwc-vest-milestone-val">0 – 224,999</div>
+            <div class="bwc-vest-milestone-desc">区块头同时通过 Yespower 和 Argon2id 验证，共享同一目标值。</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--end">
+            <div class="bwc-vest-milestone-label">Yespower 已移除</div>
+            <div class="bwc-vest-milestone-val">225,000</div>
+            <div class="bwc-vest-milestone-desc">从此高度起，Yespower 验证从共识代码中移除。</div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="bwc-vest-milestone bwc-vest-milestone--unlock">
+            <div class="bwc-vest-milestone-label">仅 Argon2id 时代</div>
+            <div class="bwc-vest-milestone-val">225,000+</div>
+            <div class="bwc-vest-milestone-desc">所有区块头仅使用 Argon2id 工作量证明进行验证。</div>
+          </div>
+        </div>
+      </div>
+    </div><div class="row gy-4">
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--miner">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-pickaxe"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">矿工须知</div>
+            <p class="bwc-vest-text mb-0">无需采取任何操作。由于 Yespower 和 Argon2id 始终共享同一目标值，基于 Argon2id 构建的挖矿软件在区块 225,000 前后均可保持不变地正常运行。轻量级 SPV 钱包可仅依赖 Argon2id 进行验证，因为 SHA-512 和 Argon2id 库几乎在所有平台上都可用。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="bwc-vest-note bwc-vest-note--pool">
+          <div class="bwc-vest-note-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <div>
+            <div class="bwc-spec-sub-title">重要声明</div>
+            <p class="bwc-vest-text">我们不使用“延迟工作量证明”（delayed PoW）技术，也与 Komodo 及其项目没有任何关联。在区块 225,000 之前，Dpowcoin 使用由 Yespower 和 Argon2id 组成的双重 PoW，其中 Argon2id 本身通过双重 SHA-512 加盐的两轮链式计算得出。</p>
+            <span class="bwc-vest-badge">与 Komodo 无关联 — 无延迟 PoW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="bwc-card d-flex flex-wrap align-items-center gap-3">
+      <div>
+        <div class="text-secondary small mb-1">最新版本</div>
+        <div class="fw-bold" id="bwc-latest-ver">—</div>
+      </div>
+      <div class="ms-auto d-flex gap-2 flex-wrap">
+        <a href="/zh/wallets/full-node/" class="btn btn-bwc-primary btn-sm">
+          <i class="fa-solid fa-download me-1"></i>下载
+        </a>
+        <a href="https://github.com/dpowcore-project/dpowcoin/releases" class="btn btn-bwc-secondary btn-sm" target="_blank" rel="noopener">
+          发布说明
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bwc-section bwc-section-flush">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="bwc-section-title mb-0">最新动态</h2>
+      <a href="/zh/blog/" class="small">阅读更多</a>
+    </div>
+    <div class="row gy-3">
+    </div>
+  </div>
+</section>
+<script src="/static/js/home.js"
+  integrity="sha512-saK9ZErY5SmOzZ5EdXZiD2Rkjs7wxTgzkHJ85Vv1UaotjqREiXvw4He+cAkl+J1lHbNJmROm8Z1oC9kIMAE1Tw==" crossorigin="anonymous"></script>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">开源软件，基于 MIT 许可证发布。</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">项目</h6>
+        <ul class="list-unstyled">
+          <li><a href="/zh/about/" class="footer-link">关于</a></li>
+          <li><a href="/zh/wallets/full-node/" class="footer-link">全节点</a></li>
+          <li><a href="/zh/blog/" class="footer-link">新闻</a></li>
+          <li><a href="/zh/resources/" class="footer-link">资源</a></li>
+          <li><a href="/zh/brand/" class="footer-link">品牌资产</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">开发者</h6>
+        <ul class="list-unstyled">
+          <li><a href="/zh/development/" class="footer-link">贡献</a></li>
+          <li><a href="/zh/development/rpc/" class="footer-link">RPC 文档</a></li>
+          <li><a href="/zh/whitepaper/" class="footer-link">白皮书</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix 签名
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">法律信息</h6>
+        <ul class="list-unstyled">
+          <li><a href="/zh/privacy/" class="footer-link">隐私政策</a></li>
+          <li><a href="/zh/cookies/" class="footer-link">Cookie 政策</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">安全</h6>
+        <p class="text-secondary small mb-1">GPG 指纹：</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>在 OpenPGP 上验证密钥
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">MIT 许可证</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>

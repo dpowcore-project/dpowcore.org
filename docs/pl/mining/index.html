@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="Mining">
+  <meta property="og:description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://dpowcore.org/pl/mining/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Mining — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/pl/mining/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/mining/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/mining/">
+  <link rel="alternate" hreflang="uk" href="https://dpowcore.org/uk/mining/">
+  <link rel="alternate" hreflang="zh" href="https://dpowcore.org/zh/mining/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/mining/">
+  <link rel="alternate" hreflang="ja" href="https://dpowcore.org/ja/mining/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/mining/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/mining/">
+  <link rel="alternate" hreflang="it" href="https://dpowcore.org/it/mining/">
+  <link rel="alternate" hreflang="tr" href="https://dpowcore.org/tr/mining/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/mining/">
+  <link rel="alternate" hreflang="fr" href="https://dpowcore.org/fr/mining/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/mining/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/pl/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>PL</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/mining/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/mining/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/mining/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/mining/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/mining/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/mining/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/mining/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/pl/mining/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/mining/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/mining/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/mining/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/mining/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/mining/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/mining/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Jasny
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Ciemny
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/">Strona główna</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/about/">O projekcie</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Portfele
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/pl/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Pełny węzeł
+          </a></li>
+          <li><a class="dropdown-item" href="/pl/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Portfel webowy
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/blog/">Aktualności</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/pl/mining/">Wydobycie</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/pl/resources/">Zasoby</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Rozwój
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/pl/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Współtworzenie
+          </a></li>
+          <li><a class="dropdown-item" href="/pl/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>Dokumentacja RPC
+          </a></li>
+          <li><a class="dropdown-item" href="/pl/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+  <div class="mb-5">
+    <h1 class="bwc-section-title"><i class="fa-solid fa-microchip me-2"></i>Wydobycie Dpowcoin</h1>
+    <p class="bwc-section-lead">Dpowcoin używa algorytmu proof-of-work Argon2id — można go wydobywać za pomocą CPU.</p>
+  </div>
+  <section class="mb-5">
+    <h2 class="h3 mb-1">Wydobycie solowe</h2>
+    <p class="text-secondary mb-4">Wydobywaj bezpośrednio na własnym pełnym węźle. Zachowujesz 100% nagród za blok.</p>
+    <div class="bwc-verify">
+      <div class="bwc-verify-step">
+        <h3 class="h5 mb-2">1. Skonfiguruj węzeł</h3>
+        <p class="text-secondary small mb-2">Dodaj następujące wpisy do dpowcoin.conf:</p>
+        <pre><code>rpcuser=user
+rpcpassword=password
+rpcallowip=127.0.0.1
+rpcport=42002
+txindex=1
+coinstatsindex=1
+server=1
+listen=1</code></pre>
+      </div>
+      <div class="bwc-verify-step">
+        <h3 class="h5 mb-2">2. Pobierz cpuminer-opt</h3>
+        <p class="text-secondary small mb-2">Kompilacje dla Windows i Linux — wybierz plik binarny odpowiadający Twojemu CPU:</p>
+        <a href="https://github.com/bitweb-project/cpuminer-opt/releases" target="_blank" rel="noopener" class="btn btn-bwc-secondary mb-3">
+          <i class="fa-brands fa-github me-2"></i>bitweb-project/cpuminer-opt
+        </a>
+        <div class="mb-3">
+          <p class="text-secondary small mb-2 fw-semibold">CPU</p>
+          <pre><code>cpuminer-sse2 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-aes-sse42 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx2 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx2-sha -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx2-sha-vaes -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx512 -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4
+
+cpuminer-avx512-sha-vaes -a dpowcoin -o http://127.0.0.1:42002 -u user -p password --coinbase-addr YOUR_ADDRESS --no-longpoll --no-stratum --no-extranonce -t 4</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2 class="h3 mb-1">Pule wydobywcze</h2>
+    <p class="text-secondary mb-4">Wydobycie w puli zapewnia stabilne wypłaty. Połącz się, używając ustawień stratum podanych w panelu każdej puli.</p>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="bwc-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bwc-card-icon mb-0"><i class="fa-solid fa-server"></i></div>
+            <div>
+              <div class="fw-semibold">Oficjalna pula Dpowcoin</div>
+              <div class="text-secondary small">pool.bitwebcore.net</div>
+            </div>
+          </div>
+          <a href="https://pool.bitwebcore.net" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm">
+            Otwórz pulę <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+          </a>
+          <a href="https://github.com/bitweb-project/miningcore" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm ms-2">
+            <i class="fa-brands fa-github me-1"></i>Źródło
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="bwc-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bwc-card-icon mb-0"><i class="fa-solid fa-chart-bar"></i></div>
+            <div>
+              <div class="fw-semibold">Wszystkie pule</div>
+              <div class="text-secondary small">miningpoolstats.stream</div>
+            </div>
+          </div>
+          <a href="https://miningpoolstats.stream/dpowcoin" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">
+            Znajdź więcej pul <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">Oprogramowanie open source, wydane na licencji MIT.</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Projekt</h6>
+        <ul class="list-unstyled">
+          <li><a href="/pl/about/" class="footer-link">O projekcie</a></li>
+          <li><a href="/pl/wallets/full-node/" class="footer-link">Pełny węzeł</a></li>
+          <li><a href="/pl/blog/" class="footer-link">Aktualności</a></li>
+          <li><a href="/pl/resources/" class="footer-link">Zasoby</a></li>
+          <li><a href="/pl/brand/" class="footer-link">Zasoby marki</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Deweloperzy</h6>
+        <ul class="list-unstyled">
+          <li><a href="/pl/development/" class="footer-link">Współtworzenie</a></li>
+          <li><a href="/pl/development/rpc/" class="footer-link">Dokumentacja RPC</a></li>
+          <li><a href="/pl/whitepaper/" class="footer-link">White Paper</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix Sigs
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Informacje prawne</h6>
+        <ul class="list-unstyled">
+          <li><a href="/pl/privacy/" class="footer-link">Polityka prywatności</a></li>
+          <li><a href="/pl/cookies/" class="footer-link">Polityka plików cookie</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Bezpieczeństwo</h6>
+        <p class="text-secondary small mb-1">Odcisk GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Zweryfikuj klucz w OpenPGP
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licencja MIT</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>

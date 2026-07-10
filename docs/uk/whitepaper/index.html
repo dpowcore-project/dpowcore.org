@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="uk" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core technical white paper — Argon2id proof-of-work, LWMA-3 difficulty, and monetary policy.">
+  <meta property="og:title" content="White Paper">
+  <meta property="og:description" content="Dpowcoin Core technical white paper — Argon2id proof-of-work, LWMA-3 difficulty, and monetary policy.">
+  <meta property="og:url" content="https://dpowcore.org/uk/whitepaper/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>White Paper — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/uk/whitepaper/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/whitepaper/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/whitepaper/">
+  <link rel="alternate" hreflang="zh" href="https://dpowcore.org/zh/whitepaper/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/whitepaper/">
+  <link rel="alternate" hreflang="ja" href="https://dpowcore.org/ja/whitepaper/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/whitepaper/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/whitepaper/">
+  <link rel="alternate" hreflang="it" href="https://dpowcore.org/it/whitepaper/">
+  <link rel="alternate" hreflang="pl" href="https://dpowcore.org/pl/whitepaper/">
+  <link rel="alternate" hreflang="tr" href="https://dpowcore.org/tr/whitepaper/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/whitepaper/">
+  <link rel="alternate" hreflang="fr" href="https://dpowcore.org/fr/whitepaper/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/whitepaper/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/uk/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>UK</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/whitepaper/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/whitepaper/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/whitepaper/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/whitepaper/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/whitepaper/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/whitepaper/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/whitepaper/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/whitepaper/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/whitepaper/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/whitepaper/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/whitepaper/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/whitepaper/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/uk/whitepaper/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/whitepaper/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Авто
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Світла
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Темна
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/">Головна</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/about/">Про проєкт</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Гаманці
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/uk/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Повний вузол
+          </a></li>
+          <li><a class="dropdown-item" href="/uk/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Веб-гаманець
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/blog/">Новини</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/mining/">Майнінг</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/uk/resources/">Ресурси</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Розробка
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/uk/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Участь
+          </a></li>
+          <li><a class="dropdown-item" href="/uk/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC Документація
+          </a></li>
+          <li><a class="dropdown-item" href="/uk/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>Біла книга
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><div class="container-fluid wp-layout">
+  <div class="row g-0">
+    <aside class="col-12 col-lg-3 col-xl-2 wp-sidebar order-2 order-lg-1" id="wpSidebar">
+      <div class="wp-sidebar-inner p-3">
+        <div class="mb-3 d-flex align-items-center gap-2">
+          <a href="/uk/development/" class="text-secondary small text-decoration-none">
+            <i class="fa-solid fa-arrow-left me-1"></i>Розробка
+          </a>
+        </div>
+        <a href="/static/whitepaper.pdf" class="btn btn-bwc-primary btn-sm w-100 mb-4" download>
+          <i class="fa-solid fa-file-pdf me-2"></i>Завантажити PDF
+        </a>
+        <p class="wp-toc-label mb-2">Зміст</p>
+        <nav id="wpToc" aria-label="White paper sections"></nav>
+      </div>
+    </aside>
+    <div class="col-12 col-lg-9 col-xl-10 wp-content px-4 py-5 order-1 order-lg-2" id="wpContent">
+      <div class="wp-header mb-5">
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-2">
+          <div>
+            <span class="badge bg-secondary text-uppercase mb-2">Technical Document</span>
+            <h1 class="wp-title mb-1">Dpowcoin Core White Paper</h1>
+            <p class="text-secondary small mb-0">Version 1.0 &mdash; June 2026</p>
+          </div>
+          <a href="/static/whitepaper.pdf" class="btn btn-bwc-primary btn-sm d-none d-lg-inline-flex" download>
+            <i class="fa-solid fa-file-pdf me-2"></i>Завантажити PDF
+          </a>
+        </div>
+      </div>
+      <div class="wp-body">
+        <h1>Dpowcoin Core: A Memory-Hard Proof-of-Work Cryptocurrency</h1>
+<p><strong>Version 1.0 · June 2026</strong></p>
+<p>Mraksoll — Lead Maintainer<br>
+contact@dpowcore.org<br>
+https://dpowcore.org</p>
+<hr>
+<h2>Abstract</h2>
+<p>Dpowcoin Core (DPC) is an open-source cryptocurrency derived from Bitcoin Core 0.26.x, distinguished
+by two design decisions: replacement of SHA256d proof-of-work with a SHA-512-salted, dual-round
+Argon2id construction — a memory-hard, ASIC-resistant hashing function — and adoption of the LWMA-3
+per-block difficulty algorithm with a five-minute target. From genesis through block
+224,999 the network additionally required a second, independent proof-of-work check (Yespower)
+sharing Argon2id's target; this transitional dual-PoW requirement was dropped from consensus at
+block 225,000 (Dpowcoin Core v26.3.1), after which Argon2id alone secures the chain. The codebase follows Bitcoin Core's development process
+including the full functional test suite, reproducible GNU Guix builds, and GPG-signed release
+attestations. This paper describes the technical parameters, the rationale behind each design
+choice, and the toolchain used to bootstrap the network.</p>
+<hr>
+<h2>Table of Contents</h2>
+<ol>
+<li>Introduction</li>
+<li>Codebase and Development Process</li>
+<li>Proof-of-Work: Argon2id</li>
+<li>Implementation: ISA Dispatcher</li>
+<li>Difficulty Algorithm: LWMA-3</li>
+<li>Timing and Anti-Manipulation Parameters</li>
+<li>Monetary Policy</li>
+<li>Network Parameters</li>
+<li>Consensus-Level Security Patches</li>
+<li>Conclusion<br>
+Appendix A — Network Parameter Reference<br>
+Appendix C — Halving Schedule</li>
+</ol>
+<hr>
+<h2>1. Introduction</h2>
+<p>Bitcoin's proof-of-work algorithm (SHA256d) was initially mined on consumer CPUs, then GPUs, and
+eventually displaced entirely by application-specific integrated circuits (ASICs). ASIC
+manufacturing concentrates hash rate among a small number of hardware producers and large mining
+operations, reducing the decentralization that proof-of-work is intended to enforce.</p>
+<p>Argon2id, winner of the Password Hashing Competition (2015), was designed to be simultaneously
+time-hard and memory-hard. Its memory requirement makes it resistant to the parallel architectures
+that give ASICs their advantage over general-purpose hardware, and its sequential memory access
+pattern penalises GPU implementations relative to CPU ones.</p>
+<p>Dpowcoin Core applies a SHA-512-salted, dual-round Argon2id construction (§3.2–3.3) as the
+proof-of-work challenge function, while retaining SHA256d for all internal chain data structures —
+the same separation used by Litecoin (Scrypt PoW / SHA256d chain). This preserves full compatibility
+with Bitcoin's UTXO model, transaction format, and wallet infrastructure while making block
+production accessible to commodity hardware. From genesis through block 224,999 this Argon2id check
+ran alongside a second, independent Yespower check under a shared-target dual proof-of-work scheme;
+§3.6 covers the rationale for consolidating to Argon2id alone at block 225,000.</p>
+<hr>
+<h2>2. Codebase and Development Process</h2>
+<h3>2.1 Upstream Base</h3>
+<p>Dpowcoin Core is a fork of Bitcoin Core 0.26.x and tracks upstream releases. Protocol changes,
+wallet improvements, and security fixes from Bitcoin Core are reviewed and merged as they are
+published. The project commits to staying within two major version series of the Bitcoin Core
+upstream.</p>
+<h3>2.2 Development Standards</h3>
+<p>The development process mirrors Bitcoin Core:</p>
+<ul>
+<li><strong>Peer review.</strong> All changes are submitted as GitHub pull requests and require review before
+merging. There is no privileged developer class; contributors earn trust through merit.</li>
+<li><strong>Functional test suite.</strong> The full Bitcoin Core functional test suite is inherited and extended.
+Consensus-critical changes require passing all tests, including the regression test framework
+(<code>regtest</code> chain).</li>
+<li><strong>Reproducible builds.</strong> Release binaries are built using GNU Guix for deterministic output.
+Builder attestations and signing keys are published at
+<a href="https://github.com/dpowcore-project/guix.sigs">github.com/dpowcore-project/guix.sigs</a>.</li>
+<li><strong>GPG-signed releases.</strong> Every release is signed by the lead maintainer's GPG key
+(<code>23B3 D882 F805 A5D1 F0A1 2A25 35A7 538B 1C81 6E49</code>). Users are expected to verify
+signatures before running any binary.</li>
+<li><strong>Security policy.</strong> Vulnerabilities are reported to security@dpowcore.org under responsible
+disclosure. The project maintains security updates for the two most recent major release series,
+following the Bitcoin Core security policy model.</li>
+</ul>
+<hr>
+<h2>3. Proof-of-Work: Argon2id</h2>
+<h3>3.1 Algorithm Selection</h3>
+<p>Argon2 is defined in RFC 9106 and exists in three variants:</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Parallelism</th>
+<th>Data-dependence</th>
+<th>Recommended use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Argon2d</td>
+<td>Single-pass</td>
+<td>Data-dependent</td>
+<td>Cryptocurrency PoW (original)</td>
+</tr>
+<tr>
+<td>Argon2i</td>
+<td>Single-pass</td>
+<td>Data-independent</td>
+<td>Password hashing</td>
+</tr>
+<tr>
+<td><strong>Argon2id</strong></td>
+<td><strong>Hybrid</strong></td>
+<td><strong>Both</strong></td>
+<td><strong>General-purpose — RFC recommendation</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Argon2id was chosen over Argon2d since it has wide support on all platforms and programming languages ​​in the form of ready-made libraries, unlike the I and D variants.</p>
+<h3>3.2 Consensus Parameters</h3>
+<p>Dpowcoin Core does not call Argon2id once per header — it chains <strong>two</strong> Argon2id passes, each
+salted independently. The salt for round 1 is derived from a double SHA-512 digest of the header;
+the salt for round 2 is round 1's output. All parameters below are consensus-critical and are
+encoded directly in <code>block.cpp</code>; any change requires a hard fork.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Round 1</th>
+<th>Round 2</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variant</td>
+<td><code>Argon2_id</code></td>
+<td><code>Argon2_id</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Time cost (<code>t</code>)</td>
+<td><code>2</code></td>
+<td><code>2</code></td>
+<td>Passes over memory, per round</td>
+</tr>
+<tr>
+<td>Memory cost (<code>m</code>)</td>
+<td><code>4,096 KiB</code> (4 MiB)</td>
+<td><code>32,768 KiB</code> (32 MiB)</td>
+<td>Round 2 is 8× round 1</td>
+</tr>
+<tr>
+<td>Parallelism (<code>p</code>)</td>
+<td><code>2</code></td>
+<td><code>2</code></td>
+<td>Lanes per round</td>
+</tr>
+<tr>
+<td>Output length</td>
+<td><code>32 bytes</code></td>
+<td><code>32 bytes</code></td>
+<td>Intermediate hash / final PoW hash</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>80-byte serialized header</td>
+<td>80-byte serialized header</td>
+<td>Identical in both rounds</td>
+</tr>
+<tr>
+<td>Salt</td>
+<td><code>SHA-512(SHA-512(header))</code></td>
+<td>Round 1 output (<code>h1</code>)</td>
+<td>64-byte salt in round 1; 32-byte salt in round 2</td>
+</tr>
+</tbody>
+</table>
+<p>Round 1's output is not itself a candidate PoW hash — it exists only to serve as round 2's salt.
+Round 2's output is the value compared against <code>nBits</code>.</p>
+<p>Doubling the SHA-512 digest before using it as round 1's salt, rather than salting directly with the
+header, adds a cheap but consensus-binding step ahead of the expensive Argon2id work: any change to
+the header changes this salt, so no salt can be precomputed independently of a specific header. The
+64-byte double-SHA-512 output comfortably exceeds Argon2's 8-byte minimum salt length. The 80-byte
+header length matches Bitcoin's block header serialization (4 version + 32 prevHash + 32 merkleRoot</p>
+<ul>
+<li>4 time + 4 nBits + 4 nNonce).</li>
+</ul>
+<h3>3.3 Hash Construction</h3>
+<pre><code class="language-cpp">// From block.cpp — consensus-critical, must not be changed
+CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
+ss &lt;&lt; *this;                                  // 80-byte serialized header
+
+// Round-1 salt: double SHA-512 over the serialized header
+uint8_t salt[CSHA512::OUTPUT_SIZE];
+CSHA512 sha512;
+sha512.Write(&amp;ss[0], ss.size()).Finalize(salt);
+sha512.Reset().Write(salt, sizeof(salt)).Finalize(salt);
+
+// Round 1: header as password, double-SHA-512 digest as salt
+uint256 h1;
+argon2id_hash_raw(/*t_cost=*/2, /*m_cost=*/4096, /*parallelism=*/2,
+                   &amp;ss[0], ss.size(), salt, sizeof(salt), &amp;h1, 32);
+
+// Round 2: header as password, round-1 output as salt
+uint256 h2;
+argon2id_hash_raw(/*t_cost=*/2, /*m_cost=*/32768, /*parallelism=*/2,
+                   &amp;ss[0], ss.size(), &amp;h1, 32, &amp;h2, 32);
+
+return h2;   // compared against nBits
+</code></pre>
+<h3>3.4 Chain Hash Separation</h3>
+<p>Block identifiers (used in <code>hashPrevBlock</code>, Merkle tree roots, and all chain linkage) are computed
+with SHA256d, not Argon2id. Argon2id serves exclusively as the proof-of-work challenge. This is the
+same separation used by Litecoin (Scrypt PoW / SHA256d chain data) and ensures that:</p>
+<ul>
+<li>Chain indexing and validation remain computationally cheap.</li>
+<li>Existing block explorer and wallet infrastructure is compatible without modification.</li>
+<li>The PoW challenge can in principle be changed in a future hard fork without altering chain
+data structures.</li>
+</ul>
+<h3>3.5 Memory Hardness and ASIC Resistance</h3>
+<p>Because round 2 cannot start until round 1's output is known — it is round 2's salt — a single PoW
+attempt requires filling and reading 4 MiB (round 1) and then 32 MiB (round 2) of working memory,
+36 MiB in total. Argon2's internal Blake2b compression rounds create data dependencies between
+memory blocks, so this memory cannot be computed in parallel sub-units within a round — it must be
+traversed sequentially. This eliminates the area reuse that makes SHA256d ASICs economically viable:
+an ASIC targeting these parameters requires the same ~32 MiB SRAM per hashing core (dominated by
+round 2) as a general-purpose CPU, removing the area advantage ASICs ordinarily exploit.</p>
+<p>At <code>t = 2</code> passes per round, each round sweeps its own buffer twice. Chaining two independently-sized
+rounds, rather than one larger round, also means an attacker cannot skip round 1 to save memory:
+round 1's output is consensus-required as round 2's salt, so both rounds must be computed in full,
+in order, for every hash attempt — raising the cost of time-memory trade-off (TMTO) attacks relative
+to a single-round construction of equivalent total work.</p>
+<h3>3.6 Dual Proof-of-Work Era and the Yespower Drop</h3>
+<p>From genesis through block 224,999, Dpowcoin Core additionally required every header to pass a
+second, independent proof-of-work check using Yespower (<code>N = 2048</code>, <code>r = 8</code>), sharing the same
+target as Argon2id: a header was valid only if both <code>Yespower(header) ≤ target(nBits)</code> and
+<code>Argon2id(header) ≤ target(nBits)</code>. Yespower was checked first as a cheap filter; the more expensive
+Argon2id check (§3.2–3.3) only ran if Yespower passed.</p>
+<p>Because both algorithms were held to the same target, Yespower added no security beyond what
+Argon2id already provided on its own, while doubling the work the LWMA-3 retargeting algorithm
+(§5) had to account for and adding consensus-code complexity for no measurable benefit. The Yespower
+check was independent of difficulty adjustment and chain-weight accounting, so dropping it changes
+neither. The dual-PoW design was worth trying; in practice it added cost without adding security.
+The &quot;Dual PoW&quot; name is retained in project documentation for historical reference only — to be
+explicit, this is unrelated to, and does not use, &quot;delayed proof-of-work&quot; (dPoW) technology, and
+Dpowcoin Core is not affiliated with Komodo or its projects.</p>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Block range</th>
+<th>PoW check(s) required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dual PoW Era</td>
+<td>0 – 224,999</td>
+<td>Yespower <strong>and</strong> Argon2id (shared target)</td>
+</tr>
+<tr>
+<td>Transition</td>
+<td>225,000</td>
+<td>Yespower requirement removed from consensus code</td>
+</tr>
+<tr>
+<td>Argon2id-Only Era</td>
+<td>225,000+</td>
+<td>Argon2id only</td>
+</tr>
+</tbody>
+</table>
+<p>The Yespower requirement was removed from consensus starting with Dpowcoin Core v26.3.1. No action
+is required from miners or SPV wallets: since Yespower and Argon2id always shared the same target,
+mining software already built on Argon2id continues to work unchanged across the transition, and
+light clients can rely on Argon2id alone for header verification both before and after block
+225,000.</p>
+<hr>
+<h2>4. Implementation: ISA Dispatcher</h2>
+<p>The internal fill-segment function — the innermost loop of Argon2's memory-filling phase — is
+performance-critical. Dpowcoin Core implements the same ISA-dispatch pattern used by Bitcoin Core
+for SHA256: a runtime CPU feature detector selects the fastest available implementation.</p>
+<h3>4.1 Available Backends</h3>
+<table>
+<thead>
+<tr>
+<th>Backend</th>
+<th>Compiled with</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fill_segment_ref</code></td>
+<td>(always)</td>
+<td>Pure-C reference; safe fallback</td>
+</tr>
+<tr>
+<td><code>fill_segment_sse2</code></td>
+<td><code>-msse2</code></td>
+<td>x86: SSE2 detected at runtime</td>
+</tr>
+<tr>
+<td><code>fill_segment_ssse3</code></td>
+<td><code>-mssse3</code></td>
+<td>x86: SSSE3 detected at runtime</td>
+</tr>
+<tr>
+<td><code>fill_segment_avx2</code></td>
+<td><code>-mavx2</code></td>
+<td>x86: AVX2 + OS XSAVE enabled</td>
+</tr>
+<tr>
+<td><code>fill_segment_avx512</code></td>
+<td><code>-mavx512f</code></td>
+<td>x86: AVX-512F + OS XSAVE enabled</td>
+</tr>
+<tr>
+<td><code>fill_segment_neon</code></td>
+<td><code>-mfpu=neon</code></td>
+<td>AArch64: NEON flag in <code>use_implementation</code></td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 Dispatcher Mechanism</h3>
+<p>A global function pointer <code>argon2_fill_segment</code> defaults to <code>fill_segment_ref</code> at startup.
+<code>Argon2AutoDetectImpl()</code> is called once at node startup. It performs CPUID detection and,
+on x86, verifies OS XSAVE support before upgrading the pointer to the fastest available SIMD
+backend. On AArch64, NEON is selected when available.</p>
+<p>This design means every node automatically uses the most efficient implementation available on its
+hardware without requiring separate binary distributions per CPU microarchitecture.</p>
+<h3>4.3 Header Proof-of-Work Cache</h3>
+<p>Because Argon2id is deliberately expensive (§3.5), and the same header's proof-of-work is
+legitimately re-checked at several independent points during normal operation — during the
+headers-presync anti-DoS pass, again in <code>CheckBlockHeader()</code> on header acceptance, again on full
+block acceptance, and again on any later disk re-read — Dpowcoin Core caches the <em>result</em> of each
+successful check rather than repeating the double Argon2id computation (§3.2–3.3) every time.</p>
+<p>The cache (<code>HeaderPoWCache</code>) is a <code>CuckooCache::cache&lt;uint256, ...&gt;</code> — the same cuckoo-filter-based
+cache structure Bitcoin Core uses for its signature cache — keyed on the header's cheap SHA256d hash
+(<code>GetHash()</code>), not on the expensive Argon2id result:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backing structure</td>
+<td><code>CuckooCache::cache</code></td>
+</tr>
+<tr>
+<td>Cache key</td>
+<td><code>header.GetHash()</code> (SHA256d)</td>
+</tr>
+<tr>
+<td>Cached entries</td>
+<td>Passing headers only — failed checks are never cached</td>
+</tr>
+<tr>
+<td>Default size</td>
+<td>64 MiB (2,097,152 entries at 32 bytes/entry)</td>
+</tr>
+<tr>
+<td>Override</td>
+<td><code>-headerpowcachesize=&lt;MiB&gt;</code></td>
+</tr>
+<tr>
+<td>Concurrency</td>
+<td><code>shared_mutex</code> — concurrent reads; writes are exclusive</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>One process-lifetime instance, shared by every call site</td>
+</tr>
+</tbody>
+</table>
+<p>A cache <strong>miss</strong> always falls back to a full, honest Argon2id recomputation — behaviour on miss is
+identical to having no cache at all — so the cache can only remove redundant work; it can never
+weaken validation. Because only positive results are ever cached, a hit can only mean &quot;this exact
+header content already passed proof-of-work verification at least once in this process.&quot; This also
+makes the cache bidirectional across sync phases: a header verified during the presync anti-DoS pass
+is already cached by the time the same header is re-sent in full during redownload, so the second
+check hits the cache instead of recomputing both Argon2id rounds.</p>
+<h3>4.4 Parallel Header Validation</h3>
+<p>Header proof-of-work checks are independent of one another — validating header <em>N</em> does not require
+knowing whether header <em>N-1</em> passed — so a batch of headers received from a peer can have its PoW
+checked across multiple threads at once, ahead of the necessarily-sequential chain-linkage and
+chainwork accounting that follows.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parallel-dispatch threshold</td>
+<td>32 headers</td>
+</tr>
+<tr>
+<td>Max worker threads</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Worker thread count</td>
+<td><code>clamp(cores &gt; 1 ? cores - 1 : cores, 1, 6)</code>, minus the calling thread</td>
+</tr>
+<tr>
+<td>Dispatch mechanism</td>
+<td><code>CCheckQueue&lt;CHeaderPoWCheck&gt;</code> — the same queue pattern used for parallel script verification</td>
+</tr>
+</tbody>
+</table>
+<p>Batches smaller than the threshold are checked sequentially on the calling thread, since dispatching
+to a queue has overhead that isn't worth paying for a handful of headers. At or above the threshold,
+each header's check is wrapped in a <code>CHeaderPoWCheck</code> (which itself goes through the cache described
+in §4.3) and handed to the queue. One CPU core is always left free for the rest of the node when
+more than one core is available, so this never starves a small box such as a single-board computer.
+This path is exercised most heavily during the headers-presync stage, where a new peer may send tens
+of thousands of headers in a single anti-DoS batch before any block data is downloaded.</p>
+<p>This mechanism is adapted from the reference dual-threaded header-validation implementation and is
+slated to ship as part of Dpowcoin Core's transition to the Bitcoin Core 31.2 base (CMake build
+system).</p>
+<hr>
+<h2>5. Difficulty Algorithm: LWMA-3</h2>
+<h3>5.1 Rationale for Replacing Bitcoin's Retargeting</h3>
+<p>Bitcoin adjusts difficulty once every 2,016 blocks (approximately two weeks). This large window
+was appropriate for a network with stable hash rate, but creates significant instability when hash
+rate changes rapidly — a common occurrence for smaller networks where a single pool can represent a
+significant fraction of total hash rate. A 2,016-block window also means the network is effectively
+unable to respond to hash rate changes for up to two weeks.</p>
+<p>Dpowcoin Core uses LWMA-3 (Linearly Weighted Moving Average, revision 3), designed by Zawy with
+contributions from the Bitcoin Gold and Zcash communities. LWMA-3 retargets on every block,
+using a weighted average of the N most recent solve times where more recent blocks receive linearly
+higher weight. This allows the network to track hash rate changes within hours rather than weeks.</p>
+<h3>5.2 Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target block time <code>T</code></td>
+<td><code>300 s</code> (5 min)</td>
+<td>Between LTC (150 s) and BTC (600 s)</td>
+</tr>
+<tr>
+<td>Averaging window <code>N</code></td>
+<td><code>576 blocks</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Retarget</td>
+<td>Every block</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The 5-minute block time was chosen to place Dpowcoin between Litecoin's 2.5 minutes and Bitcoin's
+10 minutes. Confirmation latency is half that of Bitcoin while the longer interval reduces orphan
+rate on variable-latency network paths.</p>
+<h2>6. Timing and Anti-Manipulation Parameters</h2>
+<h3>6.1 Future Time Limit (FTL)</h3>
+<pre><code class="language-cpp">// chain.h
+static constexpr int64_t MAX_FUTURE_BLOCK_TIME = 600; // 2 × target block time
+</code></pre>
+<p>A block is rejected if its timestamp exceeds the node's current time by more than 600 seconds.
+Setting FTL to <code>2T</code> (two block intervals) is standard practice for time-warp attack mitigation.
+The original Bitcoin Core value was <code>7200 s</code> (two hours); Dpowcoin Core reduces this to limit the
+window in which a miner can manipulate timestamps to artificially lower difficulty.</p>
+<h3>6.2 Timestamp Window</h3>
+<pre><code class="language-cpp">static constexpr int64_t TIMESTAMP_WINDOW = 2 * 60 * 60; // 2 hours
+</code></pre>
+<p>The grace period used when validating external timestamps (RPC parameters, wallet key creation
+times) against block timestamps. This remains at two hours to preserve compatibility with wallet
+software that computes key creation time from block timestamps.</p>
+<h3>6.3 Catching-Up Gap</h3>
+<pre><code class="language-cpp">static constexpr int64_t MAX_BLOCK_TIME_GAP = 90 * 60; // 90 minutes
+</code></pre>
+<p>The threshold at which the GUI switches to &quot;Catching up...&quot; mode. At a 5-minute block time, 90
+minutes represents 18 blocks — enough to distinguish a genuine sync lag from normal network
+variance.</p>
+<h3>6.4 Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Ratio to T</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAX_FUTURE_BLOCK_TIME</code></td>
+<td>600 s</td>
+<td>2T</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP_WINDOW</code></td>
+<td>7200 s</td>
+<td>24T</td>
+</tr>
+<tr>
+<td><code>MAX_BLOCK_TIME_GAP</code></td>
+<td>5400 s</td>
+<td>18T</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>7. Monetary Policy</h2>
+<h3>7.1 Supply Cap</h3>
+<p>The maximum supply is capped at <code>42,000,000 DPC</code> in the consensus parameters. The subsidy
+function uses integer right-shift identical to Bitcoin Core's <code>GetBlockSubsidy()</code> implementation.
+Actual issuable supply across all 33 halving eras is <strong>41,999,999.9538 DPC</strong>
+(4,199,999,995,380,000 satoshis — the C++ verifiable nSum value).</p>
+<h3>7.2 Block Reward and Halving</h3>
+<pre><code>Initial block reward : 50 DPC  (5,000,000,000 satoshis)
+Halving interval     : 420,000 blocks
+Halving period       : ≈ 4.0 years at 300 s/block
+</code></pre>
+<p>The reward for block <code>n</code> in satoshis:</p>
+<pre><code>subsidy(n) = (50 × COIN) &gt;&gt; floor(n / 420000)
+COIN = 100,000,000
+</code></pre>
+<p>This mirrors Bitcoin Core exactly. The right-shift produces precise fractional DPC values
+(12.5, 6.25, 3.125…) unlike floor division of integer DPC amounts.</p>
+<h3>7.3 Halving Schedule</h3>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Blocks</th>
+<th>Reward (DPC)</th>
+<th>Era Supply (DPC)</th>
+<th>Cumulative (DPC)</th>
+<th>Approx. Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0 – 419,999</td>
+<td>50</td>
+<td>21,000,000</td>
+<td>21,000,000</td>
+<td>2026–2030</td>
+</tr>
+<tr>
+<td>1</td>
+<td>420,000 – 839,999</td>
+<td>25</td>
+<td>10,500,000</td>
+<td>31,500,000</td>
+<td>2030–2034</td>
+</tr>
+<tr>
+<td>2</td>
+<td>840,000 – 1,259,999</td>
+<td>12.5</td>
+<td>5,250,000</td>
+<td>36,750,000</td>
+<td>2034–2038</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,260,000 – 1,679,999</td>
+<td>6.25</td>
+<td>2,625,000</td>
+<td>39,375,000</td>
+<td>2038–2042</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1,680,000 – 2,099,999</td>
+<td>3.125</td>
+<td>1,312,500</td>
+<td>40,687,500</td>
+<td>2042–2046</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2,100,000 – 2,519,999</td>
+<td>1.5625</td>
+<td>656,250</td>
+<td>41,343,750</td>
+<td>2046–2050</td>
+</tr>
+</tbody>
+</table>
+<p>Series continues for 27 additional eras. Total converges to <strong>41,999,999.9538 DPC</strong>
+(verifiable nSum: 4,199,999,995,380,000 satoshis).</p>
+<h3>7.4 Coinbase Maturity</h3>
+<p>A standard coinbase output becomes spendable after <code>100</code> blocks (approximately 8.3 hours).</p>
+<hr>
+<h2>8. Network Parameters</h2>
+<h3>8.1 Ports and Magic</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2P Port (mainnet)</td>
+<td><code>42003</code></td>
+</tr>
+<tr>
+<td>RPC Port (mainnet)</td>
+<td><code>42002</code></td>
+</tr>
+<tr>
+<td>Network magic</td>
+<td><code>0xf29f4afb</code></td>
+</tr>
+<tr>
+<td>BIP-324 shared secret salt</td>
+<td><code>dpowcoin_v2_shared_secret</code></td>
+</tr>
+<tr>
+<td>BIPs active from</td>
+<td>Block 1</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 Address Formats</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Prefix</th>
+<th>Version byte</th>
+<th>Encoding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2PKH</td>
+<td><code>P…</code></td>
+<td><code>55</code> (0x37)</td>
+<td>Base58Check</td>
+</tr>
+<tr>
+<td>P2SH</td>
+<td><code>C…</code></td>
+<td><code>28</code> (0x1c)</td>
+<td>Base58Check</td>
+</tr>
+<tr>
+<td>P2WPKH / P2WSH</td>
+<td><code>dpc1q…</code></td>
+<td>—</td>
+<td>Bech32</td>
+</tr>
+<tr>
+<td>P2TR (Taproot)</td>
+<td><code>dpc1p…</code></td>
+<td>—</td>
+<td>Bech32m</td>
+</tr>
+</tbody>
+</table>
+<p>All SegWit and Taproot address types inherited from Bitcoin Core are fully supported and active
+from block 2.</p>
+<hr>
+<h2>9. Consensus-Level Security Patches</h2>
+<p>Dpowcoin Core incorporates several security patches applied at the consensus layer, beyond what
+was present in the inherited Bitcoin Core base.</p>
+<h3>9.1 BIP53 — 64-Byte Transaction Rejection</h3>
+<pre><code class="language-cpp">// tx_check.cpp
+if (!tx.IsCoinBase() &amp;&amp; ::GetSerializeSize(TX_NO_WITNESS(tx)) == 64)
+    return state.Invalid(TxValidationResult::TX_CONSENSUS, &quot;bad-txns-64byte&quot;,
+                         &quot;tx serialized size is exactly 64 bytes (BIP53)&quot;);
+</code></pre>
+<p>Transactions serialized to exactly 64 bytes (without witness) are rejected at the consensus level.
+Such transactions create ambiguity in the Merkle tree: a 64-byte transaction serialization can be
+confused with an internal Merkle node, enabling certain Merkle proof forgeries. Coinbase
+transactions are exempt because a 64-byte coinbase would require approximately 224 bits of work
+to construct and is therefore practically impossible to produce maliciously.</p>
+<h3>9.2 CVE-2018-17144 — Duplicate Input Detection</h3>
+<p>Transactions are checked for duplicate inputs before any UTXO lookup. The original vulnerability
+could result in coin inflation if a transaction spending the same output twice passed validation in
+certain caching conditions.</p>
+<hr>
+<h2>10. Conclusion</h2>
+<p>Dpowcoin Core applies two targeted modifications to Bitcoin Core: Argon2id as a memory-hard
+proof-of-work function, and LWMA-3 per-block difficulty retargeting calibrated to a five-minute block
+interval. All other Bitcoin Core behaviour — transaction format, UTXO model, SegWit, Taproot,
+BIP-324 transport encryption, reproducible builds, and the full test suite — is preserved.</p>
+<p>The design prioritises verifiability. Every consensus-critical parameter is embedded directly in
+source code and documented here. Every release binary is independently reproducible via GNU Guix
+and GPG-signed. The development process is open: there is no privileged developer class, and all
+changes go through public peer review.</p>
+<p>Source: <a href="https://github.com/dpowcore-project/dpowcoin">github.com/dpowcore-project/dpowcoin</a><br>
+Website: <a href="https://dpowcore.org">dpowcore.org</a></p>
+<hr>
+<h2>Appendix A — Network Parameter Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ticker</td>
+<td>DPC</td>
+</tr>
+<tr>
+<td>Max supply (params)</td>
+<td>42,000,000 DPC</td>
+</tr>
+<tr>
+<td>Issuable supply (satoshi precision)</td>
+<td>41,999,999.9538 DPC</td>
+</tr>
+<tr>
+<td>nSum (C++ verifiable)</td>
+<td>4,199,999,995,380,000 sat</td>
+</tr>
+<tr>
+<td>Initial block reward</td>
+<td>50 DPC</td>
+</tr>
+<tr>
+<td>Halving interval</td>
+<td>420,000 blocks</td>
+</tr>
+<tr>
+<td>Halving period</td>
+<td>≈ 4.0 years</td>
+</tr>
+<tr>
+<td>Target block time</td>
+<td>300 s (5 min)</td>
+</tr>
+<tr>
+<td>Coinbase maturity (standard)</td>
+<td>100 blocks (~8.3 h)</td>
+</tr>
+<tr>
+<td>PoW algorithm</td>
+<td>Argon2id (dual-round, SHA-512-salted)</td>
+</tr>
+<tr>
+<td>Argon2id round 1 <code>t</code> / <code>m</code> / <code>p</code></td>
+<td>2 / 4,096 KiB / 2</td>
+</tr>
+<tr>
+<td>Argon2id round 2 <code>t</code> / <code>m</code> / <code>p</code></td>
+<td>2 / 32,768 KiB / 2</td>
+</tr>
+<tr>
+<td>Dual-PoW era (Yespower + Argon2id)</td>
+<td>Blocks 0 – 224,999</td>
+</tr>
+<tr>
+<td>Yespower dropped from consensus</td>
+<td>Block 225,000 (v26.3.1)</td>
+</tr>
+<tr>
+<td>Header PoW cache size (default)</td>
+<td>64 MiB (<code>-headerpowcachesize</code>)</td>
+</tr>
+<tr>
+<td>Header PoW parallel-check threshold</td>
+<td>32 headers</td>
+</tr>
+<tr>
+<td>Header PoW check worker threads (max)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Difficulty algorithm</td>
+<td>LWMA-3</td>
+</tr>
+<tr>
+<td>LWMA window N</td>
+<td>576 blocks</td>
+</tr>
+<tr>
+<td>Retarget</td>
+<td>Every block</td>
+</tr>
+<tr>
+<td>Max future block time (FTL)</td>
+<td>600 s</td>
+</tr>
+<tr>
+<td>PoW limit</td>
+<td><code>001fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</code> or <code>0x1f1fffff</code></td>
+</tr>
+<tr>
+<td>Genesis block hash</td>
+<td><code>d86f8a0582e779830f182befeaaabc8c73a159b6b06530910758daf17ce31e36</code></td>
+</tr>
+<tr>
+<td>P2P port (mainnet)</td>
+<td>42003</td>
+</tr>
+<tr>
+<td>RPC port (mainnet)</td>
+<td>42002</td>
+</tr>
+<tr>
+<td>Network magic</td>
+<td>0xf29f4afb</td>
+</tr>
+<tr>
+<td>BIP-324 salt</td>
+<td><code>dpowcoin_v2_shared_secret</code></td>
+</tr>
+<tr>
+<td>P2PKH prefix</td>
+<td>P (dec 55, 0x37)</td>
+</tr>
+<tr>
+<td>P2SH prefix</td>
+<td>C (dec 28, 0x1C)</td>
+</tr>
+<tr>
+<td>Bech32 HRP</td>
+<td><code>dpc</code></td>
+</tr>
+<tr>
+<td>SegWit / Taproot</td>
+<td>Active from block 2</td>
+</tr>
+<tr>
+<td>BIPs</td>
+<td>Active from block 2</td>
+</tr>
+<tr>
+<td>License</td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Appendix C — Halving Schedule</h2>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Block range</th>
+<th>Reward (DPC)</th>
+<th>Era supply (DPC)</th>
+<th>Cumulative (DPC)</th>
+<th>Target year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0 – 419,999</td>
+<td>50</td>
+<td>21,000,000</td>
+<td>21,000,000</td>
+<td>2026–2030</td>
+</tr>
+<tr>
+<td>1</td>
+<td>420,000 – 839,999</td>
+<td>25</td>
+<td>10,500,000</td>
+<td>31,500,000</td>
+<td>2030–2034</td>
+</tr>
+<tr>
+<td>2</td>
+<td>840,000 – 1,259,999</td>
+<td>12.5</td>
+<td>5,250,000</td>
+<td>36,750,000</td>
+<td>2034–2038</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,260,000 – 1,679,999</td>
+<td>6.25</td>
+<td>2,625,000</td>
+<td>39,375,000</td>
+<td>2038–2042</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1,680,000 – 2,099,999</td>
+<td>3.125</td>
+<td>1,312,500</td>
+<td>40,687,500</td>
+<td>2042–2046</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2,100,000 – 2,519,999</td>
+<td>1.5625</td>
+<td>656,250</td>
+<td>41,343,750</td>
+<td>2046–2050</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2,520,000 – 2,939,999</td>
+<td>0.78125</td>
+<td>328,125</td>
+<td>41,671,875</td>
+<td>2050–2054</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2,940,000 – 3,359,999</td>
+<td>0.390625</td>
+<td>164,062.5</td>
+<td>41,835,937.5</td>
+<td>2054–2058</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>33</td>
+<td>13,440,000 – 13,859,999</td>
+<td>0.00000001</td>
+<td>0.0042</td>
+<td>41,999,999.9538</td>
+<td>~2162</td>
+</tr>
+</tbody>
+</table>
+<p>Reward halves every 420,000 blocks. Series runs 33 eras until reward = 1 satoshi (0.00000001 DPC).
+Total issuable: <strong>41,999,999.9538 DPC</strong> (nSum: 4,199,999,995,380,000 satoshis).</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/js/whitepaper.js"
+  integrity="sha512-7Usofl1kz2xKIwiAzukldYe/Ohn3GlOTl+WjNMxE95t9ygQ3ZrmL5+5zBU01LckMqxmjoK3N5JGgNr26IuUYyQ==" crossorigin="anonymous"></script>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">Програмне забезпечення з відкритим кодом, випущене під ліцензією MIT.</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Проєкт</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/about/" class="footer-link">Про проєкт</a></li>
+          <li><a href="/uk/wallets/full-node/" class="footer-link">Повний вузол</a></li>
+          <li><a href="/uk/blog/" class="footer-link">Новини</a></li>
+          <li><a href="/uk/resources/" class="footer-link">Ресурси</a></li>
+          <li><a href="/uk/brand/" class="footer-link">Брендові активи</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Розробники</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/development/" class="footer-link">Участь</a></li>
+          <li><a href="/uk/development/rpc/" class="footer-link">RPC Документація</a></li>
+          <li><a href="/uk/whitepaper/" class="footer-link">Біла книга</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Підписи Guix
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Правова інформація</h6>
+        <ul class="list-unstyled">
+          <li><a href="/uk/privacy/" class="footer-link">Політика конфіденційності</a></li>
+          <li><a href="/uk/cookies/" class="footer-link">Політика використання cookie</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Безпека</h6>
+        <p class="text-secondary small mb-1">Відбиток GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Перевірити ключ на OpenPGP
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Ліцензія MIT</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>

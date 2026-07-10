@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core 26.2 released">
+  <meta property="og:title" content="Dpowcoin Core 26.2 released">
+  <meta property="og:description" content="Dpowcoin Core 26.2 released">
+  <meta property="og:url" content="https://dpowcore.org/fr/blog/dpowcoin-26-2-0/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Dpowcoin Core 26.2 released — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/fr/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="uk" href="https://dpowcore.org/uk/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="zh" href="https://dpowcore.org/zh/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="ja" href="https://dpowcore.org/ja/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="it" href="https://dpowcore.org/it/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="pl" href="https://dpowcore.org/pl/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="tr" href="https://dpowcore.org/tr/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/blog/dpowcoin-26-2-0/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/blog/dpowcoin-26-2-0/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/fr/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>FR</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/blog/dpowcoin-26-2-0/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/blog/dpowcoin-26-2-0/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/blog/dpowcoin-26-2-0/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/fr/blog/dpowcoin-26-2-0/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/blog/dpowcoin-26-2-0/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/blog/dpowcoin-26-2-0/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/blog/dpowcoin-26-2-0/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/blog/dpowcoin-26-2-0/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/blog/dpowcoin-26-2-0/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/blog/dpowcoin-26-2-0/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/blog/dpowcoin-26-2-0/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/blog/dpowcoin-26-2-0/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/blog/dpowcoin-26-2-0/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/blog/dpowcoin-26-2-0/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Clair
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Sombre
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/fr/">Accueil</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/fr/about/">À propos</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Portefeuilles
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/fr/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Nœud complet
+          </a></li>
+          <li><a class="dropdown-item" href="/fr/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Portefeuille web
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/fr/blog/">Actualités</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/fr/mining/">Minage</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/fr/resources/">Ressources</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Développement
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/fr/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Contribuer
+          </a></li>
+          <li><a class="dropdown-item" href="/fr/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>Documentation RPC
+          </a></li>
+          <li><a class="dropdown-item" href="/fr/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="bwc-post-date mb-2">Invalid Date</div>
+      <h1 class="bwc-section-title mb-4">Dpowcoin Core 26.2 released</h1>
+      <hr class="bwc-divider">
+      <p class="mb-4">
+        <a href="https://github.com/dpowcore-project/dpowcoin/releases/tag/v26.2" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm me-2">
+          <i class="fa-brands fa-github me-1"></i>GitHub Release v26.2
+        </a>
+        <a href="/fr/wallets/full-node/" class="btn btn-bwc-secondary btn-sm me-2">Télécharger</a>
+        <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/doc/release-notes/release-notes-26.2.md" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">Notes de version</a>
+      </p>
+      <div class="bwc-post-content">
+        <p>Dpowcoin Core 26.2 is now available.</p>
+<blockquote>
+<p>⚠️ <strong>IMPORTANT! ALWAYS BACK UP YOUR WALLET DATA BEFORE ANY UPDATE.</strong>
+Shut down your wallet completely, then copy your <code>wallet.dat</code> file to a safe place before
+updating. If possible, always encrypt your wallet with a strong password.</p>
+</blockquote>
+<p><strong>Fix Network sync problems</strong></p>
+<p><strong>Full Changelog: https://github.com/dpowcore-project/dpowcoin/commits/26.2/</strong></p>
+<p><strong>Release Notes: https://github.com/dpowcore-project/dpowcoin/blob/master/doc/release-notes.md</strong></p>
+<h1>VIRUSTOTAL</h1>
+<p>https://www.virustotal.com/gui/file/a3a1db534699a3df249c386c501631295a98b7ab352d6448893349739ff74de1?nocache=1</p>
+<p>dpowcoin-26.2-aarch64-linux-gnu-debug.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/e71fd0cf2b8c3a0346ea122bb7c73f85c356e7cd9eac4ab6144860a64c0ce46e?nocache=1</p>
+<p>dpowcoin-26.2-aarch64-linux-gnu.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/0f6c4f39e2452c11188e528228e68d1a01836f99c848c6c9f9009f06b04277b7?nocache=1</p>
+<p>dpowcoin-26.2-arm-linux-gnueabihf-debug.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/61a567f61006eb940347ad6bc80c5663326e0c1152c9902a0df21db826f4da50?nocache=1</p>
+<p>dpowcoin-26.2-arm-linux-gnueabihf.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/16c41cd5d13599a8bf744a36f05602faca4b7d226e7c4ffd7288b7267a6154c4?nocache=1</p>
+<p>dpowcoin-26.2-arm64-apple-darwin-unsigned.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/9c62012527720a97901590ba6b878bf46ccb374e508a08ae4f12aaacfabb5274?nocache=1</p>
+<p>dpowcoin-26.2-arm64-apple-darwin-unsigned.zip</p>
+<p>https://www.virustotal.com/gui/file/045c58a4e0eee7e38131893e960462178c18adf89eab22c5a00a8ebadea59473?nocache=1</p>
+<p>dpowcoin-26.2-arm64-apple-darwin.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/9037625a41e1024da37dce2fcacea6e1e100225f278eb5792073b41a66d67978?nocache=1</p>
+<p>dpowcoin-26.2-powerpc64-linux-gnu-debug.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/5f42a4db8e68c5643c83cfeeb74f7e7e93e7285788c78ecb48c692d084356a7e?nocache=1</p>
+<p>dpowcoin-26.2-powerpc64-linux-gnu.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/84e31330a78a730573e87f78f52cb01266c2ec122736d507079ef47c754623ad?nocache=1</p>
+<p>dpowcoin-26.2-powerpc64le-linux-gnu-debug.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/46f27e3b403cd55d1a7daf1e07e00df141e479eb6309f4a8695d5b87d0790356?nocache=1</p>
+<p>dpowcoin-26.2-powerpc64le-linux-gnu.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/4f4824fbc02c786bef3b664f831d239bd1416046563fc8d9a562e3987089b4a2?nocache=1</p>
+<p>dpowcoin-26.2-riscv64-linux-gnu-debug.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/ee00323a6af1c1fb5e775c69dc2dc2e253f5972bf88ac24671bd45c7a7cc47bc?nocache=1</p>
+<p>dpowcoin-26.2-riscv64-linux-gnu.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/5b71e9e7773cd4769de94d94ac410545add4b383d556878cf9e77c116cd4daa4?nocache=1</p>
+<p>dpowcoin-26.2-win64-debug.zip</p>
+<p>https://www.virustotal.com/gui/file/a513b384c86ca6ae58b8897fe75e7b48deedb976e607f02ae9e67585138fc46d?nocache=1</p>
+<p>dpowcoin-26.2-win64-setup-unsigned.exe</p>
+<p>https://www.virustotal.com/gui/file/8d187ede792be288f3d925bee97a5f379cfb7bc740f1a7387550d882b4c6451c?nocache=1</p>
+<p>dpowcoin-26.2-win64-unsigned.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/e15bcaa9965d8535650c2349a7c2fd146ed137f1729c256b56b81ac67668f08e?nocache=1</p>
+<p>dpowcoin-26.2-win64.zip</p>
+<p>https://www.virustotal.com/gui/file/d7b23aecf59070bd58d1c44464d1e2af4960655721881735e9f6853afdaa513a</p>
+<p>dpowcoin-26.2-x86_64-apple-darwin-unsigned.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/2f9b8cf682608fe215a6a41cfd44ecf8eea85d8fa681435bc7678d3499a71751?nocache=1</p>
+<p>dpowcoin-26.2-x86_64-apple-darwin-unsigned.zip</p>
+<p>https://www.virustotal.com/gui/file/f8407a3429af56b9dd81398b9b2615811d32042be9efeb5a7e6c482b941ed7c8?nocache=1</p>
+<p>dpowcoin-26.2-x86_64-apple-darwin.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/14a226a5af46ab0b7259400b123207b17d304cc0ecf9211f43d2867d00b80b9c?nocache=1</p>
+<p>dpowcoin-26.2-x86_64-linux-gnu-debug.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/23b8db46ec5e1ae2b86fd2a158568d07a06e0873f1b62d2b178b155b636af22c?nocache=1</p>
+<p>dpowcoin-26.2-x86_64-linux-gnu.tar.gz</p>
+<p>https://www.virustotal.com/gui/file/8117a0ab7fc6c1fef39fa6d2d615babe0e39e69de42ca9591c305057a156c14a?nocache=1</p>
+<p>dpowcoin-26.2.tar.gz</p>
+<h1>checksums (sha256)</h1>
+<pre><code>a3a1db534699a3df249c386c501631295a98b7ab352d6448893349739ff74de1  dpowcoin-26.2-aarch64-linux-gnu-debug.tar.gz
+e71fd0cf2b8c3a0346ea122bb7c73f85c356e7cd9eac4ab6144860a64c0ce46e  dpowcoin-26.2-aarch64-linux-gnu.tar.gz
+0f6c4f39e2452c11188e528228e68d1a01836f99c848c6c9f9009f06b04277b7  dpowcoin-26.2-arm-linux-gnueabihf-debug.tar.gz
+61a567f61006eb940347ad6bc80c5663326e0c1152c9902a0df21db826f4da50  dpowcoin-26.2-arm-linux-gnueabihf.tar.gz
+d7b23aecf59070bd58d1c44464d1e2af4960655721881735e9f6853afdaa513a  dpowcoin-26.2-x86_64-apple-darwin-unsigned.tar.gz
+2f9b8cf682608fe215a6a41cfd44ecf8eea85d8fa681435bc7678d3499a71751  dpowcoin-26.2-x86_64-apple-darwin-unsigned.zip
+f8407a3429af56b9dd81398b9b2615811d32042be9efeb5a7e6c482b941ed7c8  dpowcoin-26.2-x86_64-apple-darwin.tar.gz
+9037625a41e1024da37dce2fcacea6e1e100225f278eb5792073b41a66d67978  dpowcoin-26.2-powerpc64-linux-gnu-debug.tar.gz
+5f42a4db8e68c5643c83cfeeb74f7e7e93e7285788c78ecb48c692d084356a7e  dpowcoin-26.2-powerpc64-linux-gnu.tar.gz
+84e31330a78a730573e87f78f52cb01266c2ec122736d507079ef47c754623ad  dpowcoin-26.2-powerpc64le-linux-gnu-debug.tar.gz
+46f27e3b403cd55d1a7daf1e07e00df141e479eb6309f4a8695d5b87d0790356  dpowcoin-26.2-powerpc64le-linux-gnu.tar.gz
+4f4824fbc02c786bef3b664f831d239bd1416046563fc8d9a562e3987089b4a2  dpowcoin-26.2-riscv64-linux-gnu-debug.tar.gz
+ee00323a6af1c1fb5e775c69dc2dc2e253f5972bf88ac24671bd45c7a7cc47bc  dpowcoin-26.2-riscv64-linux-gnu.tar.gz
+5b71e9e7773cd4769de94d94ac410545add4b383d556878cf9e77c116cd4daa4  dpowcoin-26.2-win64-debug.zip
+a513b384c86ca6ae58b8897fe75e7b48deedb976e607f02ae9e67585138fc46d  dpowcoin-26.2-win64-setup-unsigned.exe
+8d187ede792be288f3d925bee97a5f379cfb7bc740f1a7387550d882b4c6451c  dpowcoin-26.2-win64-unsigned.tar.gz
+e15bcaa9965d8535650c2349a7c2fd146ed137f1729c256b56b81ac67668f08e  dpowcoin-26.2-win64.zip
+16c41cd5d13599a8bf744a36f05602faca4b7d226e7c4ffd7288b7267a6154c4  dpowcoin-26.2-arm64-apple-darwin-unsigned.tar.gz
+9c62012527720a97901590ba6b878bf46ccb374e508a08ae4f12aaacfabb5274  dpowcoin-26.2-arm64-apple-darwin-unsigned.zip
+045c58a4e0eee7e38131893e960462178c18adf89eab22c5a00a8ebadea59473  dpowcoin-26.2-arm64-apple-darwin.tar.gz
+14a226a5af46ab0b7259400b123207b17d304cc0ecf9211f43d2867d00b80b9c  dpowcoin-26.2-x86_64-linux-gnu-debug.tar.gz
+23b8db46ec5e1ae2b86fd2a158568d07a06e0873f1b62d2b178b155b636af22c  dpowcoin-26.2-x86_64-linux-gnu.tar.gz
+8117a0ab7fc6c1fef39fa6d2d615babe0e39e69de42ca9591c305057a156c14a  dpowcoin-26.2.tar.gz
+</code></pre>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>&quot;Unexpected application id&quot; error</strong> — ensure you are using the 26.2 binary, not an older one.</li>
+<li><strong>Balance shows zero after rescan</strong> — wait for the rescan to fully complete:
+<code>dpowcoin-cli getwalletinfo</code> → check the <code>&quot;scanning&quot;</code> field.</li>
+</ul>
+<p>Issues or questions? Use the <a href="https://github.com/dpowcore-project/dpowcoin/issues">issue tracker</a>
+or join the community on the <a href="/en/resources/">resources page</a>.</p>
+
+      </div>
+      <hr class="bwc-divider mt-5">
+      <a href="/fr/blog/" class="btn btn-bwc-secondary btn-sm">
+        <i class="fa-solid fa-arrow-left me-1"></i>Actualités
+      </a>
+    </div>
+  </div>
+</div>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">Logiciel open source, publié sous la licence MIT.</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Projet</h6>
+        <ul class="list-unstyled">
+          <li><a href="/fr/about/" class="footer-link">À propos</a></li>
+          <li><a href="/fr/wallets/full-node/" class="footer-link">Nœud complet</a></li>
+          <li><a href="/fr/blog/" class="footer-link">Actualités</a></li>
+          <li><a href="/fr/resources/" class="footer-link">Ressources</a></li>
+          <li><a href="/fr/brand/" class="footer-link">Ressources de marque</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Développeurs</h6>
+        <ul class="list-unstyled">
+          <li><a href="/fr/development/" class="footer-link">Contribuer</a></li>
+          <li><a href="/fr/development/rpc/" class="footer-link">Documentation RPC</a></li>
+          <li><a href="/fr/whitepaper/" class="footer-link">White Paper</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Signatures Guix
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Légal</h6>
+        <ul class="list-unstyled">
+          <li><a href="/fr/privacy/" class="footer-link">Politique de confidentialité</a></li>
+          <li><a href="/fr/cookies/" class="footer-link">Politique de cookies</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Sécurité</h6>
+        <p class="text-secondary small mb-1">Empreinte GPG :</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Vérifier la clé sur OpenPGP
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licence MIT</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>
