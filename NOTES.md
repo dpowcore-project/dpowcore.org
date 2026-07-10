@@ -54,4 +54,4 @@ permalink: "/{{ locale }}/page-name/"
 - Web page: generated at `/en/whitepaper/` and `/ru/whitepaper/` via locales pagination (`templateEngineOverride: md`)
 - Body content is English-only — do NOT translate it; nav/footer/sidebar UI ARE translated via locale
 - PDF: pre-generated artifact at `src/static/whitepaper.pdf` — committed to the repo, served at `/static/whitepaper.pdf`
-- To update the PDF after editing the whitepaper: run `bash contrib/generate-pdf.sh` (needs `pandoc` + `weasyprint`), then commit `src/static/whitepaper.pdf`
+- To update the PDF after editing the whitepaper: run `bash contrib/generate-pdf.sh` (needs `pandoc` + `wkhtmltopdf`, falls back to `weasyprint` if wkhtmltopdf is absent), then commit `src/static/whitepaper.pdf`
