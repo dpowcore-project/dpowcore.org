@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="tr" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:title" content="addmultisigaddress">
+  <meta property="og:description" content="Dpowcoin Core — a cryptocurrency with Argon2id proof-of-work algorithm">
+  <meta property="og:url" content="https://dpowcore.org/tr/development/rpc/26.3.2/addmultisigaddress/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>addmultisigaddress — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/tr/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="uk" href="https://dpowcore.org/uk/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="zh" href="https://dpowcore.org/zh/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="ja" href="https://dpowcore.org/ja/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="it" href="https://dpowcore.org/it/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="pl" href="https://dpowcore.org/pl/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="fr" href="https://dpowcore.org/fr/development/rpc/26.3.2/addmultisigaddress/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/development/rpc/26.3.2/addmultisigaddress/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/tr/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>TR</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/development/rpc/26.3.2/addmultisigaddress/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/development/rpc/26.3.2/addmultisigaddress/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/development/rpc/26.3.2/addmultisigaddress/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/development/rpc/26.3.2/addmultisigaddress/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/it/development/rpc/26.3.2/addmultisigaddress/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/development/rpc/26.3.2/addmultisigaddress/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/development/rpc/26.3.2/addmultisigaddress/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/development/rpc/26.3.2/addmultisigaddress/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/development/rpc/26.3.2/addmultisigaddress/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/development/rpc/26.3.2/addmultisigaddress/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/development/rpc/26.3.2/addmultisigaddress/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/tr/development/rpc/26.3.2/addmultisigaddress/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/development/rpc/26.3.2/addmultisigaddress/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/development/rpc/26.3.2/addmultisigaddress/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Otomatik
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Açık
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Koyu
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/tr/">Ana Sayfa</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/tr/about/">Hakkında</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Cüzdanlar
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/tr/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Tam Düğüm
+          </a></li>
+          <li><a class="dropdown-item" href="/tr/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Web Cüzdanı
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/tr/blog/">Haberler</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/tr/mining/">Madencilik</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/tr/resources/">Kaynaklar</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle active"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Geliştirme
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/tr/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Katkı Sağla
+          </a></li>
+          <li><a class="dropdown-item" href="/tr/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>RPC Belgeleri
+          </a></li>
+          <li><a class="dropdown-item" href="/tr/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>Teknik Rapor
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><div class="container-fluid rpc-layout">
+  <div class="row g-0">
+    <aside class="col-12 col-lg-3 col-xl-2 rpc-sidebar order-2 order-lg-1" id="rpcSidebar">
+      <div class="rpc-sidebar-inner p-3">
+        <div class="mb-3">
+          <div class="dropdown">
+            <button class="btn bwc-util-btn dropdown-toggle w-100 text-start"
+                    data-bs-toggle="dropdown" aria-expanded="false" type="button">
+              <i class="fa-solid fa-code-branch me-1"></i>v26.3.2 <span class="rpc-latest-tag">latest</span>
+            </button>
+            <ul class="dropdown-menu bwc-dd w-100">
+              <li>
+                <a class="dropdown-item rpc-ver-item active"
+                   href="/tr/development/rpc/26.3.2/"
+                   data-rpc-ver="26.3.2">v26.3.2 <span class="rpc-latest-tag">latest</span></a>
+              </li>
+              <li>
+                <a class="dropdown-item rpc-ver-item"
+                   href="/tr/development/rpc/26.2.0/"
+                   data-rpc-ver="26.2.0">v26.2.0</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input
+            type="search"
+            class="form-control form-control-sm bg-body-tertiary border-0"
+            id="rpcSearch"
+            placeholder="Metodları ara…"
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </div>
+        <a href="/tr/development/rpc/26.3.2/" class="rpc-index-link d-block mb-2 small text-secondary">
+          &larr; Tüm Metodlar
+        </a>
+        <nav id="rpcNav" aria-label="RPC methods" data-rpc-ver="26.3.2"><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="blockchain"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>blockchain
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/dumptxoutset/"
+                   class="rpc-method-link"
+                   data-rpc-method="dumptxoutset">
+                  dumptxoutset
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getargon2idpowhash/"
+                   class="rpc-method-link"
+                   data-rpc-method="getargon2idpowhash">
+                  getargon2idpowhash
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getbestblockhash/"
+                   class="rpc-method-link"
+                   data-rpc-method="getbestblockhash">
+                  getbestblockhash
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblock/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblock">
+                  getblock
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblockchaininfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblockchaininfo">
+                  getblockchaininfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblockcount/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblockcount">
+                  getblockcount
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblockfilter/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblockfilter">
+                  getblockfilter
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblockfrompeer/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblockfrompeer">
+                  getblockfrompeer
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblockhash/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblockhash">
+                  getblockhash
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblockheader/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblockheader">
+                  getblockheader
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblockstats/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblockstats">
+                  getblockstats
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getchainstates/"
+                   class="rpc-method-link"
+                   data-rpc-method="getchainstates">
+                  getchainstates
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getchaintips/"
+                   class="rpc-method-link"
+                   data-rpc-method="getchaintips">
+                  getchaintips
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getchaintxstats/"
+                   class="rpc-method-link"
+                   data-rpc-method="getchaintxstats">
+                  getchaintxstats
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getdeploymentinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getdeploymentinfo">
+                  getdeploymentinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getdifficulty/"
+                   class="rpc-method-link"
+                   data-rpc-method="getdifficulty">
+                  getdifficulty
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getmempoolancestors/"
+                   class="rpc-method-link"
+                   data-rpc-method="getmempoolancestors">
+                  getmempoolancestors
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getmempooldescendants/"
+                   class="rpc-method-link"
+                   data-rpc-method="getmempooldescendants">
+                  getmempooldescendants
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getmempoolentry/"
+                   class="rpc-method-link"
+                   data-rpc-method="getmempoolentry">
+                  getmempoolentry
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getmempoolinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getmempoolinfo">
+                  getmempoolinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getrawmempool/"
+                   class="rpc-method-link"
+                   data-rpc-method="getrawmempool">
+                  getrawmempool
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/gettxout/"
+                   class="rpc-method-link"
+                   data-rpc-method="gettxout">
+                  gettxout
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/gettxoutproof/"
+                   class="rpc-method-link"
+                   data-rpc-method="gettxoutproof">
+                  gettxoutproof
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/gettxoutsetinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="gettxoutsetinfo">
+                  gettxoutsetinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/gettxspendingprevout/"
+                   class="rpc-method-link"
+                   data-rpc-method="gettxspendingprevout">
+                  gettxspendingprevout
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getyespowerpowhash/"
+                   class="rpc-method-link"
+                   data-rpc-method="getyespowerpowhash">
+                  getyespowerpowhash
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importmempool/"
+                   class="rpc-method-link"
+                   data-rpc-method="importmempool">
+                  importmempool
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/loadtxoutset/"
+                   class="rpc-method-link"
+                   data-rpc-method="loadtxoutset">
+                  loadtxoutset
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/preciousblock/"
+                   class="rpc-method-link"
+                   data-rpc-method="preciousblock">
+                  preciousblock
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/pruneblockchain/"
+                   class="rpc-method-link"
+                   data-rpc-method="pruneblockchain">
+                  pruneblockchain
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/savemempool/"
+                   class="rpc-method-link"
+                   data-rpc-method="savemempool">
+                  savemempool
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/scanblocks/"
+                   class="rpc-method-link"
+                   data-rpc-method="scanblocks">
+                  scanblocks
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/scantxoutset/"
+                   class="rpc-method-link"
+                   data-rpc-method="scantxoutset">
+                  scantxoutset
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/verifychain/"
+                   class="rpc-method-link"
+                   data-rpc-method="verifychain">
+                  verifychain
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/verifytxoutproof/"
+                   class="rpc-method-link"
+                   data-rpc-method="verifytxoutproof">
+                  verifytxoutproof
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="control"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>control
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getmemoryinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getmemoryinfo">
+                  getmemoryinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getrpcinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getrpcinfo">
+                  getrpcinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/help/"
+                   class="rpc-method-link"
+                   data-rpc-method="help">
+                  help
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/logging/"
+                   class="rpc-method-link"
+                   data-rpc-method="logging">
+                  logging
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/stop/"
+                   class="rpc-method-link"
+                   data-rpc-method="stop">
+                  stop
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/uptime/"
+                   class="rpc-method-link"
+                   data-rpc-method="uptime">
+                  uptime
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="mining"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>mining
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getblocktemplate/"
+                   class="rpc-method-link"
+                   data-rpc-method="getblocktemplate">
+                  getblocktemplate
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getmininginfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getmininginfo">
+                  getmininginfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getnetworkhashps/"
+                   class="rpc-method-link"
+                   data-rpc-method="getnetworkhashps">
+                  getnetworkhashps
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getprioritisedtransactions/"
+                   class="rpc-method-link"
+                   data-rpc-method="getprioritisedtransactions">
+                  getprioritisedtransactions
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/prioritisetransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="prioritisetransaction">
+                  prioritisetransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/submitblock/"
+                   class="rpc-method-link"
+                   data-rpc-method="submitblock">
+                  submitblock
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/submitheader/"
+                   class="rpc-method-link"
+                   data-rpc-method="submitheader">
+                  submitheader
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="network"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>network
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/addnode/"
+                   class="rpc-method-link"
+                   data-rpc-method="addnode">
+                  addnode
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/clearbanned/"
+                   class="rpc-method-link"
+                   data-rpc-method="clearbanned">
+                  clearbanned
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/disconnectnode/"
+                   class="rpc-method-link"
+                   data-rpc-method="disconnectnode">
+                  disconnectnode
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getaddednodeinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getaddednodeinfo">
+                  getaddednodeinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getaddrmaninfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getaddrmaninfo">
+                  getaddrmaninfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getconnectioncount/"
+                   class="rpc-method-link"
+                   data-rpc-method="getconnectioncount">
+                  getconnectioncount
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getnettotals/"
+                   class="rpc-method-link"
+                   data-rpc-method="getnettotals">
+                  getnettotals
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getnetworkinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getnetworkinfo">
+                  getnetworkinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getnodeaddresses/"
+                   class="rpc-method-link"
+                   data-rpc-method="getnodeaddresses">
+                  getnodeaddresses
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getpeerinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getpeerinfo">
+                  getpeerinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listbanned/"
+                   class="rpc-method-link"
+                   data-rpc-method="listbanned">
+                  listbanned
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/ping/"
+                   class="rpc-method-link"
+                   data-rpc-method="ping">
+                  ping
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/setban/"
+                   class="rpc-method-link"
+                   data-rpc-method="setban">
+                  setban
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/setnetworkactive/"
+                   class="rpc-method-link"
+                   data-rpc-method="setnetworkactive">
+                  setnetworkactive
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="rawtransactions"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>rawtransactions
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/analyzepsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="analyzepsbt">
+                  analyzepsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/combinepsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="combinepsbt">
+                  combinepsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/combinerawtransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="combinerawtransaction">
+                  combinerawtransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/converttopsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="converttopsbt">
+                  converttopsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/createpsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="createpsbt">
+                  createpsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/createrawtransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="createrawtransaction">
+                  createrawtransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/decodepsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="decodepsbt">
+                  decodepsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/decoderawtransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="decoderawtransaction">
+                  decoderawtransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/decodescript/"
+                   class="rpc-method-link"
+                   data-rpc-method="decodescript">
+                  decodescript
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/descriptorprocesspsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="descriptorprocesspsbt">
+                  descriptorprocesspsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/finalizepsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="finalizepsbt">
+                  finalizepsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/fundrawtransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="fundrawtransaction">
+                  fundrawtransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getrawtransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="getrawtransaction">
+                  getrawtransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/joinpsbts/"
+                   class="rpc-method-link"
+                   data-rpc-method="joinpsbts">
+                  joinpsbts
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/sendrawtransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="sendrawtransaction">
+                  sendrawtransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/signrawtransactionwithkey/"
+                   class="rpc-method-link"
+                   data-rpc-method="signrawtransactionwithkey">
+                  signrawtransactionwithkey
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/submitpackage/"
+                   class="rpc-method-link"
+                   data-rpc-method="submitpackage">
+                  submitpackage
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/testmempoolaccept/"
+                   class="rpc-method-link"
+                   data-rpc-method="testmempoolaccept">
+                  testmempoolaccept
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/utxoupdatepsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="utxoupdatepsbt">
+                  utxoupdatepsbt
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="signer"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>signer
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/enumeratesigners/"
+                   class="rpc-method-link"
+                   data-rpc-method="enumeratesigners">
+                  enumeratesigners
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="util"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>util
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/createmultisig/"
+                   class="rpc-method-link"
+                   data-rpc-method="createmultisig">
+                  createmultisig
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/deriveaddresses/"
+                   class="rpc-method-link"
+                   data-rpc-method="deriveaddresses">
+                  deriveaddresses
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/estimatesmartfee/"
+                   class="rpc-method-link"
+                   data-rpc-method="estimatesmartfee">
+                  estimatesmartfee
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getdescriptorinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getdescriptorinfo">
+                  getdescriptorinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getindexinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getindexinfo">
+                  getindexinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/signmessagewithprivkey/"
+                   class="rpc-method-link"
+                   data-rpc-method="signmessagewithprivkey">
+                  signmessagewithprivkey
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/validateaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="validateaddress">
+                  validateaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/verifymessage/"
+                   class="rpc-method-link"
+                   data-rpc-method="verifymessage">
+                  verifymessage
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="wallet"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>wallet
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/abandontransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="abandontransaction">
+                  abandontransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/abortrescan/"
+                   class="rpc-method-link"
+                   data-rpc-method="abortrescan">
+                  abortrescan
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/addmultisigaddress/"
+                   class="rpc-method-link active"
+                   data-rpc-method="addmultisigaddress">
+                  addmultisigaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/backupwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="backupwallet">
+                  backupwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/bumpfee/"
+                   class="rpc-method-link"
+                   data-rpc-method="bumpfee">
+                  bumpfee
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/createwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="createwallet">
+                  createwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/dumpprivkey/"
+                   class="rpc-method-link"
+                   data-rpc-method="dumpprivkey">
+                  dumpprivkey
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/dumpwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="dumpwallet">
+                  dumpwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/encryptwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="encryptwallet">
+                  encryptwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getaddressesbylabel/"
+                   class="rpc-method-link"
+                   data-rpc-method="getaddressesbylabel">
+                  getaddressesbylabel
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getaddressinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getaddressinfo">
+                  getaddressinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getbalance/"
+                   class="rpc-method-link"
+                   data-rpc-method="getbalance">
+                  getbalance
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getbalances/"
+                   class="rpc-method-link"
+                   data-rpc-method="getbalances">
+                  getbalances
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getnewaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="getnewaddress">
+                  getnewaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getrawchangeaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="getrawchangeaddress">
+                  getrawchangeaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getreceivedbyaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="getreceivedbyaddress">
+                  getreceivedbyaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getreceivedbylabel/"
+                   class="rpc-method-link"
+                   data-rpc-method="getreceivedbylabel">
+                  getreceivedbylabel
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/gettransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="gettransaction">
+                  gettransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getunconfirmedbalance/"
+                   class="rpc-method-link"
+                   data-rpc-method="getunconfirmedbalance">
+                  getunconfirmedbalance
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getwalletinfo/"
+                   class="rpc-method-link"
+                   data-rpc-method="getwalletinfo">
+                  getwalletinfo
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="importaddress">
+                  importaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importdescriptors/"
+                   class="rpc-method-link"
+                   data-rpc-method="importdescriptors">
+                  importdescriptors
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importmulti/"
+                   class="rpc-method-link"
+                   data-rpc-method="importmulti">
+                  importmulti
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importprivkey/"
+                   class="rpc-method-link"
+                   data-rpc-method="importprivkey">
+                  importprivkey
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importprunedfunds/"
+                   class="rpc-method-link"
+                   data-rpc-method="importprunedfunds">
+                  importprunedfunds
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importpubkey/"
+                   class="rpc-method-link"
+                   data-rpc-method="importpubkey">
+                  importpubkey
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/importwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="importwallet">
+                  importwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/keypoolrefill/"
+                   class="rpc-method-link"
+                   data-rpc-method="keypoolrefill">
+                  keypoolrefill
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listaddressgroupings/"
+                   class="rpc-method-link"
+                   data-rpc-method="listaddressgroupings">
+                  listaddressgroupings
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listdescriptors/"
+                   class="rpc-method-link"
+                   data-rpc-method="listdescriptors">
+                  listdescriptors
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listlabels/"
+                   class="rpc-method-link"
+                   data-rpc-method="listlabels">
+                  listlabels
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listlockunspent/"
+                   class="rpc-method-link"
+                   data-rpc-method="listlockunspent">
+                  listlockunspent
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listreceivedbyaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="listreceivedbyaddress">
+                  listreceivedbyaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listreceivedbylabel/"
+                   class="rpc-method-link"
+                   data-rpc-method="listreceivedbylabel">
+                  listreceivedbylabel
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listsinceblock/"
+                   class="rpc-method-link"
+                   data-rpc-method="listsinceblock">
+                  listsinceblock
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listtransactions/"
+                   class="rpc-method-link"
+                   data-rpc-method="listtransactions">
+                  listtransactions
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listunspent/"
+                   class="rpc-method-link"
+                   data-rpc-method="listunspent">
+                  listunspent
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listwalletdir/"
+                   class="rpc-method-link"
+                   data-rpc-method="listwalletdir">
+                  listwalletdir
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/listwallets/"
+                   class="rpc-method-link"
+                   data-rpc-method="listwallets">
+                  listwallets
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/loadwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="loadwallet">
+                  loadwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/lockunspent/"
+                   class="rpc-method-link"
+                   data-rpc-method="lockunspent">
+                  lockunspent
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/migratewallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="migratewallet">
+                  migratewallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/newkeypool/"
+                   class="rpc-method-link"
+                   data-rpc-method="newkeypool">
+                  newkeypool
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/psbtbumpfee/"
+                   class="rpc-method-link"
+                   data-rpc-method="psbtbumpfee">
+                  psbtbumpfee
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/removeprunedfunds/"
+                   class="rpc-method-link"
+                   data-rpc-method="removeprunedfunds">
+                  removeprunedfunds
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/rescanblockchain/"
+                   class="rpc-method-link"
+                   data-rpc-method="rescanblockchain">
+                  rescanblockchain
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/restorewallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="restorewallet">
+                  restorewallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/send/"
+                   class="rpc-method-link"
+                   data-rpc-method="send">
+                  send
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/sendall/"
+                   class="rpc-method-link"
+                   data-rpc-method="sendall">
+                  sendall
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/sendmany/"
+                   class="rpc-method-link"
+                   data-rpc-method="sendmany">
+                  sendmany
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/sendtoaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="sendtoaddress">
+                  sendtoaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/sethdseed/"
+                   class="rpc-method-link"
+                   data-rpc-method="sethdseed">
+                  sethdseed
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/setlabel/"
+                   class="rpc-method-link"
+                   data-rpc-method="setlabel">
+                  setlabel
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/settxfee/"
+                   class="rpc-method-link"
+                   data-rpc-method="settxfee">
+                  settxfee
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/setwalletflag/"
+                   class="rpc-method-link"
+                   data-rpc-method="setwalletflag">
+                  setwalletflag
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/signmessage/"
+                   class="rpc-method-link"
+                   data-rpc-method="signmessage">
+                  signmessage
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/signrawtransactionwithwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="signrawtransactionwithwallet">
+                  signrawtransactionwithwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/simulaterawtransaction/"
+                   class="rpc-method-link"
+                   data-rpc-method="simulaterawtransaction">
+                  simulaterawtransaction
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/unloadwallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="unloadwallet">
+                  unloadwallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/upgradewallet/"
+                   class="rpc-method-link"
+                   data-rpc-method="upgradewallet">
+                  upgradewallet
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/walletcreatefundedpsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="walletcreatefundedpsbt">
+                  walletcreatefundedpsbt
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/walletdisplayaddress/"
+                   class="rpc-method-link"
+                   data-rpc-method="walletdisplayaddress">
+                  walletdisplayaddress
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/walletlock/"
+                   class="rpc-method-link"
+                   data-rpc-method="walletlock">
+                  walletlock
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/walletpassphrase/"
+                   class="rpc-method-link"
+                   data-rpc-method="walletpassphrase">
+                  walletpassphrase
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/walletpassphrasechange/"
+                   class="rpc-method-link"
+                   data-rpc-method="walletpassphrasechange">
+                  walletpassphrasechange
+                </a>
+              </li>
+              <li>
+                <a href="/tr/development/rpc/26.3.2/walletprocesspsbt/"
+                   class="rpc-method-link"
+                   data-rpc-method="walletprocesspsbt">
+                  walletprocesspsbt
+                </a>
+              </li></ul></div><div class="rpc-category mb-1">
+                <button
+                  class="rpc-cat-toggle btn btn-link btn-sm w-100 text-start px-1 py-1 text-uppercase fw-semibold text-secondary"
+                  data-cat="zmq"
+                >
+                  <i class="fa-solid fa-chevron-down me-1 rpc-chevron"></i>zmq
+                </button>
+                <ul class="rpc-method-list list-unstyled ms-2 mb-0">
+              <li>
+                <a href="/tr/development/rpc/26.3.2/getzmqnotifications/"
+                   class="rpc-method-link"
+                   data-rpc-method="getzmqnotifications">
+                  getzmqnotifications
+                </a>
+              </li></ul></div>
+        </nav>
+      </div>
+    </aside>
+    <div class="col-12 col-lg-9 col-xl-10 rpc-content px-4 py-4 order-1 order-lg-2">
+      <div class="rpc-method-page">
+  <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+    <h1 class="rpc-method-title mb-0">
+      <span class="rpc-method-name-badge">addmultisigaddress</span>
+    </h1>
+    <span class="badge rpc-cat-badge text-uppercase">wallet</span>
+  </div>
+  <div class="rpc-description">
+    <pre class="rpc-pre"><code>addmultisigaddress nrequired [&quot;key&quot;,...] ( &quot;label&quot; &quot;address_type&quot; )
+
+Add an nrequired-to-sign multisignature address to the wallet. Requires a new wallet backup.
+Each key is a Dpowcoin address or hex-encoded public key.
+This functionality is only intended for use with non-watchonly addresses.
+See `importaddress` for watchonly p2sh address support.
+If &#39;label&#39; is specified, assign address to that label.
+Note: This command is only compatible with legacy wallets.
+
+Arguments:
+1. nrequired       (numeric, required) The number of required signatures out of the n keys or addresses.
+2. keys            (json array, required) The dpowcoin addresses or hex-encoded public keys
+     [
+       &quot;key&quot;,      (string) dpowcoin address or hex-encoded public key
+       ...
+     ]
+3. label           (string, optional) A label to assign the addresses to.
+4. address_type    (string, optional, default=set by -addresstype) The address type to use. Options are &quot;legacy&quot;, &quot;p2sh-segwit&quot;, and &quot;bech32&quot;.
+
+Result:
+{                            (json object)
+  &quot;address&quot; : &quot;str&quot;,         (string) The value of the new multisig address
+  &quot;redeemScript&quot; : &quot;hex&quot;,    (string) The string value of the hex-encoded redemption script
+  &quot;descriptor&quot; : &quot;str&quot;,      (string) The descriptor for this multisig
+  &quot;warnings&quot; : [             (json array, optional) Any warnings resulting from the creation of this multisig
+    &quot;str&quot;,                   (string)
+    ...
+  ]
+}
+
+Examples:
+
+Add a multisig address from 2 addresses
+&gt; dpowcoin-cli addmultisigaddress 2 &quot;[&#92;&quot;dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p&#92;&quot;,&#92;&quot;dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p&#92;&quot;]&quot;
+
+As a JSON-RPC call
+&gt; curl --user myusername --data-binary &#39;{&quot;jsonrpc&quot;: &quot;1.0&quot;, &quot;id&quot;: &quot;curltest&quot;, &quot;method&quot;: &quot;addmultisigaddress&quot;, &quot;params&quot;: [2, &quot;[&#92;&quot;dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p&#92;&quot;,&#92;&quot;dpc1qztyqhx06t6gf40v8kdmd84s6ty9jkex8cfn94p&#92;&quot;]&quot;]}&#39; -H &#39;content-type: text/plain;&#39; http://127.0.0.1:42002/</code></pre>
+  </div>
+  <div class="mt-4 d-flex gap-3 rpc-nav-links text-muted small">
+    <a href="/tr/development/rpc/26.3.2/">&larr; Tüm Metodlar</a>
+    <span class="text-secondary">v26.3.2</span>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<script src="/static/js/rpc-sidebar.js"
+  integrity="sha512-m5vNKMZC0fmEvB7ZLb/xYDrPMyZRBYCyNA1lCCfJAXBgjBEwYCvYbLqWFgehHspV4/ilKihAeXVZ82K+k45yQA==" crossorigin="anonymous"></script>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">MIT lisansı altında yayınlanan açık kaynak yazılım.</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Proje</h6>
+        <ul class="list-unstyled">
+          <li><a href="/tr/about/" class="footer-link">Hakkında</a></li>
+          <li><a href="/tr/wallets/full-node/" class="footer-link">Tam Düğüm</a></li>
+          <li><a href="/tr/blog/" class="footer-link">Haberler</a></li>
+          <li><a href="/tr/resources/" class="footer-link">Kaynaklar</a></li>
+          <li><a href="/tr/brand/" class="footer-link">Marka Kaynakları</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Geliştiriciler</h6>
+        <ul class="list-unstyled">
+          <li><a href="/tr/development/" class="footer-link">Katkı Sağla</a></li>
+          <li><a href="/tr/development/rpc/" class="footer-link">RPC Belgeleri</a></li>
+          <li><a href="/tr/whitepaper/" class="footer-link">Teknik Rapor</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix İmzaları
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Yasal</h6>
+        <ul class="list-unstyled">
+          <li><a href="/tr/privacy/" class="footer-link">Gizlilik Politikası</a></li>
+          <li><a href="/tr/cookies/" class="footer-link">Çerez Politikası</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Güvenlik</h6>
+        <p class="text-secondary small mb-1">GPG Parmak İzi:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>OpenPGP&#39;de anahtarı doğrula
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">MIT Lisansı</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>

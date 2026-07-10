@@ -227,7 +227,7 @@ Argon2id construction — a memory-hard, ASIC-resistant hashing function — and
 per-block difficulty algorithm with a five-minute target. From genesis through block
 224,999 the network additionally required a second, independent proof-of-work check (Yespower)
 sharing Argon2id's target; this transitional dual-PoW requirement was dropped from consensus at
-block 225,000 (Dpowcoin Core v26.3.1), after which Argon2id alone secures the chain. The codebase follows Bitcoin Core's development process
+block 225,000 (Dpowcoin Core v26.3.2), after which Argon2id alone secures the chain. The codebase follows Bitcoin Core's development process
 including the full functional test suite, reproducible GNU Guix builds, and GPG-signed release
 attestations. This paper describes the technical parameters, the rationale behind each design
 choice, and the toolchain used to bootstrap the network.</p>
@@ -479,7 +479,7 @@ Dpowcoin Core is not affiliated with Komodo or its projects.</p>
 </tr>
 </tbody>
 </table>
-<p>The Yespower requirement was removed from consensus starting with Dpowcoin Core v26.3.1. No action
+<p>The Yespower requirement was removed from consensus starting with Dpowcoin Core v26.3.2. No action
 is required from miners or SPV wallets: since Yespower and Argon2id always shared the same target,
 mining software already built on Argon2id continues to work unchanged across the transition, and
 light clients can rely on Argon2id alone for header verification both before and after block
@@ -975,7 +975,7 @@ Website: <a href="https://dpowcore.org">dpowcore.org</a></p>
 </tr>
 <tr>
 <td>Yespower dropped from consensus</td>
-<td>Block 225,000 (v26.3.1)</td>
+<td>Block 225,000 (v26.3.2)</td>
 </tr>
 <tr>
 <td>Header PoW cache size (default)</td>

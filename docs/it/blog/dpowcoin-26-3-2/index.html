@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dpowcoin Core 26.3.2 This release is a transition release and feature update on top of the 26.x branch.">
+  <meta property="og:title" content="Dpowcoin Core 26.3.2">
+  <meta property="og:description" content="Dpowcoin Core 26.3.2 This release is a transition release and feature update on top of the 26.x branch.">
+  <meta property="og:url" content="https://dpowcore.org/it/blog/dpowcoin-26-3-2/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Dpowcoin Core 26.3.2 — Dpowcoin Core</title>
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"
+    integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous">
+  <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css -->
+  <link rel="stylesheet" href="/static/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/custom.css"
+    integrity="sha512-rx1GeD+BXQ86OmdonxptlYvgJ2Em0J6xRogjZqwqczJ2Lg4Ams7fLjy5e/XF/GjSbsK7UOwNTF3oBVIa4+xBag==" crossorigin="anonymous">
+  <link rel="icon" href="/static/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="canonical" href="https://dpowcore.org/it/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="en" href="https://dpowcore.org/en/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="ru" href="https://dpowcore.org/ru/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="uk" href="https://dpowcore.org/uk/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="zh" href="https://dpowcore.org/zh/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="de" href="https://dpowcore.org/de/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="ja" href="https://dpowcore.org/ja/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="ko" href="https://dpowcore.org/ko/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="es" href="https://dpowcore.org/es/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="pl" href="https://dpowcore.org/pl/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="tr" href="https://dpowcore.org/tr/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="pt" href="https://dpowcore.org/pt/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="fr" href="https://dpowcore.org/fr/blog/dpowcoin-26-3-2/">
+  <link rel="alternate" hreflang="ro" href="https://dpowcore.org/ro/blog/dpowcoin-26-3-2/">
+</head>
+<body>
+<nav class="bwc-navbar sticky-top" id="mainNav">
+  <div class="container bwc-nav-inner">
+    <a class="bwc-nav-brand" href="/it/">
+      <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+           class="bwc-logo">
+      Dpowcoin Core
+    </a>
+    <div class="bwc-nav-utils">
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false" type="button">
+          <i class="fa-solid fa-language"></i>
+          <span>IT</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd bwc-lang-dd">
+          <li><a class="dropdown-item"
+                 href="/en/blog/dpowcoin-26-3-2/">
+            EN&nbsp; English
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/de/blog/dpowcoin-26-3-2/">
+            DE&nbsp; Deutsch
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/es/blog/dpowcoin-26-3-2/">
+            ES&nbsp; Español
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/fr/blog/dpowcoin-26-3-2/">
+            FR&nbsp; Français
+          </a></li>
+          <li><a class="dropdown-item active"
+                 href="/it/blog/dpowcoin-26-3-2/">
+            IT&nbsp; Italiano
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ja/blog/dpowcoin-26-3-2/">
+            JA&nbsp; 日本語
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ko/blog/dpowcoin-26-3-2/">
+            KO&nbsp; 한국어
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pl/blog/dpowcoin-26-3-2/">
+            PL&nbsp; Polski
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/pt/blog/dpowcoin-26-3-2/">
+            PT&nbsp; Português
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ro/blog/dpowcoin-26-3-2/">
+            RO&nbsp; Română
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/ru/blog/dpowcoin-26-3-2/">
+            RU&nbsp; Русский
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/tr/blog/dpowcoin-26-3-2/">
+            TR&nbsp; Türkçe
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/uk/blog/dpowcoin-26-3-2/">
+            UK&nbsp; Українська
+          </a></li>
+          <li><a class="dropdown-item"
+                 href="/zh/blog/dpowcoin-26-3-2/">
+            ZH&nbsp; 中文
+          </a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn bwc-util-btn dropdown-toggle" id="bwc-theme-btn"
+                data-bs-toggle="dropdown" aria-expanded="false" type="button">
+          <i class="fa-solid fa-circle-half-stroke" id="bwc-theme-icon"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bwc-dd" id="bwc-theme-menu">
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="auto" type="button">
+            <i class="fa-solid fa-circle-half-stroke fa-fw me-2"></i>Auto
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="light" type="button">
+            <i class="fa-solid fa-sun fa-fw me-2"></i>Chiaro
+          </button></li>
+          <li><button class="dropdown-item bwc-theme-opt" data-theme="dark" type="button">
+            <i class="fa-solid fa-moon fa-fw me-2"></i>Scuro
+          </button></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="bwc-nav-links list-unstyled mb-0">
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/it/">Home</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/it/about/">Informazioni</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Portafogli
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/it/wallets/full-node/">
+            <i class="fa-solid fa-server fa-fw me-2"></i>Nodo Completo
+          </a></li>
+          <li><a class="dropdown-item" href="/it/wallets/web/">
+            <i class="fa-solid fa-globe fa-fw me-2"></i>Portafoglio Web
+          </a></li>
+        </ul>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link active"
+           href="/it/blog/">Notizie</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/it/mining/">Mining</a>
+      </li>
+      <li class="bwc-nav-item">
+        <a class="bwc-nav-link"
+           href="/it/resources/">Risorse</a>
+      </li>
+      <li class="bwc-nav-item dropdown">
+        <a class="bwc-nav-link dropdown-toggle"
+           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Sviluppo
+        </a>
+        <ul class="dropdown-menu bwc-dd">
+          <li><a class="dropdown-item" href="/it/development/">
+            <i class="fa-solid fa-code fa-fw me-2"></i>Contribuire
+          </a></li>
+          <li><a class="dropdown-item" href="/it/development/rpc/">
+            <i class="fa-solid fa-terminal fa-fw me-2"></i>Documentazione RPC
+          </a></li>
+          <li><a class="dropdown-item" href="/it/whitepaper/">
+            <i class="fa-solid fa-file-lines fa-fw me-2"></i>White Paper
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main><div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="bwc-post-date mb-2">10 Jul 2026</div>
+      <h1 class="bwc-section-title mb-4">Dpowcoin Core 26.3.2</h1>
+      <hr class="bwc-divider">
+      <p class="mb-4">
+        <a href="https://github.com/dpowcore-project/dpowcoin/releases/tag/v26.3.2" target="_blank" rel="noopener" class="btn btn-bwc-primary btn-sm me-2">
+          <i class="fa-brands fa-github me-1"></i>GitHub Release v26.3.2
+        </a>
+        <a href="/it/wallets/full-node/" class="btn btn-bwc-secondary btn-sm me-2">Scarica</a>
+        <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/doc/release-notes/release-notes-26.3.2.md" target="_blank" rel="noopener" class="btn btn-bwc-secondary btn-sm">Note di rilascio</a>
+      </p>
+      <div class="bwc-post-content">
+        <p>Dpowcoin Core 26.3.2 is now available.
+This is a <strong>transition release</strong>: at block <strong>225,000</strong>, the Yespower proof-of-work requirement is
+dropped from consensus, and Argon2id alone secures the chain from that point on. It also brings a
+maintenance and feature update on top of the 26.x branch.</p>
+<blockquote>
+<p>⚠️ [!CAUTION]
+THIS RELEASE IS NESSARY FOR ALL.
+ALWAYS BACK UP YOUR WALLET DATA BEFORE ANY UPDATE.
+Shut down your wallet completely, then copy your <code>wallet.dat</code> file to a safe place before
+updating. If possible, always encrypt your wallet with a strong password.</p>
+</blockquote>
+<h2>Consensus change: the Yespower drop</h2>
+<p>From genesis through block 224,999, Dpowcoin required every header to pass <strong>two</strong> independent
+proof-of-work checks sharing the same target: Yespower (<code>N = 2048</code>, <code>r = 8</code>) as a cheap filter,
+followed by the dual-round Argon2id check described in the <a href="/en/whitepaper/">white paper</a> if
+Yespower passed. Starting at block <strong>225,000</strong>, the Yespower check is removed from consensus —
+Argon2id alone determines validity from that height onward.</p>
+<p>This was a deliberate design decision, not a security response: because both algorithms shared the
+same target, Yespower never added security beyond what Argon2id already provided on its own — it
+only doubled the work the LWMA-3 retarget algorithm had to account for and added consensus-code
+complexity. The &quot;Dual PoW&quot; name stays in project documentation for historical reference only.</p>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Block range</th>
+<th>PoW check(s) required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dual PoW Era</td>
+<td>0 – 224,999</td>
+<td>Yespower <strong>and</strong> Argon2id (shared target)</td>
+</tr>
+<tr>
+<td>Transition</td>
+<td>225,000</td>
+<td>Yespower requirement removed from consensus</td>
+</tr>
+<tr>
+<td>Argon2id-Only Era</td>
+<td>225,000+</td>
+<td>Argon2id only</td>
+</tr>
+</tbody>
+</table>
+<h2>Upgrade from 26.2</h2>
+<p>If you are already running Dpowcoin Core 26.2, upgrading to 26.3.2 is straightforward:</p>
+<ol>
+<li>Shut down your node completely.</li>
+<li>Back up your <code>wallet.dat</code> to a safe location outside the data directory.</li>
+<li>Install Dpowcoin Core 26.3.2.</li>
+<li>Start the node — it will continue syncing from where it left off.</li>
+</ol>
+<h2>What's new in 26.3.2</h2>
+<h3>New feature: header PoW verification cache</h3>
+<p>This release adds a new <strong>header proof-of-work verification cache</strong> (<code>pow_cache</code>), built on the
+same <code>CuckooCache::cache</code> structure already used elsewhere in the codebase (e.g. the signature
+cache). The cache stores the result of already-verified headers (64 MiB by default, configurable
+via <code>-headerpowcachesize</code>) and sits behind a single choke point, <code>CheckProofOfWorkCached()</code>, used
+by both header validation (<code>CheckBlockHeader()</code>) and block reads from disk
+(<code>BlockManager::ReadBlockFromDisk()</code>). This means the cache speeds up essentially any PoW check on
+an already-seen header — including re-reading blocks from local storage — not just initial header
+sync. It starts empty and is warmed up by ordinary node operation; misses always fall back to a
+full Argon2id recompute, so consensus rules are unaffected.</p>
+<h3>New feature: parallel header PoW check queue</h3>
+<p>Separately, header PoW checks can now be dispatched across a dedicated parallel check queue,
+instead of being checked one at a time. This only engages once a batch of headers exceeds an
+internal threshold (32 headers) — in practice this means it's mainly active during the presync
+stage of initial headers sync, where large batches of headers arrive from a peer and need checking
+before the chain's cumulative work is confirmed; during normal steady-state operation, where
+headers usually arrive in small numbers, checks are still processed sequentially. Up to <strong>6
+threads</strong> can be used, sized off the number of available CPU cores rather than the <code>-par</code> setting;
+on machines with fewer than 3 CPU cores, header PoW checking automatically falls back to running
+on the calling thread so it never starves the rest of the node.</p>
+<h3>Consensus-adjacent hardening</h3>
+<ul>
+<li><strong>Tighter future-block time window.</strong> The maximum amount of time a block timestamp is allowed to
+exceed network-adjusted time has been reduced from 2 hours to <strong>600 seconds</strong>, with the
+timestamp grace window used for RPCs and wallet key creation times widened to 2 hours
+separately. The previous 2-hour allowance was inherited from Bitcoin's 10-minute block target
+and was too permissive for Dpowcoin's 5-minute blocks.</li>
+<li><strong>BIP53-style malleation guard.</strong> Blocks without a coinbase transaction are now rejected as
+mutated if any transaction in them serializes to exactly 64 bytes, closing off a known Merkle
+tree malleability vector. This is not a consensus change in practice, since such blocks were
+already invalid for lacking a coinbase.</li>
+<li><strong>Stricter RPC input validation.</strong> <code>getnetworkhashps</code> now rejects invalid <code>nblocks</code>/<code>height</code>
+arguments instead of silently clamping them, and <code>setmocktime</code> validation was tightened.</li>
+</ul>
+<h3>Bug fixes and other improvements</h3>
+<ul>
+<li>Hardened Taproot miniscript parsing against malformed input, with added unit test coverage.</li>
+<li>Fixed IPv6 handling issues in the networking code.</li>
+<li>Corrected miner default <code>nBits</code> handling.</li>
+<li>Updated DNS seed and fixed-seed lists for mainnet and signet.</li>
+<li>Various build/dependency fixes (Qt zlib patch on newer toolchains, miniupnpc download URL, an
+API-compatible UPnP call).</li>
+</ul>
+<p>See <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/doc/release-notes/release-notes-26.3.2.md">release notes</a>
+on GitHub for the full changelog.</p>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>Node won't start after upgrade</strong> — make sure you're upgrading from 26.2. If you're coming from
+an older release, upgrade to 26.2 first.</li>
+<li><strong>Balance shows zero after upgrade</strong> — run <code>dpowcoin-cli rescanblockchain</code> to rescan the chain.</li>
+</ul>
+<p>Issues or questions? Use the <a href="https://github.com/dpowcore-project/dpowcoin/issues">issue tracker</a>
+or join the community on the <a href="/en/resources/">resources page</a>.</p>
+
+      </div>
+      <hr class="bwc-divider mt-5">
+      <a href="/it/blog/" class="btn btn-bwc-secondary btn-sm">
+        <i class="fa-solid fa-arrow-left me-1"></i>Notizie
+      </a>
+    </div>
+  </div>
+</div>
+</main><footer class="bwc-footer mt-auto py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/static/img/logo.svg" alt="Dpowcoin Core" width="28" height="28"
+               class="bwc-logo">
+          <span class="fw-bold fs-5">Dpowcoin Core</span>
+        </div>
+        <p class="text-secondary small">Software open source, rilasciato sotto la licenza MIT.</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Progetto</h6>
+        <ul class="list-unstyled">
+          <li><a href="/it/about/" class="footer-link">Informazioni</a></li>
+          <li><a href="/it/wallets/full-node/" class="footer-link">Nodo Completo</a></li>
+          <li><a href="/it/blog/" class="footer-link">Notizie</a></li>
+          <li><a href="/it/resources/" class="footer-link">Risorse</a></li>
+          <li><a href="/it/brand/" class="footer-link">Risorse del Brand</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Sviluppatori</h6>
+        <ul class="list-unstyled">
+          <li><a href="/it/development/" class="footer-link">Contribuire</a></li>
+          <li><a href="/it/development/rpc/" class="footer-link">Documentazione RPC</a></li>
+          <li><a href="/it/whitepaper/" class="footer-link">White Paper</a></li>
+          <li><a href="https://github.com/dpowcore-project/dpowcoin" class="footer-link" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github me-1"></i>GitHub
+          </a></li>
+          <li><a href="https://github.com/dpowcore-project/guix.sigs" class="footer-link" target="_blank" rel="noopener">
+            Guix Sigs
+          </a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Legale</h6>
+        <ul class="list-unstyled">
+          <li><a href="/it/privacy/" class="footer-link">Politica sulla Privacy</a></li>
+          <li><a href="/it/cookies/" class="footer-link">Politica sui Cookie</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h6 class="text-uppercase text-secondary small fw-semibold mb-3">Sicurezza</h6>
+        <p class="text-secondary small mb-1">Impronta GPG:</p>
+        <code class="bwc-fingerprint">23B3D882F805A5D1F0A12A2535A7538B1C816E49</code>
+        <div class="mt-2">
+          <a href="https://keys.openpgp.org/search?q=23B3D882F805A5D1F0A12A2535A7538B1C816E49" target="_blank" rel="noopener" class="footer-link small">
+            <i class="fa-solid fa-shield-halved me-1"></i>Verifica la chiave su OpenPGP
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 text-secondary small">
+      <span>&copy; Dpowcoin Core contributors</span>
+      <a href="https://github.com/dpowcore-project/dpowcoin/blob/master/COPYING" class="footer-link" target="_blank" rel="noopener">Licenza MIT</a>
+    </div>
+  </div>
+</footer>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js -->
+<script src="/static/js/bootstrap.bundle.min.js"
+  integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous"></script>
+<script src="/static/js/theme.js"
+  integrity="sha512-oL3RDuQJZTJUSC30a2K9I7jhD4o/5iAnrxskNhKIIIlUKIXHpFdN4bGh96yiTLgwY9nxFRxp23eRcQKaOKhW2Q==" crossorigin="anonymous"></script>
+
+</body>
+</html>
